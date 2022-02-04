@@ -28,6 +28,7 @@
             <div class="result_text_class">
                 <p v-html="result_text"></p>
                 <p>測試結果值:</p>
+                <p>八类型:</p>
                     <p>
                         <span>Ti:</span>
                         <progress :value="user_data.ti" max="100" class="T_bar"></progress>
@@ -68,6 +69,7 @@
                         <progress :value="user_data.ne" max="100" class="N_bar"></progress>
                         {{ user_data.ne }}<br>
                     </p>
+                    <p>内外倾:</p>
                     <p>
                         <span>I:</span>
                         <progress :value="user_data.I" max="100" class="I_bar"></progress>
@@ -78,6 +80,7 @@
                         <progress :value="user_data.E" max="100" class="E_bar"></progress>
                         {{ user_data.E }}<br>
                     </p>
+                    <p>四功能:</p>
                     <p>
                         <span>T:</span>
                         <progress :value="user_data.T" max="100" class="T_bar"></progress>
