@@ -113,7 +113,7 @@ function getcharacter(type) {
         return ['鸣人','卡卡罗特','菜月昂']
     }
     if (type == 'Ni-T') {
-        return ['鲁鲁修','夏娜','李舜生']
+        return ['鲁鲁修','夏娜','碇源堂']
     }
     if (type == 'Ni-F') {
         return ['黑雪姬','卫宫切嗣','伊莉雅']
