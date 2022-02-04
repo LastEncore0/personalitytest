@@ -135,7 +135,9 @@
             <div>
                 <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
             </div>
-            <p v-text="question_text" class="q_text"></p>
+            <div class="p_question">
+                <p v-text="question_text" class="q_text"></p>
+            </div>   
             <div>
                 <button class="more_yes" @click="answer(3)">非常符合</button>
             </div>
