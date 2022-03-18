@@ -52,3 +52,18 @@ function getlistlen(obj) {
     return len
     
 }
+
+function getmax(result_arr,add) {
+    let maxenneagram = [0, 0]
+    for (let index = 0; index < result_arr.length; index++) {
+        const element = result_arr[index];
+        if (element > maxenneagram[0]) {
+            maxenneagram[0] = element
+            maxenneagram[1] = index + add
+        }
+    }
+    if (maxenneagram[1] > 9) {
+        maxenneagram[1] = 1
+    }
+    return maxenneagram
+}

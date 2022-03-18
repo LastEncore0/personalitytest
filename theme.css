@@ -17,6 +17,12 @@ td {
   font-size: 1.5em;
   font-weight: bold;
 }
+.td_text {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1em;
+  font-weight: bold;
+}
 tr {
   text-align: center;
   margin-top: 100px;
@@ -35,6 +41,39 @@ progress::-webkit-progress-bar {
 }
 .start_button {
   background-color: rgb(104, 207, 238);
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  font-size: 2em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  /* margin-top:0px;
+    margin-right:850px;
+    margin-bottom:0px;
+    margin-left:850px; */
+  border-color: rgb(14, 34, 14);
+}
+
+.e_start_button {
+  background-color: rgb(238, 73, 81);
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  font-size: 2em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  /* margin-top:0px;
+    margin-right:850px;
+    margin-bottom:0px;
+    margin-left:850px; */
+  border-color: rgb(14, 34, 14);
+}
+
+.e_start_button:hover {
+  background-color: rgb(137, 67, 170);
+  color: azure;
   text-align: center;
   height: 50px;
   width: 200px;
@@ -85,6 +124,14 @@ progress::-webkit-progress-bar {
   padding-bottom: 2mm;
   padding-top: 3mm;
 }
+.trifix_class {
+  font-size: 1em;
+  font-weight: bold;
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 1mm;
+  padding-top: 1mm;
+}
 
 .result_text_class {
   font-size: 1em;
@@ -111,6 +158,93 @@ progress::-webkit-progress-bar {
   background-color: rgb(104, 207, 238);
   height: 55px;
   width: 440px;
+}
+
+.Instincts_answer {
+  background-color: rgb(152, 228, 247);
+  text-align: center;
+  height: 70px;
+  width: 600px;
+  font-size: 0.9em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
+}
+.Instincts_answer:hover {
+  background-color: rgb(152, 228, 247);
+  text-align: center;
+  height: 80px;
+  width: 650px;
+  font-size: 0.9em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
+}
+
+.Igreen_answer {
+  background-color: rgb(123, 214, 123);
+  text-align: center;
+  height: 70px;
+  width: 600px;
+  font-size: 0.9em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
+}
+.Igreen_answer:hover {
+  background-color: rgb(123, 214, 123);
+  text-align: center;
+  height: 80px;
+  width: 650px;
+  font-size: 0.9em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
+}
+
+.Ired_answer {
+  background-color: rgb(243, 116, 137);
+  text-align: center;
+  height: 70px;
+  width: 600px;
+  font-size: 0.9em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
+}
+.Ired_answer:hover {
+  background-color: rgb(243, 116, 137);
+  text-align: center;
+  height: 80px;
+  width: 650px;
+  font-size: 0.9em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
 }
 
 .more_yes {
