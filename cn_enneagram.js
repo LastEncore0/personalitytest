@@ -167,7 +167,7 @@ function TestEnneagrama(Instincts,num) {
                 {text:"我更重视自身价值认同和他人认可，但也重视实现自己的目的，我会以狂热的信仰和高尚的口号去驱动自己达成目标，就如同宗教热情驱动下殖民美洲的西班牙人那样。",type:"1",value:8,color:"Instincts_answer"},
                 {text:"我更重视自身价值认同和他人认可，我希望能用我深厚的情感彻底去征服我所爱的人。",type:"2",value:8,color:"Instincts_answer"},
                 {text:"我更重视自身价值认同和他人认可，我希望自己充满性吸引力来引诱别人认可接受我，并借此从他们那里得到好处。",type:"3",value:8,color:"Instincts_answer"},
-                {text:"我习惯于把精力投入到内心世界中，因为那些活在虚假的和平中的人是多么的低劣，世人愚昧不堪无法相处，我蔑视常人的生活，他们永远无法理解我的痛苦，杀杀杀杀杀杀杀！",type:"4",value:8,color:"Instincts_answer"},
+                {text:"我习惯于把精力投入到内心世界中,蔑视常人的生活，因为那些活在虚假的和平中的人是多么的低劣，世人愚昧不堪无法相处",type:"4",value:8,color:"Instincts_answer"},
                 {text:"我习惯于把精力投入到内心世界中，世界上大多数人都是难以相处的，与其与人类交流不如自己去探索知识或宅在家玩，但我希望我能找到我所能与之交流的人。",type:"5",value:8,color:"Instincts_answer"},
                 {text:"我习惯于把精力投入到内心世界中，我必须克服内心的恐惧变得更强大，为了让内心的勇气战胜恐惧我甚至愿意去从事危险的事业去锻炼自身。",type:"6",value:8,color:"Instincts_answer"},
                 {text:"我以实现自己的欲望优先，这种欲望往往是追求一些梦幻般的理想，想都不想的去踏入未知领域。",type:"7",value:8,color:"Instincts_answer"},
