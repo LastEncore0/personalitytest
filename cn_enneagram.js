@@ -278,10 +278,13 @@ function TestEnneagrama(Instincts,num) {
     return result
 }
 
-function SelectEnneagrama(selected) {
+function SelectEnneagrama(selected,commondata) {
     var result = []
     var tvalue = 8 - selected.length
     console.log(selected,tvalue)
+    if (commondata.startorder == false) {
+        commondata.startorder = true
+    }
     if (selected.indexOf(2)===-1) {
         result.push({text:"我是一个热情、有爱心、热情好客的人，会关心他人的人，渴望从他人那里得到爱",type:"2",value:tvalue,color:"Igreen_answer"})
     }

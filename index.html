@@ -342,6 +342,7 @@
                 },
                 question_enneagram: "",
                 trifix: "",
+                startorder: false,
                 answer_enneagram: [],
                 selected_enneagram: [],
                 enneagram_num: 0,
@@ -425,7 +426,7 @@
                             }
                             this.enneagram_num = 0
                             this.question_enneagram = TestEnneagramq(this.enneagram_data.Instincts, this.enneagram_num)
-                            this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num)
+                            
                         }
 
                         console.log(this.enneagram_data);
@@ -464,8 +465,10 @@
                         if (TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num)) {
                             this.question_enneagram = TestEnneagramq(this.enneagram_data.Instincts, this.enneagram_num)
                             this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num)
+                            
                         }
                         else if (this.selected_enneagram.length < 6) {
+                            var commondata = this
                             if (type == "1") {
                                 this.selected_enneagram.push(1)
                             }
@@ -494,7 +497,12 @@
                                 this.selected_enneagram.push(9)
                             }
                             this.question_enneagram = TestEnneagramq(this.enneagram_data.Instincts, this.enneagram_num)
-                            this.answer_enneagram = SelectEnneagrama(this.selected_enneagram)
+                            if (this.startorder) {
+                                this.answer_enneagram = SelectEnneagrama(this.selected_enneagram,commondata)
+                            }
+                            else {
+                                this.answer_enneagram = SelectEnneagrama([],commondata)
+                            }
                         }
                         else {
                             this.enneagram_question = false
