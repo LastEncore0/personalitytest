@@ -17,21 +17,21 @@ function TestInstinctsa(num) {
         result = [
             {text:"很多朋友，良好的声誉，广受尊敬的社会地位",type:"So",value:7,color:"Instincts_answer",color:"Instincts_answer"},
             {text:"与某个人隐秘且亲密的关系，深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业",type:"Sx",value:7,color:"Instincts_answer",color:"Instincts_answer"},
-            {text:"能让我不用工作躺平不愁花光的永久稳定的金钱来源，优质且自由自在的生活",type:"Sp",value:7,color:"Instincts_answer",color:"Instincts_answer"},
+            {text:"能让我躺平不去工作也不用担忧金钱匮乏，想要什么就有什么的自由快乐的生活",type:"Sp",value:7,color:"Instincts_answer",color:"Instincts_answer"},
         ]
     }
     if (num == 1) {
         result = [
             {text:"一生平淡无奇，没有让我感受到热烈和深入，让我焕发生命的人和事。",type:"Sx",value:5,color:"Instincts_answer"},
             {text:"失去赖以为生的收入来源，遭遇严重的生存危机",type:"Sp",value:5,color:"Instincts_answer"},
-            {text:"很多人都无法认同接受我，总是无法实现我渴望的社会成就",type:"So",value:5,color:"Instincts_answer"},
+            {text:"很多人都无法认同接受我，被所在的朋友圈排挤出去",type:"So",value:5,color:"Instincts_answer"},
         ]
     }
     if (num == 2) {
         result = [
-            {text:"优先考虑维护和实现自身利益，保护自身",type:"Sp",value:6,color:"Instincts_answer"},
-            {text:"优先考虑与他人的人际关系，社会评价",type:"So",value:6,color:"Instincts_answer"},
-            {text:"优先为能让我焕发激情和生命的人和事所考虑",type:"Sx",value:6,color:"Instincts_answer"},
+            {text:"一般情况下更多会考虑维护和实现自身利益，保护自身",type:"Sp",value:6,color:"Instincts_answer"},
+            {text:"一般情况下更多会考虑与他人的人际关系，社会评价",type:"So",value:6,color:"Instincts_answer"},
+            {text:"一般情况下更多会为能让我焕发激情和生命的人和事所考虑",type:"Sx",value:6,color:"Instincts_answer"},
         ]
     }
     return result
@@ -82,7 +82,7 @@ function TestEnneagramq(Instincts,num) {
             return '我内心里总是有种情感，渴望着摧毁杀灭掉某些人，我条件反射的排斥当下，看不起像过着家畜一般日常生活的人，容易沉浸在脱离现实的幻想中'
         }
         if (Instincts == 'Sp') {
-            return '我能享受着沉浸在痛苦之中，欣赏那些悲剧性的角色，我渴望实现我那遥不可及的悲愿，不过一旦实现有可能去追逐新的理想，因为实质上是为了弥补我那无法弥补的内心缺失'
+            return '我的生活中有很多悲伤痛苦的事情，觉得自己有很多缺陷，但害怕因此一些人把我视为脆弱的，我不喜欢与其他人诉苦，如果他们因为我的痛苦来关心我，我会有些无所适从，所以我习惯表现出一副坚韧不屈的样子，一个人独自去战胜这些痛苦。'
         }
     }
     if (num == 8) {
@@ -184,7 +184,7 @@ function TestEnneagrama(Instincts,num) {
                 {text:"我更重视自身价值认同和自我认可，我希望我能不断改善自身，达到完美的状态。",type:"1",value:8,color:"Instincts_answer"},
                 {text:"我更重视自身价值认同和自我认可，我内心不想长大，希望像小孩子一样被大家怜爱。",type:"2",value:8,color:"Instincts_answer"},
                 {text:"我更重视自身价值认同和自我认可，我希望在与他人的竞争中获胜，取得社会成就，提升社会地位。",type:"3",value:8,color:"Instincts_answer"},
-                {text:"我习惯于把精力投入到内心世界中，苦苦追逐遥不可及的理想，无论付出多少代价我都要实现他，那里仿佛有我内心缺失的东西，我甚至认为也许人生来就是要承受痛苦，历经磨难才能修得正果的。",type:"4",value:8,color:"Instincts_answer"},
+                {text:"我习惯于把精力投入到内心世界中，苦苦追逐遥不可及的理想，无论付出多少代价我都要实现他，那里仿佛有我内心缺失的东西",type:"4",value:8,color:"Instincts_answer"},
                 {text:"我习惯于把精力投入到内心世界中，在内心世界中我能用我的想象力构建出现实世界难以体验的内心世界，如果不影响我的物质生活，我希望能建立起厚厚的堡垒隔绝与他人的交流。",type:"5",value:8,color:"Instincts_answer"},
                 {text:"我习惯于把精力投入到内心世界中，很没安全感，这个世界上有很多人都是不怀好意的，光靠我自己无法保护好自己，我是弱势群体，渴望能得到外界以及社会公义的保护。",type:"6",value:8,color:"Instincts_answer"},
                 {text:"我以实现自己的欲望优先，为此我可以不择手段，让自己学会越来越狡猾的生活，因为只有这样才能保护我以及我的家庭。",type:"7",value:8,color:"Instincts_answer"},
