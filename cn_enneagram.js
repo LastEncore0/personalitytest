@@ -15,23 +15,23 @@ function TestInstinctsa(num) {
     var result = false
     if (num == 0) {
         result = [
-            {text:"很多朋友，良好的声誉，广受尊敬的社会地位",type:"So",value:5,color:"Instincts_answer",color:"Instincts_answer"},
-            {text:"与某个人隐秘且亲密的关系，深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业",type:"Sx",value:5,color:"Instincts_answer",color:"Instincts_answer"},
-            {text:"能让我不用工作躺平不愁花光的永久稳定的金钱来源，优质且自由自在的生活",type:"Sp",value:5,color:"Instincts_answer",color:"Instincts_answer"},
+            {text:"很多朋友，良好的声誉，广受尊敬的社会地位",type:"So",value:7,color:"Instincts_answer",color:"Instincts_answer"},
+            {text:"与某个人隐秘且亲密的关系，深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业",type:"Sx",value:7,color:"Instincts_answer",color:"Instincts_answer"},
+            {text:"能让我不用工作躺平不愁花光的永久稳定的金钱来源，优质且自由自在的生活",type:"Sp",value:7,color:"Instincts_answer",color:"Instincts_answer"},
         ]
     }
     if (num == 1) {
         result = [
-            {text:"一生平淡无奇，没有让我感受到热烈和深入，让我焕发生命的人和事。",type:"Sx",value:6,color:"Instincts_answer"},
-            {text:"失去赖以为生的收入来源，遭遇严重的生存危机",type:"Sp",value:6,color:"Instincts_answer"},
-            {text:"很多人都无法认同接受我，总是无法实现我渴望的社会成就",type:"So",value:6,color:"Instincts_answer"},
+            {text:"一生平淡无奇，没有让我感受到热烈和深入，让我焕发生命的人和事。",type:"Sx",value:5,color:"Instincts_answer"},
+            {text:"失去赖以为生的收入来源，遭遇严重的生存危机",type:"Sp",value:5,color:"Instincts_answer"},
+            {text:"很多人都无法认同接受我，总是无法实现我渴望的社会成就",type:"So",value:5,color:"Instincts_answer"},
         ]
     }
     if (num == 2) {
         result = [
-            {text:"优先考虑维护和实现自身利益，保护自身",type:"Sp",value:7,color:"Instincts_answer"},
-            {text:"优先考虑与他人的人际关系，社会评价",type:"So",value:7,color:"Instincts_answer"},
-            {text:"优先为能让我焕发激情和生命的人和事所考虑",type:"Sx",value:7,color:"Instincts_answer"},
+            {text:"优先考虑维护和实现自身利益，保护自身",type:"Sp",value:6,color:"Instincts_answer"},
+            {text:"优先考虑与他人的人际关系，社会评价",type:"So",value:6,color:"Instincts_answer"},
+            {text:"优先为能让我焕发激情和生命的人和事所考虑",type:"Sx",value:6,color:"Instincts_answer"},
         ]
     }
     return result
