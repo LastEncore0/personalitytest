@@ -397,6 +397,7 @@
                     this.answer_enneagram = TestInstinctsa(this.enneagram_num)
                     this.nostart = false
                     this.enneagram_question = true
+                    this.enneagram_num += 1
                 },
 
                 eanswer: function (type, value) {
@@ -410,7 +411,8 @@
                         if (type == "Sp") {
                             this.enneagram_data.sp += value
                         }
-                        this.enneagram_num += 1
+                        
+                        console.log(this.enneagram_num)
                         if (TestInstinctsa(this.enneagram_num)) {
                             this.question_enneagram = TestInstinctsq(this.enneagram_num)
                             this.answer_enneagram = TestInstinctsa(this.enneagram_num)
@@ -426,10 +428,11 @@
                             }
                             this.enneagram_num = 0
                             this.question_enneagram = TestEnneagramq(this.enneagram_data.Instincts, this.enneagram_num)
+                            this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num)
                             
                         }
-
-                        console.log(this.enneagram_data);
+                        console.log(this.enneagram_num)
+                        
 
                     }
                     else {
@@ -461,7 +464,7 @@
                             this.enneagram_data.IX += value
                         }
                         console.log(this.enneagram_data);
-                        this.enneagram_num += 1
+                        
                         if (TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num)) {
                             this.question_enneagram = TestEnneagramq(this.enneagram_data.Instincts, this.enneagram_num)
                             this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num)
@@ -469,35 +472,35 @@
                         }
                         else if (this.selected_enneagram.length < 6) {
                             var commondata = this
-                            if (type == "1") {
-                                this.selected_enneagram.push(1)
-                            }
-                            if (type == "2") {
-                                this.selected_enneagram.push(2)
-                            }
-                            if (type == "3") {
-                                this.selected_enneagram.push(3)
-                            }
-                            if (type == "4") {
-                                this.selected_enneagram.push(4)
-                            }
-                            if (type == "5") {
-                                this.selected_enneagram.push(5)
-                            }
-                            if (type == "6") {
-                                this.selected_enneagram.push(6)
-                            }
-                            if (type == "7") {
-                                this.selected_enneagram.push(7)
-                            }
-                            if (type == "8") {
-                                this.selected_enneagram.push(8)
-                            }
-                            if (type == "9") {
-                                this.selected_enneagram.push(9)
-                            }
                             this.question_enneagram = TestEnneagramq(this.enneagram_data.Instincts, this.enneagram_num)
                             if (this.startorder) {
+                                if (type == "1") {
+                                    this.selected_enneagram.push(1)
+                                }
+                                if (type == "2") {
+                                    this.selected_enneagram.push(2)
+                                }
+                                if (type == "3") {
+                                    this.selected_enneagram.push(3)
+                                }
+                                if (type == "4") {
+                                    this.selected_enneagram.push(4)
+                                }
+                                if (type == "5") {
+                                    this.selected_enneagram.push(5)
+                                }
+                                if (type == "6") {
+                                    this.selected_enneagram.push(6)
+                                }
+                                if (type == "7") {
+                                    this.selected_enneagram.push(7)
+                                }
+                                if (type == "8") {
+                                    this.selected_enneagram.push(8)
+                                }
+                                if (type == "9") {
+                                    this.selected_enneagram.push(9)
+                                }
                                 this.answer_enneagram = SelectEnneagrama(this.selected_enneagram,commondata)
                             }
                             else {
@@ -548,7 +551,7 @@
                             this.enneagram_result = true
                         }
                     }
-
+                    this.enneagram_num += 1
                 },
 
                 etest: function () {
