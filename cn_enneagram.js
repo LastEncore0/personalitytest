@@ -16,7 +16,7 @@ function TestInstinctsa(num) {
     if (num == 0) {
         result = [
             {text:"很多朋友，良好的声誉，广受尊敬的社会地位",type:"So",value:7,color:"Instincts_answer",color:"Instincts_answer"},
-            {text:"与某个人隐秘且亲密的关系，深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业",type:"Sx",value:7,color:"Instincts_answer",color:"Instincts_answer"},
+            {text:"深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业",type:"Sx",value:7,color:"Instincts_answer",color:"Instincts_answer"},
             {text:"能让我躺平不去工作也不用担忧金钱匮乏，想要什么就有什么的自由快乐的生活",type:"Sp",value:7,color:"Instincts_answer",color:"Instincts_answer"},
         ]
     }
