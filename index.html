@@ -21,8 +21,8 @@
                 @click="start">八维测试</button>
             <!-- <button @click="test">test</button> -->
             <h3>该测试基于荣格提出的八种类型理论和辅助功能猜想，与MBTI有一定理论渊源上的关系，但具体出入很大，无法混为一谈。</h3>
-            <!-- <button type="button" :class="eclass" @click="estart">九型测试</button>
-            <button @click="etest">etest</button> -->
+            <button type="button" :class="eclass" @click="estart">九型测试</button>
+            <!-- <button @click="etest">etest</button> -->
         </div>
         <div v-else-if="result_page">
             <h3>你的类型可能为:</h3>
@@ -155,6 +155,9 @@
             <div class="result_class">
                 {{ enneagram_test_result }}
             </div>
+            <div class="result_class">
+                {{ sin }}
+            </div>
             <div class="trifix_class">
                 你的Trifix可能为：{{ trifix }}
             </div>
@@ -215,7 +218,7 @@
                 <table>
                     <tr>
                         <h2>
-                            较可能为该类型的角色以及反应该类型特点的台词:
+                            较可能为该类型的角色:
                         </h2>
                         <!-- <h3>该测试展示的分类仅是从心理动机方面进行的分类，所以即使是同一类型，也可能存在较大区别，为了体现这一点，刻意以相差较大的同一类型的人物为例子展示</h3> -->
                     </tr>
@@ -309,6 +312,7 @@
                 list_len: 0,
                 current_len: 0,
                 result: "",
+                sin: "",
                 enneagram_keyword: "",
                 result_text: "该类型简介：<br>",
                 enneagram_result_dec: "该类型简介：<br>",
@@ -531,19 +535,8 @@
                             }
 
                             this.enneagram_test_result = this.enneagram_data.Instincts + maxenneagram[1]
-                            this.enneagram_keyword = getetext(this.enneagram_test_result)[0]
-                            this.enneagram_result_dec += getetext(this.enneagram_test_result)[1]
-                            this.C1 = getecharacter(this.enneagram_test_result)[0][0]
-                            this.C1text = getecharacter(this.enneagram_test_result)[0][1]
-                            this.img1 = getecharacter(this.enneagram_test_result)[0][2]
-                            if (getecharacter(this.enneagram_test_result)[1]) {
-                                this.C2 = getecharacter(this.enneagram_test_result)[1][0]
-                                this.C2text = getecharacter(this.enneagram_test_result)[1][1]
-                                this.img2 = getecharacter(this.enneagram_test_result)[1][2]
-                            }
-                            else {
-                                this.C2 = false
-                            }
+                            var that = this
+                            get_e_result(this.enneagram_test_result,that)
                             this.enneagram_result = true
                         }
                     }
@@ -551,20 +544,9 @@
                 },
 
                 etest: function () {
-                    this.enneagram_test_result = 'Sx1'
-                    this.C1 = getecharacter(this.enneagram_test_result)[0][0]
-                    this.C1text = getecharacter(this.enneagram_test_result)[0][1]
-                    this.img1 = getecharacter(this.enneagram_test_result)[0][2]
-                    if (getecharacter(this.enneagram_test_result)[1]) {
-                        this.C2 = getecharacter(this.enneagram_test_result)[1][0]
-                        this.C2text = getecharacter(this.enneagram_test_result)[1][1]
-                        this.img2 = getecharacter(this.enneagram_test_result)[1][2]
-                    }
-                    else {
-                        this.C2 = false
-                    }
-                    this.enneagram_keyword = getetext(this.enneagram_test_result)[0]
-                    this.enneagram_result_dec += getetext(this.enneagram_test_result)[1]
+                    this.enneagram_test_result = 'Sp1'
+                    var that = this
+                    get_e_result(this.enneagram_test_result,that)
                     this.nostart = false
                     this.enneagram_result = true
                 },

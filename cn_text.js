@@ -92,7 +92,7 @@ function getcharacter(type) {
         return ['晓美焰','櫛名安娜','碇真嗣']
     }
     if (type == 'Fi-S') {
-        return ['路比','不动明','休比·多拉']
+        return ['路比','不动明','间桐樱']
     }
     if (type == 'Fe-N') {
         return ['乔纳森·乔斯达','巴麻美','楯山文乃']
@@ -104,7 +104,7 @@ function getcharacter(type) {
         return ['吉良吉影','阿尔托莉雅','七海八千代']
     }
     if (type == 'Si-F') {
-        return ['间桐樱','黑桐干也','立华奏']
+        return ['休比·多拉','黑桐干也','立华奏']
     }
     if (type == 'Se-T') {
         return ['佐仓杏子','零二','凯尼∙阿克曼']
