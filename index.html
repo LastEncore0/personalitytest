@@ -319,6 +319,7 @@
                 img1: "/01.png' alt='01 pic'>",
                 img2: "/02.png' alt='02 pic'>",
                 img3: "/03.png' alt='03 pic'>",
+                sound: new Audio('./sound/click.wav'),
                 C1: "",
                 C2: "",
                 C1text: "",
@@ -401,6 +402,8 @@
                 },
 
                 eanswer: function (type, value) {
+                    
+                    this.sound.play()
                     if (this.enneagram_data.Instincts == '') {
                         if (type == "So") {
                             this.enneagram_data.so += value
@@ -593,8 +596,7 @@
                     var current_question = this.question_data
                     var current_key = this.question_key
                     var list = this.Question_list
-                    var sound = new Audio('./sound/click.wav')
-                    sound.play()
+                    this.sound.play()
                     // calculate result
                     this.user_data.ti += value * current_question.ti
                     this.user_data.te += value * current_question.te

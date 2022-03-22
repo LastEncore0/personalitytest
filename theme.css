@@ -71,22 +71,7 @@ progress::-webkit-progress-bar {
   border-color: rgb(14, 34, 14);
 }
 
-.e_start_button:hover {
-  background-color: rgb(137, 67, 170);
-  color: azure;
-  text-align: center;
-  height: 50px;
-  width: 200px;
-  font-size: 2em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  /* margin-top:0px;
-    margin-right:850px;
-    margin-bottom:0px;
-    margin-left:850px; */
-  border-color: rgb(14, 34, 14);
-}
+
 
 .start_button_mouseover {
   background-color: rgb(136, 236, 166);
@@ -174,40 +159,12 @@ progress::-webkit-progress-bar {
   border-color: rgb(14, 34, 14);
   color: black;
 }
-.Instincts_answer:hover {
-  background-color: rgb(152, 228, 247);
-  text-align: center;
-  height: 80px;
-  width: 650px;
-  font-size: 0.9em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
 
 .Igreen_answer {
   background-color: rgb(123, 214, 123);
   text-align: center;
   height: 70px;
   width: 600px;
-  font-size: 0.9em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-.Igreen_answer:hover {
-  background-color: rgb(123, 214, 123);
-  text-align: center;
-  height: 80px;
-  width: 650px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -232,20 +189,6 @@ progress::-webkit-progress-bar {
   border-color: rgb(14, 34, 14);
   color: black;
 }
-.Ired_answer:hover {
-  background-color: rgb(243, 116, 137);
-  text-align: center;
-  height: 80px;
-  width: 650px;
-  font-size: 0.9em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
 
 .more_yes {
   background-color: rgba(52, 184, 58, 0.89);
@@ -253,111 +196,6 @@ progress::-webkit-progress-bar {
   height: 50px;
   width: 400px;
   font-size: 2em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-
-.more_yes:hover {
-  background-color: rgba(52, 184, 58, 0.89);
-  text-align: center;
-  height: 60px;
-  width: 450px;
-  font-size: 2.3em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-
-.yes:hover {
-  background-color: rgba(132, 240, 137, 0.89);
-  text-align: center;
-  height: 60px;
-  width: 450px;
-  font-size: 2.3em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-
-.little_yes:hover {
-  background-color: rgba(132, 217, 238, 0.89);
-  text-align: center;
-  height: 60px;
-  width: 450px;
-  font-size: 2.3em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-
-.netural:hover {
-  background-color: rgba(84, 86, 87, 0.89);
-  text-align: center;
-  height: 60px;
-  width: 450px;
-  font-size: 2.3em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-
-.more_no:hover {
-  background-color: rgba(214, 30, 30, 0.89);
-  text-align: center;
-  height: 60px;
-  width: 450px;
-  font-size: 2.3em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-
-.no:hover {
-  background-color: rgba(241, 93, 82, 0.89);
-  text-align: center;
-  height: 60px;
-  width: 450px;
-  font-size: 2.3em;
-  font-family: "Microsoft YaHei";
-  font-weight: 600;
-  border-width: 0.1cm;
-  border-radius: 15px;
-  margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
-}
-
-.little_no:hover {
-  background-color: rgba(247, 186, 108, 0.89);
-  text-align: center;
-  height: 60px;
-  width: 450px;
-  font-size: 2.3em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
   border-width: 0.1cm;
@@ -577,4 +415,174 @@ progress::-webkit-progress-bar {
 .p_question {
   text-align: center;
   margin: 0 auto;
+}
+
+@media (any-hover: hover) {
+  .e_start_button:hover {
+    background-color: rgb(137, 67, 170);
+    color: azure;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    font-size: 2em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    /* margin-top:0px;
+      margin-right:850px;
+      margin-bottom:0px;
+      margin-left:850px; */
+    border-color: rgb(14, 34, 14);
+  }
+
+  .Instincts_answer:hover {
+    background-color: rgb(152, 228, 247);
+    text-align: center;
+    height: 80px;
+    width: 650px;
+    font-size: 0.9em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+
+  .Igreen_answer:hover {
+    background-color: rgb(123, 214, 123);
+    text-align: center;
+    height: 80px;
+    width: 650px;
+    font-size: 0.9em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+
+  .Ired_answer:hover {
+    background-color: rgb(243, 116, 137);
+    text-align: center;
+    height: 80px;
+    width: 650px;
+    font-size: 0.9em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+
+  .more_yes:hover {
+    background-color: rgba(52, 184, 58, 0.89);
+    text-align: center;
+    height: 60px;
+    width: 450px;
+    font-size: 2.3em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+
+  .yes:hover {
+    background-color: rgba(132, 240, 137, 0.89);
+    text-align: center;
+    height: 60px;
+    width: 450px;
+    font-size: 2.3em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+
+  .little_yes:hover {
+    background-color: rgba(132, 217, 238, 0.89);
+    text-align: center;
+    height: 60px;
+    width: 450px;
+    font-size: 2.3em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+
+  .netural:hover {
+    background-color: rgba(84, 86, 87, 0.89);
+    text-align: center;
+    height: 60px;
+    width: 450px;
+    font-size: 2.3em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+
+  .more_no:hover {
+    background-color: rgba(214, 30, 30, 0.89);
+    text-align: center;
+    height: 60px;
+    width: 450px;
+    font-size: 2.3em;
+    font-family: "Microsoft YaHei";
+    font-weight: 600;
+    border-width: 0.1cm;
+    border-radius: 15px;
+    margin: 1.5mm;
+    border-color: rgb(14, 34, 14);
+    color: black;
+  }
+  
+.no:hover {
+  background-color: rgba(241, 93, 82, 0.89);
+  text-align: center;
+  height: 60px;
+  width: 450px;
+  font-size: 2.3em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
+}
+
+.little_no:hover {
+  background-color: rgba(247, 186, 108, 0.89);
+  text-align: center;
+  height: 60px;
+  width: 450px;
+  font-size: 2.3em;
+  font-family: "Microsoft YaHei";
+  font-weight: 600;
+  border-width: 0.1cm;
+  border-radius: 15px;
+  margin: 1.5mm;
+  border-color: rgb(14, 34, 14);
+  color: black;
+}
+
 }
