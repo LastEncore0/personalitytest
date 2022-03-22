@@ -148,8 +148,8 @@ progress::-webkit-progress-bar {
 .Instincts_answer {
   background-color: rgb(152, 228, 247);
   text-align: center;
-  height: 70px;
-  width: 600px;
+  height: 20%;
+  width: 30%;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -163,8 +163,8 @@ progress::-webkit-progress-bar {
 .Igreen_answer {
   background-color: rgb(123, 214, 123);
   text-align: center;
-  height: 70px;
-  width: 600px;
+  height: 20%;
+  width: 30%;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -178,8 +178,8 @@ progress::-webkit-progress-bar {
 .Ired_answer {
   background-color: rgb(243, 116, 137);
   text-align: center;
-  height: 70px;
-  width: 600px;
+  height: 20%;
+  width: 30%;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
