@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <link rel="icon" href="favicon.ico">
     <title>人格测试</title>
     <link rel="stylesheet" type="text/css" href="theme.css">
@@ -152,17 +152,17 @@
             </div>
         </div>
         <div v-else-if="enneagram_result">
-            <h3>你的类型可能为:</h3>
-            <div class="result_class">
-                {{ enneagram_test_result }}
-            </div>
-            <div class="result_class">
-                {{ sin }}
-            </div>
-            <div class="trifix_class">
-                你的Trifix可能为：{{ trifix }}
-            </div>
             <div class="result_text_class">
+                <h3>你的类型可能为:</h3>
+                <div class="result_class">
+                    {{ enneagram_test_result }}
+                </div>
+                <div class="result_class">
+                    {{ sin }}
+                </div>
+                <div class="trifix_class">
+                    你的Trifix可能为：{{ trifix }}
+                </div>
                 <div class="result_class">
                     {{ enneagram_keyword }}
                 </div>

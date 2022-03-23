@@ -125,7 +125,8 @@ progress::-webkit-progress-bar {
   text-align: center;
   font-size: 1em;
   font-weight: bold;
-  width: 600px;
+  width: auto;
+  max-width: 600px;
   margin: 0 auto;
   padding-bottom: 2cm;
   padding-top: 1cm;
@@ -135,7 +136,8 @@ progress::-webkit-progress-bar {
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
-  width: 500px;
+  width: auto;
+  max-width: 500px;
   margin: 0 auto;
   padding-bottom: 2cm;
   padding-top: 1cm;
