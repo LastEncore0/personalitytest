@@ -135,7 +135,7 @@ progress::-webkit-progress-bar {
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
-  width: 600px;
+  width: 500px;
   margin: 0 auto;
   padding-bottom: 2cm;
   padding-top: 1cm;
@@ -153,8 +153,9 @@ progress::-webkit-progress-bar {
 .Instincts_answer {
   background-color: rgb(152, 228, 247);
   text-align: center;
-  height: auto;
-  width: 400px;
+  height: auto !important;
+  min-height: 80px;
+  width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -169,7 +170,8 @@ progress::-webkit-progress-bar {
   background-color: rgb(123, 214, 123);
   text-align: center;
   height: auto;
-  width: 400px;
+  min-height: 80px;
+  width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -184,7 +186,8 @@ progress::-webkit-progress-bar {
   background-color: rgb(243, 116, 137);
   text-align: center;
   height: auto;
-  width: 400px;
+  min-height: 80px;
+  width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
