@@ -10,23 +10,23 @@ function TestInstinctsa(num) {
     var result = false
     if (num == 0) {
         result = [
-            { text: "很多朋友，良好的声誉，广受尊敬的社会地位", type: [0, "So"], value: 14, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业", type: [0, "Sx"], value: 14, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "能让我躺平不去工作也不用担忧金钱匮乏，想要什么就有什么的自由快乐的生活", type: [0, "Sp"], value: 14, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "很多朋友，良好的声誉，广受尊敬的社会地位", type: [0, "So"], value: 12, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业", type: [0, "Sx"], value: 12, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "能让我躺平不去工作也不用担忧金钱匮乏，想要什么就有什么的自由快乐的生活", type: [0, "Sp"], value: 12, color: "Instincts_answer", color: "Instincts_answer" },
         ]
     }
     if (num == 1) {
         result = [
-            { text: "一生平淡无奇，没有让我感受到热烈和深入，让我焕发生命的人和事。", type: [0, "Sx"], value: 10, color: "Instincts_answer" },
-            { text: "失去赖以为生的收入来源，遭遇严重的生存危机", type: [0, "Sp"], value: 10, color: "Instincts_answer" },
-            { text: "很多人都无法认同接受我，被所在的朋友圈排挤出去", type: [0, "So"], value: 10, color: "Instincts_answer" },
+            { text: "一生平淡无奇，没有让我感受到热烈和深入，让我焕发生命的人和事。", type: [0, "Sx"], value: 8, color: "Instincts_answer" },
+            { text: "失去赖以为生的收入来源，遭遇严重的生存危机", type: [0, "Sp"], value: 8, color: "Instincts_answer" },
+            { text: "很多人都无法认同接受我，被所在的朋友圈排挤出去", type: [0, "So"], value: 8, color: "Instincts_answer" },
         ]
     }
     if (num == 2) {
         result = [
-            { text: "一般情况下更多会考虑维护和实现自身利益，保护自身", type: [0, "Sp"], value: 12, color: "Instincts_answer" },
-            { text: "一般情况下更多会考虑与他人的人际关系，社会评价", type: [0, "So"], value: 12, color: "Instincts_answer" },
-            { text: "一般情况下更多会为能让我焕发激情和生命的人和事所考虑", type: [0, "Sx"], value: 12, color: "Instincts_answer" },
+            { text: "一般情况下更多会考虑维护和实现自身利益，保护自身", type: [0, "Sp"], value: 10, color: "Instincts_answer" },
+            { text: "一般情况下更多会考虑与他人的人际关系，社会评价", type: [0, "So"], value: 10, color: "Instincts_answer" },
+            { text: "一般情况下更多会为能让我焕发激情和生命的人和事所考虑", type: [0, "Sx"], value: 10, color: "Instincts_answer" },
         ]
     }
     if (num > 2 && num < 12) {
@@ -317,6 +317,49 @@ function SelectEnneagrama(selected, commondata) {
         return false
     }
     return result
+}
+
+function CheckEnneagrama(Instincts, num, type) {
+    if (type == 1) {
+        if (num == 1) {
+            if (Instincts == 'So' || Instincts == 'Sx') {
+                return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "符合", type: [1, 4], value: -20, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
+            }
+            if (Instincts == 'Sp') {
+                return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "符合", type: [1, 4], value: -20, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
+            }
+        }
+    }
+    if (type == 4) {
+        if (num == 1) {
+            if (Instincts == 'Sp' || Instincts == 'Sx') {
+                return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [5, 6], value: -20, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
+            }
+            if (Instincts == 'So') {
+                return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，不过也不喜欢向人诉苦或表达悲伤的情绪，担忧那样会让他人对我留下不好的印象',[{ text: "符合", type: [5, 6], value: -20, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
+            }
+        }
+    }
+    if (type == 2) {
+        
+    }
+    if (type == 8) {
+        
+    }
+    if (type == 5) {
+        if (num == 1) {
+            if (Instincts == 'So' || Instincts == 'Sx') {
+                return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [5, 6], value: -20, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
+            }
+            if (Instincts == 'Sp') {
+                return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [5, 6], value: -30, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
+            }
+        }
+    }
+    if (type == 7) {
+        
+    }
+    return false
 }
 
 function yesorno(num, Instinct) {

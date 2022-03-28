@@ -31,6 +31,15 @@ var app = new Vue({
         C1text: "",
         C2text: "",
         C3: "character3",
+        e_check: true,
+        check_data: {
+            "I": 0,
+            "II": 0,
+            "IV": 0,
+            "V": 0,
+            "VII": 0,
+            "VIII": 0,
+        },
         user_data: {
             "ti": 30,
             "fe": 30,
@@ -136,6 +145,33 @@ var app = new Vue({
                 if (type[0] == 9) {
                     this.enneagram_data.IX += value
                 }
+                if (type[1] == 1) {
+                    this.enneagram_data.I -= value*0.5
+                }
+                if (type[1] == 2) {
+                    this.enneagram_data.II -= value*0.5
+                }
+                if (type[1] == 3) {
+                    this.enneagram_data.III -= value*0.5
+                }
+                if (type[1] == 4) {
+                    this.enneagram_data.IV -= value*0.5
+                }
+                if (type[1] == 5) {
+                    this.enneagram_data.V -= value*0.5
+                }
+                if (type[1] == 6) {
+                    this.enneagram_data.VI -= value*0.5
+                }
+                if (type[1] == 7) {
+                    this.enneagram_data.VII -= value*0.5
+                }
+                if (type[1] == 8) {
+                    this.enneagram_data.VIII -= value*0.5
+                }
+                if (type[1] == 9) {
+                    this.enneagram_data.IX -= value*0.5
+                }
                 if (type[1] == "So") {
                     this.enneagram_data.so += value
                 }
@@ -221,6 +257,109 @@ var app = new Vue({
                         this.answer_enneagram = SelectEnneagrama([],commondata)
                     }
                 }
+                else if (this.e_check) {
+                    //检测是否除籍
+                    var c_heart = true
+                    var c_head = true
+                    var c_gut = true
+                    var no_question = true
+                    if (this.enneagram_data.I > 35) {
+                        this.check_data.I += 1
+                        c_gut = false
+                        this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.I, 1)[0]
+                        this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.I, 1)[1]
+                        this.check_data.I += 1
+                        no_question = false
+                    }
+                    if (this.enneagram_data.IV > 35) {
+                        this.check_data.IV += 1
+                        c_heart = false
+                        if (no_question) {
+                            this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.IV, 4)[0]
+                            this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.IV, 4)[1]
+                            this.check_data.IV += 1
+                        }
+                    }
+                    if (this.enneagram_data.II > 35) {
+                        this.check_data.II += 1
+                        c_heart = false
+                        if (no_question) {
+                            this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.II, 2)[0]
+                            this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.II, 2)[1]
+                            this.check_data.II += 1
+                        }
+                    }
+                    if (this.enneagram_data.VIII > 35) {
+                        this.check_data.VIII += 1
+                        c_gut = false
+                        if (no_question) {
+                            this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VIII, 8)[0]
+                            this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VIII, 8)[1]
+                            this.check_data.VIII += 1
+                        }
+                    }
+                    if (this.enneagram_data.V > 35) {
+                        this.check_data.V += 1
+                        c_head = false
+                        if (no_question) {
+                            this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.V, 5)[0]
+                            this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.V, 5)[1]
+                            this.check_data.V += 1
+                        }
+                    }
+                    if (this.enneagram_data.VII > 35) {
+                        this.check_data.VII += 1
+                        c_head = false
+                        if (no_question) {
+                            this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VII, 7)[0]
+                            this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VII, 7)[1]
+                            this.check_data.VII += 1
+                        }
+                    }
+                    if (c_heart) {
+                        this.enneagram_data.VI += 5
+                        this.enneagram_data.IX += 5
+                    }
+                    if (c_head) {
+                        this.enneagram_data.III += 5
+                        this.enneagram_data.IX += 5
+                    }
+                    if (c_gut) {
+                        this.enneagram_data.III += 5
+                        this.enneagram_data.VI += 5
+                    }
+                    this.e_check = false
+                }
+                else if (CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.I, 1)) {
+                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.I, 1)[0]
+                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.I, 1)[1]
+                    this.check_data.I += 1
+                }
+                else if (CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.IV, 4)) {
+                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.IV, 4)[0]
+                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.IV, 4)[1]
+                    this.check_data.IV += 1
+                }
+                else if (CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.II, 2)) {
+                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.II, 2)[0]
+                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.II, 2)[1]
+                    this.check_data.II += 1
+                }
+                else if (CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VIII, 8)) {
+                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VIII, 8)[0]
+                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VIII, 8)[1]
+                    this.check_data.VIII += 1
+                }
+                else if (CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.V, 5)) {
+                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.V, 5)[0]
+                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.V, 5)[1]
+                    this.check_data.V += 1
+                }
+                else if (CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VII, 7)) {
+                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VII, 7)[0]
+                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts, this.check_data.VII, 7)[1]
+                    this.check_data.VII += 1
+                }
                 else {
                     this.enneagram_question = false
                     var result_arr = [this.enneagram_data.I, this.enneagram_data.II, this.enneagram_data.III, this.enneagram_data.IV, this.enneagram_data.V, this.enneagram_data.VI, this.enneagram_data.VII, this.enneagram_data.VIII, this.enneagram_data.IX]
@@ -228,9 +367,9 @@ var app = new Vue({
                     var heart = [this.enneagram_data.II, this.enneagram_data.III, this.enneagram_data.IV]
                     var gut = [this.enneagram_data.VIII, this.enneagram_data.IX, this.enneagram_data.I]
                     var maxenneagram = getmax(result_arr, 1)
-                    var maxbrain = getmax(brain, 5)
-                    var maxheart = getmax(heart, 2)
-                    var maxgut = getmax(gut, 8)
+                    var maxbrain = getmax(brain, 5 , true)
+                    var maxheart = getmax(heart, 2, true)
+                    var maxgut = getmax(gut, 8, true)
 
                     if (maxenneagram[1] == 2 || maxenneagram[1] == 3 || maxenneagram[1] == 4) {
                         if (maxbrain[0] > maxgut[0]) {

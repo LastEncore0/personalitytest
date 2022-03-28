@@ -53,7 +53,10 @@ function getlistlen(obj) {
 
 }
 
-function getmax(result_arr, add) {
+function getmax(result_arr, add, trifix) {
+    if (result_arr[0] == result_arr[1] && result_arr[2] == result_arr[1] && trifix) {
+        return [result_arr[0],1 + add]
+    }
     let maxenneagram = [0, 0]
     for (let index = 0; index < result_arr.length; index++) {
         const element = result_arr[index];
