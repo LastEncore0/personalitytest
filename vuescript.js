@@ -6,6 +6,7 @@ var app = new Vue({
         result_page: false,
         enneagram_question: false,
         enneagram_result: false,
+        no_result: false,
         enneagram_test_result: "",
         select: "no_select_button",
         bclass: "start_button",
@@ -19,8 +20,8 @@ var app = new Vue({
         result: "",
         sin: "",
         enneagram_keyword: "",
-        result_text: "该类型简介：<br>",
-        enneagram_result_dec: "该类型简介：<br>",
+        result_text: "<br>",
+        enneagram_result_dec: "<br>",
         img1: "/01.png' alt='01 pic'>",
         img2: "/02.png' alt='02 pic'>",
         img3: "/03.png' alt='03 pic'>",
@@ -154,17 +155,26 @@ var app = new Vue({
                 } else {
                     if (this.enneagram_data.so > this.enneagram_data.sx && this.enneagram_data.so > this.enneagram_data.sp) {
                         this.enneagram_data.Instincts = 'So'
+                        this.question_enneagram = TestInstinctsq(this.enneagram_num)
+                        this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
+                        this.enneagram_num2 += 1
                     }
-                    if (this.enneagram_data.sx > this.enneagram_data.so && this.enneagram_data.sx > this.enneagram_data.sp) {
+                    else if (this.enneagram_data.sx > this.enneagram_data.so && this.enneagram_data.sx > this.enneagram_data.sp) {
                         this.enneagram_data.Instincts = 'Sx'
+                        this.question_enneagram = TestInstinctsq(this.enneagram_num)
+                        this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
+                        this.enneagram_num2 += 1
                     }
-                    if (this.enneagram_data.sp > this.enneagram_data.sx && this.enneagram_data.sp > this.enneagram_data.so) {
+                    else if (this.enneagram_data.sp > this.enneagram_data.sx && this.enneagram_data.sp > this.enneagram_data.so) {
                         this.enneagram_data.Instincts = 'Sp'
-                    }
-                    this.question_enneagram = TestInstinctsq(this.enneagram_num)
-                    this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
-                    this.enneagram_num2 += 1
-                    
+                        this.question_enneagram = TestInstinctsq(this.enneagram_num)
+                        this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
+                        this.enneagram_num2 += 1
+                    } 
+                    else {
+                        this.enneagram_question = false
+                        this.no_result = true
+                    }             
                 }
                 console.log(this.enneagram_num)
             }
@@ -265,8 +275,12 @@ var app = new Vue({
             this.nostart = false
             this.enneagram_result = true
         },
-
+        refresh: function () {
+            location.reload();
+        },
         test: function () {
+            // this.no_result = true
+            this.nostart = false
             this.result = 'Fe-N'
             this.result_text += getresulttext('Fi', 'N')
             this.C1 = getcharacter(this.result)[0]
@@ -275,7 +289,6 @@ var app = new Vue({
             this.img1 = "<img src='./img/" + this.result + this.img1
             this.img2 = "<img src='./img/" + this.result + this.img2
             this.img3 = "<img src='./img/" + this.result + this.img3
-            this.nostart = false
             this.result_page = true
             this.user_data.ti = 110
             this.user_data.te = 30
@@ -402,8 +415,7 @@ var app = new Vue({
                             }
                         }
                         else {
-                            this.result = "你的结果无意义"
-                            this.result_page = true
+                            this.no_result = true
                         }
                     }
                     else if (trovet[1] == 'i') {
@@ -428,13 +440,11 @@ var app = new Vue({
                             }
                         }
                         else {
-                            this.result = "你的结果无意义"
-                            this.result_page = true
+                            this.no_result = true
                         }
                     }
                     else {
-                        this.result = "你的结果无意义"
-                        this.result_page = true
+                        this.no_result = true
                     }
                 }
                 // if i = e then get a e result first
@@ -480,8 +490,7 @@ var app = new Vue({
                         }
                     }
                     else {
-                        this.result = "你的结果无意义"
-                        this.result_page = true
+                        this.no_result = true
                     }
                 }
                 var result1 = this.result + random_aux1

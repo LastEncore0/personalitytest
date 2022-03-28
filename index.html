@@ -31,7 +31,7 @@
                 {{ result }}
             </div>
             <div class="result_text_class">
-                <p v-html="result_text"></p>
+                <p v-html="result_text"> 该类型简介：{{result_text}} </p>
                 <p>測試結果值:</p>
                 <p>八类型:</p>
                 <p>
@@ -166,7 +166,7 @@
                 <div class="result_class">
                     {{ enneagram_keyword }}
                 </div>
-                <p v-html="enneagram_result_dec"></p>
+                <p> 该类型简介：{{ enneagram_result_dec }} </p>
                 <p>測試結果值:</p>
                 <p>心区:</p>
                 <p>
@@ -259,6 +259,11 @@
                     </tr> -->
                 </table>
             </div>
+        </div>
+        <div v-else-if="no_result">
+            <h2>你的结果没有意义</h2>
+            <button type="button" class="refreshclass" @click="refresh">重新测试</button>
+            <h4>可以尝试尽可能避免选择中立选项重新测试，一般而言很少会出现这种情况</h4>
         </div>
         <div v-else class="q_selection">
             <div>
