@@ -330,10 +330,10 @@ function CheckEnneagrama(Instincts, num) {
     }
     if (num == 4) {
         if (Instincts == 'Sp' || Instincts == 'Sx') {
-            return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: 16, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
+            return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: 16, color: "yes" },{ text: "不符合", type: [4, ''], value: 3, color: "no" }]]
         }
         if (Instincts == 'So') {
-            return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，不过也不喜欢向人诉苦或表达悲伤的情绪，担忧那样会让他人对我留下不好的印象',[{ text: "符合", type: [3, 4], value: 16, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
+            return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，不过也不喜欢向人诉苦或表达悲伤的情绪，担忧那样会让他人对我留下不好的印象',[{ text: "符合", type: [3, 4], value: 16, color: "yes" },{ text: "不符合", type: [4, ''], value: 4, color: "no" }]]
         }
     }
     if (num == 5) {
