@@ -10,9 +10,9 @@ function TestInstinctsa(num) {
     var result = false
     if (num == 0) {
         result = [
-            { text: "很多朋友，良好的声誉，广受尊敬的社会地位", type: [0, "So"], value: 12, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业", type: [0, "Sx"], value: 12, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "能让我躺平不去工作也不用担忧金钱匮乏，想要什么就有什么的自由快乐的生活", type: [0, "Sp"], value: 12, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "很多朋友，良好的声誉，广受尊敬的社会地位", type: [0, "So"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业", type: [0, "Sx"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "能让我躺平不去工作也不用担忧金钱匮乏，想要什么就有什么的自由快乐的生活", type: [0, "Sp"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
         ]
     }
     if (num == 1) {
@@ -319,45 +319,30 @@ function SelectEnneagrama(selected, commondata) {
     return result
 }
 
-function CheckEnneagrama(Instincts, num, type) {
-    if (type == 1) {
-        if (num == 1) {
-            if (Instincts == 'So' || Instincts == 'Sx') {
-                return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "符合", type: [1, 4], value: -20, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
-            }
-            if (Instincts == 'Sp') {
-                return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "符合", type: [1, 4], value: -20, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
-            }
+function CheckEnneagrama(Instincts, num) {
+    if (num == 1) {
+        if (Instincts == 'So' || Instincts == 'Sx') {
+            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "符合", type: [4, 1], value: 16, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
+        }
+        if (Instincts == 'Sp') {
+            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "符合", type: [4, 1], value: 16, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
         }
     }
-    if (type == 4) {
-        if (num == 1) {
-            if (Instincts == 'Sp' || Instincts == 'Sx') {
-                return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [5, 6], value: -20, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
-            }
-            if (Instincts == 'So') {
-                return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，不过也不喜欢向人诉苦或表达悲伤的情绪，担忧那样会让他人对我留下不好的印象',[{ text: "符合", type: [5, 6], value: -20, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
-            }
+    if (num == 4) {
+        if (Instincts == 'Sp' || Instincts == 'Sx') {
+            return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: 16, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
+        }
+        if (Instincts == 'So') {
+            return ['我对于和他人欢乐的情感互动(贴贴)不会感到恶心，不过也不喜欢向人诉苦或表达悲伤的情绪，担忧那样会让他人对我留下不好的印象',[{ text: "符合", type: [3, 4], value: 16, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
         }
     }
-    if (type == 2) {
-        
-    }
-    if (type == 8) {
-        
-    }
-    if (type == 5) {
-        if (num == 1) {
-            if (Instincts == 'So' || Instincts == 'Sx') {
-                return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [5, 6], value: -20, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
-            }
-            if (Instincts == 'Sp') {
-                return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [5, 6], value: -30, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
-            }
+    if (num == 5) {
+        if (Instincts == 'So' || Instincts == 'Sx') {
+            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: 16, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
         }
-    }
-    if (type == 7) {
-        
+        if (Instincts == 'Sp') {
+            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: 20, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
+        }
     }
     return false
 }
@@ -412,7 +397,7 @@ function getecharacter(type) {
         return [["水银灯", "我..垃圾...才不是什么垃圾呢！", "<img src='./img/Sx/401.png' alt='01 pic'>"], ["黑雪姬", "很遗憾的，我的对战虚拟角色可是很丑陋的，而且丑陋到了极点。虽然我并非因为它丑陋才予以封印……不过我的事不重要", "<img src='./img/Ni-F/01.png' alt='02 pic'>"]]
     }
     if (type == 'Sp4') {
-        return [["碇源堂", "时钟的针不会转回到原来的地方,不过事情是可以靠自己的力量去进行的", "<img src='./img/Ni-T/03.png' alt='01 pic'>"], ["卫宫切嗣", "我试图采取正途，却总是不断犯错。虽然试图挽回，面临的仍是不断重蹈覆辙。然后碰到穷途末路的时候，又擅自希冀奇迹降临。这是追寻看不见的月亮，仿佛身处暗夜的旅途", "<img src='./img/sp/401.png' alt='01 pic'>"]]
+        return [["黑", "总有一天我会撕去这虚假的星空", "<img src='./img/sp/402.png' alt='01 pic'>"], ["卫宫切嗣", "我试图采取正途，却总是不断犯错。虽然试图挽回，面临的仍是不断重蹈覆辙。然后碰到穷途末路的时候，又擅自希冀奇迹降临。这是追寻看不见的月亮，仿佛身处暗夜的旅途", "<img src='./img/sp/401.png' alt='02 pic'>"]]
     }
     if (type == 'So5') {
         return [["黎明卿", " ", "<img src='./img/So/501.png' alt='01 pic'>"], ["圣岛慎护", "我想看到人类灵魂的光辉，想确认它是真正高贵的东西。但不问自己的意思，纯粹按照巫女神谕活着的人们，究竟有什么价值？", "<img src='./img/Ne-T/02.png' alt='02 pic'>"]]
