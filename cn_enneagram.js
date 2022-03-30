@@ -344,6 +344,9 @@ function CheckEnneagrama(Instincts, num) {
             return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: 20, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
         }
     }
+    if (num == 10) {
+        return ['我喜欢表现出自己是一个理性，客观的人，我会明确区分哪些是正确的正义的，哪些是错误的邪恶的',[{ text: "符合", type: [6, 5], value: 30, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
+    }
     return false
 }
 
