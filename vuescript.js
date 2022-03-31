@@ -253,29 +253,38 @@ var app = new Vue({
                 }
                 else if (this.e_check) {
                     //检测是否除籍
-                    if (this.enneagram_data.IV > 35) {
+                    if ((this.enneagram_data.IV > this.enneagram_data.III && this.enneagram_data.III + 20 > this.enneagram_data.IV) || this.enneagram_data.IV > 35) {
                         this.check_data.push(4)
                     }
-                    if (this.enneagram_data.I > this.enneagram_data.IV && this.enneagram_data.IV + 10 > this.enneagram_data.I ) {
+                    if (this.enneagram_data.I > this.enneagram_data.IV && this.enneagram_data.IV + 20 > this.enneagram_data.I ) {
                         this.check_data.push(1)
                     }
-                    if (this.enneagram_data.II > this.enneagram_data.III && this.enneagram_data.III + 10 > this.enneagram_data.II ) {
+                    if (this.enneagram_data.II > this.enneagram_data.III && this.enneagram_data.III + 20 > this.enneagram_data.II ) {
                         this.check_data.push(2)
                     }
-                    if (this.enneagram_data.VII > this.enneagram_data.V && this.enneagram_data.V + 10 > this.enneagram_data.VII ) {
+                    if (this.enneagram_data.VII > this.enneagram_data.V && this.enneagram_data.V + 20 > this.enneagram_data.VII ) {
                         this.check_data.push(7)
                     }
                     if ((this.enneagram_data.V > this.enneagram_data.VI && this.enneagram_data.VI + 20 > this.enneagram_data.V) || this.enneagram_data.V > 35 ) {
                         this.check_data.push(10)
                         this.check_data.push(5)
                     }
-                    if (this.enneagram_data.V > this.enneagram_data.VII && this.enneagram_data.VII + 10 > this.enneagram_data.V ) {
+                    if (this.enneagram_data.VII > this.enneagram_data.II && this.enneagram_data.II + 20 > this.enneagram_data.VII ) {
+                        this.check_data.push(14)
+                    }
+                    if (this.enneagram_data.VIII > this.enneagram_data.IV && this.enneagram_data.IV + 20 > this.enneagram_data.VIII ) {
+                        this.check_data.push(8)
+                    }
+                    if (this.enneagram_data.VIII > this.enneagram_data.I && this.enneagram_data.I + 20 > this.enneagram_data.VIII ) {
+                        this.check_data.push(16)
+                    }
+                    if (this.enneagram_data.V > this.enneagram_data.VII && this.enneagram_data.VII + 20 > this.enneagram_data.V ) {
                         this.check_data.push(15)
                     }
-                    if (this.enneagram_data.IX > this.enneagram_data.V && this.enneagram_data.V + 10 > this.enneagram_data.IX ) {
+                    if (this.enneagram_data.IX > this.enneagram_data.V && this.enneagram_data.V + 20 > this.enneagram_data.IX ) {
                         this.check_data.push(9)
                     }
-                    if (this.enneagram_data.IX > this.enneagram_data.VI && this.enneagram_data.VI + 10 > this.enneagram_data.IX ) {
+                    if (this.enneagram_data.IX > this.enneagram_data.VI && this.enneagram_data.VI + 20 > this.enneagram_data.IX ) {
                         this.check_data.push(18)
                     }
                     if (this.check_data.length > this.check_num) {
