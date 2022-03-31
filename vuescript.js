@@ -262,8 +262,13 @@ var app = new Vue({
                     if (this.enneagram_data.II > this.enneagram_data.III && this.enneagram_data.III + 15 > this.enneagram_data.II ) {
                         this.check_data.push(2)
                     }
-                    if ((this.enneagram_data.VI > this.enneagram_data.II && this.enneagram_data.II + 15 > this.enneagram_data.VI) || (this.enneagram_data.II > this.enneagram_data.VI && this.enneagram_data.II + 15 > this.enneagram_data.VI )) {
+                    //检测是否除6籍
+                    if (this.enneagram_data.VI > this.enneagram_data.II && this.enneagram_data.II + 15 > this.enneagram_data.VI) {
                         this.check_data.push(26)
+                    }
+                    //检测是否除2籍
+                    if (this.enneagram_data.II > this.enneagram_data.VI && this.enneagram_data.II + 15 > this.enneagram_data.VI ) {
+                        this.check_data.push(62)
                     }
                     if (this.enneagram_data.VII > this.enneagram_data.V && this.enneagram_data.V + 15 > this.enneagram_data.VII ) {
                         this.check_data.push(7)

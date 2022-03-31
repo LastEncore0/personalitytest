@@ -260,17 +260,17 @@ function CheckEnneagrama(Instincts, num) {
         }
     }
     if (num == 62) {
-        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "符合", type: [6, 2], value: 24, color: "yes" },{ text: "不符合", type: [2, ''], value: 4, color: "no" }]]
+        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "符合", type: [6, 2], value: 24, color: "yes" },{ text: "不符合", type: [2, ''], value: 2, color: "no" }]]
     }
     if (num == 26) {
         if (Instincts == 'So') {
-            return ['以下哪种更符合你的情况？',[{ text: "我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好", type: [2, 6], value: 24, color: "Ired_answer" },{ text: "我接近他人更多是为了安全感而非情感需求", type: [6, 2], value: 23, color: "Instincts_answer" }]]
+            return ['我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好',[{ text: "符合", type: [2, 6], value: 24, color: "yes" },{ text: "不符合", type: [6, 2], value: 2, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['以下哪种更符合你的情况？',[{ text: "我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好", type: [2, 6], value: 24, color: "Ired_answer" },{ text: "我接近他人更多是为了安全感而非情感需求", type: [6, 2], value: 23, color: "Instincts_answer" }]]
+            return ['我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好',[{ text: "符合", type: [2, 6], value: 24, color: "yes" },{ text: "不符合", type: [6, 2], value: 2, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['以下哪种更符合你的情况？',[{ text: "我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好", type: [2, 6], value: 24, color: "Ired_answer" },{ text: "我接近他人更多是为了安全感而非情感需求", type: [6, 2], value: 24, color: "Instincts_answer" }]]
+            return ['我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好',[{ text: "符合", type: [2, 6], value: 26, color: "yes" },{ text: "不符合", type: [6, 2], value: 2, color: "no" }]]
         }
     }
     if (num == 7) {
