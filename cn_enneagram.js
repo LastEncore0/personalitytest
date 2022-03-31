@@ -238,6 +238,20 @@ function CheckEnneagrama(Instincts, num) {
             return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: 26, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
         }
     }
+    if (num == 62) {
+        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "符合", type: [6, 2], value: 24, color: "yes" },{ text: "不符合", type: [2, ''], value: 4, color: "no" }]]
+    }
+    if (num == 26) {
+        if (Instincts == 'So') {
+            return ['以下哪种更符合你的情况？',[{ text: "我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好", type: [2, 6], value: 24, color: "Ired_answer" },{ text: "我接近他人更多是为了安全感而非情感需求", type: [6, 2], value: 23, color: "Instincts_answer" }]]
+        }
+        if (Instincts == 'Sx') {
+            return ['以下哪种更符合你的情况？',[{ text: "我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好", type: [2, 6], value: 24, color: "Ired_answer" },{ text: "我接近他人更多是为了安全感而非情感需求", type: [6, 2], value: 23, color: "Instincts_answer" }]]
+        }
+        if (Instincts == 'Sp') {
+            return ['以下哪种更符合你的情况？',[{ text: "我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好", type: [2, 6], value: 24, color: "Ired_answer" },{ text: "我接近他人更多是为了安全感而非情感需求", type: [6, 2], value: 24, color: "Instincts_answer" }]]
+        }
+    }
     if (num == 7) {
         return ['我很容易陷入沉浸式思考，察觉到别人察觉不到的方面',[{ text: "符合", type: [5, 7], value: 20, color: "yes" },{ text: "不符合", type: [7, ''], value: 3, color: "no" }]]
     }
@@ -262,7 +276,7 @@ function CheckEnneagrama(Instincts, num) {
     if (num == 15) {
         return ['我不怎么喜欢考虑过于复杂概念性形而上的问题',[{ text: "符合", type: [7, 5], value: 20, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
     }
-    return false
+    return ['error',[{ text: "请点击", type: [0, 0], value: 0, color: "yes" },{ text: "error", type: [0, 0], value: 0, color: "no" }]]
 }
 
 function yesorno(num, Instinct) {
@@ -341,7 +355,7 @@ function getecharacter(type) {
         return [["凉宫春日", "实现梦想的第一步是相信他，否则连原本能达成的愿望也实现不了", "<img src='./img/Sx/701.png' alt='01 pic'>"], ["伊蕾娜", " ", "<img src='./img/Ne-T/03.png' alt='03 pic'>"]]
     }
     if (type == 'Sp7') {
-        return [["乔瑟夫·乔斯达", "你的下一句话是______", "<img src='./img/Sp/701.png' alt='01 pic'>"]]
+        return [["乔瑟夫·乔斯达", "你的下一句话是______", "<img src='./img/Sp/701.png' alt='01 pic'>"],["凯尼∙阿克曼", " ", "<img src='./img/Se-T/03.png' alt='01 pic'>"]]
     }
     if (type == 'So8') {
         return [["艾伦", "如果会被他人夺走自由，我就会先反过来夺走那个人的自由", "<img src='./img/Ne-F/01.png' alt='01 pic'>"]]
