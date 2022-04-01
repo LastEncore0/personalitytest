@@ -52,6 +52,7 @@ progress::-webkit-progress-bar {
     margin-right:850px;
     margin-bottom:0px;
     margin-left:850px; */
+  color: black;
   border-color: rgb(14, 34, 14);
 }
 
@@ -68,6 +69,7 @@ progress::-webkit-progress-bar {
     margin-right:850px;
     margin-bottom:0px;
     margin-left:850px; */
+  color: black;
   border-color: rgb(14, 34, 14);
 }
 
@@ -172,7 +174,7 @@ progress::-webkit-progress-bar {
   text-align: center;
   height: auto !important;
   min-height: 80px;
-  width: 80%;
+  width: 90%;
   max-width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
@@ -189,7 +191,7 @@ progress::-webkit-progress-bar {
   text-align: center;
   height: auto;
   min-height: 80px;
-  width: 80%;
+  width: 90%;
   max-width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
@@ -206,7 +208,7 @@ progress::-webkit-progress-bar {
   text-align: center;
   height: auto;
   min-height: 80px;
-  width: 80%;
+  width: 90%;
   max-width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
