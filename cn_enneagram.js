@@ -238,66 +238,66 @@ function SelectEnneagrama(selected, commondata) {
     return result
 }
 
-function CheckEnneagrama(Instincts, num) {
+function CheckEnneagrama(Instincts, num, value) {
     if (num == 1) {
         if (Instincts == 'So' || Instincts == 'Sx') {
-            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "符合", type: [4, 1], value: 16, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
+            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "符合", type: [4, 1], value: value, color: "yes" },{ text: "不符合", type: [1, ""], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "符合", type: [4, 1], value: 16, color: "yes" },{ text: "不符合", type: [1, ""], value: 2, color: "no" }]]
+            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "符合", type: [4, 1], value: value, color: "yes" },{ text: "不符合", type: [1, ""], value: 0, color: "no" }]]
         }
     }
     if (num == 2) {
-        return ['虽然我喜欢讨好他人，但这主要是为了提高他人对我的评价，而不是想要对方也来这样回报讨好我',[{ text: "符合", type: [3, 2], value: 24, color: "yes" },{ text: "不符合", type: [2, ''], value: 3, color: "no" }]]
+        return ['虽然我喜欢讨好他人，但这主要是为了提高他人对我的评价，而不是想要对方也来这样回报讨好我',[{ text: "符合", type: [3, 2], value: value, color: "yes" },{ text: "不符合", type: [2, ''], value: 0, color: "no" }]]
     }
     if (num == 4) {
-        return ['我对于和他人欢乐的情感互动(贴贴)不会感到厌恶，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: 26, color: "yes" },{ text: "不符合", type: [4, ''], value: 3, color: "no" }]]
+        return ['我对于和他人欢乐的情感互动(贴贴)不会感到厌恶，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 3, color: "no" }]]
     }
     if (num == 5) {
         if (Instincts == 'So' || Instincts == 'Sx') {
-            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: 22, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
+            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: 26, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
+            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
         }
     }
     if (num == 62) {
-        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "符合", type: [6, 2], value: 14, color: "yes" },{ text: "不符合", type: [2, ''], value: 0, color: "no" }]]
+        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "符合", type: [6, 2], value: value, color: "yes" },{ text: "不符合", type: [2, ''], value: 0, color: "no" }]]
     }
     if (num == 26) {
         if (Instincts == 'So') {
-            return ['我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好',[{ text: "符合", type: [2, 6], value: 14, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
+            return ['我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好',[{ text: "符合", type: [2, 6], value: value, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好',[{ text: "符合", type: [2, 6], value: 14, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
+            return ['我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好',[{ text: "符合", type: [2, 6], value: value, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好',[{ text: "符合", type: [2, 6], value: 16, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
+            return ['我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好',[{ text: "符合", type: [2, 6], value: value, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
         }
     }
     if (num == 7) {
-        return ['我很容易陷入沉浸式思考，察觉到别人察觉不到的方面',[{ text: "符合", type: [5, 7], value: 20, color: "yes" },{ text: "不符合", type: [7, ''], value: 3, color: "no" }]]
+        return ['我很容易陷入沉浸式思考，察觉到别人察觉不到的方面',[{ text: "符合", type: [5, 7], value: value, color: "yes" },{ text: "不符合", type: [7, ''], value: 0, color: "no" }]]
     }
     if (num == 14) {
-        return ['为了能在和对方交流时让双方都愉快，我喜欢表现的乐观快乐',[{ text: "符合", type: [2, 7], value: 20, color: "yes" },{ text: "不符合", type: [7, ''], value: 3, color: "no" }]]
+        return ['为了能在和对方交流时让双方都愉快，我喜欢表现的乐观快乐',[{ text: "符合", type: [2, 7], value: value, color: "yes" },{ text: "不符合", type: [7, ''], value: 0, color: "no" }]]
     }
     if (num == 8) {
-        return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "符合", type: [4, 8], value: 26, color: "yes" },{ text: "不符合", type: [4, ''], value: 3, color: "no" }]]
+        return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
     }
     if (num == 16) {
-        return ['我感到这个世界充满荒谬，所以愤世嫉俗，但如果可能我不愿意用革命等反秩序的手段去纠正错误，而是在现秩序上进行改良',[{ text: "符合", type: [1, 8], value: 26, color: "yes" },{ text: "不符合", type: [1, ''], value: 3, color: "no" }]]
+        return ['我感到这个世界充满荒谬，所以愤世嫉俗，但如果可能我不愿意用革命等反秩序的手段去纠正错误，而是在现秩序上进行改良',[{ text: "符合", type: [1, 8], value: value, color: "yes" },{ text: "不符合", type: [1, ''], value: 0, color: "no" }]]
     }
     if (num == 9) {
-        return ['虽然我很慵懒，但好奇心会驱使我深入的探索某些问题，对创新的渴求会驱使我废寝忘食的完成某些项目',[{ text: "符合", type: [5, 9], value: 20, color: "yes" },{ text: "不符合", type: [9, ''], value: 3, color: "no" }]]
+        return ['虽然我很慵懒，但好奇心会驱使我深入的探索某些问题，对创新的渴求会驱使我废寝忘食的完成某些项目',[{ text: "符合", type: [5, 9], value: value, color: "yes" },{ text: "不符合", type: [9, ''], value: 0, color: "no" }]]
     }
     if (num == 18) {
-        return ['我内心有明确的边界去区分哪些人是好的或坏的，哪些人可能对我造成威胁所以先行防范',[{ text: "符合", type: [6, 9], value: 20, color: "yes" },{ text: "不符合", type: [6, ''], value: 3, color: "no" }]]
+        return ['我内心有明确的边界去区分哪些人是好的或坏的，哪些人可能对我造成威胁所以先行防范',[{ text: "符合", type: [6, 9], value: value, color: "yes" },{ text: "不符合", type: [6, ''], value: 0, color: "no" }]]
     }
     if (num == 10) {
-        return ['我喜欢表现出自己是一个理性，客观的人，我会明确区分哪些是正确的正义的，哪些是错误的邪恶的，我会尽量避免用魔怔的说法反驳他人',[{ text: "符合", type: [6, 5], value: 30, color: "yes" },{ text: "不符合", type: [5, ''], value: 4, color: "no" }]]
+        return ['我喜欢表现出自己是一个理性，客观的人，我会明确区分哪些是正确的正义的，哪些是错误的邪恶的，我会尽量避免用魔怔的说法反驳他人',[{ text: "符合", type: [6, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
     }
     if (num == 15) {
-        return ['我不怎么喜欢考虑过于复杂概念性形而上的问题',[{ text: "符合", type: [7, 5], value: 20, color: "yes" },{ text: "不符合", type: [5, ''], value: 3, color: "no" }]]
+        return ['我不怎么喜欢考虑过于复杂概念性形而上的问题',[{ text: "符合", type: [7, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
     }
     return ['error',[{ text: "请点击", type: [0, 0], value: 0, color: "yes" },{ text: "error", type: [0, 0], value: 0, color: "no" }]]
 }

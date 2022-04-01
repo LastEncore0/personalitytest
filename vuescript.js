@@ -253,58 +253,71 @@ var app = new Vue({
                 }
                 else if (this.e_check) {
                     //检测是否除籍
-                    if ((this.enneagram_data.IV > this.enneagram_data.III && this.enneagram_data.III + 15 > this.enneagram_data.IV) || this.enneagram_data.IV > 35) {
-                        this.check_data.push(4)
+                    if (this.enneagram_data.IV > this.enneagram_data.III && this.enneagram_data.III + 15 > this.enneagram_data.IV) {
+                        let difference = this.enneagram_data.IV - this.enneagram_data.III
+                        this.check_data.push([4,difference])
                     }
                     if (this.enneagram_data.I > this.enneagram_data.IV && this.enneagram_data.IV + 15 > this.enneagram_data.I ) {
-                        this.check_data.push(1)
+                        let difference = this.enneagram_data.I - this.enneagram_data.IV
+                        this.check_data.push([1,difference])
                     }
                     if (this.enneagram_data.II > this.enneagram_data.III && this.enneagram_data.III + 15 > this.enneagram_data.II ) {
-                        this.check_data.push(2)
+                        let difference = this.enneagram_data.II - this.enneagram_data.III
+                        this.check_data.push([2,difference])
                     }
                     //检测是否除6籍
                     if (this.enneagram_data.VI > this.enneagram_data.II && this.enneagram_data.II + 15 > this.enneagram_data.VI) {
-                        this.check_data.push(26)
+                        let difference = this.enneagram_data.VI - this.enneagram_data.II
+                        this.check_data.push([26,difference])
                     }
                     //检测是否除2籍
                     if (this.enneagram_data.II > this.enneagram_data.VI && this.enneagram_data.II + 15 > this.enneagram_data.VI ) {
-                        this.check_data.push(62)
+                        let difference = this.enneagram_data.II - this.enneagram_data.VI
+                        this.check_data.push([62,difference])
                     }
                     if (this.enneagram_data.VII > this.enneagram_data.V && this.enneagram_data.V + 15 > this.enneagram_data.VII ) {
-                        this.check_data.push(7)
+                        let difference = this.enneagram_data.VII - this.enneagram_data.V
+                        this.check_data.push([7,difference])
                     }
-                    if ((this.enneagram_data.V > this.enneagram_data.VI && this.enneagram_data.VI + 15 > this.enneagram_data.V) || this.enneagram_data.V > 35 ) {
-                        this.check_data.push(10)
-                        this.check_data.push(5)
+                    if (this.enneagram_data.V > this.enneagram_data.VI && this.enneagram_data.VI + 15 > this.enneagram_data.V) {
+                        let difference = this.enneagram_data.V - this.enneagram_data.VI
+                        this.check_data.push([10,difference])
+                        this.check_data.push([5,difference])
                     }
                     if (this.enneagram_data.VII > this.enneagram_data.II && this.enneagram_data.II + 15 > this.enneagram_data.VII ) {
-                        this.check_data.push(14)
+                        let difference = this.enneagram_data.VII - this.enneagram_data.II
+                        this.check_data.push([14,difference])
                     }
                     if (this.enneagram_data.VIII > this.enneagram_data.IV && this.enneagram_data.IV + 15 > this.enneagram_data.VIII ) {
-                        this.check_data.push(8)
+                        let difference = this.enneagram_data.VIII - this.enneagram_data.IV
+                        this.check_data.push([8,difference])
                     }
                     if (this.enneagram_data.VIII > this.enneagram_data.I && this.enneagram_data.I + 15 > this.enneagram_data.VIII ) {
-                        this.check_data.push(16)
+                        let difference = this.enneagram_data.VIII - this.enneagram_data.I
+                        this.check_data.push([16,difference])
                     }
                     if (this.enneagram_data.V > this.enneagram_data.VII && this.enneagram_data.VII + 15 > this.enneagram_data.V ) {
-                        this.check_data.push(15)
+                        let difference = this.enneagram_data.V - this.enneagram_data.VII
+                        this.check_data.push([15,difference])
                     }
                     if (this.enneagram_data.IX > this.enneagram_data.V && this.enneagram_data.V + 15 > this.enneagram_data.IX ) {
-                        this.check_data.push(9)
+                        let difference = this.enneagram_data.IX - this.enneagram_data.V
+                        this.check_data.push([9,difference])
                     }
                     if (this.enneagram_data.IX > this.enneagram_data.VI && this.enneagram_data.VI + 15 > this.enneagram_data.IX ) {
-                        this.check_data.push(18)
+                        let difference = this.enneagram_data.IX - this.enneagram_data.VI
+                        this.check_data.push([18,difference])
                     }
                     if (this.check_data.length > this.check_num) {
-                        this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num])[0]
-                        this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num])[1]
+                        this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num][0],this.check_data[this.check_num][1])[0]
+                        this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num][0],this.check_data[this.check_num][1])[1]
                     }
                     this.check_num += 1
                     this.e_check = false
                 }
                 else if (this.check_data.length > this.check_num) {
-                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num])[0]
-                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num])[1]
+                    this.question_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num][0],this.check_data[this.check_num][1])[0]
+                    this.answer_enneagram = CheckEnneagrama(this.enneagram_data.Instincts,this.check_data[this.check_num][0],this.check_data[this.check_num][1])[1]
                     this.check_num += 1
                 }
                 else {
