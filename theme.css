@@ -172,7 +172,8 @@ progress::-webkit-progress-bar {
   text-align: center;
   height: auto !important;
   min-height: 80px;
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -188,7 +189,8 @@ progress::-webkit-progress-bar {
   text-align: center;
   height: auto;
   min-height: 80px;
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -204,7 +206,8 @@ progress::-webkit-progress-bar {
   text-align: center;
   height: auto;
   min-height: 80px;
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   font-size: 0.9em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
