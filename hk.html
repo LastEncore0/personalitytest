@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <title>人格测试</title>
+    <link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="pickRandom.js"></script>
+    <script src="cn_text.js"></script>
+    <script src="cn_enneagram.js"></script>
+    <h1>人格心理類型測試</h1>
+    <div id="app">
+        <div v-if="nostart">
+            <div>
+                <p>語言/Language：</p>
+                <select name="Language" class="Language" id="langselect" onchange="selectlanguage()">
+                    <option value="schinese">简体中文/Simplifed Chinese</option>
+                    <option value="tchinese" selected>繁体中文/Traditional Chinese</option>
+                </select>
+            </div><br><br>
+            <button type="button" :class="bclass" @mouseover="transbutton" @mouseleave="outbutton"
+                @click="start">八维测试</button>
+            <!-- <button @click="test">test</button> -->
+            <h3>该测试基于荣格提出的八种类型理论和辅助功能猜想，与MBTI有一定理论渊源上的关系，但具体出入很大，无法混为一谈。</h3>
+            <button type="button" :class="eclass" @click="estart">九型测试</button>
+            <!-- <button @click="etest">etest</button> -->
+        </div>
+        <div v-else-if="result_page">
+            <h3>你的类型可能为:</h3>
+            <div class="result_class">
+                {{ result }}
+            </div>
+            <div class="result_text_class">
+                <p>该类型简介：</p>
+                <p> {{result_text}} </p>
+                <p>測試結果值:</p>
+                <p>八类型:</p>
+                <p class="result_progress">
+                    <span>Ti:</span>
+                    <progress :value="user_data.ti" max="100" class="T_bar"></progress>
+                    {{ user_data.ti }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>Te:</span>
+                    <progress :value="user_data.te" max="100" class="T_bar"></progress>
+                    {{ user_data.te }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>Fi:</span>
+                    <progress :value="user_data.fi" max="100" class="F_bar"></progress>
+                    {{ user_data.fi }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>Fe:</span>
+                    <progress :value="user_data.fe" max="100" class="F_bar"></progress>
+                    {{ user_data.fe }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>Si:</span>
+                    <progress :value="user_data.si" max="100" class="S_bar"></progress>
+                    {{ user_data.si }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>Se:</span>
+                    <progress :value="user_data.se" max="100" class="S_bar"></progress>
+                    {{ user_data.se }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>Ni:</span>
+                    <progress :value="user_data.ni" max="100" class="N_bar"></progress>
+                    {{ user_data.ni }} <br>
+                </p>
+                <p class="result_progress">
+                    <span>Ne:</span>
+                    <progress :value="user_data.ne" max="100" class="N_bar"></progress>
+                    {{ user_data.ne }}<br>
+                </p>
+                <p>内外倾:</p>
+                <p class="result_progress">
+                    <span>I:</span>
+                    <progress :value="user_data.I" max="100" class="I_bar"></progress>
+                    {{ user_data.I }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>E:</span>
+                    <progress :value="user_data.E" max="100" class="E_bar"></progress>
+                    {{ user_data.E }}<br>
+                </p>
+                <p>四功能:</p>
+                <p class="result_progress">
+                    <span>T:</span>
+                    <progress :value="user_data.T" max="100" class="T_bar"></progress>
+                    {{ user_data.T }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>F:</span>
+                    <progress :value="user_data.F" max="100" class="F_bar"></progress>
+                    {{ user_data.F }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>S:</span>
+                    <progress :value="user_data.S" max="100" class="S_bar"></progress>
+                    {{ user_data.S }}<br>
+                </p>
+                <p class="result_progress">
+                    <span>N:</span>
+                    <progress :value="user_data.N" max="100" class="N_bar"></progress>
+                    {{ user_data.N }}
+                </p>
+                <table>
+                    <tr>
+                        <h2>
+                            较可能为该类型的角色:
+                        </h2>
+                        <h3>该测试展示的分类仅是从心理动机方面进行的分类，所以即使是同一类型，也可能存在较大区别，为了体现这一点，刻意以相差较大的同一类型的人物为例子展示（请不要用微信等内置浏览器打开页面）</h3>
+                    </tr>
+                    <tr>
+                        <td v-html="img1"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ C1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td v-html="img2"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ C2 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td v-html="img3"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ C3 }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div v-else-if="enneagram_question" class="q_selection">
+            <!-- <div>
+                <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
+            </div> -->
+            <div>
+                <p v-text="question_enneagram" class="q_text"></p>
+            </div>
+            <div v-for="answer in answer_enneagram">
+                <button :class=answer.color @click="eanswer(answer.type,answer.value)">{{ answer.text }}</button>
+            </div>
+        </div>
+        <div v-else-if="enneagram_result">
+            <div class="result_text_class">
+                <h3>你的类型可能为:</h3>
+                <div class="result_class">
+                    {{ enneagram_test_result }}
+                </div>
+                <div class="result_class">
+                    {{ sin }}
+                </div>
+                <div class="trifix_class">
+                    你的Trifix可能为：{{ trifix }}
+                </div>
+                <div class="result_class">
+                    {{ enneagram_keyword }}
+                </div>
+                <p>该类型简介：</p>
+                <p> {{ enneagram_result_dec }} </p>
+                <p>測試結果值:</p>
+                <div class="result_value">
+                    <p>心区:</p>
+                    <p class="result_progress">
+                        <span>2:</span>
+                        <progress :value="enneagram_data.II" max="100" class="F_bar"></progress>
+                        {{ enneagram_data.II }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>3:</span>
+                        <progress :value="enneagram_data.III" max="100" class="F_bar"></progress>
+                        {{ enneagram_data.III }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>4:</span>
+                        <progress :value="enneagram_data.IV" max="100" class="F_bar"></progress>
+                        {{ enneagram_data.IV }}<br>
+                    </p>
+                    <p>脑区:</p>
+                    <p class="result_progress">
+                        <span>5:</span>
+                        <progress :value="enneagram_data.V" max="100" class="T_bar"></progress>
+                        {{ enneagram_data.V }}<br>
+                    </p class="result_progress">
+                    <p class="result_progress">
+                        <span>6:</span>
+                        <progress :value="enneagram_data.VI" max="100" class="T_bar"></progress>
+                        {{ enneagram_data.VI }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>7:</span>
+                        <progress :value="enneagram_data.VII" max="100" class="T_bar"></progress>
+                        {{ enneagram_data.VII }}<br>
+                    </p>
+                    <p>腹区:</p>
+                    <p class="result_progress">
+                        <span>8:</span>
+                        <progress :value="enneagram_data.VIII" max="100" class="N_bar"></progress>
+                        {{ enneagram_data.VIII }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>9:</span>
+                        <progress :value="enneagram_data.IX" max="100" class="N_bar"></progress>
+                        {{ enneagram_data.IX }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>1:</span>
+                        <progress :value="enneagram_data.I" max="100" class="N_bar"></progress>
+                        {{ enneagram_data.I }}<br>
+                    </p>
+                </div> 
+                <table>
+                    <tr>
+                        <h2>
+                            较可能为该类型的角色:
+                        </h2>
+                        <!-- <h3>该测试展示的分类仅是从心理动机方面进行的分类，所以即使是同一类型，也可能存在较大区别，为了体现这一点，刻意以相差较大的同一类型的人物为例子展示</h3> -->
+                    </tr>
+                    <tr>
+                        <td v-html="img1"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ C1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_text">
+                            {{ C1text }}
+                        </td>
+                    </tr>
+                    <tr v-if="C2">
+                        <td v-html="img2"></td>
+                    </tr>
+                    <tr v-if="C2">
+                        <td>
+                            {{ C2 }}
+                        </td>
+                    </tr>
+                    <tr v-if="C2">
+                        <td class="td_text">
+                            {{ C2text }}
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td v-html="img3"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ C3 }}
+                        </td>
+                    </tr> -->
+                </table>
+            </div>
+        </div>
+        <div v-else-if="no_result">
+            <h2>你的结果没有意义</h2>
+            <button type="button" class="refreshclass" @click="refresh">重新测试</button>
+            <h4>可以尝试尽可能避免选择中立选项重新测试，一般而言很少会出现这种情况</h4>
+        </div>
+        <div v-else class="q_selection">
+            <div>
+                <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
+            </div>
+            <div>
+                <p v-text="question_text" class="q_text"></p>
+            </div>
+            <div>
+                <button class="more_yes" @click="answer(3)">非常符合</button>
+            </div>
+            <div>
+                <button class="yes" @click="answer(2)">符合</button>
+            </div>
+            <div>
+                <button class="little_yes" @click="answer(1)">部分符合</button>
+            </div>
+            <div>
+                <button class="netural" @click="answer(0)">不确定</button>
+            </div>
+            <div>
+                <button class="little_no" @click="answer(-1)">部分不符合</button>
+            </div>
+            <div>
+                <button class="no" @click="answer(-2)">不符合</button>
+            </div>
+            <div>
+                <button class="more_no" @click="answer(-3)">非常不符合</button>
+            </div>
+            <h3 class="warning">请尽量避免选不确定或者部分符合/部分不符合选项以免结果没有意义或者较为不准确</h2>
+        </div>
+
+    </div>
+
+    <script src="vuescript.js">
+        
+    </script>
+</body>
+
+</html>

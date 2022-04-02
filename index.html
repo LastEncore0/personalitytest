@@ -18,6 +18,13 @@
     <h1>人格心理类型测试</h1>
     <div id="app">
         <div v-if="nostart">
+            <!-- <div>
+                <p>语言/Language：</p>
+                <select name="Language" class="Language" id="langselect" onchange="selectlanguage()">
+                    <option value="schinese" selected>简体中文/Simplifed Chinese</option>
+                    <option value="tchinese" >繁体中文/Traditional Chinese</option>
+                </select>
+            </div><br><br> -->
             <button type="button" :class="bclass" @mouseover="transbutton" @mouseleave="outbutton"
                 @click="start">八维测试</button>
             <!-- <button @click="test">test</button> -->
@@ -35,74 +42,74 @@
                 <p> {{result_text}} </p>
                 <p>測試結果值:</p>
                 <p>八类型:</p>
-                <p>
+                <p class="result_progress">
                     <span>Ti:</span>
                     <progress :value="user_data.ti" max="100" class="T_bar"></progress>
                     {{ user_data.ti }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>Te:</span>
                     <progress :value="user_data.te" max="100" class="T_bar"></progress>
                     {{ user_data.te }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>Fi:</span>
                     <progress :value="user_data.fi" max="100" class="F_bar"></progress>
                     {{ user_data.fi }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>Fe:</span>
                     <progress :value="user_data.fe" max="100" class="F_bar"></progress>
                     {{ user_data.fe }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>Si:</span>
                     <progress :value="user_data.si" max="100" class="S_bar"></progress>
                     {{ user_data.si }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>Se:</span>
                     <progress :value="user_data.se" max="100" class="S_bar"></progress>
                     {{ user_data.se }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>Ni:</span>
                     <progress :value="user_data.ni" max="100" class="N_bar"></progress>
                     {{ user_data.ni }} <br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>Ne:</span>
                     <progress :value="user_data.ne" max="100" class="N_bar"></progress>
                     {{ user_data.ne }}<br>
                 </p>
                 <p>内外倾:</p>
-                <p>
+                <p class="result_progress">
                     <span>I:</span>
                     <progress :value="user_data.I" max="100" class="I_bar"></progress>
                     {{ user_data.I }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>E:</span>
                     <progress :value="user_data.E" max="100" class="E_bar"></progress>
                     {{ user_data.E }}<br>
                 </p>
                 <p>四功能:</p>
-                <p>
+                <p class="result_progress">
                     <span>T:</span>
                     <progress :value="user_data.T" max="100" class="T_bar"></progress>
                     {{ user_data.T }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>F:</span>
                     <progress :value="user_data.F" max="100" class="F_bar"></progress>
                     {{ user_data.F }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>S:</span>
                     <progress :value="user_data.S" max="100" class="S_bar"></progress>
                     {{ user_data.S }}<br>
                 </p>
-                <p>
+                <p class="result_progress">
                     <span>N:</span>
                     <progress :value="user_data.N" max="100" class="N_bar"></progress>
                     {{ user_data.N }}
@@ -170,54 +177,56 @@
                 <p>该类型简介：</p>
                 <p> {{ enneagram_result_dec }} </p>
                 <p>測試結果值:</p>
-                <p>心区:</p>
-                <p>
-                    <span>2:</span>
-                    <progress :value="enneagram_data.II" max="100" class="F_bar"></progress>
-                    {{ enneagram_data.II }}<br>
-                </p>
-                <p>
-                    <span>3:</span>
-                    <progress :value="enneagram_data.III" max="100" class="F_bar"></progress>
-                    {{ enneagram_data.III }}<br>
-                </p>
-                <p>
-                    <span>4:</span>
-                    <progress :value="enneagram_data.IV" max="100" class="F_bar"></progress>
-                    {{ enneagram_data.IV }}<br>
-                </p>
-                <p>脑区:</p>
-                <p>
-                    <span>5:</span>
-                    <progress :value="enneagram_data.V" max="100" class="T_bar"></progress>
-                    {{ enneagram_data.V }}<br>
-                </p>
-                <p>
-                    <span>6:</span>
-                    <progress :value="enneagram_data.VI" max="100" class="T_bar"></progress>
-                    {{ enneagram_data.VI }}<br>
-                </p>
-                <p>
-                    <span>7:</span>
-                    <progress :value="enneagram_data.VII" max="100" class="T_bar"></progress>
-                    {{ enneagram_data.VII }}<br>
-                </p>
-                <p>腹区:</p>
-                <p>
-                    <span>8:</span>
-                    <progress :value="enneagram_data.VIII" max="100" class="N_bar"></progress>
-                    {{ enneagram_data.VIII }}<br>
-                </p>
-                <p>
-                    <span>9:</span>
-                    <progress :value="enneagram_data.IX" max="100" class="N_bar"></progress>
-                    {{ enneagram_data.IX }}<br>
-                </p>
-                <p>
-                    <span>1:</span>
-                    <progress :value="enneagram_data.I" max="100" class="N_bar"></progress>
-                    {{ enneagram_data.I }}<br>
-                </p>
+                <div class="result_value">
+                    <p>心区:</p>
+                    <p class="result_progress">
+                        <span>2:</span>
+                        <progress :value="enneagram_data.II" max="100" class="F_bar"></progress>
+                        {{ enneagram_data.II }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>3:</span>
+                        <progress :value="enneagram_data.III" max="100" class="F_bar"></progress>
+                        {{ enneagram_data.III }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>4:</span>
+                        <progress :value="enneagram_data.IV" max="100" class="F_bar"></progress>
+                        {{ enneagram_data.IV }}<br>
+                    </p>
+                    <p>脑区:</p>
+                    <p class="result_progress">
+                        <span>5:</span>
+                        <progress :value="enneagram_data.V" max="100" class="T_bar"></progress>
+                        {{ enneagram_data.V }}<br>
+                    </p class="result_progress">
+                    <p class="result_progress">
+                        <span>6:</span>
+                        <progress :value="enneagram_data.VI" max="100" class="T_bar"></progress>
+                        {{ enneagram_data.VI }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>7:</span>
+                        <progress :value="enneagram_data.VII" max="100" class="T_bar"></progress>
+                        {{ enneagram_data.VII }}<br>
+                    </p>
+                    <p>腹区:</p>
+                    <p class="result_progress">
+                        <span>8:</span>
+                        <progress :value="enneagram_data.VIII" max="100" class="N_bar"></progress>
+                        {{ enneagram_data.VIII }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>9:</span>
+                        <progress :value="enneagram_data.IX" max="100" class="N_bar"></progress>
+                        {{ enneagram_data.IX }}<br>
+                    </p>
+                    <p class="result_progress">
+                        <span>1:</span>
+                        <progress :value="enneagram_data.I" max="100" class="N_bar"></progress>
+                        {{ enneagram_data.I }}<br>
+                    </p>
+                </div> 
                 <table>
                     <tr>
                         <h2>

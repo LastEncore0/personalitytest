@@ -1,3 +1,13 @@
+function selectlanguage() {
+    let i = document.getElementById("langselect").selectedIndex
+    if (i == 0) {
+        location.href = `index.html`
+    }
+    if (i == 1) {
+        location.href = `hk.html`
+    }
+    
+}
 var app = new Vue({
     el: "#app",
 

@@ -29,8 +29,9 @@ tr {
   margin-bottom: 100px;
 }
 progress {
-  width: 450px;
+  max-width: 450px;
   height: 20px;
+  width: 80%;
   border-radius: 25px;
 }
 progress::-webkit-progress-bar {
@@ -39,6 +40,19 @@ progress::-webkit-progress-bar {
 #app {
   text-align: center;
 }
+.Language {
+  font-size: 1em;
+  height: 25px;
+  border-radius: 25px;
+  border-width: 0.05cm;
+  border-color: rgb(14, 34, 14);
+}
+
+.result_progress {
+  text-align:left;
+  margin-left: 10%;
+}
+
 .start_button {
   background-color: rgb(104, 207, 238);
   text-align: center;
@@ -54,6 +68,7 @@ progress::-webkit-progress-bar {
     margin-left:850px; */
   color: black;
   border-color: rgb(14, 34, 14);
+  border-radius: 25px;
 }
 
 .e_start_button {
@@ -71,6 +86,7 @@ progress::-webkit-progress-bar {
     margin-left:850px; */
   color: black;
   border-color: rgb(14, 34, 14);
+  border-radius: 25px;
 }
 
 .refreshclass {
@@ -105,6 +121,7 @@ progress::-webkit-progress-bar {
     margin-left:850px; */
   border-color: rgb(14, 34, 14);
   color: azure;
+  border-radius: 25px;
 }
 .q_selection {
   padding-bottom: 0.5cm;
@@ -117,6 +134,11 @@ progress::-webkit-progress-bar {
   margin: 0 auto;
   padding-bottom: 0.5cm;
   padding-top: 0.2cm;
+}
+
+.result_value {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .result_class {
