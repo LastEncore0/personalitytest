@@ -1,7 +1,5 @@
 function TestInstinctsq(num) {
-    if (num > 29) {
-        return '请选择以下最符合你的情况'
-    }
+
     let q_list = [
         '请选择以下你最为渴求的事物',
         '请选择以下你最为恐惧的事物',
@@ -26,7 +24,12 @@ function TestInstinctsq(num) {
         '我是一个机会主义者，总是寻找便利，赚取某些好处，谋求某些利益',
         '我感觉人们善良和良好的意图根本不存在，我可以慷慨的为他人提供保护，以让他们对我形成依赖，进而控制他们，为了不被他们所伤害',
         '我吃，故我在；我睡，故我在；我拥有，故我在；对我而言没有形而上的层次，只想现实安逸的度日']
-    return q_list[num]
+    if (q_list[num]) {
+        return q_list[num]
+    }
+    else {
+        return '请选择以下最符合你的情况'
+    }
 }
 
 function TestInstinctsa(num) {
