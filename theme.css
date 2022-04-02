@@ -7,6 +7,9 @@ h1 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
+img {
+  width: 90%;
+}
 table {
   text-align: center;
   margin: 0 auto;
