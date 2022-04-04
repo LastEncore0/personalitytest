@@ -254,7 +254,7 @@ function CheckEnneagrama(Instincts, num, value) {
         return ['虽然我喜欢讨好他人，但这主要是为了提高他人对我的评价，而不是想要对方也来这样回报讨好我',[{ text: "符合", type: [3, 2], value: value, color: "yes" },{ text: "不符合", type: [2, ''], value: 0, color: "no" }]]
     }
     if (num == 4) {
-        return ['我对于和他人欢乐的情感互动(贴贴)不会感到厌恶，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 3, color: "no" }]]
+        return ['我对于和他人欢乐的情感互动(贴贴)不会感到厌恶，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
     }
     if (num == 5) {
         if (Instincts == 'So' || Instincts == 'Sx') {
@@ -266,6 +266,17 @@ function CheckEnneagrama(Instincts, num, value) {
     }
     if (num == 62) {
         return ['我接近他人更多是为了安全感而非情感需求',[{ text: "符合", type: [6, 2], value: value, color: "yes" },{ text: "不符合", type: [2, ''], value: 0, color: "no" }]]
+    }
+    if (num == 48) {
+        if (Instincts == 'So') {
+            return ['我有我想要保护的人，所以我不会向别人倾诉痛苦，表现出软弱',[{ text: "符合", type: [8, 4], value: value, color: "yes" },{ text: "不符合", type: [4, 8], value: 0, color: "no" }]]
+        }
+        if (Instincts == 'Sx') {
+            return ['如果有人要和我敌对，我会当众奋起反击，让他们知道我是不好惹的',[{ text: "符合", type: [8, 4], value: value, color: "yes" },{ text: "不符合", type: [4, 8], value: 0, color: "no" }]]
+        }
+        if (Instincts == 'Sp') {
+            return ['我对周围的很多人不放心，总想把他们控制住，所以我一般对外压抑掩盖自己的内心',[{ text: "符合", type: [8, 4], value: value, color: "yes" },{ text: "不符合", type: [4, 8], value: 0, color: "no" }]]
+        }
     }
     if (num == 26) {
         if (Instincts == 'So') {
@@ -286,6 +297,17 @@ function CheckEnneagrama(Instincts, num, value) {
     }
     if (num == 8) {
         return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+    }
+    if (num == 8) {
+        if (Instincts == 'So') {
+            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+        }
+        if (Instincts == 'Sx') {
+            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+        }
+        if (Instincts == 'Sp') {
+            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+        }
     }
     if (num == 16) {
         return ['我感到这个世界充满荒谬，所以愤世嫉俗，但如果可能我不愿意用革命等反秩序的手段去纠正错误，而是在现秩序上进行改良',[{ text: "符合", type: [1, 8], value: value, color: "yes" },{ text: "不符合", type: [1, ''], value: 0, color: "no" }]]

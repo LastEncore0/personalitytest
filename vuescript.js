@@ -267,6 +267,10 @@ var app = new Vue({
                         let difference = this.enneagram_data.IV - this.enneagram_data.III
                         this.check_data.push([4,difference])
                     }
+                    if (this.enneagram_data.IV > this.enneagram_data.VIII && this.enneagram_data.VIII + 15 > this.enneagram_data.IV) {
+                        let difference = this.enneagram_data.IV - this.enneagram_data.VIII
+                        this.check_data.push([48,difference])
+                    }
                     if (this.enneagram_data.I > this.enneagram_data.IV && this.enneagram_data.IV + 15 > this.enneagram_data.I ) {
                         let difference = this.enneagram_data.I - this.enneagram_data.IV
                         this.check_data.push([1,difference])
