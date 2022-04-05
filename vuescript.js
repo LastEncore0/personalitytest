@@ -211,6 +211,24 @@ var app = new Vue({
                         this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
                         this.enneagram_num2 += 1
                     } 
+                    else if (this.enneagram_data.sx > this.enneagram_data.so && this.enneagram_data.sx == this.enneagram_data.sp) {
+                        this.enneagram_data.Instincts = 'Sx'
+                        this.question_enneagram = TestInstinctsq(this.enneagram_num)
+                        this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
+                        this.enneagram_num2 += 1
+                    }
+                    else if (this.enneagram_data.so == this.enneagram_data.sx && this.enneagram_data.so > this.enneagram_data.sp) {
+                        this.enneagram_data.Instincts = 'So'
+                        this.question_enneagram = TestInstinctsq(this.enneagram_num)
+                        this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
+                        this.enneagram_num2 += 1
+                    }
+                    else if (this.enneagram_data.sp > this.enneagram_data.sx && this.enneagram_data.sp == this.enneagram_data.so) {
+                        this.enneagram_data.Instincts = 'Sp'
+                        this.question_enneagram = TestInstinctsq(this.enneagram_num)
+                        this.answer_enneagram = TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
+                        this.enneagram_num2 += 1
+                    } 
                     else {
                         this.enneagram_question = false
                         this.no_result = true
