@@ -39,7 +39,7 @@
             </div>
             <div class="result_text_class">
                 <p>该类型简介：</p>
-                <p> {{result_text}} </p>
+                <p v-html="result_text"></p>
                 <p>測試結果值:</p>
                 <p>八类型:</p>
                 <p class="result_progress">
@@ -175,7 +175,7 @@
                     {{ enneagram_keyword }}
                 </div>
                 <p>该类型简介：</p>
-                <p> {{ enneagram_result_dec }} </p>
+                <p v-html="enneagram_result_dec"></p>
                 <p>測試結果值:</p>
                 <div class="result_value">
                     <p>心区:</p>
