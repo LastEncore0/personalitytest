@@ -64,9 +64,11 @@ var app = new Vue({
         startorder: false,
         answer_enneagram: [],
         selected_enneagram: [],
+        e_maybe: [],
         enneagram_num: 0,
         enneagram_num2: 0,
         check_num: 0,
+        e_result_value: 0,
         enneagram_data: {
             "Instincts": '',
             "so": 0,
@@ -389,7 +391,8 @@ var app = new Vue({
                             this.trifix = this.trifix + maxenneagram[1] + maxheart[1] + maxbrain[1]
                         }
                     }
-
+                    this.e_result_value = maxenneagram[1]
+                    this.e_maybe = getclose(result_arr, maxenneagram[1])
                     this.enneagram_test_result = this.enneagram_data.Instincts + maxenneagram[1]
                     var that = this
                     get_e_result(this.enneagram_test_result,that)
@@ -399,8 +402,19 @@ var app = new Vue({
             this.enneagram_num += 1
         },
 
+        emayberesult: function (type, value) {
+            this.e_maybe[value] = this.e_result_value
+            this.e_result_value = type
+            this.enneagram_test_result = this.enneagram_data.Instincts + type
+            var that = this
+            get_e_result(this.enneagram_test_result,that)
+        },
+
         etest: function () {
-            this.enneagram_test_result = 'Sp7'
+            this.e_result_value = 7
+            this.enneagram_data.Instincts = 'Sp'
+            this.enneagram_test_result = this.enneagram_data.Instincts + this.e_result_value
+            this.e_maybe = [6,8,5,1]
             var that = this
             get_e_result(this.enneagram_test_result,that)
             this.nostart = false

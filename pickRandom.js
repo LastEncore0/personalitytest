@@ -71,11 +71,68 @@ function getmax(result_arr, add, trifix) {
     return maxenneagram
 }
 
+function getclose(result_arr, type) {
+    let close_arr = []
+    let distance = 10
+    let left, right, up ,down
+    let few = [1,4,2,8,5,7]
+    let mainstream = [3,6,9]
+    if (type + 1 > 9) {
+        right = 1
+    }
+    else {
+        right = type + 1
+    }
+    if (left - 1 < 1) {
+        left = 9
+    }
+    else {
+        left = type - 1
+    }
+    if (checkclose(type,few)[0] && checkclose(type,few)[1]) {
+        up = checkclose(type,few)[0]
+        down = checkclose(type,few)[1]
+    }
+    if (checkclose(type,mainstream)[0] && checkclose(type,mainstream)[1]) {
+        up = checkclose(type,mainstream)[0]
+        down = checkclose(type,mainstream)[1]
+    }
+    if (Math.abs(result_arr[type - 1] - result_arr[left - 1]) < distance) {
+        close_arr.push(left)
+    }
+    if (Math.abs(result_arr[type - 1] - result_arr[right - 1]) < distance) {
+        close_arr.push(right)
+    }
+    if (Math.abs(result_arr[type - 1] - result_arr[up - 1]) < distance) {
+        close_arr.push(up)
+    }
+    if (Math.abs(result_arr[type - 1] - result_arr[down - 1]) < distance) {
+        close_arr.push(down)
+    }
+    return close_arr
+}
+function checkclose(type,list) {
+    let result = []
+    for (let index = 0; index < list.length; index++) {
+        const element = list[index];
+        if (type == list[index]) {
+            result.push(list[index - 1])
+            if (index + 1 < list.length) {
+                result.push(list[index + 1])
+            }
+            else {
+                result.push(list[0])
+            }
+        }
+    }
+    return result
+}
+
 function get_e_result(enneagram_test_result,that) {
 
     that.enneagram_keyword = getetext(enneagram_test_result)[0]
     that.sin = getetext(enneagram_test_result)[1]
-    that.enneagram_result_dec += getetext(enneagram_test_result)[2]
+    that.enneagram_result_dec = getetext(enneagram_test_result)[2]
     that.C1 = getecharacter(enneagram_test_result)[0][0]
     that.C1text = getecharacter(enneagram_test_result)[0][1]
     that.img1 = getecharacter(enneagram_test_result)[0][2]
