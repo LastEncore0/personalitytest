@@ -40,7 +40,8 @@ var app = new Vue({
         C2: "",
         C1text: "",
         C2text: "",
-        C3: "character3",
+        C3: "",
+        C3text: "",
         e_check: true,
         check_data:[],
         user_data: {
@@ -411,10 +412,10 @@ var app = new Vue({
         },
 
         etest: function () {
-            this.e_result_value = 7
-            this.enneagram_data.Instincts = 'Sp'
+            this.e_result_value = 4
+            this.enneagram_data.Instincts = 'Sx'
             this.enneagram_test_result = this.enneagram_data.Instincts + this.e_result_value
-            this.e_maybe = [6,8,5,1]
+            this.e_maybe = [5,3,1,7]
             var that = this
             get_e_result(this.enneagram_test_result,that)
             this.nostart = false

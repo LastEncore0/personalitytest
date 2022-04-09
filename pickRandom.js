@@ -144,4 +144,12 @@ function get_e_result(enneagram_test_result,that) {
     else {
         that.C2 = false
     }
+    if (getecharacter(enneagram_test_result)[2]) {
+        that.C3 = getecharacter(enneagram_test_result)[2][0]
+        that.C3text = getecharacter(enneagram_test_result)[2][1]
+        that.img3 = getecharacter(enneagram_test_result)[2][2]
+    }
+    else {
+        that.C3 = false
+    }
 }
