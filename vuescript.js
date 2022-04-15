@@ -1,16 +1,22 @@
-// import Vue from 'vue'
-// import VueI18n from 'vue-i18n'
+// import Vue from 'vue';
+// import VueI18n from 'vue-i18n';
 
 // Vue.use(VueI18n)
 
+
 // const i18n = new VueI18n({
-//     locale: 'en-US',
-//     formatter: new CustomFormatter(/* 这里是构造函数选项 */),
+//     locale: 'zh', // 设置语言环境
 //     messages: {
-//       'en-US': {
-//         // ...
-//       },
-//       // ...
+//         en: {
+//           message: {
+//             test_title: 'Personality type Test'
+//           }
+//         },
+//         zh: {
+//             message: {
+//               test_title: '人格心理类型测试'
+//             }
+//         }
 //     }
 //   })
   
@@ -26,7 +32,6 @@ function selectlanguage() {
 }
 var app = new Vue({
     el: "#app",
-
     data: {
         nostart: true,
         result_page: false,
