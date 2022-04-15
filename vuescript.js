@@ -1,3 +1,19 @@
+// import Vue from 'vue'
+// import VueI18n from 'vue-i18n'
+
+// Vue.use(VueI18n)
+
+// const i18n = new VueI18n({
+//     locale: 'en-US',
+//     formatter: new CustomFormatter(/* 这里是构造函数选项 */),
+//     messages: {
+//       'en-US': {
+//         // ...
+//       },
+//       // ...
+//     }
+//   })
+  
 function selectlanguage() {
     let i = document.getElementById("langselect").selectedIndex
     if (i == 0) {

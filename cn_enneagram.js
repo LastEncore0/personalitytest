@@ -400,7 +400,9 @@ function getecharacter(type) {
         return [["漩涡鸣人", " ", "<img src='./img/Se-F/01.png' alt='01 pic'>"], ["麻仓叶", "船到桥头自然直", "<img src='./img/So/701.png' alt='01 pic'>"]]
     }
     if (type == 'Sx7') {
-        return [["凉宫春日", "实现梦想的第一步是相信他，否则连原本能达成的愿望也实现不了", "<img src='./img/Sx/701.png' alt='01 pic'>"], ["伊蕾娜", " ", "<img src='./img/Ne-T/03.png' alt='03 pic'>"]]
+        return [["凉宫春日", "实现梦想的第一步是相信他，否则连原本能达成的愿望也实现不了", "<img src='./img/Sx/701.png' alt='01 pic'>"], 
+        // ["伊蕾娜", " ", "<img src='./img/Ne-T/03.png' alt='03 pic'>"]
+    ]
     }
     if (type == 'Sp7') {
         return [["乔瑟夫·乔斯达", "你的下一句话是______", "<img src='./img/Sp/701.png' alt='01 pic'>"],["凯尼∙阿克曼", " ", "<img src='./img/Se-T/03.png' alt='01 pic'>"]]
