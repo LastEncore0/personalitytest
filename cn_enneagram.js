@@ -2,7 +2,7 @@ function TestInstinctsq(num) {
 
     let q_list = [
         '请选择以下你最为渴求的事物',
-        '请选择以下你最为恐惧的事物',
+        '你认为你现在过得不好或者将来如果过得不好会是因为什么?',
         '请选择以下你最能接受的超能力以及相应的命运',
         '我认为我已经将自身调整至最完美的，不需要为了适应其他人而改变自身，我对他人的不完美感到愤怒，纠正自身的缺陷',
         '我认为我是社交圈子中的核心人物，我喜欢以大人物的形象呈现在大家面前',
@@ -43,9 +43,9 @@ function TestInstinctsa(num) {
     }
     if (num == 1) {
         result = [
-            { text: "一生平淡无奇，没有让我感受到热烈和深入，让我焕发生命的人和事。", type: [0, "Sx"], value: 8, color: "Instincts_answer" },
-            { text: "失去赖以为生的收入来源，遭遇严重的生存危机", type: [0, "Sp"], value: 8, color: "Instincts_answer" },
-            { text: "很多人都无法认同接受我，被所在的朋友圈排挤出去", type: [0, "So"], value: 8, color: "Instincts_answer" },
+            { text: "无法去体验我所想要的体验，遇不到我想要遇到的人", type: [0, "Sx"], value: 8, color: "Instincts_answer" },
+            { text: "金钱物质方面的匮乏以及没有安全舒适的生活和工作", type: [0, "Sp"], value: 8, color: "Instincts_answer" },
+            { text: "没有几个能帮助我的，能向他倾诉的朋友，被大家排挤", type: [0, "So"], value: 8, color: "Instincts_answer" },
         ]
     }
     if (num == 2) {
