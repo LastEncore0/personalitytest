@@ -3,11 +3,10 @@
 
 // Vue.use(VueI18n)
 
-
 // const i18n = new VueI18n({
 //     locale: 'zh', // 设置语言环境
 //     messages: {
-//         en: {
+//         en: {vue init webpack my_project
 //           message: {
 //             test_title: 'Personality type Test'
 //           }
