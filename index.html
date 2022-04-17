@@ -12,13 +12,15 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- <script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script> -->
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <script src="https://unpkg.com/vue-i18n@9"></script>
     <script src="pickRandom.js"></script>
     <script src="cn_text.js"></script>
     <script src="cn_enneagram.js"></script>
     
     <div id="app">
         <h1>人格心理类型测试</h1>
+        <!-- <h1>{{ $t("message.test_title") }}</h1> -->
         <div v-if="nostart">
             <!-- <div>
                 <p>语言/Language：</p>
@@ -332,7 +334,7 @@
 
     </div>
 
-    <script src="vuescript.js"></script>
+    <script type="module" src="vuescript.js"></script>
     <script type="module" src="vuei18n.js"></script>
 </body>
 

@@ -18,6 +18,7 @@
 //         }
 //     }
 //   })
+
   
 function selectlanguage() {
     let i = document.getElementById("langselect").selectedIndex
