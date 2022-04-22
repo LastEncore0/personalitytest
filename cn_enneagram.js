@@ -10,13 +10,20 @@ function TestInstinctsq(num) {
         '我总是自责，带着自我厌恶的倾向与别人比较，为自己不如别人而痛苦',
         '我寻求超凡价值，追寻理想图腾，并因此间接的蔑视了凡人和普通生活',
         '我内心有一条明确的界限来区分哪些人是好的，哪些人是坏的',
-        '我希望自己能作为一个乐善好施，扶危济贫的好人，然后得到大家的喝彩','我对【向不公发出怒吼】有强烈的共鸣，在我的世界里，根本没有权威或者尊敬这回事，只有蔑视，对社会、规范、文化和强权阶层的蔑视！',
-        '遗忘自我，忽视内心世界，随波逐流，把自己安顿在舒适的尘世中，为了满足集体的需要，投入大量的精力','我对各种丑恶的现象充满愤怒，这种愤怒成为一种精神力量驱使我摧毁他们','我内心里渴望获得别人，并且会在别人抛弃我之前抛弃对方以避免自己受到伤害',
+        '我希望自己能作为一个乐善好施，扶危济贫的好人，然后得到大家的喝彩',
+        '我对【向不公发出怒吼】有强烈的共鸣，在我的世界里，根本没有权威或者尊敬这回事，只有蔑视，对社会、规范、文化和强权阶层的蔑视！',
+        '遗忘自我，忽视内心世界，随波逐流，把自己安顿在舒适的尘世中，为了满足集体的需要，投入大量的精力',
+        '我对各种丑恶的现象充满愤怒，这种愤怒成为一种精神力量驱使我摧毁他们',
+        '我内心里渴望获得别人，并且会在别人抛弃我之前抛弃对方以避免自己受到伤害',
         '我总是为吸引和讨好某些生活中的亲密朋友或亲人而活着',
         '我内心里总是有种情感，渴望着摧毁杀灭掉某些人，我条件反射的排斥当下，看不起像过着家畜一般日常生活的人，容易沉浸在脱离现实的幻想中',
         '我生活在理性和客观性为王的内心世界中，我认为无条件的爱是一种美好愿景，但基本不可能在现实中寻觅到这种爱，所以倾向于把自己与他人隔离起来',
-        '我希望获得力量，强健体魄，喜欢表现强势的态度','我对世间之事毫无兴趣，渴望着一个更高级更先进的世界，追寻着心中的梦想',
-        '我喜欢追求紧张刺激，主动寻求冒险，挑战和危险，内心深处总想体会那种肾上腺素飙到峰值的感觉','我感觉自己很没有激情，在人群中很没有存在感，但我渴望着和他人融合(Union)','我感到自身有很多不完美之处，对此我甚至会感到愤怒，不过这种愤怒也会驱使我去纠正自己的缺陷达到完美','我希望我是最重要的！我不想当成年人！希望得到大家的呵护',
+        '我希望获得力量，强健体魄，喜欢表现强势的态度',
+        '我对世间之事毫无兴趣，渴望着一个更高级更先进的世界，追寻着心中的梦想',
+        '我喜欢追求紧张刺激，主动寻求冒险，挑战和危险，内心深处总想体会那种肾上腺素飙到峰值的感觉',
+        '我感觉自己很没有激情，在人群中很没有存在感，但我渴望着和他人融合(Union)',
+        '我感到自身有很多不完美之处，对此我甚至会感到愤怒，不过这种愤怒也会驱使我去纠正自己的缺陷达到完美',
+        '我希望我是最重要的！我不想当成年人！希望得到大家的呵护',
         '我下决心做个普通的好人，不去沾染错误的想法，也不求闻达于诸侯',
         '我的生活中有很多悲伤痛苦的事情，觉得自己有很多缺陷，但害怕因此一些人把我视为脆弱的，我不喜欢与其他人诉苦，如果他们因为我的痛苦来关心我，我会有些无所适从，所以我习惯表现出一副坚韧不屈的样子，一个人独自去战胜这些痛苦。',
         '我倾向压低自己的欲望以获得更多个人独处的时间，因为欲望意味着需要去依赖他人，我倾向摆脱和他人的情感交流，退缩到自己头脑中的内心世界中最为舒适',
@@ -36,23 +43,23 @@ function TestInstinctsa(num) {
     var result = false
     if (num == 0) {
         result = [
-            { text: "很多朋友，良好的声誉，广受尊敬的社会地位", type: [0, "So"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "深入/剧烈的经历与体验，不顾艰难险阻的去实现我的理想伟业", type: [0, "Sx"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "能让我躺平不去工作也不用担忧金钱匮乏，想要什么就有什么的自由快乐的生活", type: [0, "Sp"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "q1s1", type: [0, "So"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "q1s2", type: [0, "Sx"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "q1s3", type: [0, "Sp"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
         ]
     }
     if (num == 1) {
         result = [
-            { text: "无法去体验我所想要的体验，遇不到我想要遇到的人", type: [0, "Sx"], value: 8, color: "Instincts_answer" },
-            { text: "金钱物质方面的匮乏以及没有安全舒适的生活和工作", type: [0, "Sp"], value: 8, color: "Instincts_answer" },
-            { text: "没有几个能帮助我的，能向他倾诉的朋友，被大家排挤", type: [0, "So"], value: 8, color: "Instincts_answer" },
+            { text: "q2s1", type: [0, "Sx"], value: 8, color: "Instincts_answer" },
+            { text: "q2s2", type: [0, "Sp"], value: 8, color: "Instincts_answer" },
+            { text: "q2s3", type: [0, "So"], value: 8, color: "Instincts_answer" },
         ]
     }
     if (num == 2) {
         result = [
-            { text: "永久的生命，但只能看着朋友家人乃至爱人接连死去，难以进入新生代的圈子，最终孤独但自由的永生", type: [0, "Sp"], value: 20, color: "Instincts_answer" },
-            { text: "可以对包括所有社会上流阶层在内的所有人施加精神影响，让他们都爱你尊重你愿意帮助提拔你，不过你将因为不断地去应酬几乎没有个人时间，并且所有人都对你戴上虚假的面具，一生也难以寻获真正爱你的人", type: [0, "So"], value: 20, color: "Instincts_answer" },
-            { text: "获得强大的战斗能力，被各方势力争相拉拢，虽然可以选择为你所理想的人或势力效忠，并去惩罚你所憎恨的人或势力，不过必须不断的去战斗，並在某次战斗中被杀死的命运", type: [0, "Sx"], value: 20, color: "Instincts_answer" },
+            { text: "q3s1", type: [0, "Sp"], value: 20, color: "Instincts_answer" },
+            { text: "q3s2", type: [0, "So"], value: 20, color: "Instincts_answer" },
+            { text: "q3s3", type: [0, "Sx"], value: 20, color: "Instincts_answer" },
         ]
     }
     if (num > 2 && num < 12) {
@@ -82,8 +89,8 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我以实现自己的欲望优先，但这种欲望往往是为了博取良好的社会名誉去帮助他人，并且我时常感受到自己考虑的过少。", type: [7, ""], value: 16, color: "Instincts_answer" },
                 { text: "我以实现自己的欲望优先，但这种欲望往往是和我的朋友结成同盟，保护弱小的朋友，一起去挑战强大的敌人或者完成艰难的项目共赴胜利。", type: [8, ""], value: 16, color: "Instincts_answer" },
                 { text: "我以实现自己的欲望优先，但这种欲望往往是对我所在的社区，家庭或朋友圈去做出贡献，往往没意识到自身真正的需求去忘我的工作。", type: [9, ""], value: 16, color: "Instincts_answer" },
-                { text: "我觉得以上描述都不符合。", type: [6, ""], value: 10, color: "Instincts_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [9, ""], value: 10, color: "Instincts_answer" },
+                { text: "qsno", type: [6, ""], value: 10, color: "Instincts_answer" },
+                { text: "qsall", type: [9, ""], value: 10, color: "Instincts_answer" },
             ]
         }
     }
@@ -99,8 +106,8 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我以实现自己的欲望优先，这种欲望往往是追求一些梦幻般的理想，想都不想的去踏入未知领域。", type: [7, ""], value: 16, color: "Instincts_answer" },
                 { text: "我以实现自己的欲望优先，我非常叛逆，喜欢成为大家关注的焦点，如果有人令我不爽我就可能向其发起挑衅。", type: [8, ""], value: 16, color: "Instincts_answer" },
                 { text: "我以实现自己的欲望优先，但这种欲望往往是对我所爱的那个人全心全力的付出，以致于在这一过程中忘却了自身的欲望。", type: [9, ""], value: 16, color: "Instincts_answer" },
-                { text: "我觉得以上描述都不符合。", type: [6, ""], value: 10, color: "Instincts_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [9, ""], value: 10, color: "Instincts_answer" },
+                { text: "qsno。", type: [6, ""], value: 10, color: "Instincts_answer" },
+                { text: "qsall", type: [9, ""], value: 10, color: "Instincts_answer" },
             ]
         }
     }
@@ -116,7 +123,8 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我以实现自己的欲望优先，为此我可以不择手段，让自己学会越来越狡猾的生活，因为只有这样才能保护我以及我的家庭。", type: [7, ""], value: 16, color: "Instincts_answer" },
                 { text: "我以实现自己的欲望优先，我虽然有很强的反抗他人的欲望，但我学会了收敛这种欲望，为了不被他人控制，我总想着如何先下手为强把周围的人尽可能控制。", type: [8, ""], value: 16, color: "Instincts_answer" },
                 { text: "我以实现自己的欲望优先，我希望我能躺平过着吃喝玩乐的安逸生活。", type: [9, ""], value: 16, color: "Instincts_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [9, ""], value: 10, color: "Instincts_answer" },
+                { text: "qsno", type: [9, ""], value: 16, color: "Instincts_answer" },
+                { text: "qsall", type: [9, ""], value: 10, color: "Instincts_answer" },
             ]
         }
     }
@@ -126,7 +134,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我希望赢的观众瞩目，成为大家所爱戴的卓越出众的人。", type: [2, ""], value: 10, color: "Ired_answer" },
                 { text: "我很在乎他人对我的看法，渴望得到社会认可，希望所有人为我喝彩。", type: [3, ""], value: 10, color: "Ired_answer" },
                 { text: "我希望他人能听我诉苦，也认为自己不如他人，与他人相处时总是喜欢把自己放在受害者的位置上。", type: [4, ""], value: 10, color: "Ired_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [3, ""], value: 6, color: "Ired_answer" },
+                { text: "qsall", type: [3, ""], value: 6, color: "Ired_answer" },
             ]
         }
         if (Instincts == 'Sx') {
@@ -134,7 +142,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我希望得到他人的爱，所以会想办法诱惑他人。", type: [2, ""], value: 10, color: "Ired_answer" },
                 { text: "我很在乎他人对我的看法，所以会尽可能掩饰自己的攻击性，但如果遭到他人拒绝，可能就无法容忍而爆发", type: [3, ""], value: 10, color: "Ired_answer" },
                 { text: "我看不起日常的日子人，轻视日常生活，我很有对这类普通人表达内心的怒气的冲动，并且内心深处认为自己很特殊高于常人。", type: [4, ""], value: 10, color: "Ired_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [3, ""], value: 6, color: "Ired_answer" },
+                { text: "qsall", type: [3, ""], value: 6, color: "Ired_answer" },
             ]
         }
         if (Instincts == 'Sp') {
@@ -142,7 +150,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我内心认为自己是最重要的，渴望得到大家的关爱。", type: [2, ""], value: 10, color: "Ired_answer" },
                 { text: "我很在乎他人对我的看法，为此尽可能把自己做到最好，不会说出会让他人留下不好印象的话，更不会说出一些触犯禁忌的话。", type: [3, ""], value: 10, color: "Ired_answer" },
                 { text: "我不怎么在乎他人的评价，我内心觉的自己不如他人，我更愿意尽可能一个人独自承受痛苦，羞于启齿寻求他人的关爱。", type: [4, ""], value: 10, color: "Ired_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [3, ""], value: 6, color: "Ired_answer" },
+                { text: "qsall", type: [3, ""], value: 6, color: "Ired_answer" },
             ]
         }
     }
@@ -152,7 +160,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我担忧和一般人沟通会浪费我的时间，所以渴望只去结交最杰出最有声望的人来帮助我实现我思维世界中的终极理想。", type: [5, ""], value: 10, color: "Instincts_answer" },
                 { text: "我恐惧模糊的原则造成的隐患，所以我喜欢黑白分明的思考，严格要求自己，绝不容许模棱两可的做法。", type: [6, ""], value: 10, color: "Instincts_answer" },
                 { text: "我害怕自己的感官快乐和实现自己利益给我带来负面影响，所以希望像苦行僧一样尽可能的去帮助他人，虽然这实际上也有一部分让他人欠我人情的动机。", type: [7, ""], value: 10, color: "Instincts_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [6, ""], value: 6, color: "Instincts_answer" },
+                { text: "qsall", type: [6, ""], value: 6, color: "Instincts_answer" },
             ]
         }
         if (Instincts == 'Sx') {
@@ -160,7 +168,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我对他人不抱期待，倾向把自己和他人隔离开来，回到自己的内心思维中。", type: [5, ""], value: 10, color: "Instincts_answer" },
                 { text: "我时常思考如何能获得力量，变得更为强大。", type: [6, ""], value: 10, color: "Instincts_answer" },
                 { text: "我总是理想化的看待世界，习惯性的忽略了去思考一些问题，把生活想象的更为美好。", type: [7, ""], value: 10, color: "Instincts_answer" },
-                { text: "我觉得以上描述都不完全符合，很难选择。", type: [6, ""], value: 6, color: "Instincts_answer" },
+                { text: "qsall。", type: [6, ""], value: 6, color: "Instincts_answer" },
             ]
         }
         if (Instincts == 'Sp') {
@@ -168,7 +176,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我恐惧与他人沟通，害怕自己做出行动时能力和知识不足，所以尽可能在现实中避免与他人的交流沉浸在自己的思维世界之中。", type: [5, ""], value: 10, color: "Instincts_answer" },
                 { text: "我很没有安全感，害怕自己被别人落下而得不到集体的保护，所以更会去接近他人，渴望得到家庭的温暖，希望在一个没有敌人的家庭环境中。", type: [6, ""], value: 10, color: "Instincts_answer" },
                 { text: "我担忧无法保护我或我的家人朋友的安全和利益，所以会尽可能去抓住机会，与人达成协议，即使这可能是具有很大风险的交易。", type: [7, ""], value: 10, color: "Instincts_answer" },
-                { text: "我觉得以上描述都不完全符合，很难选择。", type: [6, ""], value: 6, color: "Instincts_answer" },
+                { text: "qsall", type: [6, ""], value: 6, color: "Instincts_answer" },
             ]
         }
     }
@@ -178,7 +186,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我有很强烈的自身欲求，对世俗标准持反对态度，喜欢简单粗暴的做事。", type: [8, ""], value: 10, color: "Igreen_answer" },
                 { text: "我非常善于满足他人的要求，为集体奉献，乃至于成为了忽视自己欲求的工作狂。", type: [9, ""], value: 10, color: "Igreen_answer" },
                 { text: "我会压抑自己的欲求，表现出一种完美的无可挑剔的态度。", type: [1, ""], value: 10, color: "Igreen_answer" },
-                { text: "我觉得以上描述都有部分符合，很难选择。", type: [9, ""], value: 6, color: "Igreen_answer" },
+                { text: " qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
             ]
         }
         if (Instincts == 'Sx') {
@@ -186,7 +194,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我有很强烈的自身欲求，因此表现的个性浮夸，十分叛逆。", type: [8, ""], value: 10, color: "Igreen_answer" },
                 { text: "我时常忽略自身的欲求，牺牲自己的生活来和我所爱的某个人或团体，甚至可能只是自己融为一体。", type: [9, ""], value: 10, color: "Igreen_answer" },
                 { text: "我可能会狂热的信仰某些东西或教条规制自身的欲求，但也可能会以此为借口来满足自己的欲求。", type: [1, ""], value: 10, color: "Igreen_answer" },
-                { text: "我觉得以上描述都不完全符合，很难选择。", type: [9, ""], value: 6, color: "Igreen_answer" },
+                { text: "qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
             ]
         }
         if (Instincts == 'Sp') {
@@ -194,7 +202,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "我有很强烈的欲求，我渴望得到一切，接受不了得不到想要的东西的挫败感，但为了我自己的安全我会尽可能收敛这一点。", type: [8, ""], value: 10, color: "Igreen_answer" },
                 { text: "我自己的想法不多，只想吃饱喝足，平静安逸的过日子。", type: [9, ""], value: 10, color: "Igreen_answer" },
                 { text: "我倾向压制自己的欲求，让自己尽可能的接近完美。", type: [1, ""], value: 10, color: "Igreen_answer" },
-                { text: "我觉得以上描述都不完全符合，很难选择。", type: [9, ""], value: 6, color: "Igreen_answer" },
+                { text: "qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
             ]
         }
     }
@@ -244,87 +252,84 @@ function SelectEnneagrama(selected, commondata) {
 function CheckEnneagrama(Instincts, num, value) {
     if (num == 1) {
         if (Instincts == 'So' || Instincts == 'Sx') {
-            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "符合", type: [4, 1], value: value, color: "yes" },{ text: "不符合", type: [1, ""], value: 0, color: "no" }]]
+            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "yesthis", type: [4, 1], value: value, color: "yes" },{ text: "notthis", type: [1, ""], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "符合", type: [4, 1], value: value, color: "yes" },{ text: "不符合", type: [1, ""], value: 0, color: "no" }]]
+            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "yesthis", type: [4, 1], value: value, color: "yes" },{ text: "notthis", type: [1, ""], value: 0, color: "no" }]]
         }
     }
     if (num == 2) {
-        return ['虽然我喜欢讨好他人，但这主要是为了提高他人对我的评价，而不是想要对方也来这样回报讨好我',[{ text: "符合", type: [3, 2], value: value, color: "yes" },{ text: "不符合", type: [2, ''], value: 0, color: "no" }]]
+        return ['虽然我喜欢讨好他人，但这主要是为了提高他人对我的评价，而不是想要对方也来这样回报讨好我',[{ text: "yesthis", type: [3, 2], value: value, color: "yes" },{ text: "notthis", type: [2, ''], value: 0, color: "no" }]]
     }
     if (num == 4) {
-        return ['我对于和他人欢乐的情感互动(贴贴)不会感到厌恶，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "符合", type: [3, 4], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+        return ['我对于和他人欢乐的情感互动(贴贴)不会感到厌恶，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "yesthis", type: [3, 4], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
     }
     if (num == 5) {
         if (Instincts == 'So' || Instincts == 'Sx') {
-            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
+            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "符合", type: [6, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
+            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
         }
     }
     if (num == 62) {
-        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "符合", type: [6, 2], value: value, color: "yes" },{ text: "不符合", type: [2, ''], value: 0, color: "no" }]]
+        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "yesthis", type: [6, 2], value: value, color: "yes" },{ text: "notthis", type: [2, ''], value: 0, color: "no" }]]
     }
     if (num == 48) {
         if (Instincts == 'So') {
-            return ['我有我想要保护的人，所以我不会向别人倾诉痛苦，表现出软弱',[{ text: "符合", type: [8, 4], value: value, color: "yes" },{ text: "不符合", type: [4, 8], value: 0, color: "no" }]]
+            return ['我有我想要保护的人，所以我不会向别人倾诉痛苦，表现出软弱',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['如果有人要和我敌对，我会当众奋起反击，让他们知道我是不好惹的',[{ text: "符合", type: [8, 4], value: value, color: "yes" },{ text: "不符合", type: [4, 8], value: 0, color: "no" }]]
+            return ['如果有人要和我敌对，我会当众奋起反击，让他们知道我是不好惹的',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我对周围的很多人不放心，总想把他们控制住，所以我一般对外压抑掩盖自己的内心',[{ text: "符合", type: [8, 4], value: value, color: "yes" },{ text: "不符合", type: [4, 8], value: 0, color: "no" }]]
+            return ['我对周围的很多人不放心，总想把他们控制住，所以我一般对外压抑掩盖自己的内心',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
         }
     }
     if (num == 26) {
         if (Instincts == 'So') {
-            return ['我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好',[{ text: "符合", type: [2, 6], value: value, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
+            return ['我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好',[{ text: "符合", type: [2, 6], value: value, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
+            return ['我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好',[{ text: "符合", type: [2, 6], value: value, color: "yes" },{ text: "不符合", type: [6, 2], value: 0, color: "no" }]]
+            return ['我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
         }
     }
     if (num == 7) {
-        return ['我很容易陷入沉浸式思考，察觉到别人察觉不到的方面',[{ text: "符合", type: [5, 7], value: value, color: "yes" },{ text: "不符合", type: [7, ''], value: 0, color: "no" }]]
+        return ['我很容易陷入沉浸式思考，察觉到别人察觉不到的方面',[{ text: "yesthis", type: [5, 7], value: value, color: "yes" },{ text: "notthis", type: [7, ''], value: 0, color: "no" }]]
     }
     if (num == 14) {
-        return ['为了能在和对方交流时让双方都愉快，我喜欢表现的乐观快乐',[{ text: "符合", type: [2, 7], value: value, color: "yes" },{ text: "不符合", type: [7, ''], value: 0, color: "no" }]]
-    }
-    if (num == 8) {
-        return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+        return ['为了能在和对方交流时让双方都愉快，我喜欢表现的乐观快乐',[{ text: "yesthis", type: [2, 7], value: value, color: "yes" },{ text: "notthis", type: [7, ''], value: 0, color: "no" }]]
     }
     if (num == 8) {
         if (Instincts == 'So') {
-            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "符合", type: [4, 8], value: value, color: "yes" },{ text: "不符合", type: [4, ''], value: 0, color: "no" }]]
+            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
         }
     }
     if (num == 16) {
-        return ['我感到这个世界充满荒谬，所以愤世嫉俗，但如果可能我不愿意用革命等反秩序的手段去纠正错误，而是在现秩序上进行改良',[{ text: "符合", type: [1, 8], value: value, color: "yes" },{ text: "不符合", type: [1, ''], value: 0, color: "no" }]]
+        return ['我感到这个世界充满荒谬，所以愤世嫉俗，但如果可能我不愿意用革命等反秩序的手段去纠正错误，而是在现秩序上进行改良',[{ text: "yesthis", type: [1, 8], value: value, color: "yes" },{ text: "notthis", type: [1, ''], value: 0, color: "no" }]]
     }
     if (num == 9) {
-        return ['虽然我很慵懒，但好奇心会驱使我深入的探索某些问题，对创新的渴求会驱使我废寝忘食的完成某些项目',[{ text: "符合", type: [5, 9], value: value, color: "yes" },{ text: "不符合", type: [9, ''], value: 0, color: "no" }]]
+        return ['虽然我很慵懒，但好奇心会驱使我深入的探索某些问题，对创新的渴求会驱使我废寝忘食的完成某些项目',[{ text: "yesthis", type: [5, 9], value: value, color: "yes" },{ text: "notthis", type: [9, ''], value: 0, color: "no" }]]
     }
     if (num == 18) {
-        return ['我内心有明确的边界去区分哪些人是好的或坏的，哪些人可能对我造成威胁所以先行防范',[{ text: "符合", type: [6, 9], value: value, color: "yes" },{ text: "不符合", type: [6, ''], value: 0, color: "no" }]]
+        return ['我内心有明确的边界去区分哪些人是好的或坏的，哪些人可能对我造成威胁所以先行防范',[{ text: "yesthis", type: [6, 9], value: value, color: "yes" },{ text: "notthis", type: [6, ''], value: 0, color: "no" }]]
     }
     if (num == 10) {
-        return ['我喜欢表现出自己是一个理性，客观的人，我会明确区分哪些是正确的正义的，哪些是错误的邪恶的，我会尽量避免用魔怔的说法反驳他人',[{ text: "符合", type: [6, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
+        return ['我喜欢表现出自己是一个理性，客观的人，我会明确区分哪些是正确的正义的，哪些是错误的邪恶的，我会尽量避免用魔怔的说法反驳他人',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
     }
     if (num == 15) {
-        return ['我不怎么喜欢考虑过于复杂概念性形而上的问题',[{ text: "符合", type: [7, 5], value: value, color: "yes" },{ text: "不符合", type: [5, ''], value: 0, color: "no" }]]
+        return ['我不怎么喜欢考虑过于复杂概念性形而上的问题',[{ text: "yesthis", type: [7, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
     }
-    return ['error',[{ text: "请点击", type: [0, 0], value: 0, color: "yes" },{ text: "error", type: [0, 0], value: 0, color: "no" }]]
+    return ['error',[{ text: "click", type: [0, 0], value: 0, color: "yes" },{ text: "error", type: [0, 0], value: 0, color: "no" }]]
 }
 
 function yesorno(num, Instinct) {
@@ -343,87 +348,86 @@ function yesorno(num, Instinct) {
 
 function getecharacter(type) {
     if (type == 'So1') {
-        return [["吉尔加美什", "王来允许，王来承认，王来背负整个世界!", "<img src='./img/So/101.png' alt='01 pic'>"]]
+        return [["Gilgamesh", "Gilgamesh_quote", "<img src='./img/So/101.png' alt='01 pic'>"]]
     }
     if (type == 'Sx1') {
-        return [["夜神月", "我将成为神，制裁这个世界，代表正义", "<img src='./img/Te-N/02.png' alt='02 pic'>"], ["谭雅", "对方是康米，是侵害个人自由的极权主义者，我无法和康米仰望同一片天空，即使为了在安全的后方，过着一帆风顺的人生，也得拿起枪，绝不容许共产主义者猖狂跋扈!", "<img src='./img/Te-S/03.png' alt='02 pic'>"]]
+        return [["Yakami", "Yakami_quote", "<img src='./img/Te-N/02.png' alt='02 pic'>"], ["Tanya", "Tanya_quote", "<img src='./img/Te-S/03.png' alt='02 pic'>"]]
     }
     if (type == 'Sp1') {
-        return [["雪下之雪乃", "自己的笨拙、狼狈、愚蠢的根本原因在哪也要问别人，你不觉得丢脸吗？", "<img src='./img/Sp/101.png' alt='02 pic'>"]]
+        return [["Yukino", "Yukino_quote", "<img src='./img/Sp/101.png' alt='02 pic'>"],["Shana", "Shana_quote", "<img src='./img/Ni-T/02.png' alt='02 pic'>"]]
     }
     if (type == 'So2') {
-        return [["巴麻美", " ", "<img src='./img/Fe-N/02.png' alt='01 pic'>"]]
+        return [["Mami", " ", "<img src='./img/Fe-N/02.png' alt='01 pic'>"]]
     }
     if (type == 'Sx2') {
-        return [["乔纳森·乔斯达", " ", "<img src='./img/Fe-N/01.png' alt='02 pic'>"]]
+        return [["Jonathan", "Jonathan_quote", "<img src='./img/Fe-N/01.png' alt='02 pic'>"]]
     }
     if (type == 'Sp2') {
-        return [["木之本樱", " ", "<img src='./img/Sp/201.png' alt='02 pic'>"]]
+        return [["Kinomoto", " ", "<img src='./img/Sp/201.png' alt='02 pic'>"]]
     }
     if (type == 'So3') {
-        return [["莱因哈特", "我的征途是星辰大海", "<img src='./img/Te-N/03.png' alt='01 pic'>"]]
+        return [["Reinhard", "Reinhard_quote", "<img src='./img/Te-N/03.png' alt='01 pic'>"]]
     }
     if (type == 'Sx3') {
-        return [["罗兹瓦尔", " ", "<img src='./img/Sx/301.png' alt='01 pic'>"]]
+        return [["Roswaal", " ", "<img src='./img/Sx/301.png' alt='01 pic'>"]]
     }
     if (type == 'Sp3') {
-        return [["渡边早季", " ", "<img src='./img/Fe-S/03.png' alt='01 pic'>"]]
+        return [["Saki", " ", "<img src='./img/Fe-S/03.png' alt='01 pic'>"]]
     }
     if (type == 'So4') {
-        return [["樱滿集", "我的......我的......我的王之力啊啊啊啊啊啊！", "<img src='./img/So/401.png' alt='01 pic'>"]]
+        return [["Omashu", "_quote", "<img src='./img/So/401.png' alt='01 pic'>"]]
     }
     if (type == 'Sx4') {
-        return [["鲁鲁修", "我在遇到你之前，只是个死人。明明是具行尸走肉，却编造活着的谎言。什么都不做的人生仅仅是活着的生命。与死亡是一样的。", "<img src='./img/Ni-T/01.png' alt='01 pic'>"],["水银灯", "我..垃圾...才不是什么垃圾呢！", "<img src='./img/Sx/401.png' alt='02 pic'>"], ["黑雪姬", "很遗憾的，我的对战虚拟角色可是很丑陋的，而且丑陋到了极点。虽然我并非因为它丑陋才予以封印……不过我的事不重要", "<img src='./img/Ni-F/01.png' alt='03 pic'>"]]
+        return [["Lelouch", "Lelouch_quote", "<img src='./img/Ni-T/01.png' alt='01 pic'>"],["Suigintou", "Suigintou_quote", "<img src='./img/Sx/401.png' alt='02 pic'>"], ["Kuroyuki", "Kuroyuki_quote", "<img src='./img/Ni-F/01.png' alt='03 pic'>"]]
     }
     if (type == 'Sp4') {
-        return [["黑", "总有一天我会撕去这虚假的星空", "<img src='./img/sp/402.png' alt='01 pic'>"], ["夏娜", "我选择了一条与你不同的共同的活下去的道路，所以我会努力实现，直到像每个人一样在我们之间建立起最强的自在法。", "<img src='./img/Ni-T/02.png' alt='02 pic'>"]]
+        return [["Hei", "Hei_quote", "<img src='./img/sp/402.png' alt='01 pic'>"]]
     }
     if (type == 'So5') {
-        return [["黎明卿", " ", "<img src='./img/So/501.png' alt='01 pic'>"], ["圣岛慎护", "我想看到人类灵魂的光辉，想确认它是真正高贵的东西。但不问自己的意思，纯粹按照巫女神谕活着的人们，究竟有什么价值？", "<img src='./img/Ne-T/02.png' alt='02 pic'>"]]
+        return [["Bondorudo", "Bondorudo_quote", "<img src='./img/So/501.png' alt='01 pic'>"], ["Shougo", "Shougo_quote", "<img src='./img/Ne-T/02.png' alt='02 pic'>"]]
     }
     if (type == 'Sx5') {
-        return [["C.C.", "知道雪为什么是白色吗，因为它忘记了自己曾经的颜色", "<img src='./img/Ti-N/01.png' alt='01 pic'>"], ["两仪式", "理所当然般地活着，理所当然般地死去。 啊，那真是多么地...孤独...", "<img src='./img/Ti-S/01.png' alt='02 pic'>"], ["坂井悠二", "我想保护这个由人类泪水组成的世界", "<img src='./img/Sx/501.png' alt='02 pic'>"]]
+        return [["CC", "CC_quote", "<img src='./img/Ti-N/01.png' alt='01 pic'>"], ["Shiki", "Shiki_quote", "<img src='./img/Ti-S/01.png' alt='02 pic'>"], ["Yuuji", "Yuuji_quote", "<img src='./img/Sx/501.png' alt='02 pic'>"]]
     }
     if (type == 'Sp5') {
-        return [["杨威利", "我并不是轻蔑权力或武力。不，其实我是在害怕。一旦权力或武力到了手，几乎会使所有的人都变得丑恶，这种例子我知道的太多了。而我也没有自信自己绝不会改变", "<img src='./img/Ti-N/02.png' alt='01 pic'>"], ["白織(蜘蛛子)", " ", "<img src='./img/Ti-N/03.png' alt='01 pic'>"]]
+        return [["Yang", "Yang_quote", "<img src='./img/Ti-N/02.png' alt='01 pic'>"], ["Shiraori", " ", "<img src='./img/Ti-N/03.png' alt='01 pic'>"]]
     }
     if (type == 'So6') {
-        return [["枢木朱雀", "用错误的手段得来的结果是无意义的", "<img src='./img/So/601.png' alt='01 pic'>"]]
+        return [["Suzaku", "Suzaku_quote", "<img src='./img/So/601.png' alt='01 pic'>"]]
     }
     if (type == 'Sx6') {
-        return [["佛洛克", " ", "<img src='./img/Sx/601.png' alt='01 pic'>"], ["碇真嗣", "不能逃避！不能逃避！不能逃避！", "<img src='./img/Fi-N/03.png' alt='03 pic'>"]]
+        return [["Floch", " ", "<img src='./img/Sx/601.png' alt='01 pic'>"], ["Shinji", "Shinji_quote", "<img src='./img/Fi-N/03.png' alt='03 pic'>"]]
     }
     if (type == 'Sp6') {
-        return [["晓美焰", "比希望更炽热，比绝望更深邃的，是爱啊！", "<img src='./img/Fi-N/01.png' alt='01 pic'>"], ["栉名安娜", "好漂亮的红色……", "<img src='./img/Sp/601.png' alt='01 pic'>"]]
+        return [["Homura", "Homura_quote", "<img src='./img/Fi-N/01.png' alt='01 pic'>"], ["Anna", "Anna_quote", "<img src='./img/Sp/601.png' alt='01 pic'>"]]
     }
     if (type == 'So7') {
-        return [["漩涡鸣人", " ", "<img src='./img/Se-F/01.png' alt='01 pic'>"], ["麻仓叶", "船到桥头自然直", "<img src='./img/So/701.png' alt='01 pic'>"]]
+        return [["Naruto", "Naruto_quote", "<img src='./img/Se-F/01.png' alt='01 pic'>"], ["Yoh", "Yoh_quote", "<img src='./img/So/701.png' alt='01 pic'>"]]
     }
     if (type == 'Sx7') {
-        return [["凉宫春日", "实现梦想的第一步是相信他，否则连原本能达成的愿望也实现不了", "<img src='./img/Sx/701.png' alt='01 pic'>"], 
-        // ["伊蕾娜", " ", "<img src='./img/Ne-T/03.png' alt='03 pic'>"]
+        return [["Haruhi", "Haruhi_quote", "<img src='./img/Sx/701.png' alt='01 pic'>"], ["Elaina", " ", "<img src='./img/Ne-T/03.png' alt='03 pic'>"]
     ]
     }
     if (type == 'Sp7') {
-        return [["乔瑟夫·乔斯达", "你的下一句话是______", "<img src='./img/Sp/701.png' alt='01 pic'>"],["凯尼∙阿克曼", " ", "<img src='./img/Se-T/03.png' alt='01 pic'>"]]
+        return [["Joseph", "Joseph_quote", "<img src='./img/Sp/701.png' alt='01 pic'>"],["Kenny", " ", "<img src='./img/Se-T/03.png' alt='01 pic'>"]]
     }
     if (type == 'So8') {
-        return [["艾伦", "如果会被他人夺走自由，我就会先反过来夺走那个人的自由", "<img src='./img/Ne-F/01.png' alt='01 pic'>"]]
+        return [["Eren", "Eren_quote", "<img src='./img/Ne-F/01.png' alt='01 pic'>"]]
     }
     if (type == 'Sx8') {
-        return [["梅利奥达斯", "人总有一天会死。但是，只要有人继续守护他的信念，那么这份信念就不会死去。既然决定要守护信念，那么即使流再多血，即使哭干眼泪，也应该去贯彻到底。这才是骑士。", "<img src='./img/Sx/801.png' alt='01 pic'>"]]
+        return [["Meliodas", "Meliodas_quote", "<img src='./img/Sx/801.png' alt='01 pic'>"],["Askeladd", " ", "<img src='./img/Sx/802.png' alt='02 pic'>"]]
     }
     if (type == 'Sp8') {
-        return [["阿谢拉特", " ", "<img src='./img/Sp/801.png' alt='02 pic'>"]]
+        return [["GioGio", "GioGio_quote", "<img src='./img/Sp/801.png' alt='02 pic'>"]]
     }
     if (type == 'So9') {
-        return [["阿尔托莉雅", "我将会带领我的人民，战斗到最后一刻", "<img src='./img/Si-T/02.png' alt='01 pic'>"],["卫宫士郎", " ", "<img src='./img/So/901.png' alt='02 pic'>"]]
+        return [["Altria", "Altria_quote", "<img src='./img/Si-T/02.png' alt='01 pic'>"],["Shirou", "Shirou_quote", "<img src='./img/So/901.png' alt='02 pic'>"]]
     }
     if (type == 'Sx9') {
-        return [["休比", "这份思念，这颗心，从机械中孕育出来 得到了生命 这全部都赌在这251秒里！", "<img src='./img/Si-F/01.png' alt='01 pic'>"],["尤贝尔", " ", "<img src='./img/Sx/901.png.png' alt='01 pic'>"]]
+        return [["Schwi", "Schwi_quote", "<img src='./img/Si-F/01.png' alt='01 pic'>"],["Yubel", " ", "<img src='./img/Sx/901.png.png' alt='01 pic'>"]]
     }
     if (type == 'Sp9') {
-        return [["立华奏", "也请让我相信，你一直以来所相信的事吧——“活着是一件很美好的事”", "<img src='./img/Si-F/03.png' alt='01 pic'>"]]
+        return [["Kanade", "Kanade_quote", "<img src='./img/Si-F/03.png' alt='01 pic'>"]]
     }
 }
 

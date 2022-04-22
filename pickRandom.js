@@ -130,9 +130,9 @@ function checkclose(type,list) {
 
 function get_e_result(enneagram_test_result,that) {
 
-    that.enneagram_keyword = getetext(enneagram_test_result)[0]
-    that.sin = getetext(enneagram_test_result)[1]
-    that.enneagram_result_dec = getetext(enneagram_test_result)[2]
+    that.enneagram_keyword = enneagram_test_result + '[0]'
+    that.sin = enneagram_test_result + '[1]'
+    that.enneagram_result_dec = enneagram_test_result + '[2]'
     that.C1 = getecharacter(enneagram_test_result)[0][0]
     that.C1text = getecharacter(enneagram_test_result)[0][1]
     that.img1 = getecharacter(enneagram_test_result)[0][2]

@@ -77,51 +77,51 @@ function getresulttext(dom,aux) {
 
 function getcharacter(type) {
     if (type == 'Ti-N') {
-        return ['C.C.','楊威利','白織(蜘蛛子)']
+        return 'Character_Ti_N'
     }
     if (type == 'Ti-S') {
-        return ['兩儀式','空條承太郎','刹那·F·清英']
+        return 'Character_Ti_S'
     }
     if (type == 'Te-N') {
-        return ['埃尔文','夜神月','莱因哈特']
+        return 'Character_Te_N'
     }
     if (type == 'Te-S') {
-        return ['金·布拉德雷','爱丽丝','谭雅']
+        return 'Character_Te_S'
     }
     if (type == 'Fi-N') {
-        return ['晓美焰','櫛名安娜','碇真嗣']
+        return 'Character_Fi_N'
     }
     if (type == 'Fi-S') {
-        return ['路比','不动明','间桐樱']
+        return 'Character_Fi_S'
     }
     if (type == 'Fe-N') {
-        return ['乔纳森·乔斯达','巴麻美','楯山文乃']
+        return 'Character_Fe_N'
     }
     if (type == 'Fe-S') {
-        return ['结城明日奈','春野樱','渡边早季']
+        return 'Character_Fe_S'
     }
     if (type == 'Si-T') {
-        return ['吉良吉影','阿尔托莉雅','七海八千代']
+        return 'Character_Si_T'
     }
     if (type == 'Si-F') {
-        return ['休比·多拉','黑桐干也','立华奏']
+        return 'Character_Si_F'
     }
     if (type == 'Se-T') {
-        return ['佐仓杏子','零二','凯尼∙阿克曼']
+        return 'Character_Se_T'
     }
     if (type == 'Se-F') {
-        return ['鸣人','卡卡罗特','菜月昂']
+        return 'Character_Se_F'
     }
     if (type == 'Ni-T') {
-        return ['鲁鲁修','夏娜','碇源堂']
+        return 'Character_Ni_T'
     }
     if (type == 'Ni-F') {
-        return ['黑雪姬','卫宫切嗣','伊莉雅']
+        return 'Character_Ni_F'
     }
     if (type == 'Ne-T') {
-        return ['少佐','圣岛慎护','伊蕾娜']
+        return 'Character_Ne_T'
     }
     if (type == 'Ne-F') {
-        return ['艾伦','游城十代','爱德华']
+        return 'Character_Ne_f'
     }
 }

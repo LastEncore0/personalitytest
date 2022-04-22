@@ -1,54 +1,9 @@
-// import Vue from 'vue';
-// import VueI18n from 'vue-i18n';
-
-// Vue.use(VueI18n)
-
-// const i18n = new VueI18n({
-//     locale: 'zh', // 设置语言环境
-//     messages: {
-//         en: {vue init webpack my_project
-//           message: {
-//             test_title: 'Personality type Test'
-//           }
-//         },
-//         zh: {
-//             message: {
-//               test_title: '人格心理类型测试'
-//             }
-//         }
-//     }
-//   })
-
-
+import { i18n } from './vuei18n.js'
 const { createApp } = Vue;
-const { createI18n } = VueI18n;
 
-const i18n = createI18n({
-  locale: "zh",
-  messages: {
-    zh: {
-      message: {
-        test_title: '人格心理类型测试',
-        Question_1: '我在不知不觉中经常会陷入长时期沉浸式的思考，甚至会一度察觉不到周边的情况。',
-      }
-    },
-    hk: {
-      message: {
-        test_title: '人格心理類型測試'
-      }
-    },
-    en: {
-      message: {
-        test_title: 'Personality type Test'
-      }
-    }
-  }
-
-});
-
-
-var app = createApp ({
+var app = createApp({
   el: '#app',
+  i18n,
   data() {
     return {
       nostart: true,
@@ -71,6 +26,7 @@ var app = createApp ({
       sin: '',
       enneagram_keyword: '',
       result_text: '',
+      result_text_last: '',
       enneagram_result_dec: '',
       img1: "/01.png' alt='01 pic'>",
       img2: "/02.png' alt='02 pic'>",
@@ -107,6 +63,7 @@ var app = createApp ({
       selected_enneagram: [],
       e_maybe: [],
       enneagram_num: 0,
+      enneagram_q_num: 31,
       enneagram_num2: 0,
       check_num: 0,
       e_result_value: 0,
@@ -141,7 +98,7 @@ var app = createApp ({
 
       request.onload = function () {
         var plist = JSON.parse(request.responseText)
-        
+
         // get question list
         that.Question_list = plist
         // start test
@@ -151,7 +108,7 @@ var app = createApp ({
         console.log(that.question_slect)
         // set first question
         that.question_key = that.question_slect
-        
+
         that.question_data = that.Question_list[that.question_slect]
         that.question_text = that.Question_list[that.question_slect].question
         that.list_len = getlistlen(that.Question_list)
@@ -159,7 +116,7 @@ var app = createApp ({
       }
     },
     estart: function () {
-      this.question_enneagram = TestInstinctsq(this.enneagram_num)
+      this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
       this.answer_enneagram = TestInstinctsa(this.enneagram_num)
       this.nostart = false
       this.enneagram_question = true
@@ -235,7 +192,7 @@ var app = createApp ({
       this.sound.play()
       if (this.enneagram_data.Instincts == '') {
         if (TestInstinctsa(this.enneagram_num)) {
-          this.question_enneagram = TestInstinctsq(this.enneagram_num)
+          this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
           this.answer_enneagram = TestInstinctsa(this.enneagram_num)
         } else {
           if (
@@ -243,7 +200,7 @@ var app = createApp ({
             this.enneagram_data.so > this.enneagram_data.sp
           ) {
             this.enneagram_data.Instincts = 'So'
-            this.question_enneagram = TestInstinctsq(this.enneagram_num)
+            this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
             this.answer_enneagram = TestEnneagrama(
               this.enneagram_data.Instincts,
               this.enneagram_num2
@@ -254,7 +211,7 @@ var app = createApp ({
             this.enneagram_data.sx > this.enneagram_data.sp
           ) {
             this.enneagram_data.Instincts = 'Sx'
-            this.question_enneagram = TestInstinctsq(this.enneagram_num)
+            this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
             this.answer_enneagram = TestEnneagrama(
               this.enneagram_data.Instincts,
               this.enneagram_num2
@@ -265,7 +222,7 @@ var app = createApp ({
             this.enneagram_data.sp > this.enneagram_data.so
           ) {
             this.enneagram_data.Instincts = 'Sp'
-            this.question_enneagram = TestInstinctsq(this.enneagram_num)
+            this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
             this.answer_enneagram = TestEnneagrama(
               this.enneagram_data.Instincts,
               this.enneagram_num2
@@ -276,7 +233,7 @@ var app = createApp ({
             this.enneagram_data.sx == this.enneagram_data.sp
           ) {
             this.enneagram_data.Instincts = 'Sx'
-            this.question_enneagram = TestInstinctsq(this.enneagram_num)
+            this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
             this.answer_enneagram = TestEnneagrama(
               this.enneagram_data.Instincts,
               this.enneagram_num2
@@ -287,7 +244,7 @@ var app = createApp ({
             this.enneagram_data.so > this.enneagram_data.sp
           ) {
             this.enneagram_data.Instincts = 'So'
-            this.question_enneagram = TestInstinctsq(this.enneagram_num)
+            this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
             this.answer_enneagram = TestEnneagrama(
               this.enneagram_data.Instincts,
               this.enneagram_num2
@@ -298,7 +255,7 @@ var app = createApp ({
             this.enneagram_data.sp == this.enneagram_data.so
           ) {
             this.enneagram_data.Instincts = 'Sp'
-            this.question_enneagram = TestInstinctsq(this.enneagram_num)
+            this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
             this.answer_enneagram = TestEnneagrama(
               this.enneagram_data.Instincts,
               this.enneagram_num2
@@ -314,7 +271,7 @@ var app = createApp ({
         if (
           TestEnneagrama(this.enneagram_data.Instincts, this.enneagram_num2)
         ) {
-          this.question_enneagram = TestInstinctsq(this.enneagram_num)
+          this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
           this.answer_enneagram = TestEnneagrama(
             this.enneagram_data.Instincts,
             this.enneagram_num2
@@ -322,7 +279,7 @@ var app = createApp ({
           this.enneagram_num2 += 1
         } else if (this.selected_enneagram.length < 6) {
           var commondata = this
-          this.question_enneagram = TestInstinctsq(this.enneagram_num)
+          this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
           if (this.startorder) {
             if (type[0] == 1) {
               this.selected_enneagram.push(1)
@@ -461,6 +418,7 @@ var app = createApp ({
             let difference = this.enneagram_data.IX - this.enneagram_data.VI
             this.check_data.push([18, difference])
           }
+          this.enneagram_num = 0
           if (this.check_data.length > this.check_num) {
             this.question_enneagram = CheckEnneagrama(
               this.enneagram_data.Instincts,
@@ -582,8 +540,8 @@ var app = createApp ({
     },
 
     etest: function () {
-      this.e_result_value = 4
-      this.enneagram_data.Instincts = 'Sx'
+      this.e_result_value = 8
+      this.enneagram_data.Instincts = 'Sp'
       this.enneagram_test_result =
         this.enneagram_data.Instincts + this.e_result_value
       this.e_maybe = [5, 3, 1, 7]
@@ -599,10 +557,12 @@ var app = createApp ({
       // this.no_result = true
       this.nostart = false
       this.result = 'Fe-N'
-      this.result_text += getresulttext('Fi', 'N')
-      this.C1 = getcharacter(this.result)[0]
-      this.C2 = getcharacter(this.result)[1]
-      this.C3 = getcharacter(this.result)[2]
+      let result_check = ['Fe','N']
+      this.result_text = result_check[0] + '_text'
+      this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
+      this.C1 = getcharacter(this.result) + '[0]'
+      this.C2 = getcharacter(this.result) + '[1]'
+      this.C3 = getcharacter(this.result) + '[2]'
       this.img1 = "<img src='./img/" + this.result + this.img1
       this.img2 = "<img src='./img/" + this.result + this.img2
       this.img3 = "<img src='./img/" + this.result + this.img3
@@ -794,14 +754,15 @@ var app = createApp ({
         var result1 = this.result + random_aux1
         var result2 = this.result + random_aux2
         var result3 = this.result + random_aux1
-        console.log(result1, result2, result3)
+        // console.log(result1, result2, result3)
         this.img1 = "<img src='./img/" + result1 + this.img1
         this.img2 = "<img src='./img/" + result2 + this.img2
         this.img3 = "<img src='./img/" + result3 + this.img3
-        this.C1 = getcharacter(result1)[0]
-        this.C2 = getcharacter(result2)[1]
-        this.C3 = getcharacter(result3)[2]
-        this.result_text += getresulttext(result_check[0], result_check[1])
+        this.C1 = getcharacter(this.result) + '[0]'
+        this.C2 = getcharacter(this.result) + '[1]'
+        this.C3 = getcharacter(this.result) + '[2]'
+        this.result_text = result_check[0] + '_text'
+        this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
         this.result_page = true
       }
     },

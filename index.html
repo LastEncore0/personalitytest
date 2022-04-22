@@ -20,7 +20,7 @@
     
     <div id="app">
         <!-- <h1>人格心理类型测试</h1> -->
-        <h1>{{ $t("message.test_title") }}</h1>
+        <h1>{{ $t("test_title") }}</h1>
         <div v-if="nostart">
             <div>
                 <p>语言/Language：</p>
@@ -39,15 +39,16 @@
             <h4 class="start_dec">由于心理防御机制，大部分测试结果很难准确反映你真正的情况，其次本测试更多基于死宅群体，所以结果会有相对应的ACG人物作为比对，如果熟悉这些人物可以比对确认，本测试目的之一就是为了颠覆。大众对MBTI以及九型的错误理解，所以结果很可能与主流测试有较大出入，另外提醒正因为包括本测试在内的所有这类心理测试都是难以反映真实情况的，所以请对包括本测试在内的测试结果都不要过于当真，仅作参考和娱乐。另外真正的心理分析是要反映心理问题的，如果结果不反映问题只叙述优点，说明这只是迎合人类普遍的逃避黑暗面的心理的商业化测试，其参考价值更低，所以也请不要对本测试结果中可能出现的不好的描述愤慨，如果您无法接受请不要参与本测试，谢谢合作！</h4>
         </div>
         <div v-else-if="result_page">
-            <h3>你的类型可能为:</h3>
+            <h3>{{ $t("you_may") }}</h3>
             <div class="result_class">
                 {{ result }}
             </div>
             <div class="result_text_class">
-                <p>该类型简介：</p>
-                <p v-html="result_text"></p>
-                <p>測試結果值:</p>
-                <p>八类型:</p>
+                <p>{{ $t("title_result") }}</p>
+                <p>{{ $t(result_text) }}</p>
+                <p>{{ $t(result_text_last) }}</p>
+                <p>{{ $t("value_result") }}</p>
+                <p>{{ $t("eight_type") }}</p>
                 <p class="result_progress">
                     <span>Ti:</span>
                     <progress :value="user_data.ti" max="100" class="T_bar"></progress>
@@ -88,7 +89,7 @@
                     <progress :value="user_data.ne" max="100" class="N_bar"></progress>
                     {{ user_data.ne }}<br>
                 </p>
-                <p>内外倾:</p>
+                <p>{{ $t("trovet") }}</p>
                 <p class="result_progress">
                     <span>I:</span>
                     <progress :value="user_data.I" max="100" class="I_bar"></progress>
@@ -99,7 +100,7 @@
                     <progress :value="user_data.E" max="100" class="E_bar"></progress>
                     {{ user_data.E }}<br>
                 </p>
-                <p>四功能:</p>
+                <p>{{ $t("four_function") }}</p>
                 <p class="result_progress">
                     <span>T:</span>
                     <progress :value="user_data.T" max="100" class="T_bar"></progress>
@@ -123,16 +124,16 @@
                 <table>
                     <tr>
                         <h2>
-                            较可能为该类型的角色:
+                            {{ $t("maybe_character") }}
                         </h2>
-                        <h3>该测试展示的分类仅是从心理动机方面进行的分类，所以即使是同一类型，也可能存在较大区别，为了体现这一点，刻意以相差较大的同一类型的人物为例子展示（请不要用微信等内置浏览器打开页面）</h3>
+                        <h3>{{ $t("maybe_character_dec") }}</h3>
                     </tr>
                     <tr>
                         <td v-html="img1"></td>
                     </tr>
                     <tr>
                         <td>
-                            {{ C1 }}
+                            {{ $t(C1) }}
                         </td>
                     </tr>
                     <tr>
@@ -140,7 +141,7 @@
                     </tr>
                     <tr>
                         <td>
-                            {{ C2 }}
+                            {{ $t(C2) }}
                         </td>
                     </tr>
                     <tr>
@@ -148,7 +149,7 @@
                     </tr>
                     <tr>
                         <td>
-                            {{ C3 }}
+                            {{ $t(C3) }}
                         </td>
                     </tr>
                 </table>
@@ -159,38 +160,39 @@
                 <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
             </div> -->
             <div>
-                <p v-text="question_enneagram" class="q_text"></p>
+                <p v-if="enneagram_num < enneagram_q_num" v-text="$t(question_enneagram)" class="q_text"></p>
+                <p v-else v-text="$t('what_statue')" class="q_text"></p>
             </div>
-            <div v-for="answer in answer_enneagram">
-                <button :class=answer.color @click="eanswer(answer.type,answer.value)">{{ answer.text }}</button>
+            <div  v-for="answer in answer_enneagram">
+                <button :class=answer.color @click="eanswer(answer.type,answer.value)">{{ $t(answer.text) }}</button>
             </div>
         </div>
         <div v-else-if="enneagram_result">
             <div class="result_text_class">
-                <h3>你的类型可能为:</h3>
+                <h3>{{ $t("you_may") }}</h3>
                 <div class="result_class">
                     {{ enneagram_test_result }}
                 </div>
                 <div class="result_class">
-                    {{ sin }}
+                    {{ $t(sin) }}
                 </div>
                 <div class="trifix_class">
-                    你的Trifix可能为：{{ trifix }}
+                    {{ $t("result_trifix")}}{{ trifix }}
                 </div>
                 <div class="result_class">
-                    {{ enneagram_keyword }}
+                    {{ $t(enneagram_keyword) }}
                 </div>
                 <div v-if="e_maybe[0]">
                     <div class="result_class">
-                        你还可能为：
+                        {{ $t("also_maybe")}}
                     </div>
-                    <button v-for="(maybetype,i) in e_maybe" class= maybe_button @click="emayberesult(maybetype,i)">{{ maybetype }}号</button>
+                    <button v-for="(maybetype,i) in e_maybe" class= maybe_button @click="emayberesult(maybetype,i)">{{ maybetype }}{{ $t("ennetype") }}</button>
                 </div>
-                <p>该类型简介：</p>
-                <p v-html="enneagram_result_dec"></p>
-                <p>測試結果值:</p>
+                <p>{{ $t("title_result") }}</p>
+                <p v-html="$t(enneagram_result_dec)"></p>
+                <p>{{ $t("value_result") }}</p>
                 <div class="result_value">
-                    <p>心区:</p>
+                    <p>{{ $t("Heart_value") }}</p>
                     <p class="result_progress">
                         <span>2:</span>
                         <progress :value="enneagram_data.II" max="100" class="F_bar"></progress>
@@ -206,7 +208,7 @@
                         <progress :value="enneagram_data.IV" max="100" class="F_bar"></progress>
                         {{ enneagram_data.IV }}<br>
                     </p>
-                    <p>脑区:</p>
+                    <p>{{ $t("Head_value") }}</p>
                     <p class="result_progress">
                         <span>5:</span>
                         <progress :value="enneagram_data.V" max="100" class="T_bar"></progress>
@@ -222,7 +224,7 @@
                         <progress :value="enneagram_data.VII" max="100" class="T_bar"></progress>
                         {{ enneagram_data.VII }}<br>
                     </p>
-                    <p>腹区:</p>
+                    <p>{{ $t("Gut_value") }}</p>
                     <p class="result_progress">
                         <span>8:</span>
                         <progress :value="enneagram_data.VIII" max="100" class="N_bar"></progress>
@@ -242,21 +244,20 @@
                 <table>
                     <tr>
                         <h2>
-                            较可能为该类型的角色:
+                            {{ $t("maybe_character") }}
                         </h2>
-                        <!-- <h3>该测试展示的分类仅是从心理动机方面进行的分类，所以即使是同一类型，也可能存在较大区别，为了体现这一点，刻意以相差较大的同一类型的人物为例子展示</h3> -->
                     </tr>
                     <tr>
                         <td v-html="img1"></td>
                     </tr>
                     <tr>
                         <td>
-                            {{ C1 }}
+                            {{ $t(C1) }}
                         </td>
                     </tr>
                     <tr>
                         <td class="td_text">
-                            {{ C1text }}
+                            {{ $t(C1text) }}
                         </td>
                     </tr>
                     <tr v-if="C2">
@@ -264,12 +265,12 @@
                     </tr>
                     <tr v-if="C2">
                         <td>
-                            {{ C2 }}
+                            {{ $t(C2) }}
                         </td>
                     </tr>
                     <tr v-if="C2">
                         <td class="td_text">
-                            {{ C2text }}
+                            {{ $t(C2text) }}
                         </td>
                     </tr>
                     <tr v-if="C3">
@@ -277,12 +278,12 @@
                     </tr>
                     <tr v-if="C3">
                         <td>
-                            {{ C3 }}
+                            {{ $t(C3) }}
                         </td>
                     </tr>
                     <tr v-if="C3">
                         <td class="td_text">
-                            {{ C3text }}
+                            {{ $t(C3text) }}
                         </td>
                     </tr>
                     <!-- <tr>
@@ -306,36 +307,36 @@
                 <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
             </div>
             <div>
-                <p v-text="question_text" class="q_text"></p>
+                <p v-text="$t(question_key)" class="q_text"></p>
             </div>
             <div>
-                <button class="more_yes" @click="answer(3)">非常符合</button>
+                <button class="more_yes" @click="answer(3)">{{ $t("more_yes_text") }}</button>
             </div>
             <div>
-                <button class="yes" @click="answer(2)">符合</button>
+                <button class="yes" @click="answer(2)">{{ $t("yes_text") }}</button>
             </div>
             <div>
-                <button class="little_yes" @click="answer(1)">部分符合</button>
+                <button class="little_yes" @click="answer(1)">{{ $t("little_yes_text") }}</button>
             </div>
             <div>
-                <button class="netural" @click="answer(0)">不确定</button>
+                <button class="netural" @click="answer(0)">{{ $t("netural_text") }}</button>
             </div>
             <div>
-                <button class="little_no" @click="answer(-1)">部分不符合</button>
+                <button class="little_no" @click="answer(-1)">{{ $t("little_no_text") }}</button>
             </div>
             <div>
-                <button class="no" @click="answer(-2)">不符合</button>
+                <button class="no" @click="answer(-2)">{{ $t("no_text") }}</button>
             </div>
             <div>
-                <button class="more_no" @click="answer(-3)">非常不符合</button>
+                <button class="more_no" @click="answer(-3)">{{ $t("more_no_text") }}</button>
             </div>
-            <h3 class="warning">请尽量避免选不确定或者部分符合/部分不符合选项以免结果没有意义或者较为不准确</h2>
+            <h3 class="warning">{{ $t("Warning_text") }}</h2>
         </div>
 
     </div>
 
     <script type="module" src="vuescript.js"></script>
-    <!-- <script type="module" src="vuei18n.js"></script> -->
+    <script type="module" src="vuei18n.js"></script>
 </body>
 
 </html>
