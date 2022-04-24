@@ -80,15 +80,15 @@ function TestEnneagrama(Instincts, num) {
     if (Instincts == 'So') {
         if (num == 0) {
             result = [
-                { text: "我更重视自身价值认同和社会认可，我认为我自己是很完美的，没必要改造自己的习惯做法适应他人，得到他人的尊重是理所当然的。", type: [1, ""], value: 16, color: "Instincts_answer" },
-                { text: "我更重视自身价值认同和社会认可，我试图做到比其他人更为热情，希望以此别人也能回报我，以增进我的影响力和社会地位。", type: [2, ""], value: 16, color: "Instincts_answer" },
-                { text: "我更重视自身价值认同和社会认可，我甚至可能用夸大的说辞来提高大家对我的评价，并尽可能隐瞒自己的缺点和失败的经历。", type: [3, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，我感到自己不如他人，所以有远离他人的倾向，并且容易一个人沉浸到痛苦和悲伤之中无法自拔。", type: [4, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，我喜欢去追逐如镜花水月般的理想，根本上我不喜欢与人交往，但需要人际关系来为理想的实现所服务。", type: [5, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，但又不信任自己的内心想法，习惯于遵循黑白分明的法律，道德或个人固有理念来判断事物。", type: [6, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，但这种欲望往往是为了博取良好的社会名誉去帮助他人，并且我时常感受到自己考虑的过少。", type: [7, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，但这种欲望往往是和我的朋友结成同盟，保护弱小的朋友，一起去挑战强大的敌人或者完成艰难的项目共赴胜利。", type: [8, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，但这种欲望往往是对我所在的社区，家庭或朋友圈去做出贡献，往往没意识到自身真正的需求去忘我的工作。", type: [9, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos1", type: [1, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos2", type: [2, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos3", type: [3, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos4", type: [4, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos5", type: [5, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos6", type: [6, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos7", type: [7, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos8", type: [8, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sos9", type: [9, ""], value: 16, color: "Instincts_answer" },
                 { text: "qsno", type: [6, ""], value: 10, color: "Instincts_answer" },
                 { text: "qsall", type: [9, ""], value: 10, color: "Instincts_answer" },
             ]
@@ -97,16 +97,16 @@ function TestEnneagrama(Instincts, num) {
     if (Instincts == 'Sx') {
         if (num == 0) {
             result = [
-                { text: "我更重视自身价值认同和他人认可，但也重视实现自己的目的，我会以狂热的信仰和高尚的口号去驱动自己达成目标，就如同宗教热情驱动下殖民美洲的西班牙人那样。", type: [1, ""], value: 16, color: "Instincts_answer" },
-                { text: "我更重视自身价值认同和他人认可，我希望能用我深厚的情感彻底去征服我所爱的人。", type: [2, ""], value: 16, color: "Instincts_answer" },
-                { text: "我更重视自身价值认同和他人认可，我希望自己充满性吸引力来引诱别人认可接受我，并借此从他们那里得到好处。", type: [3, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中,蔑视常人的生活，因为那些活在虚假的和平中的人是多么的低劣，世人愚昧不堪无法相处", type: [4, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，世界上大多数人都是难以相处的，与其与人类交流不如自己去探索知识或宅在家玩，但我希望我能找到我所能与之交流的人。", type: [5, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，我必须克服内心的恐惧变得更强大，为了让内心的勇气战胜恐惧我甚至愿意去从事危险的事业去锻炼自身。", type: [6, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，这种欲望往往是追求一些梦幻般的理想，想都不想的去踏入未知领域。", type: [7, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，我非常叛逆，喜欢成为大家关注的焦点，如果有人令我不爽我就可能向其发起挑衅。", type: [8, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，但这种欲望往往是对我所爱的那个人全心全力的付出，以致于在这一过程中忘却了自身的欲望。", type: [9, ""], value: 16, color: "Instincts_answer" },
-                { text: "qsno。", type: [6, ""], value: 10, color: "Instincts_answer" },
+                { text: "q4sxs1", type: [1, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs2", type: [2, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs3", type: [3, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs4", type: [4, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs5", type: [5, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs6", type: [6, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs7", type: [7, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs8", type: [8, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sxs9", type: [9, ""], value: 16, color: "Instincts_answer" },
+                { text: "qsno", type: [6, ""], value: 10, color: "Instincts_answer" },
                 { text: "qsall", type: [9, ""], value: 10, color: "Instincts_answer" },
             ]
         }
@@ -114,15 +114,15 @@ function TestEnneagrama(Instincts, num) {
     if (Instincts == 'Sp') {
         if (num == 0) {
             result = [
-                { text: "我更重视自身价值认同和自我认可，我希望我能不断改善自身，达到完美的状态。", type: [1, ""], value: 16, color: "Instincts_answer" },
-                { text: "我更重视自身价值认同和自我认可，我内心不想长大，希望像小孩子一样被大家怜爱。", type: [2, ""], value: 16, color: "Instincts_answer" },
-                { text: "我更重视自身价值认同和自我认可，我只对实际的，最有用的东西感兴趣，渴望不断提升自己的效率。", type: [3, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，苦苦追逐遥不可及的理想，无论付出多少代价我都要实现他，那里仿佛有我内心缺失的东西", type: [4, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，在内心世界中我能用我的想象力构建出现实世界难以体验的内心世界，如果不影响我的物质生活，我希望能建立起厚厚的堡垒隔绝与他人的交流。", type: [5, ""], value: 16, color: "Instincts_answer" },
-                { text: "我习惯于把精力投入到内心世界中，很没安全感，这个世界上有很多人都是不怀好意的，光靠我自己无法保护好自己，我是弱势群体，渴望能得到外界以及社会公义的保护。", type: [6, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，为此我可以不择手段，让自己学会越来越狡猾的生活，因为只有这样才能保护我以及我的家庭。", type: [7, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，我虽然有很强的反抗他人的欲望，但我学会了收敛这种欲望，为了不被他人控制，我总想着如何先下手为强把周围的人尽可能控制。", type: [8, ""], value: 16, color: "Instincts_answer" },
-                { text: "我以实现自己的欲望优先，我希望我能躺平过着吃喝玩乐的安逸生活。", type: [9, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps1", type: [1, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps2", type: [2, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps3", type: [3, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps4", type: [4, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps5", type: [5, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps6", type: [6, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps7", type: [7, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps8", type: [8, ""], value: 16, color: "Instincts_answer" },
+                { text: "q4sps9", type: [9, ""], value: 16, color: "Instincts_answer" },
                 { text: "qsno", type: [9, ""], value: 16, color: "Instincts_answer" },
                 { text: "qsall", type: [9, ""], value: 10, color: "Instincts_answer" },
             ]
@@ -131,25 +131,25 @@ function TestEnneagrama(Instincts, num) {
     if (num == 1) {
         if (Instincts == 'So') {
             result = [
-                { text: "我希望赢的观众瞩目，成为大家所爱戴的卓越出众的人。", type: [2, ""], value: 10, color: "Ired_answer" },
-                { text: "我很在乎他人对我的看法，渴望得到社会认可，希望所有人为我喝彩。", type: [3, ""], value: 10, color: "Ired_answer" },
-                { text: "我希望他人能听我诉苦，也认为自己不如他人，与他人相处时总是喜欢把自己放在受害者的位置上。", type: [4, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sos2", type: [2, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sos3", type: [3, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sos4", type: [4, ""], value: 10, color: "Ired_answer" },
                 { text: "qsall", type: [3, ""], value: 6, color: "Ired_answer" },
             ]
         }
         if (Instincts == 'Sx') {
             result = [
-                { text: "我希望得到他人的爱，所以会想办法诱惑他人。", type: [2, ""], value: 10, color: "Ired_answer" },
-                { text: "我很在乎他人对我的看法，所以会尽可能掩饰自己的攻击性，但如果遭到他人拒绝，可能就无法容忍而爆发", type: [3, ""], value: 10, color: "Ired_answer" },
-                { text: "我看不起日常的日子人，轻视日常生活，我很有对这类普通人表达内心的怒气的冲动，并且内心深处认为自己很特殊高于常人。", type: [4, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sxs2", type: [2, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sxs3", type: [3, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sxs4", type: [4, ""], value: 10, color: "Ired_answer" },
                 { text: "qsall", type: [3, ""], value: 6, color: "Ired_answer" },
             ]
         }
         if (Instincts == 'Sp') {
             result = [
-                { text: "我内心认为自己是最重要的，渴望得到大家的关爱。", type: [2, ""], value: 10, color: "Ired_answer" },
-                { text: "我很在乎他人对我的看法，为此尽可能把自己做到最好，不会说出会让他人留下不好印象的话，更不会说出一些触犯禁忌的话。", type: [3, ""], value: 10, color: "Ired_answer" },
-                { text: "我不怎么在乎他人的评价，我内心觉的自己不如他人，我更愿意尽可能一个人独自承受痛苦，羞于启齿寻求他人的关爱。", type: [4, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sps2", type: [2, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sps3", type: [3, ""], value: 10, color: "Ired_answer" },
+                { text: "q5sps4", type: [4, ""], value: 10, color: "Ired_answer" },
                 { text: "qsall", type: [3, ""], value: 6, color: "Ired_answer" },
             ]
         }
@@ -157,25 +157,25 @@ function TestEnneagrama(Instincts, num) {
     if (num == 2) {
         if (Instincts == 'So') {
             result = [
-                { text: "我担忧和一般人沟通会浪费我的时间，所以渴望只去结交最杰出最有声望的人来帮助我实现我思维世界中的终极理想。", type: [5, ""], value: 10, color: "Instincts_answer" },
-                { text: "我恐惧模糊的原则造成的隐患，所以我喜欢黑白分明的思考，严格要求自己，绝不容许模棱两可的做法。", type: [6, ""], value: 10, color: "Instincts_answer" },
-                { text: "我害怕自己的感官快乐和实现自己利益给我带来负面影响，所以希望像苦行僧一样尽可能的去帮助他人，虽然这实际上也有一部分让他人欠我人情的动机。", type: [7, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sos5", type: [5, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sos6", type: [6, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sos7", type: [7, ""], value: 10, color: "Instincts_answer" },
                 { text: "qsall", type: [6, ""], value: 6, color: "Instincts_answer" },
             ]
         }
         if (Instincts == 'Sx') {
             result = [
-                { text: "我对他人不抱期待，倾向把自己和他人隔离开来，回到自己的内心思维中。", type: [5, ""], value: 10, color: "Instincts_answer" },
-                { text: "我时常思考如何能获得力量，变得更为强大。", type: [6, ""], value: 10, color: "Instincts_answer" },
-                { text: "我总是理想化的看待世界，习惯性的忽略了去思考一些问题，把生活想象的更为美好。", type: [7, ""], value: 10, color: "Instincts_answer" },
-                { text: "qsall。", type: [6, ""], value: 6, color: "Instincts_answer" },
+                { text: "q6sxs5", type: [5, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sxs6", type: [6, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sxs7", type: [7, ""], value: 10, color: "Instincts_answer" },
+                { text: "qsall", type: [6, ""], value: 6, color: "Instincts_answer" },
             ]
         }
         if (Instincts == 'Sp') {
             result = [
-                { text: "我恐惧与他人沟通，害怕自己做出行动时能力和知识不足，所以尽可能在现实中避免与他人的交流沉浸在自己的思维世界之中。", type: [5, ""], value: 10, color: "Instincts_answer" },
-                { text: "我很没有安全感，害怕自己被别人落下而得不到集体的保护，所以更会去接近他人，渴望得到家庭的温暖，希望在一个没有敌人的家庭环境中。", type: [6, ""], value: 10, color: "Instincts_answer" },
-                { text: "我担忧无法保护我或我的家人朋友的安全和利益，所以会尽可能去抓住机会，与人达成协议，即使这可能是具有很大风险的交易。", type: [7, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sps5", type: [5, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sps6", type: [6, ""], value: 10, color: "Instincts_answer" },
+                { text: "q6sps7", type: [7, ""], value: 10, color: "Instincts_answer" },
                 { text: "qsall", type: [6, ""], value: 6, color: "Instincts_answer" },
             ]
         }
@@ -183,25 +183,25 @@ function TestEnneagrama(Instincts, num) {
     if (num == 3) {
         if (Instincts == 'So') {
             result = [
-                { text: "我有很强烈的自身欲求，对世俗标准持反对态度，喜欢简单粗暴的做事。", type: [8, ""], value: 10, color: "Igreen_answer" },
-                { text: "我非常善于满足他人的要求，为集体奉献，乃至于成为了忽视自己欲求的工作狂。", type: [9, ""], value: 10, color: "Igreen_answer" },
-                { text: "我会压抑自己的欲求，表现出一种完美的无可挑剔的态度。", type: [1, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sos8", type: [8, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sos9", type: [9, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sos1", type: [1, ""], value: 10, color: "Igreen_answer" },
                 { text: " qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
             ]
         }
         if (Instincts == 'Sx') {
             result = [
-                { text: "我有很强烈的自身欲求，因此表现的个性浮夸，十分叛逆。", type: [8, ""], value: 10, color: "Igreen_answer" },
-                { text: "我时常忽略自身的欲求，牺牲自己的生活来和我所爱的某个人或团体，甚至可能只是自己融为一体。", type: [9, ""], value: 10, color: "Igreen_answer" },
-                { text: "我可能会狂热的信仰某些东西或教条规制自身的欲求，但也可能会以此为借口来满足自己的欲求。", type: [1, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sxs8", type: [8, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sxs9", type: [9, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sxs1", type: [1, ""], value: 10, color: "Igreen_answer" },
                 { text: "qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
             ]
         }
         if (Instincts == 'Sp') {
             result = [
-                { text: "我有很强烈的欲求，我渴望得到一切，接受不了得不到想要的东西的挫败感，但为了我自己的安全我会尽可能收敛这一点。", type: [8, ""], value: 10, color: "Igreen_answer" },
-                { text: "我自己的想法不多，只想吃饱喝足，平静安逸的过日子。", type: [9, ""], value: 10, color: "Igreen_answer" },
-                { text: "我倾向压制自己的欲求，让自己尽可能的接近完美。", type: [1, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sps8", type: [8, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sps9", type: [9, ""], value: 10, color: "Igreen_answer" },
+                { text: "q7sps1", type: [1, ""], value: 10, color: "Igreen_answer" },
                 { text: "qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
             ]
         }
@@ -217,31 +217,31 @@ function SelectEnneagrama(selected, commondata) {
         commondata.startorder = true
     }
     if (selected.indexOf(2) === -1) {
-        result.push({ text: "我是一个热情、有爱心、热情好客的人，会关心他人的人，渴望从他人那里得到爱", type: [2, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s2", type: [2, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(3) === -1) {
-        result.push({ text: "我是一个有效率、有成效、有动力的人，需要设定并实现自己的目标，渴望竞争超越他人的人", type: [3, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s3", type: [3, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(4) === -1) {
-        result.push({ text: "我是一个情绪化，敏感，想法奇异，沉浸于痛苦中的人，需要发现美，探索我的内心世界，渴望自己有与众不同的特点，并倾向远离他人", type: [4, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s4", type: [4, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(5) === -1) {
-        result.push({ text: "我是一个容易沉浸于内心的想象世界，喜欢以奇特的角度思考提出奇异观点的人，需要时间远离他人独自处理事实和信息，提升自己的知识和技能应对焦虑", type: [5, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s5", type: [5, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(6) === -1) {
-        result.push({ text: "我是一个友好的，敏感的，正义的，正确的人，信奉公理，理性和普遍认可的逻辑，依靠调整自己的想法接近于大家所认同的观点来应对焦虑", type: [6, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s6", type: [6, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(7) === -1) {
-        result.push({ text: "我是一个即兴和乐观的人，需要新的想法，选择，可能性和令人兴奋的计划，喜欢现实物质享受，会习惯性的忽视了自己所焦虑的问题", type: [7, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s7", type: [7, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(8) === -1) {
-        result.push({ text: "我是一个自信、果断、愤世嫉俗的人，我不能容忍强者以强权压迫我或者欺凌其他弱者，如果现秩序与我的理想和欲求产生冲突，我就会竭尽全力将其摧毁殆尽！", type: [8, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s8", type: [8, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(9) === -1) {
-        result.push({ text: "我是一个善良，随和，老实的人，需要避免冲突，看到所有的观点，能为集体或朋友同事竭尽所能的做事，满足他们的要求", type: [9, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s9", type: [9, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (selected.indexOf(1) === -1) {
-        result.push({ text: "我是一个有责任心、恰当、勤奋的人，做正确的事情服从于秩序安排的人，我严于律己，克制自己的欲望，希望其他人也是如此，这个世界才会更好", type: [1, ""], value: tvalue, color: "Igreen_answer" })
+        result.push({ text: "q8s1", type: [1, ""], value: tvalue, color: "Igreen_answer" })
     }
     if (result == []) {
         return false
@@ -252,82 +252,82 @@ function SelectEnneagrama(selected, commondata) {
 function CheckEnneagrama(Instincts, num, value) {
     if (num == 1) {
         if (Instincts == 'So' || Instincts == 'Sx') {
-            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，因此尽力做的完美',[{ text: "yesthis", type: [4, 1], value: value, color: "yes" },{ text: "notthis", type: [1, ""], value: 0, color: "no" }]]
+            return ['q4or1sosx',[{ text: "yesthis", type: [4, 1], value: value, color: "yes" },{ text: "notthis", type: [1, ""], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我喜欢在内心和某些人比较，会为感到不如对方而痛苦烦恼，但我更会尝试去克服忍受痛苦，以让自己更为完美',[{ text: "yesthis", type: [4, 1], value: value, color: "yes" },{ text: "notthis", type: [1, ""], value: 0, color: "no" }]]
+            return ['q4or1sp',[{ text: "yesthis", type: [4, 1], value: value, color: "yes" },{ text: "notthis", type: [1, ""], value: 0, color: "no" }]]
         }
     }
     if (num == 2) {
-        return ['虽然我喜欢讨好他人，但这主要是为了提高他人对我的评价，而不是想要对方也来这样回报讨好我',[{ text: "yesthis", type: [3, 2], value: value, color: "yes" },{ text: "notthis", type: [2, ''], value: 0, color: "no" }]]
+        return ['q3or2',[{ text: "yesthis", type: [3, 2], value: value, color: "yes" },{ text: "notthis", type: [2, ''], value: 0, color: "no" }]]
     }
     if (num == 4) {
-        return ['我对于和他人欢乐的情感互动(贴贴)不会感到厌恶，而且觉得和他人友好互动可以提高他人对我的评价',[{ text: "yesthis", type: [3, 4], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
+        return ['q3or4',[{ text: "yesthis", type: [3, 4], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
     }
     if (num == 5) {
         if (Instincts == 'So' || Instincts == 'Sx') {
-            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
+            return ['q6or5',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我和他人情感互动(贴贴)不会有心理负担而能感到快乐，所以我喜欢接近他人',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
+            return ['q6or5',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
         }
     }
     if (num == 62) {
-        return ['我接近他人更多是为了安全感而非情感需求',[{ text: "yesthis", type: [6, 2], value: value, color: "yes" },{ text: "notthis", type: [2, ''], value: 0, color: "no" }]]
+        return ['q6or2',[{ text: "yesthis", type: [6, 2], value: value, color: "yes" },{ text: "notthis", type: [2, ''], value: 0, color: "no" }]]
     }
     if (num == 48) {
         if (Instincts == 'So') {
-            return ['我有我想要保护的人，所以我不会向别人倾诉痛苦，表现出软弱',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
+            return ['q8or4so',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['如果有人要和我敌对，我会当众奋起反击，让他们知道我是不好惹的',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
+            return ['q8or4sx',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我对周围的很多人不放心，总想把他们控制住，所以我一般对外压抑掩盖自己的内心',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
+            return ['q8or4sp',[{ text: "yesthis", type: [8, 4], value: value, color: "yes" },{ text: "notthis", type: [4, 8], value: 0, color: "no" }]]
         }
     }
     if (num == 26) {
         if (Instincts == 'So') {
-            return ['我向大部分人表达情感很容易，没有障碍，我乐于帮助他们，也希望大家都对我更好',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
+            return ['q2or6so',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['我向部分亲近的人表达情感很容易，没有障碍，我乐于吸引他们，让他们都对我更好',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
+            return ['q2or6sx',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我向部分亲近的人表达情感很容易，没有障碍，我喜欢装可爱来让他们对我更好',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
+            return ['q2or6sp',[{ text: "yesthis", type: [2, 6], value: value, color: "yes" },{ text: "notthis", type: [6, 2], value: 0, color: "no" }]]
         }
     }
     if (num == 7) {
-        return ['我很容易陷入沉浸式思考，察觉到别人察觉不到的方面',[{ text: "yesthis", type: [5, 7], value: value, color: "yes" },{ text: "notthis", type: [7, ''], value: 0, color: "no" }]]
+        return ['q5or7',[{ text: "yesthis", type: [5, 7], value: value, color: "yes" },{ text: "notthis", type: [7, ''], value: 0, color: "no" }]]
     }
     if (num == 14) {
-        return ['为了能在和对方交流时让双方都愉快，我喜欢表现的乐观快乐',[{ text: "yesthis", type: [2, 7], value: value, color: "yes" },{ text: "notthis", type: [7, ''], value: 0, color: "no" }]]
+        return ['q2or7',[{ text: "yesthis", type: [2, 7], value: value, color: "yes" },{ text: "notthis", type: [7, ''], value: 0, color: "no" }]]
     }
     if (num == 8) {
         if (Instincts == 'So') {
-            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
+            return ['q4or8sosp',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sx') {
-            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，即使这也会毁灭我自己以及我的家人和朋友也在所不辞',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
+            return ['q4or8sx',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
         }
         if (Instincts == 'Sp') {
-            return ['我憎恨着这个世界，我想要摧毁的是一切现秩序，也不想保护任何人',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
+            return ['q4or8sosp',[{ text: "yesthis", type: [4, 8], value: value, color: "yes" },{ text: "notthis", type: [4, ''], value: 0, color: "no" }]]
         }
     }
     if (num == 16) {
-        return ['我感到这个世界充满荒谬，所以愤世嫉俗，但如果可能我不愿意用革命等反秩序的手段去纠正错误，而是在现秩序上进行改良',[{ text: "yesthis", type: [1, 8], value: value, color: "yes" },{ text: "notthis", type: [1, ''], value: 0, color: "no" }]]
+        return ['q1or8',[{ text: "yesthis", type: [1, 8], value: value, color: "yes" },{ text: "notthis", type: [1, ''], value: 0, color: "no" }]]
     }
     if (num == 9) {
-        return ['虽然我很慵懒，但好奇心会驱使我深入的探索某些问题，对创新的渴求会驱使我废寝忘食的完成某些项目',[{ text: "yesthis", type: [5, 9], value: value, color: "yes" },{ text: "notthis", type: [9, ''], value: 0, color: "no" }]]
+        return ['q5or9',[{ text: "yesthis", type: [5, 9], value: value, color: "yes" },{ text: "notthis", type: [9, ''], value: 0, color: "no" }]]
     }
     if (num == 18) {
-        return ['我内心有明确的边界去区分哪些人是好的或坏的，哪些人可能对我造成威胁所以先行防范',[{ text: "yesthis", type: [6, 9], value: value, color: "yes" },{ text: "notthis", type: [6, ''], value: 0, color: "no" }]]
+        return ['q6or9',[{ text: "yesthis", type: [6, 9], value: value, color: "yes" },{ text: "notthis", type: [6, ''], value: 0, color: "no" }]]
     }
     if (num == 10) {
-        return ['我喜欢表现出自己是一个理性，客观的人，我会明确区分哪些是正确的正义的，哪些是错误的邪恶的，我会尽量避免用魔怔的说法反驳他人',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
+        return ['q6or5',[{ text: "yesthis", type: [6, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
     }
     if (num == 15) {
-        return ['我不怎么喜欢考虑过于复杂概念性形而上的问题',[{ text: "yesthis", type: [7, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
+        return ['q7or5',[{ text: "yesthis", type: [7, 5], value: value, color: "yes" },{ text: "notthis", type: [5, ''], value: 0, color: "no" }]]
     }
     return ['error',[{ text: "click", type: [0, 0], value: 0, color: "yes" },{ text: "error", type: [0, 0], value: 0, color: "no" }]]
 }
@@ -335,13 +335,13 @@ function CheckEnneagrama(Instincts, num, value) {
 function yesorno(num, Instinct) {
     etype = num
     result = [
-        { text: "非常符合", type: [etype, Instinct], value: 3, color: "more_yes" },
-        { text: "基本符合", type: [etype, Instinct], value: 2, color: "yes" },
-        { text: "部分符合", type: [etype, Instinct], value: 1, color: "little_yes" },
-        { text: "不确定。", type: [etype, Instinct], value: 0, color: "netural" },
-        { text: "较不符合", type: [etype, Instinct], value: -1, color: "little_no" },
-        { text: "基本不符合", type: [etype, Instinct], value: -2, color: "no" },
-        { text: "完全不符合", type: [etype, Instinct], value: -3, color: "more_no" },
+        { text: "more_yes_text", type: [etype, Instinct], value: 3, color: "more_yes" },
+        { text: "yes_text", type: [etype, Instinct], value: 2, color: "yes" },
+        { text: "little_yes_text", type: [etype, Instinct], value: 1, color: "little_yes" },
+        { text: "netural_text", type: [etype, Instinct], value: 0, color: "netural" },
+        { text: "little_no_text", type: [etype, Instinct], value: -1, color: "little_no" },
+        { text: "no_text", type: [etype, Instinct], value: -2, color: "no" },
+        { text: "more_no_text", type: [etype, Instinct], value: -3, color: "more_no" },
     ]
     return result
 }

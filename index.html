@@ -19,24 +19,22 @@
     <script src="cn_enneagram.js"></script>
     
     <div id="app">
-        <!-- <h1>人格心理类型测试</h1> -->
         <h1>{{ $t("test_title") }}</h1>
         <div v-if="nostart">
             <div>
-                <p>语言/Language：</p>
+                <p>{{ $t("Language_selection") }}</p>
                 <select name="Language" class="Language" v-model="$i18n.locale">
                     <option value="zh">简体中文/Simplifed Chinese</option>
                     <option value="hk">繁体中文(未完工)/Traditional Chinese</option>
                   </select>
             </div><br><br>
-            <button type="button" :class="bclass" @mouseover="transbutton" @mouseleave="outbutton"
-                @click="start">八维测试</button>
+            <button type="button" :class="bclass" @mouseover="transbutton" @mouseleave="outbutton" @click="start">{{ $t("jung_test") }}</button>
             <!-- <button @click="test">test</button> -->
-            <h3>该测试基于荣格提出的八种类型理论和辅助功能猜想，与MBTI有一定理论渊源上的关系，但具体出入很大，无法混为一谈。</h3>
-            <button type="button" :class="eclass" @click="estart">九型测试</button>
+            <h3>{{ $t("jung_dec") }}</h3>
+            <button type="button" :class="eclass" @click="estart">{{ $t("ennegram_test") }}</button>
             <!-- <button @click="etest">etest</button> -->
-            <h3>请在开始测试前先阅读以下提示：</h3>
-            <h4 class="start_dec">由于心理防御机制，大部分测试结果很难准确反映你真正的情况，其次本测试更多基于死宅群体，所以结果会有相对应的ACG人物作为比对，如果熟悉这些人物可以比对确认，本测试目的之一就是为了颠覆。大众对MBTI以及九型的错误理解，所以结果很可能与主流测试有较大出入，另外提醒正因为包括本测试在内的所有这类心理测试都是难以反映真实情况的，所以请对包括本测试在内的测试结果都不要过于当真，仅作参考和娱乐。另外真正的心理分析是要反映心理问题的，如果结果不反映问题只叙述优点，说明这只是迎合人类普遍的逃避黑暗面的心理的商业化测试，其参考价值更低，所以也请不要对本测试结果中可能出现的不好的描述愤慨，如果您无法接受请不要参与本测试，谢谢合作！</h4>
+            <h3>{{ $t("read_pls") }}</h3>
+            <h4 class="start_dec">{{ $t("start_dec_text") }}</h4>
         </div>
         <div v-else-if="result_page">
             <h3>{{ $t("you_may") }}</h3>
@@ -298,9 +296,9 @@
             </div>
         </div>
         <div v-else-if="no_result">
-            <h2>你的结果没有意义</h2>
-            <button type="button" class="refreshclass" @click="refresh">重新测试</button>
-            <h4>可以尝试尽可能避免选择中立选项重新测试，一般而言很少会出现这种情况</h4>
+            <h2>{{ $t("no_result_text") }}</h2>
+            <button type="button" class="refreshclass" @click="refresh">{{ $t("restart_button") }}</button>
+            <h4>{{ $t("no_result_dec") }}</h4>
         </div>
         <div v-else class="q_selection">
             <div>
