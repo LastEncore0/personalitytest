@@ -354,7 +354,7 @@ function getecharacter(type) {
         return [["Yakami", "Yakami_quote", "<img src='./img/Te-N/02.png' alt='02 pic'>"], ["Tanya", "Tanya_quote", "<img src='./img/Te-S/03.png' alt='02 pic'>"]]
     }
     if (type == 'Sp1') {
-        return [["Yukino", "Yukino_quote", "<img src='./img/Sp/101.png' alt='02 pic'>"],["Shana", "Shana_quote", "<img src='./img/Ni-T/02.png' alt='02 pic'>"]]
+        return [["Yukino", "Yukino_quote", "<img src='./img/Sp/101.png' alt='02 pic'>"],["Erwin", "Erwin_quote", "<img src='./img/Te-N/01.png' alt='02 pic'>"]]
     }
     if (type == 'So2') {
         return [["Mami", " ", "<img src='./img/Fe-N/02.png' alt='01 pic'>"]]
@@ -375,13 +375,13 @@ function getecharacter(type) {
         return [["Saki", " ", "<img src='./img/Fe-S/03.png' alt='01 pic'>"]]
     }
     if (type == 'So4') {
-        return [["Omashu", "_quote", "<img src='./img/So/401.png' alt='01 pic'>"]]
+        return [["Omashu", "Omashu_quote", "<img src='./img/So/401.png' alt='01 pic'>"],["Illiya", "Illiya_quote", "<img src='./img/So/402.png' alt='02 pic'>"]]
     }
     if (type == 'Sx4') {
         return [["Lelouch", "Lelouch_quote", "<img src='./img/Ni-T/01.png' alt='01 pic'>"],["Suigintou", "Suigintou_quote", "<img src='./img/Sx/401.png' alt='02 pic'>"], ["Kuroyuki", "Kuroyuki_quote", "<img src='./img/Ni-F/01.png' alt='03 pic'>"]]
     }
     if (type == 'Sp4') {
-        return [["Hei", "Hei_quote", "<img src='./img/sp/402.png' alt='01 pic'>"]]
+        return [["Hei", "Hei_quote", "<img src='./img/sp/402.png' alt='01 pic'>"],["Shana", "Shana_quote", "<img src='./img/Ni-T/02.png' alt='02 pic'>"]]
     }
     if (type == 'So5') {
         return [["Bondorudo", "Bondorudo_quote", "<img src='./img/So/501.png' alt='01 pic'>"], ["Shougo", "Shougo_quote", "<img src='./img/Ne-T/02.png' alt='02 pic'>"]]
