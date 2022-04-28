@@ -85,7 +85,9 @@ progress::-webkit-progress-bar {
   background-color: rgb(238, 73, 81);
   text-align: center;
   height: 50px;
-  width: 200px;
+  min-width: 200px;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -502,7 +504,9 @@ progress::-webkit-progress-bar {
     color: azure;
     text-align: center;
     height: 50px;
-    width: 200px;
+    min-width: 200px;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
     font-size: 2em;
     font-family: "Microsoft YaHei";
     font-weight: 600;
