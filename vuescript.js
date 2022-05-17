@@ -411,13 +411,13 @@ var app = createApp({
             let difference = this.enneagram_data.IX - this.enneagram_data.V
             this.check_data.push([9, difference])
           }
-          if (
-            this.enneagram_data.IX > this.enneagram_data.VI &&
-            this.enneagram_data.VI + 15 > this.enneagram_data.IX
-          ) {
-            let difference = this.enneagram_data.IX - this.enneagram_data.VI
-            this.check_data.push([18, difference])
-          }
+          // if (
+          //   this.enneagram_data.IX > this.enneagram_data.VI &&
+          //   this.enneagram_data.VI + 15 > this.enneagram_data.IX
+          // ) {
+          //   let difference = this.enneagram_data.IX - this.enneagram_data.VI
+          //   this.check_data.push([18, difference])
+          // }
           this.enneagram_num = 0
           if (this.check_data.length > this.check_num) {
             this.question_enneagram = CheckEnneagrama(
