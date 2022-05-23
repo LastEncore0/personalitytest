@@ -418,7 +418,7 @@ function getecharacter(type) {
         return [["Meliodas", "Meliodas_quote", "<img src='./img/Sx/801.png' alt='01 pic'>"],["Askeladd", " ", "<img src='./img/Sx/802.png' alt='02 pic'>"]]
     }
     if (type == 'Sp8') {
-        return [["GioGio", "GioGio_quote", "<img src='./img/Sp/801.png' alt='02 pic'>"]]
+        return [["GioGio", "GioGio_quote", "<img src='./img/Sp/801.png' alt='02 pic'>"],["Dio", "dio_quote", "<img src='./img/Sp/802.png' alt='02 pic'>"]]
     }
     if (type == 'So9') {
         return [["Altria", "Altria_quote", "<img src='./img/Si-T/02.png' alt='01 pic'>"],["Shirou", "Shirou_quote", "<img src='./img/So/901.png' alt='02 pic'>"]]
