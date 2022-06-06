@@ -369,7 +369,7 @@ function getecharacter(type) {
         return [["Reinhard", "Reinhard_quote", "<img src='./img/Te-N/03.png' alt='01 pic'>"]]
     }
     if (type == 'Sx3') {
-        return [["Roswaal", " ", "<img src='./img/Sx/301.png' alt='01 pic'>"]]
+        return [["saya", " ", "<img src='./img/Sx/302.png' alt='01 pic'>"]]
     }
     if (type == 'Sp3') {
         return [["Saki", " ", "<img src='./img/Fe-S/03.png' alt='01 pic'>"]]

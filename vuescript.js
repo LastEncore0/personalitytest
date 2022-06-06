@@ -541,7 +541,7 @@ var app = createApp({
 
     etest: function () {
       this.e_result_value = 8
-      this.enneagram_data.Instincts = 'Sp'
+      this.enneagram_data.Instincts = 'Sx'
       this.enneagram_test_result =
         this.enneagram_data.Instincts + this.e_result_value
       this.e_maybe = [5, 3, 1, 7]
