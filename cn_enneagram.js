@@ -43,9 +43,9 @@ function TestInstinctsa(num) {
     var result = false
     if (num == 0) {
         result = [
-            { text: "q1s1", type: [0, "So"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "q1s2", type: [0, "Sx"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
-            { text: "q1s3", type: [0, "Sp"], value: 16, color: "Instincts_answer", color: "Instincts_answer" },
+            { text: "q1s1", type: [0, "So"], value: 16, color: "Instincts_answer"},
+            { text: "q1s2", type: [0, "Sx"], value: 16, color: "Instincts_answer"},
+            { text: "q1s3", type: [0, "Sp"], value: 16, color: "Instincts_answer"},
         ]
     }
     if (num == 1) {
@@ -366,7 +366,7 @@ function getecharacter(type) {
         return [["Kinomoto", " ", "<img src='./img/Sp/201.png' alt='02 pic'>"]]
     }
     if (type == 'So3') {
-        return [["Reinhard", "Reinhard_quote", "<img src='./img/Te-N/03.png' alt='01 pic'>"]]
+        return [["Iroha", "Iroha_quote", "<img src='./img/So/301.png' alt='01 pic'>"]]
     }
     if (type == 'Sx3') {
         return [["saya", " ", "<img src='./img/Sx/302.png' alt='01 pic'>"]]

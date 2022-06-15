@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
     <link rel="icon" href="favicon.ico">
     <title>人格测试</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="theme.css">
 </head>
 
@@ -17,140 +20,215 @@
     <script src="pickRandom.js"></script>
     <script src="cn_text.js"></script>
     <script src="cn_enneagram.js"></script>
-    
+
     <div id="app">
-        <h1>{{ $t("test_title") }}</h1>
-        <div v-if="nostart">
-            <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand me-md-5 px-2" href="#">{{ $t("test_title") }}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav col-md-3">
+                        <li class="nav-item justify-content-center align-items-center">
+                            <a class="nav-link text-dark justify-content-center align-items-center" href="#">{{
+                                $t("Language_selection") }}</a>
+                        </li>
+                        <select name="Language"
+                            class="nav-item dropdown Language justify-content-center align-items-center"
+                            v-model="$i18n.locale">
+                            <option value="zh">简体中文/Simplifed Chinese</option>
+                            <option value="hk">繁体中文/Traditional Chinese</option>
+                        </select>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.6.15.0</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- <h1>{{ $t("test_title") }}</h1> -->
+
+        <div v-if="nostart" class="container">
+            <p class="text-dark justify-content-center align-items-center d-md-none">{{ $t("Language_selection") }}</p>
+            <select name="Language" class="form-select Language justify-content-center align-items-center d-md-none"
+                v-model="$i18n.locale">
+                <option value="zh">简体中文/Simplifed Chinese</option>
+                <option value="hk">繁体中文/Traditional Chinese</option>
+            </select>
+            <form class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                    <div class="card mb-3 border-0">
+                        <div class="row g-0">
+                            <div class="col-md-4 h-75">
+                                <img src="img\enneagarm.png" class="card-img-top">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $t("ennegram_test") }}</h5>
+                                    <p class="card-text">{{ $t("ennegram_dec") }}</p>
+                                    <button type="button" class="btn btn-info btn-lg"
+                                        @click="estart">{{$t("start_test")}}</button>
+                                    <!-- <button @click="etest">etest</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3 border-0">
+                        <div class="row g-0">
+                            <div class="col-md-4 h-75">
+                                <img src="img\jungs.png" class="card-img-top">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $t("jung_test") }}</h5>
+                                    <p class="card-text">{{ $t("jung_dec") }}</p>
+                                    <button type="button" class="btn btn-info btn-lg"
+                                        @click="start">{{$t("start_test")}}</button>
+                                    <!-- <button @click="test">test</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- <div>
                 <p>{{ $t("Language_selection") }}</p>
                 <select name="Language" class="Language" v-model="$i18n.locale">
                     <option value="zh">简体中文/Simplifed Chinese</option>
                     <option value="hk">繁体中文/Traditional Chinese</option>
-                  </select>
-            </div><br><br>
-            <button type="button" :class="bclass" @mouseover="transbutton" @mouseleave="outbutton" @click="start">{{ $t("jung_test") }}</button>
+                </select>
+            </div><br><br> -->
+
+            <!-- <button type="button" :class="bclass" @mouseover="transbutton" @mouseleave="outbutton" @click="start">{{
+                $t("jung_test") }}</button> -->
             <!-- <button @click="test">test</button> -->
-            <h3 class="start_dec">{{ $t("jung_dec") }}</h3>
-            <button type="button" :class="eclass" @click="estart">{{ $t("ennegram_test") }}</button>
+            <!-- <h3 class="start_dec">{{ $t("jung_dec") }}</h3>
+            <button type="button" :class="eclass" @click="estart">{{ $t("ennegram_test") }}</button> -->
             <!-- <button @click="etest">etest</button> -->
-            <h3>{{ $t("read_pls") }}</h3>
-            <h4 class="start_dec">{{ $t("start_dec_text") }}</h4>
+            <h3 class="text-danger">{{ $t("read_pls") }}</h3>
+            <h5 class="start_dec">{{ $t("start_dec_text") }}</h5>
         </div>
         <div v-else-if="result_page">
             <h3>{{ $t("you_may") }}</h3>
             <div class="result_class">
                 {{ result }}
             </div>
-            <div class="result_text_class">
+            <div class="result_text_class container">
                 <p>{{ $t("title_result") }}</p>
-                <p>{{ $t(result_text) }}</p>
-                <p>{{ $t(result_text_last) }}</p>
-                <p>{{ $t("value_result") }}</p>
-                <p>{{ $t("eight_type") }}</p>
-                <p class="result_progress">
-                    <span>Ti:</span>
-                    <progress :value="user_data.ti" max="100" class="T_bar"></progress>
-                    {{ user_data.ti }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>Te:</span>
-                    <progress :value="user_data.te" max="100" class="T_bar"></progress>
-                    {{ user_data.te }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>Fi:</span>
-                    <progress :value="user_data.fi" max="100" class="F_bar"></progress>
-                    {{ user_data.fi }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>Fe:</span>
-                    <progress :value="user_data.fe" max="100" class="F_bar"></progress>
-                    {{ user_data.fe }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>Si:</span>
-                    <progress :value="user_data.si" max="100" class="S_bar"></progress>
-                    {{ user_data.si }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>Se:</span>
-                    <progress :value="user_data.se" max="100" class="S_bar"></progress>
-                    {{ user_data.se }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>Ni:</span>
-                    <progress :value="user_data.ni" max="100" class="N_bar"></progress>
-                    {{ user_data.ni }} <br>
-                </p>
-                <p class="result_progress">
-                    <span>Ne:</span>
-                    <progress :value="user_data.ne" max="100" class="N_bar"></progress>
-                    {{ user_data.ne }}<br>
-                </p>
-                <p>{{ $t("trovet") }}</p>
-                <p class="result_progress">
-                    <span>I:</span>
-                    <progress :value="user_data.I" max="100" class="I_bar"></progress>
-                    {{ user_data.I }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>E:</span>
-                    <progress :value="user_data.E" max="100" class="E_bar"></progress>
-                    {{ user_data.E }}<br>
-                </p>
-                <p>{{ $t("four_function") }}</p>
-                <p class="result_progress">
-                    <span>T:</span>
-                    <progress :value="user_data.T" max="100" class="T_bar"></progress>
-                    {{ user_data.T }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>F:</span>
-                    <progress :value="user_data.F" max="100" class="F_bar"></progress>
-                    {{ user_data.F }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>S:</span>
-                    <progress :value="user_data.S" max="100" class="S_bar"></progress>
-                    {{ user_data.S }}<br>
-                </p>
-                <p class="result_progress">
-                    <span>N:</span>
-                    <progress :value="user_data.N" max="100" class="N_bar"></progress>
-                    {{ user_data.N }}
-                </p>
-                <table>
-                    <tr>
-                        <h2>
-                            {{ $t("maybe_character") }}
-                        </h2>
-                        <h3>{{ $t("maybe_character_dec") }}</h3>
-                    </tr>
-                    <tr>
-                        <td v-html="img1"></td>
-                    </tr>
-                    <tr>
-                        <td>
+                <p class="text-center">{{ $t(result_text) }}</p>
+                <p class="text-center">{{ $t(result_text_last) }}</p>
+                <div class="row">
+                    <p>{{ $t("value_result") }}</p>
+                    <div class="col-12 col-md-6">
+                        <p>{{ $t("eight_type") }}</p>
+                        <p class="result_progress">
+                            <span>Ti:</span>
+                            <progress :value="user_data.ti" max="100" class="T_bar"></progress>
+                            {{ user_data.ti }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>Te:</span>
+                            <progress :value="user_data.te" max="100" class="T_bar"></progress>
+                            {{ user_data.te }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>Fi:</span>
+                            <progress :value="user_data.fi" max="100" class="F_bar"></progress>
+                            {{ user_data.fi }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>Fe:</span>
+                            <progress :value="user_data.fe" max="100" class="F_bar"></progress>
+                            {{ user_data.fe }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>Si:</span>
+                            <progress :value="user_data.si" max="100" class="S_bar"></progress>
+                            {{ user_data.si }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>Se:</span>
+                            <progress :value="user_data.se" max="100" class="S_bar"></progress>
+                            {{ user_data.se }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>Ni:</span>
+                            <progress :value="user_data.ni" max="100" class="N_bar"></progress>
+                            {{ user_data.ni }} <br>
+                        </p>
+                        <p class="result_progress">
+                            <span>Ne:</span>
+                            <progress :value="user_data.ne" max="100" class="N_bar"></progress>
+                            {{ user_data.ne }}<br>
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <p>{{ $t("trovet") }}</p>
+                        <p class="result_progress">
+                            <span>I:</span>
+                            <progress :value="user_data.I" max="100" class="I_bar"></progress>
+                            {{ user_data.I }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>E:</span>
+                            <progress :value="user_data.E" max="100" class="E_bar"></progress>
+                            {{ user_data.E }}<br>
+                        </p>
+                        <p>{{ $t("four_function") }}</p>
+                        <p class="result_progress">
+                            <span>T:</span>
+                            <progress :value="user_data.T" max="100" class="T_bar"></progress>
+                            {{ user_data.T }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>F:</span>
+                            <progress :value="user_data.F" max="100" class="F_bar"></progress>
+                            {{ user_data.F }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>S:</span>
+                            <progress :value="user_data.S" max="100" class="S_bar"></progress>
+                            {{ user_data.S }}<br>
+                        </p>
+                        <p class="result_progress">
+                            <span>N:</span>
+                            <progress :value="user_data.N" max="100" class="N_bar"></progress>
+                            {{ user_data.N }}
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <h2>
+                        {{ $t("maybe_character") }}
+                    </h2>
+                    <h5>{{ $t("maybe_character_dec") }}</h5>
+                    <div class="col-12 col-md-4">
+                        <div v-html="img1"></div>
+                        <div>
                             {{ $t(C1) }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td v-html="img2"></td>
-                    </tr>
-                    <tr>
-                        <td>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div v-html="img2"></div>
+                        <div>
                             {{ $t(C2) }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td v-html="img3"></td>
-                    </tr>
-                    <tr>
-                        <td>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div v-html="img3"></div>
+                        <div>
                             {{ $t(C3) }}
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </div>
         <div v-else-if="enneagram_question" class="q_selection">
@@ -161,138 +239,144 @@
                 <p v-if="enneagram_num < enneagram_q_num" v-text="$t(question_enneagram)" class="q_text"></p>
                 <p v-else v-text="$t('what_statue')" class="q_text"></p>
             </div>
-            <div  v-for="answer in answer_enneagram">
-                <button :class=answer.color @click="eanswer(answer.type,answer.value)">{{ $t(answer.text) }}</button>
+            <div v-for="answer in answer_enneagram">
+                <button :class=answer.color @click="eanswer(answer.type,answer.value)">{{ $t(answer.text)
+                    }}</button>
             </div>
         </div>
         <div v-else-if="enneagram_result">
-            <div class="result_text_class">
-                <h3>{{ $t("you_may") }}</h3>
-                <div class="result_class">
-                    {{ enneagram_test_result }}
-                </div>
-                <div class="result_class">
-                    {{ $t(sin) }}
-                </div>
-                <div class="trifix_class">
-                    {{ $t("result_trifix")}}{{ trifix }}
-                </div>
-                <div class="result_class">
-                    {{ $t(enneagram_keyword) }}
-                </div>
-                <div v-if="e_maybe[0]">
-                    <div class="result_class">
-                        {{ $t("also_maybe")}}
+            <div class="result_text_class container">
+                <div class="row">
+                    <h3>{{ $t("you_may") }}</h3>
+
+                    <div class="result_class col-12">
+                        {{ enneagram_test_result }} {{ $t(sin) }}<br>
                     </div>
-                    <button v-for="(maybetype,i) in e_maybe" class= maybe_button @click="emayberesult(maybetype,i)">{{ maybetype }}{{ $t("ennetype") }}</button>
+                    <div class="col-12 fs-4">
+                        {{ $t("result_trifix")}}{{ trifix }}<br>{{$t(enneagram_keyword) }}<br>
+                    </div>
+                    <p>{{ $t("title_result") }}</p>
+                    <p v-html="$t(enneagram_result_dec)"></p>
+                    <div class="col-12 col-md-6">
+                        <div v-if="e_maybe[0]">
+                            <div class="result_class col-12">
+                                {{ $t("also_maybe")}}<br>
+                            </div>
+                            <button v-for="(maybetype,i) in e_maybe" class="maybe_button col-6 col-md-3"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title=""
+                                @click="emayberesult(maybetype,i)">{{maybetype }}{{ $t("ennetype") }}</button>
+                        </div>
+                        <p><br>{{ $t("value_result") }}</p>
+                        <div class="result_value">
+                            <p>{{ $t("Heart_value") }}</p>
+                            <p class="result_progress">
+                                <span>2:</span>
+                                <progress :value="enneagram_data.II" max="100" class="F_bar"></progress>
+                                {{ enneagram_data.II }}<br>
+                            </p>
+                            <p class="result_progress">
+                                <span>3:</span>
+                                <progress :value="enneagram_data.III" max="100" class="F_bar"></progress>
+                                {{ enneagram_data.III }}<br>
+                            </p>
+                            <p class="result_progress">
+                                <span>4:</span>
+                                <progress :value="enneagram_data.IV" max="100" class="F_bar"></progress>
+                                {{ enneagram_data.IV }}<br>
+                            </p>
+                            <p>{{ $t("Head_value") }}</p>
+                            <p class="result_progress">
+                                <span>5:</span>
+                                <progress :value="enneagram_data.V" max="100" class="T_bar"></progress>
+                                {{ enneagram_data.V }}<br>
+                            </p class="result_progress">
+                            <p class="result_progress">
+                                <span>6:</span>
+                                <progress :value="enneagram_data.VI" max="100" class="T_bar"></progress>
+                                {{ enneagram_data.VI }}<br>
+                            </p>
+                            <p class="result_progress">
+                                <span>7:</span>
+                                <progress :value="enneagram_data.VII" max="100" class="T_bar"></progress>
+                                {{ enneagram_data.VII }}<br>
+                            </p>
+                            <p>{{ $t("Gut_value") }}</p>
+                            <p class="result_progress">
+                                <span>8:</span>
+                                <progress :value="enneagram_data.VIII" max="100" class="N_bar"></progress>
+                                {{ enneagram_data.VIII }}<br>
+                            </p>
+                            <p class="result_progress">
+                                <span>9:</span>
+                                <progress :value="enneagram_data.IX" max="100" class="N_bar"></progress>
+                                {{ enneagram_data.IX }}<br>
+                            </p>
+                            <p class="result_progress">
+                                <span>1:</span>
+                                <progress :value="enneagram_data.I" max="100" class="N_bar"></progress>
+                                {{ enneagram_data.I }}<br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <table>
+                            <tr>
+                                <h2>
+                                    {{ $t("maybe_character") }}
+                                </h2>
+                            </tr>
+                            <tr>
+                                <td v-html="img1"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {{ $t(C1) }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_text">
+                                    {{ $t(C1text) }}
+                                </td>
+                            </tr>
+                            <tr v-if="C2">
+                                <td v-html="img2"></td>
+                            </tr>
+                            <tr v-if="C2">
+                                <td>
+                                    {{ $t(C2) }}
+                                </td>
+                            </tr>
+                            <tr v-if="C2">
+                                <td class="td_text">
+                                    {{ $t(C2text) }}
+                                </td>
+                            </tr>
+                            <tr v-if="C3">
+                                <td v-html="img3"></td>
+                            </tr>
+                            <tr v-if="C3">
+                                <td>
+                                    {{ $t(C3) }}
+                                </td>
+                            </tr>
+                            <tr v-if="C3">
+                                <td class="td_text">
+                                    {{ $t(C3text) }}
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                    <td v-html="img3"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ C3 }}
+                                    </td>
+                                </tr> -->
+                        </table>
+                    </div>
                 </div>
-                <p>{{ $t("title_result") }}</p>
-                <p v-html="$t(enneagram_result_dec)"></p>
-                <p>{{ $t("value_result") }}</p>
-                <div class="result_value">
-                    <p>{{ $t("Heart_value") }}</p>
-                    <p class="result_progress">
-                        <span>2:</span>
-                        <progress :value="enneagram_data.II" max="100" class="F_bar"></progress>
-                        {{ enneagram_data.II }}<br>
-                    </p>
-                    <p class="result_progress">
-                        <span>3:</span>
-                        <progress :value="enneagram_data.III" max="100" class="F_bar"></progress>
-                        {{ enneagram_data.III }}<br>
-                    </p>
-                    <p class="result_progress">
-                        <span>4:</span>
-                        <progress :value="enneagram_data.IV" max="100" class="F_bar"></progress>
-                        {{ enneagram_data.IV }}<br>
-                    </p>
-                    <p>{{ $t("Head_value") }}</p>
-                    <p class="result_progress">
-                        <span>5:</span>
-                        <progress :value="enneagram_data.V" max="100" class="T_bar"></progress>
-                        {{ enneagram_data.V }}<br>
-                    </p class="result_progress">
-                    <p class="result_progress">
-                        <span>6:</span>
-                        <progress :value="enneagram_data.VI" max="100" class="T_bar"></progress>
-                        {{ enneagram_data.VI }}<br>
-                    </p>
-                    <p class="result_progress">
-                        <span>7:</span>
-                        <progress :value="enneagram_data.VII" max="100" class="T_bar"></progress>
-                        {{ enneagram_data.VII }}<br>
-                    </p>
-                    <p>{{ $t("Gut_value") }}</p>
-                    <p class="result_progress">
-                        <span>8:</span>
-                        <progress :value="enneagram_data.VIII" max="100" class="N_bar"></progress>
-                        {{ enneagram_data.VIII }}<br>
-                    </p>
-                    <p class="result_progress">
-                        <span>9:</span>
-                        <progress :value="enneagram_data.IX" max="100" class="N_bar"></progress>
-                        {{ enneagram_data.IX }}<br>
-                    </p>
-                    <p class="result_progress">
-                        <span>1:</span>
-                        <progress :value="enneagram_data.I" max="100" class="N_bar"></progress>
-                        {{ enneagram_data.I }}<br>
-                    </p>
-                </div> 
-                <table>
-                    <tr>
-                        <h2>
-                            {{ $t("maybe_character") }}
-                        </h2>
-                    </tr>
-                    <tr>
-                        <td v-html="img1"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            {{ $t(C1) }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td_text">
-                            {{ $t(C1text) }}
-                        </td>
-                    </tr>
-                    <tr v-if="C2">
-                        <td v-html="img2"></td>
-                    </tr>
-                    <tr v-if="C2">
-                        <td>
-                            {{ $t(C2) }}
-                        </td>
-                    </tr>
-                    <tr v-if="C2">
-                        <td class="td_text">
-                            {{ $t(C2text) }}
-                        </td>
-                    </tr>
-                    <tr v-if="C3">
-                        <td v-html="img3"></td>
-                    </tr>
-                    <tr v-if="C3">
-                        <td>
-                            {{ $t(C3) }}
-                        </td>
-                    </tr>
-                    <tr v-if="C3">
-                        <td class="td_text">
-                            {{ $t(C3text) }}
-                        </td>
-                    </tr>
-                    <!-- <tr>
-                        <td v-html="img3"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            {{ C3 }}
-                        </td>
-                    </tr> -->
-                </table>
+
             </div>
         </div>
         <div v-else-if="no_result">
@@ -335,6 +419,9 @@
 
     <script type="module" src="vuescript.js"></script>
     <script type="module" src="vuei18n.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

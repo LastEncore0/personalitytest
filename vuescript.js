@@ -28,9 +28,9 @@ var app = createApp({
       result_text: '',
       result_text_last: '',
       enneagram_result_dec: '',
-      img1: "/01.png' alt='01 pic'>",
-      img2: "/02.png' alt='02 pic'>",
-      img3: "/03.png' alt='03 pic'>",
+      img1: "/01.png' class = 'rounded-circle' alt='01 pic'>",
+      img2: "/02.png' class = 'rounded-circle' alt='02 pic'>",
+      img3: "/03.png' class = 'rounded-circle' alt='03 pic'>",
       sound: new Audio('./sound/click.wav'),
       C1: '',
       C2: '',
@@ -540,13 +540,15 @@ var app = createApp({
     },
 
     etest: function () {
-      this.e_result_value = 8
-      this.enneagram_data.Instincts = 'Sx'
+      this.e_result_value = 3
+      this.enneagram_data.Instincts = 'So'
       this.enneagram_test_result =
         this.enneagram_data.Instincts + this.e_result_value
+      this.trifix = '548'
       this.e_maybe = [5, 3, 1, 7]
       var that = this
       get_e_result(this.enneagram_test_result, that)
+      this.enneagram_data.II = 60
       this.nostart = false
       this.enneagram_result = true
     },
