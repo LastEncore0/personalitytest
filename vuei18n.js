@@ -380,6 +380,7 @@ export var i18n = createI18n({
             Illiya_quote: "我明明，是为了复仇来的，而那个人却已经不在了，真是悲伤……",
             //6.6 update
             saya: "沙耶",
+            saya_quote: "",
             //8.15 update
             Iroha: "一色",
             Iroha_quote: "",
@@ -773,6 +774,9 @@ export var i18n = createI18n({
             Illiya_quote: "我明明，是為了報仇而來的，而那個人卻已經不在了，真是悲傷了...",
             //6.6 update
             saya: "沙耶",
+            //8.15 update
+            Iroha: "一色",
+            Iroha_quote: "",
         },
         jp: {
             test_title: '人格心理类型测试',
@@ -1148,6 +1152,9 @@ export var i18n = createI18n({
             Illiya_quote: "我明明，是为了复仇来的，而那个人却已经不在了，真是悲伤……",
             //6.6 update
             saya: "沙耶",
+            //8.15 update
+            Iroha: "一色",
+            Iroha_quote: "",
         },
         en: {
             test_title: 'Personality type Test',
