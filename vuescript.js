@@ -28,6 +28,21 @@ var app = createApp({
       result_text: '',
       result_text_last: '',
       enneagram_result_dec: '',
+      tibar: '',
+      tebar: '',
+      fibar: '',
+      febar: '',
+      nibar: '',
+      nebar: '',
+      sibar: '',
+      sebar: '',
+      Fbar: '',
+      Tbar: '',
+      Nbar: '',
+      Sbar: '',
+      Ibar: '',
+      Ebar: '',
+      testvalue: '34deg',
       img1: "/01.png' class = 'rounded-circle' alt='01 pic'>",
       img2: "/02.png' class = 'rounded-circle' alt='02 pic'>",
       img3: "/03.png' class = 'rounded-circle' alt='03 pic'>",
@@ -82,7 +97,32 @@ var app = createApp({
         VIII: 20,
         IX: 20,
       },
+      eleft: {
+        I: '0deg',
+        II: '0deg',
+        III: '0deg',
+        IV: '0deg',
+        V: '0deg',
+        VI: '0deg',
+        VII: '0deg',
+        VIII: '0deg',
+        IX: '0deg',
+      },
+      eright: {
+        I: '0deg',
+        II: '0deg',
+        III: '0deg',
+        IV: '0deg',
+        V: '0deg',
+        VI: '0deg',
+        VII: '0deg',
+        VIII: '0deg',
+        IX: '0deg',
+      },
     };
+  },
+  mounted() {
+
   },
   methods: {
     start: function () {
@@ -525,6 +565,7 @@ var app = createApp({
             this.enneagram_data.Instincts + maxenneagram[1]
           var that = this
           get_e_result(this.enneagram_test_result, that)
+          setvalue(this)
           this.enneagram_result = true
         }
       }
@@ -540,8 +581,8 @@ var app = createApp({
     },
 
     etest: function () {
-      this.e_result_value = 3
-      this.enneagram_data.Instincts = 'So'
+      this.e_result_value = 4
+      this.enneagram_data.Instincts = 'Sx'
       this.enneagram_test_result =
         this.enneagram_data.Instincts + this.e_result_value
       this.trifix = '548'
@@ -551,6 +592,7 @@ var app = createApp({
       this.enneagram_data.II = 60
       this.nostart = false
       this.enneagram_result = true
+      setvalue(this)
     },
     refresh: function () {
       location.reload()
@@ -559,7 +601,7 @@ var app = createApp({
       // this.no_result = true
       this.nostart = false
       this.result = 'Fe-N'
-      let result_check = ['Fe','N']
+      let result_check = ['Fe', 'N']
       this.result_text = result_check[0] + '_text'
       this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
       this.C1 = getcharacter(this.result) + '[0]'
@@ -569,7 +611,7 @@ var app = createApp({
       this.img2 = "<img src='./img/" + this.result + this.img2
       this.img3 = "<img src='./img/" + this.result + this.img3
       this.result_page = true
-      this.user_data.ti = 110
+      this.user_data.ti = 20
       this.user_data.te = 30
       this.user_data.fi = 20
       this.user_data.fe = 5
@@ -583,6 +625,7 @@ var app = createApp({
       this.user_data.S = 3
       this.user_data.I = 60
       this.user_data.E = 10
+      createbar(this)
     },
 
     answer: function (value) {
@@ -766,6 +809,7 @@ var app = createApp({
         this.result_text = result_check[0] + '_text'
         this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
         this.result_page = true
+        createbar(this)
       }
     },
     // expandbutton: function () {

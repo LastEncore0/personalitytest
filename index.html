@@ -43,7 +43,7 @@
                             <option value="hk">繁体中文/Traditional Chinese</option>
                         </select>
                         <li class="nav-item px-2">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.6.15.1</a>
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.6.19.0</a>
                         </li>
                     </ul>
                 </div>
@@ -124,82 +124,96 @@
                 <p class="text-center">{{ $t(result_text_last) }}</p>
                 <div class="row">
                     <p>{{ $t("value_result") }}</p>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 ">
                         <p>{{ $t("eight_type") }}</p>
-                        <p class="result_progress">
-                            <span>Ti:</span>
-                            <progress :value="user_data.ti" max="100" class="T_bar"></progress>
-                            {{ user_data.ti }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>Te:</span>
-                            <progress :value="user_data.te" max="100" class="T_bar"></progress>
-                            {{ user_data.te }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>Fi:</span>
-                            <progress :value="user_data.fi" max="100" class="F_bar"></progress>
-                            {{ user_data.fi }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>Fe:</span>
-                            <progress :value="user_data.fe" max="100" class="F_bar"></progress>
-                            {{ user_data.fe }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>Si:</span>
-                            <progress :value="user_data.si" max="100" class="S_bar"></progress>
-                            {{ user_data.si }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>Se:</span>
-                            <progress :value="user_data.se" max="100" class="S_bar"></progress>
-                            {{ user_data.se }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>Ni:</span>
-                            <progress :value="user_data.ni" max="100" class="N_bar"></progress>
-                            {{ user_data.ni }} <br>
-                        </p>
-                        <p class="result_progress">
-                            <span>Ne:</span>
-                            <progress :value="user_data.ne" max="100" class="N_bar"></progress>
-                            {{ user_data.ne }}<br>
-                        </p>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Ti:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="tibar">
+                            </div>
+                            <span class="col-1">{{ user_data.ti }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Te:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="tebar">
+                            </div>
+                            <span class="col-1">{{ user_data.te }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Fi:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="fibar">
+                            </div>
+                            <span class="col-1">{{ user_data.fi }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Fe:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="febar">
+                            </div>
+                            <span class="col-1">{{ user_data.fe }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Si:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="sibar">
+                            </div>
+                            <span class="col-1">{{ user_data.si }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Se:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="sebar">
+                            </div>
+                            <span class="col-1">{{ user_data.se }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Ni:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="nibar">
+                            </div>
+                            <span class="col-1">{{ user_data.ni }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1 p-1">Ne:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="nebar">
+                            </div>
+                            <span class="col-1">{{ user_data.ne }}</span>          
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <p>{{ $t("trovet") }}</p>
-                        <p class="result_progress">
-                            <span>I:</span>
-                            <progress :value="user_data.I" max="100" class="I_bar"></progress>
-                            {{ user_data.I }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>E:</span>
-                            <progress :value="user_data.E" max="100" class="E_bar"></progress>
-                            {{ user_data.E }}<br>
-                        </p>
+                        <div class="result_progress row p-2">
+                            <span class="col-1">I:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="Ibar">
+                            </div>
+                            <span class="col-1">{{ user_data.I }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1">E:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="Ebar">
+                            </div>
+                            <span class="col-1">{{ user_data.E }}</span>          
+                        </div>
                         <p>{{ $t("four_function") }}</p>
-                        <p class="result_progress">
-                            <span>T:</span>
-                            <progress :value="user_data.T" max="100" class="T_bar"></progress>
-                            {{ user_data.T }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>F:</span>
-                            <progress :value="user_data.F" max="100" class="F_bar"></progress>
-                            {{ user_data.F }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>S:</span>
-                            <progress :value="user_data.S" max="100" class="S_bar"></progress>
-                            {{ user_data.S }}<br>
-                        </p>
-                        <p class="result_progress">
-                            <span>N:</span>
-                            <progress :value="user_data.N" max="100" class="N_bar"></progress>
-                            {{ user_data.N }}
-                        </p>
+                        <div class="result_progress row p-2">
+                            <span class="col-1">T:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="Tbar">
+                            </div>
+                            <span class="col-1">{{ user_data.T }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1">F:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="Fbar">
+                            </div>
+                            <span class="col-1">{{ user_data.F }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1">S:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="Sbar">
+                            </div>
+                            <span class="col-1">{{ user_data.S }}</span>          
+                        </div>
+                        <div class="result_progress row p-2">
+                            <span class="col-1">N:</span>
+                            <div class="progress col-10 p-0 align-self-center" v-html="Nbar">
+                            </div>
+                            <span class="col-1">{{ user_data.N }}</span>          
+                        </div>
                     </div>
 
                 </div>
@@ -266,8 +280,120 @@
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" title=""
                                 @click="emayberesult(maybetype,i)">{{maybetype }}{{ $t("ennetype") }}</button>
                         </div>
-                        <p><br>{{ $t("value_result") }}</p>
-                        <div class="result_value">
+                        <p class="fs-4"><br>{{ $t("value_result") }}</p> 
+                        <div class="enimg result_value">
+                            <div class="IIposition">
+                                <div class="c_progress II">
+                                    <span class="c_progress-left II">
+                                                      <span class="c_progress-bar II" :style="{'--eleftII': eleft.II}"></span>
+                                    </span>
+                                    <span class="c_progress-right II">
+                                                      <span class="c_progress-bar II" :style="{'--erightII': eright.II}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.II }}</div>
+                                </div>
+                                <p class="e_toolitop heart badge text-wrap">2 {{ $t("pride") }}</p>
+                            </div>
+                            <div class="IIIposition">
+                                <div class="c_progress III">
+                                    <span class="c_progress-left III">
+                                                      <span class="c_progress-bar III" :style="{'--eleftIII': eleft.III}"></span>
+                                    </span>
+                                    <span class="c_progress-right III">
+                                                      <span class="c_progress-bar III" :style="{'--erightIII': eright.III}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.III }}</div>
+                                </div>
+                                <p class="e_toolitop heart badge text-wrap">3 {{ $t("vanity") }}</p>
+                            </div>    
+                            <div class="IVposition">
+                                <div class="c_progress IV">
+                                    <span class="c_progress-left IV">
+                                                      <span class="c_progress-bar IV" :style="{'--eleftIV': eleft.IV}"></span>
+                                    </span>
+                                    <span class="c_progress-right IV">
+                                                      <span class="c_progress-bar IV" :style="{'--erightIV': eright.IV}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.IV }}</div>
+                                </div>
+                                <p class="e_toolitop heart badge text-wrap">4 {{ $t("envy") }}</p>
+                            </div>
+                            <div class="Vposition">
+                                <div class="c_progress V">
+                                    <span class="c_progress-left V">
+                                                      <span class="c_progress-bar V" :style="{'--eleftV': eleft.V}"></span>
+                                    </span>
+                                    <span class="c_progress-right V">
+                                                      <span class="c_progress-bar V" :style="{'--erightV': eright.V}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.V }}</div>
+                                </div>
+                                <p class="e_toolitop head badge text-wrap">5 {{ $t("avarice") }}</p>
+                            </div>
+                            <div class="VIposition">
+                                <div class="c_progress VI">
+                                    <span class="c_progress-left VI">
+                                                      <span class="c_progress-bar VI" :style="{'--eleftVI': eleft.VI}"></span>
+                                    </span>
+                                    <span class="c_progress-right VI">
+                                                      <span class="c_progress-bar VI" :style="{'--erightVI': eright.VI}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.VI }}</div>
+                                </div>
+                                <p class="e_toolitop head badge text-wrap">6 {{ $t("cowardice") }}</p>
+                            </div>    
+                            <div class="VIIposition">
+                                <div class="c_progress VII">
+                                    <span class="c_progress-left VII">
+                                                      <span class="c_progress-bar VII" :style="{'--eleftVII': eleft.VII}"></span>
+                                    </span>
+                                    <span class="c_progress-right VII">
+                                                      <span class="c_progress-bar VII" :style="{'--erightVII': eright.VII}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.VII }}</div>
+                                </div>
+                                <p class="e_toolitop head badge text-wrap">7 {{ $t("gluttony") }}</p>
+                            </div> 
+                            <div class="VIIIposition">
+                                <div class="c_progress VIII">
+                                    <span class="c_progress-left VIII">
+                                                      <span class="c_progress-bar VIII" :style="{'--eleftVIII': eleft.VIII}"></span>
+                                    </span>
+                                    <span class="c_progress-right VIII">
+                                                      <span class="c_progress-bar VIII" :style="{'--erightVIII': eright.VIII}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.VIII }}</div>
+                                </div>
+                                <p class="e_toolitop gut badge text-wrap">8 {{ $t("lust") }}</p>
+                            </div>
+                            <div class="IXposition">
+                                <div class="c_progress IX">
+                                    <span class="c_progress-left IX">
+                                                      <span class="c_progress-bar IX" :style="{'--eleftIX': eleft.IX}"></span>
+                                    </span>
+                                    <span class="c_progress-right IX">
+                                                      <span class="c_progress-bar IX" :style="{'--erightIX': eright.IX}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.IX }}</div>
+                                </div>
+                                <p class="e_toolitop gut badge text-wrap">9 {{ $t("indolence") }}</p>
+                            </div>    
+                            <div class="Iposition">
+                                <div class="c_progress I">
+                                    <span class="c_progress-left I">
+                                                      <span class="c_progress-bar IV" :style="{'--eleftI': eleft.I}"></span>
+                                    </span>
+                                    <span class="c_progress-right I">
+                                                      <span class="c_progress-bar IV" :style="{'--erightI': eright.I}"></span>
+                                    </span>
+                                    <div class="c_progress-value">{{ enneagram_data.I }}</div>
+                                </div>
+                                <p class="e_toolitop gut badge text-wrap">1 {{ $t("anger") }}</p>
+                            </div>  
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>                     
+                        </div>
+                        
+                        <!-- <div class="result_value">
                             <p>{{ $t("Heart_value") }}</p>
                             <p class="result_progress">
                                 <span>2:</span>
@@ -316,10 +442,11 @@
                                 <progress :value="enneagram_data.I" max="100" class="N_bar"></progress>
                                 {{ enneagram_data.I }}<br>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="col-12 col-md-6">
+                        <br> 
                         <table>
                             <tr>
                                 <h2>
