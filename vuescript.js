@@ -42,7 +42,6 @@ var app = createApp({
       Sbar: '',
       Ibar: '',
       Ebar: '',
-      testvalue: '34deg',
       img1: "/01.png' class = 'rounded-circle' alt='01 pic'>",
       img2: "/02.png' class = 'rounded-circle' alt='02 pic'>",
       img3: "/03.png' class = 'rounded-circle' alt='03 pic'>",
