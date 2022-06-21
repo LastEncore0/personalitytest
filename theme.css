@@ -274,7 +274,8 @@ progress::-webkit-progress-bar {
   background-color: rgba(52, 184, 58, 0.89);
   text-align: center;
   height: 50px;
-  width: 400px;
+  max-width: 400px;
+  width: 80%;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -289,7 +290,8 @@ progress::-webkit-progress-bar {
   background-color: rgba(132, 240, 137, 0.89);
   text-align: center;
   height: 50px;
-  width: 400px;
+  max-width: 400px;
+  width: 80%;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -304,7 +306,8 @@ progress::-webkit-progress-bar {
   background-color: rgba(132, 217, 238, 0.89);
   text-align: center;
   height: 50px;
-  width: 400px;
+  max-width: 400px;
+  width: 80%;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -319,7 +322,8 @@ progress::-webkit-progress-bar {
   background-color: rgba(84, 86, 87, 0.89);
   text-align: center;
   height: 50px;
-  width: 400px;
+  max-width: 400px;
+  width: 80%;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -334,7 +338,8 @@ progress::-webkit-progress-bar {
   background-color: rgba(214, 30, 30, 0.89);
   text-align: center;
   height: 50px;
-  width: 400px;
+  max-width: 400px;
+  width: 80%;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -349,7 +354,8 @@ progress::-webkit-progress-bar {
   background-color: rgba(241, 93, 82, 0.89);
   text-align: center;
   height: 50px;
-  width: 400px;
+  max-width: 400px;
+  width: 80%;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
@@ -364,7 +370,8 @@ progress::-webkit-progress-bar {
   background-color: rgba(247, 186, 108, 0.89);
   text-align: center;
   height: 50px;
-  width: 400px;
+  max-width: 400px;
+  width: 80%;
   font-size: 2em;
   font-family: "Microsoft YaHei";
   font-weight: 600;
