@@ -519,7 +519,7 @@ progress::-webkit-progress-bar {
 }
 
 .enimg {
-  background-image: url('../img/enneagram_result.png'),url("../img/enneagram_result.jpg");
+  background-image: url('../img/enneagram_result.png'),url('https://sm.ms/image/sojh7WyRxmKcgdv');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
