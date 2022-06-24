@@ -186,7 +186,7 @@ function TestEnneagrama(Instincts, num) {
                 { text: "q7sos8", type: [8, ""], value: 10, color: "Igreen_answer" },
                 { text: "q7sos9", type: [9, ""], value: 10, color: "Igreen_answer" },
                 { text: "q7sos1", type: [1, ""], value: 10, color: "Igreen_answer" },
-                { text: " qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
+                { text: "qsall", type: [9, ""], value: 6, color: "Igreen_answer" },
             ]
         }
         if (Instincts == 'Sx') {
