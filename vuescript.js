@@ -120,8 +120,114 @@ var app = createApp({
       },
     };
   },
+  created() {
+    console.log('created');
+  },
   mounted() {
 
+    this.$nextTick(function () {
+      // 仅在整个视图都被渲染之后才会运行的代码
+      var query, querydata;
+      if (window.location.search) {
+        query = window.location.search.substring(1);
+        querydata = new URLSearchParams(query)
+
+        if (querydata.has("Instincts")) {
+          this.enneagram_data.Instincts = querydata.get("Instincts")
+        }
+        if (querydata.has("I")) {
+          this.enneagram_data.I = querydata.get("I")
+        }
+        if (querydata.has("II")) {
+          this.enneagram_data.II = querydata.get("II")
+        }
+        if (querydata.has("III")) {
+          this.enneagram_data.III = querydata.get("III")
+        }
+        if (querydata.has("IV")) {
+          this.enneagram_data.IV = querydata.get("IV")
+        }
+        if (querydata.has("V")) {
+          this.enneagram_data.V = querydata.get("V")
+        }
+        if (querydata.has("VI")) {
+          this.enneagram_data.VI = querydata.get("VI")
+        }
+        if (querydata.has("VII")) {
+          this.enneagram_data.VII = querydata.get("VII")
+        }
+        if (querydata.has("VIII")) {
+          this.enneagram_data.VIII = querydata.get("VIII")
+        }
+        if (querydata.has("IX")) {
+          this.enneagram_data.IX = querydata.get("IX")
+        }
+        if (querydata.has("e_result_value")) {
+          this.e_result_value = querydata.get("e_result_value")
+        }
+        if (querydata.has("trifix")) {
+          this.trifix = querydata.get("trifix")
+        }
+        if (querydata.has("e_maybe")) {
+          this.e_maybe = querydata.get("e_maybe")
+        }
+        if (querydata.get("statue") == "enneagram_result") {
+          if (this.enneagram_data.Instincts && this.e_result_value) {
+            this.enneagram_test_result = this.enneagram_data.Instincts + this.e_result_value
+            var that = this
+            get_e_result(this.enneagram_test_result, that)
+            setvalue(this)
+          }
+          this.nostart = false
+          this.enneagram_result = true
+        }
+        let dom = "Ti"
+        let aux = "N"
+        if (querydata.has("dom")) {
+          dom = querydata.get("dom")
+        }
+        if (querydata.has("aux")) {
+          aux = querydata.get("aux")
+        }
+        for (let key in this.user_data) {
+          if (querydata.has(key.toString())) {
+            this.user_data[key] = querydata.get(key.toString())
+          }
+        }
+        if (querydata.get("statue") == "result_page") {
+          this.result = dom + '-' + aux
+          this.result_text = dom + '_text'
+          this.result_text_last = dom + '_' + aux + '_text'
+          this.C1 = getcharacter(this.result) + '[0]'
+          this.C2 = getcharacter(this.result) + '[1]'
+          this.C3 = getcharacter(this.result) + '[2]'
+          this.img1 = "<img src='./img/" + this.result + this.img1
+          this.img2 = "<img src='./img/" + this.result + this.img2
+          this.img3 = "<img src='./img/" + this.result + this.img3
+          this.nostart = false
+          this.result_page = true
+          createbar(this)
+        }
+      }
+      else {
+        location.href = location.href + "?load"
+      }
+      // else {
+      //   console.log("no search")
+      // }
+
+
+    })
+  },
+  watch: {
+    '$i18n.locale'() {
+      //change url's language
+      var newlangurl = location.href
+      newlangurl.toString()
+      var start = newlangurl.search("lang=") + 5
+      var orglang = newlangurl.substr(start,2)
+      location.href = newlangurl.replace(orglang,this.$i18n.locale)
+    }
   },
   methods: {
     start: function () {
@@ -564,8 +670,15 @@ var app = createApp({
             this.enneagram_data.Instincts + maxenneagram[1]
           var that = this
           get_e_result(this.enneagram_test_result, that)
+          var newurl = location.href + "&" + "statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&IX=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
+          if (this.e_maybe) {
+            newurl += "&e_maybe="
+            for (let index = 0; index < this.e_maybe.length; index++) {
+              newurl += this.e_maybe[index]
+            }
+          }
+          location.href = newurl
           setvalue(this)
-          this.enneagram_result = true
         }
       }
       this.enneagram_num += 1
@@ -582,13 +695,20 @@ var app = createApp({
     etest: function () {
       this.e_result_value = 4
       this.enneagram_data.Instincts = 'Sx'
-      this.enneagram_test_result =
-        this.enneagram_data.Instincts + this.e_result_value
+      this.enneagram_test_result = this.enneagram_data.Instincts + this.e_result_value
       this.trifix = '548'
       this.e_maybe = [5, 3, 1, 7]
       var that = this
       get_e_result(this.enneagram_test_result, that)
       this.enneagram_data.II = 60
+      var newurl = location.href + "&statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&IX=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
+      if (this.e_maybe) {
+        newurl += "&e_maybe="
+        for (let index = 0; index < this.e_maybe.length; index++) {
+          newurl += this.e_maybe[index]
+        }
+      }
+      location.href = newurl
       this.nostart = false
       this.enneagram_result = true
       setvalue(this)
@@ -624,6 +744,13 @@ var app = createApp({
       this.user_data.S = 3
       this.user_data.I = 60
       this.user_data.E = 10
+      var newurl = location.href + ""
+      console.log("newurl")
+      newurl += "&statue=result_page" + "&dom=" + result_check[0] + "&aux=" + result_check[1]
+      for (let key in this.user_data) {
+        newurl += "&" + key + "=" + this.user_data[key]
+      }
+      location.href = newurl
       createbar(this)
     },
 
@@ -795,20 +922,28 @@ var app = createApp({
             this.no_result = true
           }
         }
-        var result1 = this.result + random_aux1
-        var result2 = this.result + random_aux2
-        var result3 = this.result + random_aux1
-        // console.log(result1, result2, result3)
-        this.img1 = "<img src='./img/" + result1 + this.img1
-        this.img2 = "<img src='./img/" + result2 + this.img2
-        this.img3 = "<img src='./img/" + result3 + this.img3
-        this.C1 = getcharacter(this.result) + '[0]'
-        this.C2 = getcharacter(this.result) + '[1]'
-        this.C3 = getcharacter(this.result) + '[2]'
-        this.result_text = result_check[0] + '_text'
-        this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
-        this.result_page = true
-        createbar(this)
+        if (this.no_result == false) {
+          var result1 = this.result + random_aux1
+          var result2 = this.result + random_aux2
+          var result3 = this.result + random_aux1
+          // console.log(result1, result2, result3)
+          this.img1 = "<img src='./img/" + result1 + this.img1
+          this.img2 = "<img src='./img/" + result2 + this.img2
+          this.img3 = "<img src='./img/" + result3 + this.img3
+          this.C1 = getcharacter(this.result) + '[0]'
+          this.C2 = getcharacter(this.result) + '[1]'
+          this.C3 = getcharacter(this.result) + '[2]'
+          this.result_text = result_check[0] + '_text'
+          this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
+          var newurl = location.href + "&" + "statue=result_page" + "&dom=" + result_check[0] + "&aux=" + result_check[1]
+          for (let key in this.user_data) {
+            newurl += "&" + key + "=" + this.user_data[key]
+          }
+          location.href = newurl
+          createbar(this)
+
+        }
+
       }
     },
     // expandbutton: function () {
@@ -830,4 +965,23 @@ var app = createApp({
 })
 
 app.use(i18n);
+var query, querydata;
+//set url's language
+if (window.location.search) {
+    query = window.location.search.substring(1);
+    querydata = new URLSearchParams(query)
+    var weblang = (navigator.language)?navigator.language:navigator.userLanguage
+    if (querydata.has("lang")) {
+        i18n.locale = querydata.get("lang")
+    }
+    else {
+      if (weblang=="zh-TW" || weblang=="zh-HK") {
+        location.href = location.href + "&lang=hk"
+      }
+      if (weblang=="zh-CN") {
+        location.href = location.href + "&lang=zh"
+      }
+    }
+
+}
 app.mount("#app");

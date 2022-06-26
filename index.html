@@ -17,9 +17,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/vue-i18n@9"></script>
-    <script src="pickRandom.js"></script>
+    <script src="mainscript.js"></script>
     <script src="cn_text.js"></script>
     <script src="cn_enneagram.js"></script>
+    <script src="jq.js"></script>
+    <script src="jquerytest.js"></script>
 
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient mb-4">
@@ -36,14 +38,14 @@
                             <a class="nav-link text-dark justify-content-center align-items-center" href="#">{{
                                 $t("Language_selection") }}</a>
                         </li>
-                        <select name="Language"
+                        <select name="Language" id="langselect" 
                             class="nav-item dropdown Language justify-content-center align-items-center"
                             v-model="$i18n.locale">
                             <option value="zh">简体中文/Simplifed Chinese</option>
                             <option value="hk">繁体中文/Traditional Chinese</option>
                         </select>
                         <li class="nav-item px-2">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.6.25.2</a>
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.6.27.0</a>
                         </li>
                     </ul>
                 </div>
@@ -53,7 +55,7 @@
 
         <div v-if="nostart" class="container">
             <p class="text-dark justify-content-center align-items-center d-md-none">{{ $t("Language_selection") }}</p>
-            <select name="Language" class="form-select Language justify-content-center align-items-center d-md-none"
+            <select name="Language" id="langselect" class="form-select Language justify-content-center align-items-center d-md-none"
                 v-model="$i18n.locale">
                 <option value="zh">简体中文/Simplifed Chinese</option>
                 <option value="hk">繁体中文/Traditional Chinese</option>
