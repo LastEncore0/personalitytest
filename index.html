@@ -26,27 +26,42 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient mb-4">
             <div class="container-fluid">
-                <a class="navbar-brand me-md-5 px-2" href="#">{{ $t("test_title") }}</a>
+                <a class="navbar-brand me-md-5 px-2" href="index.html">{{ $t("test_title") }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav col-md-3" v-if="nostart || result_page || enneagram_result">
+                    <ul class="navbar-nav col-md-7" v-if="nostart || result_page || enneagram_result">
                         <li class="nav-item justify-content-center align-items-center">
                             <a class="nav-link text-dark justify-content-center align-items-center" href="#">{{
                                 $t("Language_selection") }}</a>
                         </li>
-                        <select name="Language" id="langselect" 
+                        <select name="Language" id="langselect"
                             class="nav-item dropdown Language justify-content-center align-items-center"
                             v-model="$i18n.locale">
                             <option value="zh">简体中文/Simplifed Chinese</option>
                             <option value="hk">繁体中文/Traditional Chinese</option>
                         </select>
                     </ul>
-                    <div class="nav-item px-2">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.7.4.0</a>
+                    <div class="nav-item col-md-2 right">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.7.4.1</a>
+                    </div>
+                    <div class="nav-item col-md-1 right">
+                        <a href="https://github.com/LastEncore0/personalitytest" target="_blank"
+                            class="mdui-btn mdui-btn-icon waves-effect tooltipped" data-tooltip="Github Repository">
+                            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 36 36"
+                                enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon"
+                                style="width: 24px;height:24px;">
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#0e0a0a" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+         c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+         c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+         c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+         c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+         c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -55,8 +70,8 @@
 
         <div v-if="nostart" class="container">
             <p class="text-dark justify-content-center align-items-center d-md-none">{{ $t("Language_selection") }}</p>
-            <select name="Language" id="langselect" class="form-select Language justify-content-center align-items-center d-md-none"
-                v-model="$i18n.locale">
+            <select name="Language" id="langselect"
+                class="form-select Language justify-content-center align-items-center d-md-none" v-model="$i18n.locale">
                 <option value="zh">简体中文/Simplifed Chinese</option>
                 <option value="hk">繁体中文/Traditional Chinese</option>
             </select>
@@ -132,49 +147,49 @@
                             <span class="col-1 p-1">Ti:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="tibar">
                             </div>
-                            <span class="col-1">{{ user_data.ti }}</span>          
+                            <span class="col-1">{{ user_data.ti }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1 p-1">Te:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="tebar">
                             </div>
-                            <span class="col-1">{{ user_data.te }}</span>          
+                            <span class="col-1">{{ user_data.te }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1 p-1">Fi:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="fibar">
                             </div>
-                            <span class="col-1">{{ user_data.fi }}</span>          
+                            <span class="col-1">{{ user_data.fi }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1 p-1">Fe:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="febar">
                             </div>
-                            <span class="col-1">{{ user_data.fe }}</span>          
+                            <span class="col-1">{{ user_data.fe }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1 p-1">Si:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="sibar">
                             </div>
-                            <span class="col-1">{{ user_data.si }}</span>          
+                            <span class="col-1">{{ user_data.si }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1 p-1">Se:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="sebar">
                             </div>
-                            <span class="col-1">{{ user_data.se }}</span>          
+                            <span class="col-1">{{ user_data.se }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1 p-1">Ni:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="nibar">
                             </div>
-                            <span class="col-1">{{ user_data.ni }}</span>          
+                            <span class="col-1">{{ user_data.ni }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1 p-1">Ne:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="nebar">
                             </div>
-                            <span class="col-1">{{ user_data.ne }}</span>          
+                            <span class="col-1">{{ user_data.ne }}</span>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
@@ -183,38 +198,38 @@
                             <span class="col-1">I:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="Ibar">
                             </div>
-                            <span class="col-1">{{ user_data.I }}</span>          
+                            <span class="col-1">{{ user_data.I }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1">E:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="Ebar">
                             </div>
-                            <span class="col-1">{{ user_data.E }}</span>          
+                            <span class="col-1">{{ user_data.E }}</span>
                         </div>
                         <p>{{ $t("four_function") }}</p>
                         <div class="result_progress row p-2">
                             <span class="col-1">T:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="Tbar">
                             </div>
-                            <span class="col-1">{{ user_data.T }}</span>          
+                            <span class="col-1">{{ user_data.T }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1">F:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="Fbar">
                             </div>
-                            <span class="col-1">{{ user_data.F }}</span>          
+                            <span class="col-1">{{ user_data.F }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1">S:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="Sbar">
                             </div>
-                            <span class="col-1">{{ user_data.S }}</span>          
+                            <span class="col-1">{{ user_data.S }}</span>
                         </div>
                         <div class="result_progress row p-2">
                             <span class="col-1">N:</span>
                             <div class="progress col-10 p-0 align-self-center" v-html="Nbar">
                             </div>
-                            <span class="col-1">{{ user_data.N }}</span>          
+                            <span class="col-1">{{ user_data.N }}</span>
                         </div>
                     </div>
 
@@ -282,15 +297,15 @@
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" title=""
                                 @click="emayberesult(maybetype,i)">{{maybetype }}{{ $t("ennetype") }}</button>
                         </div>
-                        <p class="fs-4"><br>{{ $t("value_result") }}</p> 
+                        <p class="fs-4"><br>{{ $t("value_result") }}</p>
                         <div class="enimg result_value">
                             <div class="IIposition">
                                 <div class="c_progress II">
                                     <span class="c_progress-left II">
-                                                      <span class="c_progress-bar II" :style="{'--eleftII': eleft.II}"></span>
+                                        <span class="c_progress-bar II" :style="{'--eleftII': eleft.II}"></span>
                                     </span>
                                     <span class="c_progress-right II">
-                                                      <span class="c_progress-bar II" :style="{'--erightII': eright.II}"></span>
+                                        <span class="c_progress-bar II" :style="{'--erightII': eright.II}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.II }}</div>
                                 </div>
@@ -299,22 +314,22 @@
                             <div class="IIIposition">
                                 <div class="c_progress III">
                                     <span class="c_progress-left III">
-                                                      <span class="c_progress-bar III" :style="{'--eleftIII': eleft.III}"></span>
+                                        <span class="c_progress-bar III" :style="{'--eleftIII': eleft.III}"></span>
                                     </span>
                                     <span class="c_progress-right III">
-                                                      <span class="c_progress-bar III" :style="{'--erightIII': eright.III}"></span>
+                                        <span class="c_progress-bar III" :style="{'--erightIII': eright.III}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.III }}</div>
                                 </div>
                                 <p class="e_toolitop heart badge text-wrap">3 {{ $t("vanity") }}</p>
-                            </div>    
+                            </div>
                             <div class="IVposition">
                                 <div class="c_progress IV">
                                     <span class="c_progress-left IV">
-                                                      <span class="c_progress-bar IV" :style="{'--eleftIV': eleft.IV}"></span>
+                                        <span class="c_progress-bar IV" :style="{'--eleftIV': eleft.IV}"></span>
                                     </span>
                                     <span class="c_progress-right IV">
-                                                      <span class="c_progress-bar IV" :style="{'--erightIV': eright.IV}"></span>
+                                        <span class="c_progress-bar IV" :style="{'--erightIV': eright.IV}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.IV }}</div>
                                 </div>
@@ -323,10 +338,10 @@
                             <div class="Vposition">
                                 <div class="c_progress V">
                                     <span class="c_progress-left V">
-                                                      <span class="c_progress-bar V" :style="{'--eleftV': eleft.V}"></span>
+                                        <span class="c_progress-bar V" :style="{'--eleftV': eleft.V}"></span>
                                     </span>
                                     <span class="c_progress-right V">
-                                                      <span class="c_progress-bar V" :style="{'--erightV': eright.V}"></span>
+                                        <span class="c_progress-bar V" :style="{'--erightV': eright.V}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.V }}</div>
                                 </div>
@@ -335,34 +350,34 @@
                             <div class="VIposition">
                                 <div class="c_progress VI">
                                     <span class="c_progress-left VI">
-                                                      <span class="c_progress-bar VI" :style="{'--eleftVI': eleft.VI}"></span>
+                                        <span class="c_progress-bar VI" :style="{'--eleftVI': eleft.VI}"></span>
                                     </span>
                                     <span class="c_progress-right VI">
-                                                      <span class="c_progress-bar VI" :style="{'--erightVI': eright.VI}"></span>
+                                        <span class="c_progress-bar VI" :style="{'--erightVI': eright.VI}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.VI }}</div>
                                 </div>
                                 <p class="e_toolitop head badge text-wrap">6 {{ $t("cowardice") }}</p>
-                            </div>    
+                            </div>
                             <div class="VIIposition">
                                 <div class="c_progress VII">
                                     <span class="c_progress-left VII">
-                                                      <span class="c_progress-bar VII" :style="{'--eleftVII': eleft.VII}"></span>
+                                        <span class="c_progress-bar VII" :style="{'--eleftVII': eleft.VII}"></span>
                                     </span>
                                     <span class="c_progress-right VII">
-                                                      <span class="c_progress-bar VII" :style="{'--erightVII': eright.VII}"></span>
+                                        <span class="c_progress-bar VII" :style="{'--erightVII': eright.VII}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.VII }}</div>
                                 </div>
                                 <p class="e_toolitop head badge text-wrap">7 {{ $t("gluttony") }}</p>
-                            </div> 
+                            </div>
                             <div class="VIIIposition">
                                 <div class="c_progress VIII">
                                     <span class="c_progress-left VIII">
-                                                      <span class="c_progress-bar VIII" :style="{'--eleftVIII': eleft.VIII}"></span>
+                                        <span class="c_progress-bar VIII" :style="{'--eleftVIII': eleft.VIII}"></span>
                                     </span>
                                     <span class="c_progress-right VIII">
-                                                      <span class="c_progress-bar VIII" :style="{'--erightVIII': eright.VIII}"></span>
+                                        <span class="c_progress-bar VIII" :style="{'--erightVIII': eright.VIII}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.VIII }}</div>
                                 </div>
@@ -371,30 +386,30 @@
                             <div class="IXposition">
                                 <div class="c_progress IX">
                                     <span class="c_progress-left IX">
-                                                      <span class="c_progress-bar IX" :style="{'--eleftIX': eleft.IX}"></span>
+                                        <span class="c_progress-bar IX" :style="{'--eleftIX': eleft.IX}"></span>
                                     </span>
                                     <span class="c_progress-right IX">
-                                                      <span class="c_progress-bar IX" :style="{'--erightIX': eright.IX}"></span>
+                                        <span class="c_progress-bar IX" :style="{'--erightIX': eright.IX}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.IX }}</div>
                                 </div>
                                 <p class="e_toolitop gut badge text-wrap">9 {{ $t("indolence") }}</p>
-                            </div>    
+                            </div>
                             <div class="Iposition">
                                 <div class="c_progress I">
                                     <span class="c_progress-left I">
-                                                      <span class="c_progress-bar IV" :style="{'--eleftI': eleft.I}"></span>
+                                        <span class="c_progress-bar IV" :style="{'--eleftI': eleft.I}"></span>
                                     </span>
                                     <span class="c_progress-right I">
-                                                      <span class="c_progress-bar IV" :style="{'--erightI': eright.I}"></span>
+                                        <span class="c_progress-bar IV" :style="{'--erightI': eright.I}"></span>
                                     </span>
                                     <div class="c_progress-value">{{ enneagram_data.I }}</div>
                                 </div>
                                 <p class="e_toolitop gut badge text-wrap">1 {{ $t("anger") }}</p>
-                            </div>  
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>                     
+                            </div>
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         </div>
-                        
+
                         <!-- <div class="result_value">
                             <p>{{ $t("Heart_value") }}</p>
                             <p class="result_progress">
@@ -448,7 +463,7 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <br> 
+                        <br>
                         <table>
                             <tr>
                                 <h2>
