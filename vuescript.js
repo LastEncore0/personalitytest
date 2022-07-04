@@ -820,6 +820,7 @@ var app = createApp({
         var random_aux1 = ''
         var random_aux2 = ''
         var result_check = []
+        //GET the max value of introvet
         if (Ji && Pi) {
           maxi = calculatemax(Ji[0], Pi[0], Ji[1], Pi[1])
         } else if (Ji) {
@@ -827,6 +828,7 @@ var app = createApp({
         } else if (Pi) {
           maxi = Pi
         }
+        //GET the max value of extrovet
         if (Je && Pe) {
           maxe = calculatemax(Je[0], Pe[0], Je[1], Pe[1])
         } else if (Je) {
@@ -835,6 +837,7 @@ var app = createApp({
           maxe = Pe
         }
         console.log(trovet, P, J, Ji, Je, Pi, Pe)
+        //GET the final result
         if (trovet) {
           if (trovet[1] == 'e') {
             if (maxe) {
@@ -922,24 +925,31 @@ var app = createApp({
             this.no_result = true
           }
         }
+        // when get significant result type the result
         if (this.no_result == false) {
+          // type various results
           var result1 = this.result + random_aux1
           var result2 = this.result + random_aux2
           var result3 = this.result + random_aux1
           // console.log(result1, result2, result3)
+          // set the character's img
           this.img1 = "<img src='./img/" + result1 + this.img1
           this.img2 = "<img src='./img/" + result2 + this.img2
           this.img3 = "<img src='./img/" + result3 + this.img3
+          // set the character's name
           this.C1 = getcharacter(this.result) + '[0]'
           this.C2 = getcharacter(this.result) + '[1]'
           this.C3 = getcharacter(this.result) + '[2]'
+          // type result's dec
           this.result_text = result_check[0] + '_text'
           this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
+          // set result's url
           var newurl = location.href + "&" + "statue=result_page" + "&dom=" + result_check[0] + "&aux=" + result_check[1]
           for (let key in this.user_data) {
             newurl += "&" + key + "=" + this.user_data[key]
           }
           location.href = newurl
+          // set value for progess's bar
           createbar(this)
 
         }
