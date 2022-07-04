@@ -808,10 +808,10 @@ var app = createApp({
         // var maxi = ilist[0]
         // var maxe = elist[0]
 
-        //GET the significant result
+        //GET the significant result and match max value's keyword
         var trovet = calculatemax(E, I, 'e', 'i')
         var P = calculatemax(N, S, 'N', 'S')
-        var J = calculatemax(T, S, 'T', 'F')
+        var J = calculatemax(T, F, 'T', 'F')
         var Ji = calculatemax(ti, fi, 'Ti', 'Fi')
         var Je = calculatemax(te, fe, 'Te', 'Fe')
         var Pi = calculatemax(ni, si, 'Ni', 'Si')

@@ -33,7 +33,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav col-md-3">
+                    <ul class="navbar-nav col-md-3" v-if="nostart || result_page || enneagram_result">
                         <li class="nav-item justify-content-center align-items-center">
                             <a class="nav-link text-dark justify-content-center align-items-center" href="#">{{
                                 $t("Language_selection") }}</a>
@@ -44,10 +44,10 @@
                             <option value="zh">简体中文/Simplifed Chinese</option>
                             <option value="hk">繁体中文/Traditional Chinese</option>
                         </select>
-                        <li class="nav-item px-2">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.6.27.0</a>
-                        </li>
                     </ul>
+                    <div class="nav-item px-2">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2022.7.4.0</a>
+                    </div>
                 </div>
             </div>
         </nav>
