@@ -685,11 +685,36 @@ var app = createApp({
     },
 
     emayberesult: function (type, value) {
-      this.e_maybe[value] = this.e_result_value
+      console.log("type",type,"value",value,"emaybe:",this.e_maybe[value],"e_result_value:",this.e_result_value)
+      var newmaybe = ""
+      for (let index = 0; index < this.e_maybe.length; index++) {
+        if (index == value) {
+          newmaybe += this.e_result_value
+        }
+        else {
+          newmaybe += this.e_maybe[index]
+        }
+      }
+      console.log("newmaybe",newmaybe)
+      // this.e_maybe[value] = this.e_result_value
       this.e_result_value = type
+      // replaceParamVal("e_maybe",newmaybe)
+      
+      
       this.enneagram_test_result = this.enneagram_data.Instincts + type
       var that = this
       get_e_result(this.enneagram_test_result, that)
+      // replaceParamVal("e_result_value",type)
+      var oUrl = location.href.toString();
+      var re1=eval('/('+ "e_result_value"+'=)([^&]*)/gi');
+      var re2=eval('/('+ "e_maybe"+'=)([^&]*)/gi');
+      var oUrl2 = oUrl.replace(re1,"e_result_value"+'='+type);
+      this.location = oUrl2;
+      window.location.href=oUrl2;
+      var nUrl = oUrl2.replace(re2,"e_maybe"+'='+newmaybe);
+      this.location = nUrl;
+      window.location.href=nUrl;
+
     },
 
     etest: function () {

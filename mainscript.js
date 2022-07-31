@@ -152,6 +152,13 @@ function get_e_result(enneagram_test_result, that) {
     else {
         that.C3 = false
     }
+} 
+function replaceParamVal(paramName,replaceWith) {
+    var oUrl = this.location.href.toString();
+    var re=eval('/('+ paramName+'=)([^&]*)/gi');
+    var nUrl = oUrl.replace(re,paramName+'='+replaceWith);
+    this.location = nUrl;
+window.location.href=nUrl
 }
 // create for enneagarm progress-bar
 function createbar(that) {
