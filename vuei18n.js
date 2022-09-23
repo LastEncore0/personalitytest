@@ -221,7 +221,7 @@ export var i18n = createI18n({
             Character_Fi_S: ['路比', '不动明', '间桐樱'],
             Character_Fe_N: ['乔纳森·乔斯达', '巴麻美', '楯山文乃'],
             Character_Fe_S: ['结城明日奈', '春野樱', '渡边早季'],
-            Character_Si_T: ['吉良吉影', '阿尔托莉雅', '七海八千代'],
+            Character_Si_T: ['吉良吉影', '阿尔托莉雅', '御坂美琴'],
             Character_Si_F: ['休比·多拉', '黑桐干也', '立华奏'],
             Character_Se_T: ['佐仓杏子', '零二', '凯尼∙阿克曼'],
             Character_Se_F: ['鸣人', '卡卡罗特', '菜月昂'],
@@ -619,7 +619,7 @@ export var i18n = createI18n({
 
             Character_Fe_S: ['結城明日奈', '春野櫻', '渡邊早季'],
 
-            Character_Si_T: ['吉良吉影', '阿爾托莉雅', '七海八千代'],
+            Character_Si_T: ['吉良吉影', '阿爾托莉雅', '御坂美琴'],
 
             Character_Si_F: ['休比·朵拉', '黑桐幹也', '立華奏'],
             Character_Se_T: ['佐倉杏子', '零二', '凱尼∙阿克曼'],
@@ -1002,7 +1002,7 @@ export var i18n = createI18n({
             Character_Fi_S: ['路比', '不动明', '间桐樱'],
             Character_Fe_N: ['乔纳森·乔斯达', '巴麻美', '楯山文乃'],
             Character_Fe_S: ['结城明日奈', '春野樱', '渡边早季'],
-            Character_Si_T: ['吉良吉影', '阿尔托莉雅', '七海八千代'],
+            Character_Si_T: ['吉良吉影', '阿尔托莉雅', '御坂美琴'],
             Character_Si_F: ['休比·多拉', '黑桐干也', '立华奏'],
             Character_Se_T: ['佐仓杏子', '零二', '凯尼∙阿克曼'],
             Character_Se_F: ['鸣人', '卡卡罗特', '菜月昂'],
