@@ -744,8 +744,8 @@ var app = createApp({
     test: function () {
       // this.no_result = true
       this.nostart = false
-      this.result = 'Fe-N'
-      let result_check = ['Fe', 'N']
+      this.result = 'Ti-N'
+      let result_check = ['Ti', 'N']
       this.result_text = result_check[0] + '_text'
       this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
       this.C1 = getcharacter(this.result) + '[0]'
