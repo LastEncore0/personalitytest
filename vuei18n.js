@@ -788,8 +788,8 @@ export var i18n = createI18n({
             Iroha_quote: "",
         },
         jp: {
-            test_title: '人格心理类型测试',
-            restart_button: '重新测试',
+            test_title: '性格タイプテスト（無料）',
+            restart_button: 'もう一度',
             no_result_text: '你的结果没有意义',
             no_result_dec: '可以尝试尽可能避免选择中立选项重新测试，一般而言很少会出现这种情况',
             Question_1: '我在不知不觉中经常会陷入长时期沉浸式的思考，甚至会一度察觉不到周边的情况。',
