@@ -1016,6 +1016,9 @@ if (window.location.search) {
       if (weblang=="zh-CN") {
         location.href = location.href + "&lang=zh"
       }
+      if (weblang=="ja") {
+        location.href = location.href + "&lang=ja"
+      }
     }
 
 }
