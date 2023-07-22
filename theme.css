@@ -523,8 +523,8 @@ progress::-webkit-progress-bar {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  /* max-width: 600px;
-  max-height: 600px; */
+  width: 400px;
+  height: 400px;
   position:relative;
 }
 .IIposition {
@@ -536,7 +536,7 @@ progress::-webkit-progress-bar {
 }
 .IIIposition {
   position:absolute;
-  left:67%;
+  left:70%;
   top:58%;
   width: 20%;
   height: 20%;
@@ -550,36 +550,36 @@ progress::-webkit-progress-bar {
 }
 .Vposition {
   position:absolute;
-  left:30%;
+  left:25%;
   top:75%;
   width: 20%;
   height: 20%;
 }
 .VIposition {
   position:absolute;
-  left:18%;
+  left:2%;
   top:58%;
   width: 20%;
   height: 20%;
 }
 .VIIposition {
   position:absolute;
-  left:13%;
+  left:1%;
   top:33%;
   width: 20%;
   height: 20%;
 }
 .VIIIposition {
   position:absolute;
-  left:23%;
+  left:13%;
   top:7%;
   width: 20%;
   height: 20%;
 }
 .IXposition {
   position:absolute;
-  left:41%;
-  top:0%;
+  left:36%;
+  top:-1%;
   width: 20%;
   height: 20%;
 }
@@ -595,7 +595,7 @@ progress::-webkit-progress-bar {
   left:30%;
   top:100%;
 }
-@media (max-width: 575.98px)  { 
+ /* @media (max-width: 575.98px)  { 
   .e_toolitop {
     position:absolute;
     left:30%;
@@ -664,7 +664,7 @@ progress::-webkit-progress-bar {
     width: 20%;
     height: 20%;
   }
-}
+} 
 @media (min-width: 768px) and (max-width: 991.98px)  { 
   .e_toolitop {
     position:absolute;
@@ -734,7 +734,7 @@ progress::-webkit-progress-bar {
     width: 20%;
     height: 20%;
   }
-}
+} 
 @media (min-width: 991.98px) and (max-width: 1399.98px)  { 
   .IIposition {
     position:absolute;
@@ -804,7 +804,7 @@ progress::-webkit-progress-bar {
     left:30%;
     top:100%;
   }
-}
+} */
 
 .heart {
   background-color: #f11861;
