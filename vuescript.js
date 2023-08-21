@@ -1019,9 +1019,6 @@ if (window.location.search) {
       if (weblang=="ja") {
         location.href = location.href + "&lang=ja"
       }
-      if (weblang=="en") {
-        location.href = location.href + "&lang=en"
-      }
     }
 
 }
