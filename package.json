@@ -4,8 +4,12 @@
     "build": "npx vue-cli-service build"
   },
   "dependencies": {
-    "bootstrap": "^5.1.3",
+    "bootstrap": "^5.3.2",
     "vue-i18n": "^9.1.9",
     "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "vue-template-compiler": "^2.7.16"
   }
 }
