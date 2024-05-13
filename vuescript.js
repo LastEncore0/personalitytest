@@ -726,7 +726,7 @@ var app = createApp({
       var that = this
       get_e_result(this.enneagram_test_result, that)
       this.enneagram_data.II = 60
-      var newurl = location.href + "&statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&IX=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
+      var newurl = location.href + "&statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&VIII=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
       if (this.e_maybe) {
         newurl += "&e_maybe="
         for (let index = 0; index < this.e_maybe.length; index++) {
