@@ -45,7 +45,7 @@ var app = createApp({
       img1: "/01.png' class = 'rounded-circle' alt='01 pic'>",
       img2: "/02.png' class = 'rounded-circle' alt='02 pic'>",
       img3: "/03.png' class = 'rounded-circle' alt='03 pic'>",
-      sound: new Audio('./sound/click.wav'),
+      //sound: new Audio('./sound/click.wav'),
       C1: '',
       C2: '',
       C1text: '',
@@ -334,7 +334,7 @@ var app = createApp({
       }
       console.log(this.enneagram_data)
 
-      this.sound.play()
+      //this.sound.play()
       if (this.enneagram_data.Instincts == '') {
         if (TestInstinctsa(this.enneagram_num)) {
           this.question_enneagram = 'enneagram_question_list' + '[' + this.enneagram_num + ']'
@@ -783,7 +783,7 @@ var app = createApp({
       var current_question = this.question_data
       var current_key = this.question_key
       var list = this.Question_list
-      this.sound.play()
+      //this.sound.play()
       // calculate result
       this.user_data.ti += value * current_question.ti
       this.user_data.te += value * current_question.te

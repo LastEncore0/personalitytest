@@ -1,4 +1,6 @@
-body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family:myFont, LiHei Pro Medium,Microsoft YaHei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;} 
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans JP', 'Roboto', 'LiHei Pro Medium', 'Microsoft YaHei', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
 h1 {
   text-align: center;
   font-size: 3em;
@@ -7,6 +9,73 @@ h1 {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+}
+
+body {
+  background-color: #f5f5f5; /* 浅灰色 */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+}
+
+.card-container {
+  transform: scale(0.9); /* 缩放卡片到 70% */
+  transform-origin: top center; /* 缩放的参考点：顶部居中 */
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 400px; 
+  weight: 300px; 
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%; /* 让图片填满卡片高度 */
+  object-fit: cover; /* 确保图片比例不变 */
+}
+
+.card-body {
+  position: absolute;
+  bottom: 0; /* 定位在卡片底部 */
+  left: 0;
+  width: 100%;
+  height: 50%; /* 高度占卡片的 50% */
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+  color: black; /* 文字颜色 */
+  padding: 20px;
+  text-align: center;
+  display: flex; /* 使用 flexbox 布局 */
+  flex-direction: column; /* 垂直布局 */
+  justify-content: center; /* 垂直居中对齐 */
+  align-items: center; /* 水平居中对齐 */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: auto; /* 确保文字与按钮分隔 */
+  flex-grow: 1; /* 占据多余空间，避免影响按钮位置 */
+}
+
+.card-btn {
+  border-radius: 20px; /* 按钮圆角 */
+  transition: all 0.3s ease; /* 悬停效果 */
+  margin-top: auto; /* 保证按钮固定在底部 */
 }
 
 [v-cloak] {
@@ -63,7 +132,8 @@ progress::-webkit-progress-bar {
   text-align: center;
   margin: 0 auto;
 
-  width: 80%;
+  font-size: 12px;
+  width: 30%;
 }
 
 .start_button {
@@ -160,6 +230,8 @@ progress::-webkit-progress-bar {
   padding-bottom: 0.5cm;
   padding-top: 0.2cm;
 }
+
+
 .q_list_len {
   text-align: center;
   font-size: 1.5em;
@@ -204,14 +276,17 @@ progress::-webkit-progress-bar {
 }
 
 .q_text {
+  background-color: white;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   width: auto;
   max-width: 500px;
-  margin: 0 auto;
-  padding-bottom: 2cm;
-  padding-top: 1cm;
+  margin: 30px auto;
+  padding: 0.5cm 0.5cm 0.5cm 0.5cm;
+  border-radius: 25px; /* 圆角半径，让外框更圆润 */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* 添加浅灰色边框 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
 }
 
 .no_select_button {
@@ -275,7 +350,7 @@ progress::-webkit-progress-bar {
 }
 
 .more_yes {
-  background-color: rgba(52, 184, 58, 0.89);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 50px;
   max-width: 400px;
@@ -286,12 +361,12 @@ progress::-webkit-progress-bar {
   border-width: 0.1cm;
   border-radius: 15px;
   margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
+  border-color: rgba(8, 151, 15, 0.89);
+  color: rgba(8, 151, 15, 0.89);
 }
 
 .yes {
-  background-color: rgba(132, 240, 137, 0.89);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 50px;
   max-width: 400px;
@@ -302,12 +377,12 @@ progress::-webkit-progress-bar {
   border-width: 0.1cm;
   border-radius: 15px;
   margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
+  border-color: rgba(75, 247, 84, 0.89);
+  color: rgba(75, 247, 84, 0.89);
 }
 
 .little_yes {
-  background-color: rgba(132, 217, 238, 0.89);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 50px;
   max-width: 400px;
@@ -318,12 +393,12 @@ progress::-webkit-progress-bar {
   border-width: 0.1cm;
   border-radius: 15px;
   margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
+  border-color: rgba(132, 238, 132, 0.89);
+  color: rgba(132, 238, 132, 0.89);
 }
 
 .netural {
-  background-color: rgba(84, 86, 87, 0.89);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 50px;
   max-width: 400px;
@@ -334,12 +409,12 @@ progress::-webkit-progress-bar {
   border-width: 0.1cm;
   border-radius: 15px;
   margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
+  border-color: rgba(84, 86, 87, 0.89);
+  color: rgba(84, 86, 87, 0.89);
 }
 
 .more_no {
-  background-color: rgba(214, 30, 30, 0.89);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 50px;
   max-width: 400px;
@@ -350,12 +425,12 @@ progress::-webkit-progress-bar {
   border-width: 0.1cm;
   border-radius: 15px;
   margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
+  border-color: rgba(214, 30, 30, 0.89);
+  color: rgba(214, 30, 30, 0.89);
 }
 
 .no {
-  background-color: rgba(241, 93, 82, 0.89);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 50px;
   max-width: 400px;
@@ -366,12 +441,12 @@ progress::-webkit-progress-bar {
   border-width: 0.1cm;
   border-radius: 15px;
   margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
+  border-color: rgba(246, 55, 42, 0.89);
+  color: rgba(246, 55, 42, 0.89);
 }
 
 .little_no {
-  background-color: rgba(247, 186, 108, 0.89);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 50px;
   max-width: 400px;
@@ -382,8 +457,8 @@ progress::-webkit-progress-bar {
   border-width: 0.1cm;
   border-radius: 15px;
   margin: 1.5mm;
-  border-color: rgb(14, 34, 14);
-  color: black;
+  border-color: rgba(247, 108, 108, 0.89);
+  color: rgba(247, 108, 108, 0.89);
 }
 
 .S_bar {
@@ -515,6 +590,8 @@ progress::-webkit-progress-bar {
 
 .warning {
   color: rgb(230, 21, 21);
+  text-align: center;
+  width: 60%;
 }
 
 .p_question {
@@ -1022,31 +1099,52 @@ progress::-webkit-progress-bar {
   }
 
   .more_yes:hover {
-    transform: scale(1.2)
+    background-color: rgba(8, 151, 15, 0.89);
+    border-color: rgb(14, 34, 14);
+    color: black;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
   }
 
   .yes:hover {
-    transform: scale(1.2)
+    background-color: rgba(75, 247, 84, 0.89);
+    border-color: rgb(14, 34, 14);
+    color: black;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
   }
 
   .little_yes:hover {
-    transform: scale(1.2)
+    background-color: rgba(132, 238, 132, 0.89);
+    border-color: rgb(14, 34, 14);
+    color: black;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
   }
 
   .netural:hover {
-    transform: scale(1.2)
+    background-color: rgba(84, 86, 87, 0.89);
+    border-color: rgb(14, 34, 14);
+    color: black;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
   }
 
   .more_no:hover {
-    transform: scale(1.2)
+    background-color: rgba(214, 30, 30, 0.89);
+    border-color: rgb(14, 34, 14);
+    color: black;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
   }
   
 .no:hover {
-  transform: scale(1.2)
+  background-color: rgba(246, 55, 42, 0.89);
+  border-color: rgb(14, 34, 14);
+  color: black;
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
 }
 
 .little_no:hover {
-  transform: scale(1.2)
+  background-color: rgba(247, 108, 108, 0.89);
+  border-color: rgb(14, 34, 14);
+  color: black;
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease; 
 }
 
 }

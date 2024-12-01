@@ -11,10 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="theme.css">
+
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-i18n@9"></script>
     <script src="mainscript.js"></script>
@@ -22,6 +22,7 @@
     <script src="cn_enneagram.js"></script>
     <script src="jq.js"></script>
     <script src="jquerytest.js"></script>
+
 
     <div id="app" v-cloak>
         <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient mb-4">
@@ -48,7 +49,7 @@
                         </select>
                     </ul>
                     <div class="nav-item col-md-2 right">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2024.1.20.1</a>
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2024.12.1.0</a>
                     </div>
                     <div class="nav-item col-md-1 right">
                         <a href="https://github.com/LastEncore0/personalitytest" target="_blank"
@@ -79,42 +80,34 @@
                 <option value="ja">日本語/Japanese</option>
             </select>
             <form class="row row-cols-1 row-cols-md-2">
-                <div class="col">
+                <!-- jungs card -->
+                <div class="col card-container">
                     <div class="card mb-3 border-0">
-                        <div class="row g-0">
-                            <div class="col-md-4 h-75">
-                                <img src="img\enneagarm.png" class="card-img-top">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $t("ennegram_test") }}</h5>
-                                    <p class="card-text">{{ $t("ennegram_dec") }}</p>
-                                    <button type="button" class="btn btn-info btn-lg"
-                                        @click="estart">{{$t("start_test")}}</button>
-                                    <!-- <button @click="etest">etest</button> -->
-                                </div>
-                            </div>
+                        <img src="img/jungs.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $t("jung_test") }}</h5>
+                            <p class="card-text">{{ $t("jung_dec") }}</p>
+                            <button type="button" class="card-btn btn btn-info btn-lg" @click="start">{{
+                                $t("start_test")
+                                }}</button>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+
+                <!-- enneagarm card -->
+                <div class="col card-container">
                     <div class="card mb-3 border-0">
-                        <div class="row g-0">
-                            <div class="col-md-4 h-75">
-                                <img src="img\jungs.png" class="card-img-top">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $t("jung_test") }}</h5>
-                                    <p class="card-text">{{ $t("jung_dec") }}</p>
-                                    <button type="button" class="btn btn-info btn-lg"
-                                        @click="start">{{$t("start_test")}}</button>
-                                    <!-- <button @click="test">test</button> -->
-                                </div>
-                            </div>
+                        <img src="img/enneagarm.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $t("ennegram_test") }}</h5>
+                            <p class="card-text">{{ $t("ennegram_dec") }}</p>
+                            <button type="button" class="card-btn btn btn-info btn-lg" @click="estart">{{
+                                $t("start_test")
+                                }}</button>
                         </div>
                     </div>
                 </div>
+
             </form>
             <!-- <div>
                 <p>{{ $t("Language_selection") }}</p>
@@ -134,136 +127,136 @@
             <h5 class="start_dec">{{ $t("start_dec_text") }}</h5>
         </div>
         <div v-else-if="result_page">
-            <h3>{{ $t("you_may") }}</h3>
-            <div class="result_class">
-                {{ result }}
-            </div>
-            <div class="result_text_class container">
-                <p>{{ $t("title_result") }}</p>
-                <p class="text-center">{{ $t(result_text) }}</p>
-                <p class="text-center">{{ $t(result_text_last) }}</p>
-                <div class="row">
-                    <p>{{ $t("value_result") }}</p>
-                    <div class="col-12 col-md-6 ">
-                        <p>{{ $t("eight_type") }}</p>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Ti:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="tibar">
-                            </div>
-                            <span class="col-1">{{ user_data.ti }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Te:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="tebar">
-                            </div>
-                            <span class="col-1">{{ user_data.te }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Fi:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="fibar">
-                            </div>
-                            <span class="col-1">{{ user_data.fi }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Fe:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="febar">
-                            </div>
-                            <span class="col-1">{{ user_data.fe }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Si:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="sibar">
-                            </div>
-                            <span class="col-1">{{ user_data.si }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Se:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="sebar">
-                            </div>
-                            <span class="col-1">{{ user_data.se }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Ni:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="nibar">
-                            </div>
-                            <span class="col-1">{{ user_data.ni }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1 p-1">Ne:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="nebar">
-                            </div>
-                            <span class="col-1">{{ user_data.ne }}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <p>{{ $t("trovet") }}</p>
-                        <div class="result_progress row p-2">
-                            <span class="col-1">I:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="Ibar">
-                            </div>
-                            <span class="col-1">{{ user_data.I }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1">E:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="Ebar">
-                            </div>
-                            <span class="col-1">{{ user_data.E }}</span>
-                        </div>
-                        <p>{{ $t("four_function") }}</p>
-                        <div class="result_progress row p-2">
-                            <span class="col-1">T:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="Tbar">
-                            </div>
-                            <span class="col-1">{{ user_data.T }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1">F:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="Fbar">
-                            </div>
-                            <span class="col-1">{{ user_data.F }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1">S:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="Sbar">
-                            </div>
-                            <span class="col-1">{{ user_data.S }}</span>
-                        </div>
-                        <div class="result_progress row p-2">
-                            <span class="col-1">N:</span>
-                            <div class="progress col-10 p-0 align-self-center" v-html="Nbar">
-                            </div>
-                            <span class="col-1">{{ user_data.N }}</span>
-                        </div>
-                    </div>
-
+            <h5>{{ $t("you_may") }}</h3>
+                <div class="result_class">
+                    {{ result }}
                 </div>
-                <div class="row">
-                    <h2>
-                        {{ $t("maybe_character") }}
-                    </h2>
-                    <h5>{{ $t("maybe_character_dec") }}</h5>
-                    <div class="col-12 col-md-4">
-                        <div v-html="img1"></div>
-                        <div>
-                            {{ $t(C1) }}
+                <div class="result_text_class container">
+                    <p>{{ $t("title_result") }}</p>
+                    <p class="text-center">{{ $t(result_text) }}</p>
+                    <p class="text-center">{{ $t(result_text_last) }}</p>
+                    <div class="row">
+                        <p>{{ $t("value_result") }}</p>
+                        <div class="col-12 col-md-6 ">
+                            <p>{{ $t("eight_type") }}</p>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Ti:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="tibar">
+                                </div>
+                                <span class="col-1">{{ user_data.ti }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Te:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="tebar">
+                                </div>
+                                <span class="col-1">{{ user_data.te }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Fi:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="fibar">
+                                </div>
+                                <span class="col-1">{{ user_data.fi }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Fe:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="febar">
+                                </div>
+                                <span class="col-1">{{ user_data.fe }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Si:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="sibar">
+                                </div>
+                                <span class="col-1">{{ user_data.si }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Se:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="sebar">
+                                </div>
+                                <span class="col-1">{{ user_data.se }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Ni:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="nibar">
+                                </div>
+                                <span class="col-1">{{ user_data.ni }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1 p-1">Ne:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="nebar">
+                                </div>
+                                <span class="col-1">{{ user_data.ne }}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div v-html="img2"></div>
-                        <div>
-                            {{ $t(C2) }}
+                        <div class="col-12 col-md-6">
+                            <p>{{ $t("trovet") }}</p>
+                            <div class="result_progress row p-2">
+                                <span class="col-1">I:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="Ibar">
+                                </div>
+                                <span class="col-1">{{ user_data.I }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1">E:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="Ebar">
+                                </div>
+                                <span class="col-1">{{ user_data.E }}</span>
+                            </div>
+                            <p>{{ $t("four_function") }}</p>
+                            <div class="result_progress row p-2">
+                                <span class="col-1">T:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="Tbar">
+                                </div>
+                                <span class="col-1">{{ user_data.T }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1">F:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="Fbar">
+                                </div>
+                                <span class="col-1">{{ user_data.F }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1">S:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="Sbar">
+                                </div>
+                                <span class="col-1">{{ user_data.S }}</span>
+                            </div>
+                            <div class="result_progress row p-2">
+                                <span class="col-1">N:</span>
+                                <div class="progress col-10 p-0 align-self-center" v-html="Nbar">
+                                </div>
+                                <span class="col-1">{{ user_data.N }}</span>
+                            </div>
                         </div>
+
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div v-html="img3"></div>
-                        <div>
-                            {{ $t(C3) }}
+                    <div class="row">
+                        <h2>
+                            {{ $t("maybe_character") }}
+                        </h2>
+                        <h5>{{ $t("maybe_character_dec") }}</h5>
+                        <div class="col-12 col-md-4">
+                            <div v-html="img1"></div>
+                            <div>
+                                {{ $t(C1) }}
+                            </div>
                         </div>
-                    </div>
+                        <div class="col-12 col-md-4">
+                            <div v-html="img2"></div>
+                            <div>
+                                {{ $t(C2) }}
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div v-html="img3"></div>
+                            <div>
+                                {{ $t(C3) }}
+                            </div>
+                        </div>
 
 
+                    </div>
                 </div>
-            </div>
         </div>
         <div v-else-if="enneagram_question" class="q_selection">
             <!-- <div>
@@ -532,34 +525,39 @@
             <h4>{{ $t("no_result_dec") }}</h4>
         </div>
         <div v-else class="q_selection">
-            <div>
-                <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
+            <div class="q_text">
+                <div>
+                    <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
+                </div>
+                <div>
+                    <p v-text="$t(question_key)"></p>
+                </div>
             </div>
-            <div>
-                <p v-text="$t(question_key)" class="q_text"></p>
+            <div class="q_button">
+                <div>
+                    <button class="more_yes" @click="answer(3)">{{ $t("more_yes_text") }}</button>
+                </div>
+                <div>
+                    <button class="yes" @click="answer(2)">{{ $t("yes_text") }}</button>
+                </div>
+                <div>
+                    <button class="little_yes" @click="answer(1)">{{ $t("little_yes_text") }}</button>
+                </div>
+                <div>
+                    <button class="netural" @click="answer(0)">{{ $t("netural_text") }}</button>
+                </div>
+                <div>
+                    <button class="little_no" @click="answer(-1)">{{ $t("little_no_text") }}</button>
+                </div>
+                <div>
+                    <button class="no" @click="answer(-2)">{{ $t("no_text") }}</button>
+                </div>
+                <div>
+                    <button class="more_no" @click="answer(-3)">{{ $t("more_no_text") }}</button>
+                </div>
             </div>
-            <div>
-                <button class="more_yes" @click="answer(3)">{{ $t("more_yes_text") }}</button>
-            </div>
-            <div>
-                <button class="yes" @click="answer(2)">{{ $t("yes_text") }}</button>
-            </div>
-            <div>
-                <button class="little_yes" @click="answer(1)">{{ $t("little_yes_text") }}</button>
-            </div>
-            <div>
-                <button class="netural" @click="answer(0)">{{ $t("netural_text") }}</button>
-            </div>
-            <div>
-                <button class="little_no" @click="answer(-1)">{{ $t("little_no_text") }}</button>
-            </div>
-            <div>
-                <button class="no" @click="answer(-2)">{{ $t("no_text") }}</button>
-            </div>
-            <div>
-                <button class="more_no" @click="answer(-3)">{{ $t("more_no_text") }}</button>
-            </div>
-            <h3 class="warning">{{ $t("Warning_text") }}</h2>
+
+            <!-- <h3 class="warning">{{ $t("Warning_text") }}</h3> -->
         </div>
 
     </div>
