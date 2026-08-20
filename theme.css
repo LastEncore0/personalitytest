@@ -433,10 +433,7 @@ body {
 
 /* 九型人格结果 - 圆形进度条 */
 .enimg {
-  background-image: url('https://s2.loli.net/2022/06/25/sojh7WyRxmKcgdv.png'),url('../img/enneagram_result.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: transparent;
   width: 400px;
   height: 400px;
   position:relative;

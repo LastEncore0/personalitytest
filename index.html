@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A multilingual Jungian cognitive functions and Enneagram personality test.">
+    <meta name="theme-color" content="#18332b">
     <link rel="icon" href="favicon.ico">
     <title>人格测试</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445751535150411"
-        crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="theme.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445751535150411"
      crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="polish.css">
 
 </head>
 
@@ -29,120 +29,109 @@
 
 
     <div id="app" v-cloak>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand me-md-5 px-2" href="index.html">{{ $t("test_title") }}</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav col-md-7" v-if="nostart || result_page || enneagram_result">
-                        <li class="nav-item justify-content-center align-items-center">
-                            <a class="nav-link text-dark justify-content-center align-items-center" href="#">{{
-                                $t("Language_selection") }}</a>
-                        </li>
-                        <select name="Language" id="langselect"
-                            class="nav-item dropdown Language justify-content-center align-items-center"
-                            v-model="$i18n.locale">
-                            <option value="zh">简体中文/Simplifed Chinese</option>
-                            <option value="hk">繁体中文/Traditional Chinese</option>
-                            <option value="ja">日本語/Japanese</option>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <div class="site-nav-inner">
+                <a class="brand" href="index.html">
+                    <span class="brand-mark" aria-hidden="true">Ψ</span>
+                    <span class="brand-copy">
+                        <strong>{{ $t("test_title") }}</strong>
+                        <small>PERSONALITY ATLAS</small>
+                    </span>
+                </a>
+                <div class="site-actions">
+                    <label class="language-picker" v-if="nostart || result_page || enneagram_result">
+                        <span>{{ $t("Language_selection") }}</span>
+                        <select name="Language" id="language-select" class="Language" v-model="$i18n.locale">
+                            <option value="zh">简体中文</option>
+                            <option value="hk">繁體中文</option>
+                            <option value="ja">日本語</option>
                             <option value="en">English</option>
                         </select>
-                    </ul>
-                    <div class="nav-item col-md-2 right">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">V.2024.12.1.0</a>
-                    </div>
-                    <div class="nav-item col-md-1 right">
-                        <a href="https://github.com/LastEncore0/personalitytest" target="_blank"
-                            class="mdui-btn mdui-btn-icon waves-effect tooltipped" data-tooltip="Github Repository">
-                            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 36 36"
-                                enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon"
-                                style="width: 24px;height:24px;">
-                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#0e0a0a" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
-         c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
-         c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
-         c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
-         c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
-         c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
-                            </svg>
-                        </a>
-                    </div>
+                    </label>
+                    <span class="version-badge">V 2026.08</span>
+                    <a href="https://github.com/LastEncore0/personalitytest" target="_blank" rel="noopener noreferrer"
+                        class="github-link" aria-label="GitHub repository">GH</a>
                 </div>
             </div>
         </nav>
-        <!-- <h1>{{ $t("test_title") }}</h1> -->
 
-        <div v-if="nostart" class="container">
-            <p class="text-dark justify-content-center align-items-center d-md-none">{{ $t("Language_selection") }}</p>
-            <select name="Language" id="langselect"
-                class="form-select Language justify-content-center align-items-center d-md-none" v-model="$i18n.locale">
-                <option value="zh">简体中文/Simplifed Chinese</option>
-                <option value="hk">繁体中文/Traditional Chinese</option>
-                <option value="ja">日本語/Japanese</option>
-            </select>
-            <form class="row row-cols-1 row-cols-md-2">
-                <!-- jungs card -->
-                <div class="col card-container">
-                    <div class="card mb-3 border-0">
-                        <img src="img/jungs.png" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $t("jung_test") }}</h5>
-                            <p class="card-text">{{ $t("jung_dec") }}</p>
-                            <button type="button" class="card-btn btn btn-info btn-lg" @click="start">{{
-                                $t("start_test")
-                                }}</button>
-                        </div>
+        <main v-if="nostart" class="landing-page">
+            <section class="hero container">
+                <div class="hero-copy">
+                    <p class="eyebrow">PERSONALITY ATLAS · 2026</p>
+                    <h1>{{ $t("test_title") }}</h1>
+                    <p class="hero-subtitle">{{ $t("hero_subtitle") }}</p>
+                    <div class="hero-facts" aria-label="Assessment summary">
+                        <span><strong>2</strong> {{ $t("assessments_label") }}</span>
+                        <span>{{ $t("reference_only") }}</span>
                     </div>
                 </div>
+                <div class="hero-orbit" aria-hidden="true">
+                    <span class="orbit-core">Ψ</span>
+                    <span class="orbit-label orbit-label-one">Ti</span>
+                    <span class="orbit-label orbit-label-two">Fe</span>
+                    <span class="orbit-label orbit-label-three">Ni</span>
+                    <span class="orbit-label orbit-label-four">Se</span>
+                </div>
+            </section>
 
-                <!-- enneagarm card -->
-                <div class="col card-container">
-                    <div class="card mb-3 border-0">
-                        <img src="img/enneagarm.png" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $t("ennegram_test") }}</h5>
-                            <p class="card-text">{{ $t("ennegram_dec") }}</p>
-                            <button type="button" class="card-btn btn btn-info btn-lg" @click="estart">{{
-                                $t("start_test")
-                                }}</button>
+            <section class="test-grid container" aria-label="Personality assessments">
+                <article class="test-card test-card-jung">
+                    <div class="test-card-visual">
+                        <img src="img/jungs.png" :alt="$t('jung_test')">
+                        <span class="card-number">01</span>
+                    </div>
+                    <div class="test-card-content">
+                        <p class="card-kicker">JUNG · COGNITIVE FUNCTIONS</p>
+                        <h2>{{ $t("jung_test") }}</h2>
+                        <p>{{ $t("jung_dec") }}</p>
+                        <div class="card-footer">
+                            <span class="card-meta"><strong>60</strong> {{ $t("questions_label") }}</span>
+                            <button type="button" class="card-btn" @click="start">{{ $t("start_test") }}<span aria-hidden="true">→</span></button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-            </form>
-            <!-- <div>
-                <p>{{ $t("Language_selection") }}</p>
-                <select name="Language" class="Language" v-model="$i18n.locale">
-                    <option value="zh">简体中文/Simplifed Chinese</option>
-                    <option value="hk">繁体中文/Traditional Chinese</option>
-                </select>
-            </div><br><br> -->
+                <article class="test-card test-card-enneagram">
+                    <div class="test-card-visual">
+                        <img src="img/enneagarm.png" :alt="$t('ennegram_test')">
+                        <span class="card-number">02</span>
+                    </div>
+                    <div class="test-card-content">
+                        <p class="card-kicker">ENNEAGRAM · MOTIVATION</p>
+                        <h2>{{ $t("ennegram_test") }}</h2>
+                        <p>{{ $t("ennegram_dec") }}</p>
+                        <div class="card-footer">
+                            <span class="card-meta"><strong>30+</strong> {{ $t("guided_steps_label") }}</span>
+                            <button type="button" class="card-btn" @click="estart">{{ $t("start_test") }}<span aria-hidden="true">→</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
 
-            <!-- <button type="button" :class="bclass" @mouseover="transbutton" @mouseleave="outbutton" @click="start">{{
-                $t("jung_test") }}</button> -->
-            <!-- <button @click="test">test</button> -->
-            <!-- <h3 class="start_dec">{{ $t("jung_dec") }}</h3>
-            <button type="button" :class="eclass" @click="estart">{{ $t("ennegram_test") }}</button> -->
-            <!-- <button @click="etest">etest</button> -->
-            <h3 class="text-danger">{{ $t("read_pls") }}</h3>
-            <h5 class="start_dec">{{ $t("start_dec_text") }}</h5>
-        </div>
-        <div v-else-if="result_page">
-            <h5>{{ $t("you_may") }}</h3>
-                <div class="result_class">
-                    {{ result }}
+            <aside class="notice-card container">
+                <div class="notice-mark" aria-hidden="true">i</div>
+                <div>
+                    <h2>{{ $t("read_pls") }}</h2>
+                    <p>{{ $t("start_dec_text") }}</p>
                 </div>
-                <div class="result_text_class container">
-                    <p>{{ $t("title_result") }}</p>
+            </aside>
+        </main>
+        <main v-else-if="result_page" class="result-page">
+            <section class="container result-shell">
+                <header class="result-header">
+                    <p class="eyebrow">JUNG · COGNITIVE PROFILE</p>
+                    <h1>{{ $t("you_may") }}</h1>
+                    <div class="result_class">{{ result }}</div>
+                </header>
+                <div class="result_text_class">
+                    <h2 class="section-heading">{{ $t("title_result") }}</h2>
                     <p class="text-center">{{ $t(result_text) }}</p>
                     <p class="text-center">{{ $t(result_text_last) }}</p>
-                    <div class="row">
-                        <p>{{ $t("value_result") }}</p>
-                        <div class="col-12 col-md-6 ">
-                            <p>{{ $t("eight_type") }}</p>
+                    <div class="row score-grid">
+                        <h2 class="section-heading">{{ $t("value_result") }}</h2>
+                        <div class="col-12 col-md-6 score-panel">
+                            <h3>{{ $t("eight_type") }}</h3>
                             <div class="result_progress row p-2">
                                 <span class="col-1 p-1">Ti:</span>
                                 <div class="progress col-10 p-0 align-self-center" v-html="tibar">
@@ -192,8 +181,8 @@
                                 <span class="col-1">{{ user_data.ne }}</span>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <p>{{ $t("trovet") }}</p>
+                        <div class="col-12 col-md-6 score-panel">
+                            <h3>{{ $t("trovet") }}</h3>
                             <div class="result_progress row p-2">
                                 <span class="col-1">I:</span>
                                 <div class="progress col-10 p-0 align-self-center" v-html="Ibar">
@@ -206,7 +195,7 @@
                                 </div>
                                 <span class="col-1">{{ user_data.E }}</span>
                             </div>
-                            <p>{{ $t("four_function") }}</p>
+                            <h3>{{ $t("four_function") }}</h3>
                             <div class="result_progress row p-2">
                                 <span class="col-1">T:</span>
                                 <div class="progress col-10 p-0 align-self-center" v-html="Tbar">
@@ -234,24 +223,24 @@
                         </div>
 
                     </div>
-                    <div class="row">
+                    <div class="row character-grid">
                         <h2>
                             {{ $t("maybe_character") }}
                         </h2>
                         <h5>{{ $t("maybe_character_dec") }}</h5>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 character-card">
                             <div v-html="img1"></div>
                             <div>
                                 {{ $t(C1) }}
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 character-card">
                             <div v-html="img2"></div>
                             <div>
                                 {{ $t(C2) }}
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 character-card">
                             <div v-html="img3"></div>
                             <div>
                                 {{ $t(C3) }}
@@ -261,34 +250,40 @@
 
                     </div>
                 </div>
-        </div>
-        <div v-else-if="enneagram_question" class="q_selection">
-            <!-- <div>
-                <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
-            </div> -->
-            <div>
-                <p v-if="enneagram_num < enneagram_q_num" v-text="$t(question_enneagram)" class="q_text"></p>
-                <p v-else v-text="$t('what_statue')" class="q_text"></p>
-            </div>
-            <div v-for="answer in answer_enneagram">
-                <button :class=answer.color @click="eanswer(answer.type,answer.value)">{{ $t(answer.text)
-                    }}</button>
-            </div>
-        </div>
-        <div v-else-if="enneagram_result">
-            <div class="result_text_class container">
+            </section>
+        </main>
+        <main v-else-if="enneagram_question" class="question-page enneagram-page">
+            <section class="q_selection enneagram-question-shell">
+                <header class="question-meta">
+                    <span>ENNEAGRAM · MOTIVATION</span>
+                    <strong>{{ $t("guided_assessment_label") }}</strong>
+                </header>
+                <div class="question-progress" aria-hidden="true"><span class="indeterminate"></span></div>
+                <div aria-live="polite">
+                    <p v-if="enneagram_num < enneagram_q_num" v-text="$t(question_enneagram)" class="q_text"></p>
+                    <p v-else v-text="$t('what_statue')" class="q_text"></p>
+                </div>
+                <div class="enneagram-answers">
+                    <button v-for="answer in answer_enneagram" :key="answer.text" type="button" :class="answer.color"
+                        @click="eanswer(answer.type,answer.value)">{{ translatedAnswer(answer.text) }}</button>
+                </div>
+            </section>
+        </main>
+        <main v-else-if="enneagram_result" class="result-page enneagram-page">
+            <div class="result_text_class container result-shell enneagram-result-shell">
                 <div class="row">
-                    <h3>{{ $t("you_may") }}</h3>
+                    <header class="result-header col-12">
+                        <p class="eyebrow">ENNEAGRAM · MOTIVATION PROFILE</p>
+                        <h1>{{ $t("you_may") }}</h1>
 
-                    <div class="result_class col-12">
-                        {{ enneagram_test_result }} {{ $t(sin) }}<br>
-                    </div>
-                    <div class="col-12 fs-4">
-                        {{ $t("result_trifix")}}{{ trifix }}<br>{{$t(enneagram_keyword) }}<br>
-                    </div>
-                    <p>{{ $t("title_result") }}</p>
+                        <div class="result_class col-12">{{ enneagram_test_result }} {{ $t(sin) }}</div>
+                        <div class="result-subtype col-12">
+                            {{ $t("result_trifix")}}{{ trifix }}<br>{{$t(enneagram_keyword) }}
+                        </div>
+                    </header>
+                    <h2 class="section-heading">{{ $t("title_result") }}</h2>
                     <p v-html="$t(enneagram_result_dec)"></p>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 enneagram-score-panel">
                         <div v-if="e_maybe[0]">
                             <div class="result_class col-12">
                                 {{ $t("also_maybe")}}<br>
@@ -297,10 +292,24 @@
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" title=""
                                 @click="emayberesult(maybetype,i)">{{maybetype }}{{ $t("ennetype") }}</button>
                         </div>
-                        <p class="fs-4"><br>{{ $t("value_result") }}</p>
+                        <h2 class="section-heading">{{ $t("value_result") }}</h2>
                         <div class="enimg result_value">
+                            <span class="enneagram-zone-label zone-gut">{{ $t("gut_center") }}</span>
+                            <span class="enneagram-zone-label zone-head">{{ $t("head_center") }}</span>
+                            <span class="enneagram-zone-label zone-heart">{{ $t("heart_center") }}</span>
+                            <div class="enneagram-geometry" aria-hidden="true">
+                                <span class="enneagram-edge triangle edge-9-3"></span>
+                                <span class="enneagram-edge triangle edge-3-6"></span>
+                                <span class="enneagram-edge triangle edge-6-9"></span>
+                                <span class="enneagram-edge hexad edge-1-4"></span>
+                                <span class="enneagram-edge hexad edge-4-2"></span>
+                                <span class="enneagram-edge hexad edge-2-8"></span>
+                                <span class="enneagram-edge hexad edge-8-5"></span>
+                                <span class="enneagram-edge hexad edge-5-7"></span>
+                                <span class="enneagram-edge hexad edge-7-1"></span>
+                            </div>
                             <div class="IIposition">
-                                <div class="e_outer II" :style="{'--eringII': 'conic-gradient(#e53e3e ' + (enneagram_data.II / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer II" :style="{'--eringII': 'conic-gradient(#b96854 ' + (enneagram_data.II / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress II">
                                         <span class="c_progress-left II">
                                             <span class="c_progress-bar II" :style="{'--eleftII': eleft.II}"></span>
@@ -314,7 +323,7 @@
                                 <p class="e_toolitop heart badge text-wrap">2 {{ $t("pride") }}</p>
                             </div>
                             <div class="IIIposition">
-                                <div class="e_outer III" :style="{'--eringIII': 'conic-gradient(#e53e3e ' + (enneagram_data.III / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer III" :style="{'--eringIII': 'conic-gradient(#b96854 ' + (enneagram_data.III / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress III">
                                         <span class="c_progress-left III">
                                             <span class="c_progress-bar III" :style="{'--eleftIII': eleft.III}"></span>
@@ -328,7 +337,7 @@
                                 <p class="e_toolitop heart badge text-wrap">3 {{ $t("vanity") }}</p>
                             </div>
                             <div class="IVposition">
-                                <div class="e_outer IV" :style="{'--eringIV': 'conic-gradient(#e53e3e ' + (enneagram_data.IV / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer IV" :style="{'--eringIV': 'conic-gradient(#b96854 ' + (enneagram_data.IV / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress IV">
                                         <span class="c_progress-left IV">
                                             <span class="c_progress-bar IV" :style="{'--eleftIV': eleft.IV}"></span>
@@ -342,7 +351,7 @@
                                 <p class="e_toolitop heart badge text-wrap">4 {{ $t("envy") }}</p>
                             </div>
                             <div class="Vposition">
-                                <div class="e_outer V" :style="{'--eringV': 'conic-gradient(#3182ce ' + (enneagram_data.V / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer V" :style="{'--eringV': 'conic-gradient(#527f96 ' + (enneagram_data.V / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress V">
                                         <span class="c_progress-left V">
                                             <span class="c_progress-bar V" :style="{'--eleftV': eleft.V}"></span>
@@ -356,7 +365,7 @@
                                 <p class="e_toolitop head badge text-wrap">5 {{ $t("avarice") }}</p>
                             </div>
                             <div class="VIposition">
-                                <div class="e_outer VI" :style="{'--eringVI': 'conic-gradient(#3182ce ' + (enneagram_data.VI / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer VI" :style="{'--eringVI': 'conic-gradient(#527f96 ' + (enneagram_data.VI / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress VI">
                                         <span class="c_progress-left VI">
                                             <span class="c_progress-bar VI" :style="{'--eleftVI': eleft.VI}"></span>
@@ -370,7 +379,7 @@
                                 <p class="e_toolitop head badge text-wrap">6 {{ $t("cowardice") }}</p>
                             </div>
                             <div class="VIIposition">
-                                <div class="e_outer VII" :style="{'--eringVII': 'conic-gradient(#3182ce ' + (enneagram_data.VII / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer VII" :style="{'--eringVII': 'conic-gradient(#527f96 ' + (enneagram_data.VII / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress VII">
                                         <span class="c_progress-left VII">
                                             <span class="c_progress-bar VII" :style="{'--eleftVII': eleft.VII}"></span>
@@ -384,7 +393,7 @@
                                 <p class="e_toolitop head badge text-wrap">7 {{ $t("gluttony") }}</p>
                             </div>
                             <div class="VIIIposition">
-                                <div class="e_outer VIII" :style="{'--eringVIII': 'conic-gradient(#d69e2e ' + (enneagram_data.VIII / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer VIII" :style="{'--eringVIII': 'conic-gradient(#c89a47 ' + (enneagram_data.VIII / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress VIII">
                                         <span class="c_progress-left VIII">
                                             <span class="c_progress-bar VIII" :style="{'--eleftVIII': eleft.VIII}"></span>
@@ -398,7 +407,7 @@
                                 <p class="e_toolitop gut badge text-wrap">8 {{ $t("lust") }}</p>
                             </div>
                             <div class="IXposition">
-                                <div class="e_outer IX" :style="{'--eringIX': 'conic-gradient(#d69e2e ' + (enneagram_data.IX / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer IX" :style="{'--eringIX': 'conic-gradient(#c89a47 ' + (enneagram_data.IX / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress IX">
                                         <span class="c_progress-left IX">
                                             <span class="c_progress-bar IX" :style="{'--eleftIX': eleft.IX}"></span>
@@ -412,7 +421,7 @@
                                 <p class="e_toolitop gut badge text-wrap">9 {{ $t("indolence") }}</p>
                             </div>
                             <div class="Iposition">
-                                <div class="e_outer I" :style="{'--eringI': 'conic-gradient(#d69e2e ' + (enneagram_data.I / 100 * 360) + 'deg, #e2e8f0 0deg)'}">
+                                <div class="e_outer I" :style="{'--eringI': 'conic-gradient(#c89a47 ' + (enneagram_data.I / 100 * 360) + 'deg, #27312c 0deg)'}">
                                     <div class="c_progress I">
                                         <span class="c_progress-left I">
                                             <span class="c_progress-bar I" :style="{'--eleftI': eleft.I}"></span>
@@ -425,7 +434,6 @@
                                 </div>
                                 <p class="e_toolitop gut badge text-wrap">1 {{ $t("anger") }}</p>
                             </div>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         </div>
 
                         <!-- <div class="result_value">
@@ -480,107 +488,74 @@
                         </div> -->
                     </div>
 
-                    <div class="col-12 col-md-6">
-                        <br>
-                        <table>
-                            <tr>
-                                <h2>
-                                    {{ $t("maybe_character") }}
-                                </h2>
-                            </tr>
-                            <tr>
-                                <td v-html="img1"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    {{ $t(C1) }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td_text">
-                                    {{ $t(C1text) }}
-                                </td>
-                            </tr>
-                            <tr v-if="C2">
-                                <td v-html="img2"></td>
-                            </tr>
-                            <tr v-if="C2">
-                                <td>
-                                    {{ $t(C2) }}
-                                </td>
-                            </tr>
-                            <tr v-if="C2">
-                                <td class="td_text">
-                                    {{ $t(C2text) }}
-                                </td>
-                            </tr>
-                            <tr v-if="C3">
-                                <td v-html="img3"></td>
-                            </tr>
-                            <tr v-if="C3">
-                                <td>
-                                    {{ $t(C3) }}
-                                </td>
-                            </tr>
-                            <tr v-if="C3">
-                                <td class="td_text">
-                                    {{ $t(C3text) }}
-                                </td>
-                            </tr>
-                            <!-- <tr>
-                                    <td v-html="img3"></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        {{ C3 }}
-                                    </td>
-                                </tr> -->
-                        </table>
+                    <div class="col-12 col-md-6 enneagram-character-panel">
+                        <h2 class="section-heading">{{ $t("maybe_character") }}</h2>
+                        <article class="featured-character">
+                            <div v-html="img1"></div>
+                            <h3>{{ $t(C1) }}</h3>
+                            <p class="td_text">{{ $t(C1text) }}</p>
+                        </article>
+                        <article v-if="C2" class="featured-character">
+                            <div v-html="img2"></div>
+                            <h3>{{ $t(C2) }}</h3>
+                            <p class="td_text">{{ $t(C2text) }}</p>
+                        </article>
+                        <article v-if="C3" class="featured-character">
+                            <div v-html="img3"></div>
+                            <h3>{{ $t(C3) }}</h3>
+                            <p class="td_text">{{ $t(C3text) }}</p>
+                        </article>
                     </div>
                 </div>
 
             </div>
-        </div>
-        <div v-else-if="no_result">
-            <h2>{{ $t("no_result_text") }}</h2>
-            <button type="button" class="refreshclass" @click="refresh">{{ $t("restart_button") }}</button>
-            <h4>{{ $t("no_result_dec") }}</h4>
-        </div>
-        <div v-else class="q_selection">
-            <div class="q_text">
-                <div>
-                    <p v-text="current_len + '/' + list_len" class="q_list_len"></p>
+        </main>
+        <main v-else-if="no_result" class="empty-result-page">
+            <section class="empty-result-card">
+                <span class="notice-mark" aria-hidden="true">!</span>
+                <h1>{{ $t("no_result_text") }}</h1>
+                <p>{{ $t("no_result_dec") }}</p>
+                <button type="button" class="refreshclass" @click="refresh">{{ $t("restart_button") }}</button>
+            </section>
+        </main>
+        <main v-else class="question-page">
+            <section class="q_selection cognitive-question-shell">
+                <header class="question-meta">
+                    <span>JUNG · COGNITIVE FUNCTIONS</span>
+                    <strong>{{ list_len - current_len + 1 }} / {{ list_len }}</strong>
+                </header>
+                <div class="question-progress" role="progressbar" :aria-valuenow="list_len - current_len + 1"
+                    aria-valuemin="1" :aria-valuemax="list_len">
+                    <span :style="{ width: ((list_len - current_len + 1) / list_len * 100) + '%' }"></span>
                 </div>
-                <div>
+                <div class="q_text" aria-live="polite">
                     <p v-text="$t(question_key)"></p>
                 </div>
+                <div class="q_button">
+                <div>
+                    <button type="button" class="more_yes" @click="answer(3)">{{ $t("more_yes_text") }}</button>
+                </div>
+                <div>
+                    <button type="button" class="yes" @click="answer(2)">{{ $t("yes_text") }}</button>
+                </div>
+                <div>
+                    <button type="button" class="little_yes" @click="answer(1)">{{ $t("little_yes_text") }}</button>
+                </div>
+                <div>
+                    <button type="button" class="netural" @click="answer(0)">{{ $t("netural_text") }}</button>
+                </div>
+                <div>
+                    <button type="button" class="little_no" @click="answer(-1)">{{ $t("little_no_text") }}</button>
+                </div>
+                <div>
+                    <button type="button" class="no" @click="answer(-2)">{{ $t("no_text") }}</button>
+                </div>
+                <div>
+                    <button type="button" class="more_no" @click="answer(-3)">{{ $t("more_no_text") }}</button>
+                </div>
             </div>
-            <div class="q_button">
-                <div>
-                    <button class="more_yes" @click="answer(3)">{{ $t("more_yes_text") }}</button>
-                </div>
-                <div>
-                    <button class="yes" @click="answer(2)">{{ $t("yes_text") }}</button>
-                </div>
-                <div>
-                    <button class="little_yes" @click="answer(1)">{{ $t("little_yes_text") }}</button>
-                </div>
-                <div>
-                    <button class="netural" @click="answer(0)">{{ $t("netural_text") }}</button>
-                </div>
-                <div>
-                    <button class="little_no" @click="answer(-1)">{{ $t("little_no_text") }}</button>
-                </div>
-                <div>
-                    <button class="no" @click="answer(-2)">{{ $t("no_text") }}</button>
-                </div>
-                <div>
-                    <button class="more_no" @click="answer(-3)">{{ $t("more_no_text") }}</button>
-                </div>
-            </div>
-
-            <!-- <h3 class="warning">{{ $t("Warning_text") }}</h3> -->
-        </div>
+            </section>
+        </main>
 
     </div>
 

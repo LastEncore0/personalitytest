@@ -220,16 +220,21 @@ var app = createApp({
     })
   },
   watch: {
-    '$i18n.locale'() {
-      //change url's language
-      var newlangurl = location.href
-      newlangurl.toString()
-      var start = newlangurl.search("lang=") + 5
-      var orglang = newlangurl.substr(start,2)
-      location.href = newlangurl.replace(orglang,this.$i18n.locale)
+    '$i18n.locale'(locale) {
+      // Keep language selection in the URL so result pages remain shareable.
+      var newlangurl = new URL(location.href)
+      newlangurl.searchParams.set('lang', locale)
+      location.href = newlangurl.toString()
     }
   },
   methods: {
+    translatedAnswer: function (key) {
+      var text = this.$t(key)
+      if (this.$i18n.locale === 'ja') {
+        return text.replace(/\s*\((?:So|Sx|Sp|タイプ)\d\)$/, '')
+      }
+      return text
+    },
     start: function () {
       var that = this
 
@@ -1001,28 +1006,29 @@ var app = createApp({
 
 app.use(i18n);
 var query, querydata;
-//set url's language
+// Set the initial language from the URL, or derive it from the browser once.
 if (window.location.search) {
-    query = window.location.search.substring(1);
-    querydata = new URLSearchParams(query)
-    var weblang = (navigator.language)?navigator.language:navigator.userLanguage
-    if (querydata.has("lang")) {
-        i18n.locale = querydata.get("lang")
+  query = window.location.search.substring(1)
+  querydata = new URLSearchParams(query)
+  var weblang = ((navigator.language) ? navigator.language : navigator.userLanguage || 'zh').toLowerCase()
+  if (querydata.has('lang')) {
+    var requestedLocale = querydata.get('lang')
+    if (['zh', 'hk', 'ja', 'en'].includes(requestedLocale)) {
+      i18n.global.locale = requestedLocale
     }
-    else {
-      if (weblang=="zh-TW" || weblang=="zh-HK") {
-        location.href = location.href + "&lang=hk"
-      }
-      if (weblang=="zh-CN") {
-        location.href = location.href + "&lang=zh"
-      }
-      if (weblang=="ja") {
-        location.href = location.href + "&lang=ja"
-      }
-      if (weblang=="en") {
-        location.href = location.href + "&lang=en"
-      }
-    }
+  } else {
+    var preferredLocale = 'en'
+    if (weblang === 'zh-tw' || weblang === 'zh-hk') preferredLocale = 'hk'
+    else if (weblang.startsWith('zh')) preferredLocale = 'zh'
+    else if (weblang.startsWith('ja')) preferredLocale = 'ja'
 
+    var localizedUrl = new URL(location.href)
+    localizedUrl.searchParams.set('lang', preferredLocale)
+    location.replace(localizedUrl.toString())
+  }
 }
+
+var activeLocale = i18n.global.locale
+document.documentElement.lang = activeLocale === 'hk' ? 'zh-Hant' : activeLocale === 'zh' ? 'zh-Hans' : activeLocale
+document.title = i18n.global.t('test_title')
 app.mount("#app");
