@@ -381,7 +381,7 @@ function getecharacter(type) {
         return [["Lelouch", "Lelouch_quote", "<img src='./img/Ni-T/01.png' alt='01 pic'>"],["Suigintou", "Suigintou_quote", "<img src='./img/Sx/401.png' alt='02 pic'>"], ["Kuroyuki", "Kuroyuki_quote", "<img src='./img/Ni-F/01.png' alt='03 pic'>"]]
     }
     if (type == 'Sp4') {
-        return [["Hei", "Hei_quote", "<img src='./img/sp/402.png' alt='01 pic'>"],["Shana", "Shana_quote", "<img src='./img/Ni-T/02.png' alt='02 pic'>"]]
+        return [["Hei", "Hei_quote", "<img src='./img/Sp/402.png' alt='01 pic'>"],["Shana", "Shana_quote", "<img src='./img/Ni-T/02.png' alt='02 pic'>"]]
     }
     if (type == 'So5') {
         return [["Bondorudo", "Bondorudo_quote", "<img src='./img/So/501.png' alt='01 pic'>"], ["Shougo", "Shougo_quote", "<img src='./img/Ne-T/02.png' alt='02 pic'>"]]
@@ -424,7 +424,7 @@ function getecharacter(type) {
         return [["Altria", "Altria_quote", "<img src='./img/Si-T/02.png' alt='01 pic'>"],["Shirou", "Shirou_quote", "<img src='./img/So/901.png' alt='02 pic'>"]]
     }
     if (type == 'Sx9') {
-        return [["Schwi", "Schwi_quote", "<img src='./img/Si-F/01.png' alt='01 pic'>"],["Yubel", " ", "<img src='./img/Sx/901.png.png' alt='01 pic'>"]]
+        return [["Schwi", "Schwi_quote", "<img src='./img/Si-F/01.png' alt='01 pic'>"],["Yubel", " ", "<img src='./img/Sx/901.png' alt='01 pic'>"]]
     }
     if (type == 'Sp9') {
         return [["Kanade", "Kanade_quote", "<img src='./img/Si-F/03.png' alt='01 pic'>"]]
