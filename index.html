@@ -12,8 +12,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="theme.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445751535150411"
-     crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="polish.css">
 
 </head>
@@ -559,9 +557,37 @@
 
     </div>
 
-    <!-- 廣告 -->
-    <!-- <script async="async" data-cfasync="false" src="//pl25540658.profitablecpmrate.com/94a5b5a93390be54ec045b85df632af5/invoke.js"></script>
-    <div id="container-94a5b5a93390be54ec045b85df632af5"></div> -->
+    <!-- 广告分流控制 (仅在 Firebase 域名下加载广告，GitHub Pages 等域名不加载) -->
+    <script>
+      (function () {
+        var AD_ENABLED_HOSTS = [
+          'gespenst-zero.firebaseapp.com',
+          'gespenst-zero.web.app'
+        ];
+        var hostname = window.location.hostname.toLowerCase();
+        var urlParams = new URLSearchParams(window.location.search);
+
+        var isAdDomain = AD_ENABLED_HOSTS.some(function (host) {
+          return hostname === host || hostname.endsWith('.' + host);
+        });
+        var isForceEnabled = urlParams.get('ads') === '1' || urlParams.get('show_ads') === 'true';
+        var isForceDisabled = urlParams.get('ads') === '0' || urlParams.get('show_ads') === 'false';
+
+        if ((isAdDomain || isForceEnabled) && !isForceDisabled) {
+          // 插入 Adsterra (ProfitableCPM) 广告容器并加载脚本
+          var adContainer = document.createElement('div');
+          adContainer.id = 'container-94a5b5a93390be54ec045b85df632af5';
+
+          var cpmScript = document.createElement('script');
+          cpmScript.async = true;
+          cpmScript.setAttribute('data-cfasync', 'false');
+          cpmScript.src = '//pl25540658.profitablecpmrate.com/94a5b5a93390be54ec045b85df632af5/invoke.js';
+
+          document.body.appendChild(adContainer);
+          document.body.appendChild(cpmScript);
+        }
+      })();
+    </script>
 
     <script type="module" src="vuescript.js"></script>
     <script type="module" src="vuei18n.js"></script>
