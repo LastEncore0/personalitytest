@@ -142,6 +142,18 @@ a:focus-visible {
   gap: 12px;
 }
 
+.studio-link {
+  color: var(--atlas-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.studio-link:hover {
+  text-decoration: underline;
+}
+
 .language-picker {
   gap: 8px;
   color: #617068;

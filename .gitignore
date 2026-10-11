@@ -70,3 +70,8 @@ node_modules/
 .npm-cache/
 .wrangler/
 .wrangler-config/
+.browser-preview/
+.preview-check.mjs
+
+# Local Search Console exports, not website source.
+/reports/

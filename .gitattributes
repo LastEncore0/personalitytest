@@ -1,0 +1,6 @@
+# Translation segments preserve spaces around inline HTML elements.
+content/translations/theory-en.txt whitespace=-blank-at-eol
+# Two trailing spaces in Markdown encode an intentional line break.
+docs/archive/*.md whitespace=-blank-at-eol
+# Preserve the vendored upstream license text unchanged.
+scripts/vendor/opencc/LICENSES/Apache-2.0.txt whitespace=-blank-at-eof

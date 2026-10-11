@@ -36,9 +36,9 @@ body {
   padding-bottom: 60px;
 }
 
-[v-cloak] {
-  display: none;
-}
+/* Show the server-rendered landing page while Vue loads or JavaScript is disabled. */
+#app[v-cloak] > :not(.site-nav):not(.landing-page):not(.site-footer) { display: none; }
+#app[v-cloak] .card-btn { visibility: hidden; }
 
 /* Navbar 现代化 */
 .navbar {
