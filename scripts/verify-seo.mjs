@@ -35,15 +35,17 @@ if (studioRoot) {
     }
   }
   checkHtml(read('atlas/index.html'), 'https://atlas.zerostudio.cc/');
-  for (const slug of ['', 'religion/', 'culture/']) {
-    checkHtml(read('guides/' + slug + 'index.html'), 'https://atlas.zerostudio.cc/guides/' + slug);
+  for (const lang of ['', 'en/', 'ja/']) {
+    for (const slug of ['', 'religion/', 'culture/', 'ai-csv/']) {
+      checkHtml(read(lang + 'guides/' + slug + 'index.html'), 'https://atlas.zerostudio.cc/' + lang + 'guides/' + slug);
+    }
   }
   assert.equal([...read('sitemap.xml').matchAll(/<url>/g)].length, 12);
   assert.equal([...read('sitemap-index.xml').matchAll(/<sitemap>/g)].length, 4);
-  assert.equal([...read('atlas/sitemap.xml').matchAll(/<url>/g)].length, 17);
+  assert.equal([...read('atlas/sitemap.xml').matchAll(/<url>/g)].length, 20);
   assert.match(read('robots.txt'), /Sitemap: https:\/\/zerostudio\.cc\/sitemap-index\.xml/);
   checkHtml(readFileSync(resolve(studioRoot, 'eastasia-travel/dist/index.html'), 'utf8'), 'https://travelmap.zerostudio.cc/');
-  console.log('Build SEO checks passed: 12 portal pages, Atlas + 3 guides, travel map and sitemap index.');
+  console.log('Build SEO checks passed: 12 portal pages, Atlas + 4 guides in three languages, travel map and sitemap index.');
 }
 const personalityOrigin = option('--personality-origin');
 if (personalityOrigin) {
