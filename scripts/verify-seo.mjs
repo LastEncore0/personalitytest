@@ -40,7 +40,7 @@ if (studioRoot) {
   }
   assert.equal([...read('sitemap.xml').matchAll(/<url>/g)].length, 12);
   assert.equal([...read('sitemap-index.xml').matchAll(/<sitemap>/g)].length, 4);
-  assert.equal([...read('atlas/sitemap.xml').matchAll(/<url>/g)].length, 10);
+  assert.equal([...read('atlas/sitemap.xml').matchAll(/<url>/g)].length, 17);
   assert.match(read('robots.txt'), /Sitemap: https:\/\/zerostudio\.cc\/sitemap-index\.xml/);
   checkHtml(readFileSync(resolve(studioRoot, 'eastasia-travel/dist/index.html'), 'utf8'), 'https://travelmap.zerostudio.cc/');
   console.log('Build SEO checks passed: 12 portal pages, Atlas + 3 guides, travel map and sitemap index.');

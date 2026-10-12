@@ -4,6 +4,7 @@ import { Converter } from './vendor/opencc/t2cn.mjs';
 import { articleLocales, articlePath } from '../content-locales.mjs';
 import { SITE_ORIGIN, X_DEFAULT_LOCALE } from '../seo.mjs';
 import { articleModified } from './lastmod.mjs';
+import { theoryReadingAid, ecosystemLinks } from './reading-aids.mjs';
 import english from '../content/translations/subtypes-en.mjs';
 import japanese from '../content/translations/subtypes-ja.mjs';
 import overviewTranslations from '../content/translations/overview.mjs';
@@ -98,6 +99,8 @@ export function localizePage(html, locale, path, modified) {
     .replace(/href="\/(theory\.html|subtypes\/[^"#]+\.html)(#[^"]*)?"/g, (_,base,hash='') => `href="${articlePath(locale,'/'+base)}${hash}"`);
   html = html.replace('</head>', languageLinks(locale,path) + '\n</head>');
   html = html.replace(/(<div class="nav-links">[\s\S]*?<\/div>)/, '$1'+languageSwitch(locale,path));
+  html = html.replace('<li><a href="https://zerostudio.cc/">Zero Studio</a></li>', '');
+  html = html.replace(/(<ul class="site-footer-links">[\s\S]*?)(<\/ul>)/, (_, links, end) => links + ecosystemLinks(locale) + end);
   return html;
 }
 
@@ -125,6 +128,8 @@ export async function buildTheory(root) {
     const path = articlePath(locale,'/theory.html');
     html = html.replaceAll(SITE_ORIGIN+'/theory.html',SITE_ORIGIN+path);
     html = localizePage(html,locale,'/theory.html',articleModified(root,locale,'theory'));
+    html = html.replace(/(<article class="article-body" id="content">)/, '$1'+theoryReadingAid(locale));
+    html = html.replace(/(<nav class="article-toc"[\s\S]*?<ol>)/, '$1<li><a href="#quick-summary">'+({hk:'先讀重點',zh:'先读重点',en:'Key points',ja:'先に読む要点'})[locale]+'</a></li>');
     await mkdir(resolve(root, '.'+articleLocales[locale].prefix),{recursive:true});
     await writeFile(resolve(root,'.'+path),html);
     pages[locale]=html;

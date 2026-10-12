@@ -35,7 +35,7 @@ export function lastModified(root, files) {
 export function articleSources(locale, slug) {
   const translated = locale === 'en' || locale === 'ja';
   const theory = ['content/theory/zh-Hant.html', ...(translated ? [`content/translations/theory-${locale}.txt`] : [])];
-  const shared = ['scripts/article-translations.mjs', 'content-locales.mjs'];
+  const shared = ['scripts/article-translations.mjs', 'scripts/reading-aids.mjs', 'content-locales.mjs'];
   if (slug === 'theory') return [...shared, ...theory];
   const subtypeSources = ['scripts/build-subtypes.mjs'];
   if (slug === 'index') return [...shared, ...subtypeSources, ...Array.from({length:9}, (_,n)=>['sp','so','sx'].map(i=>`content/subtypes/zh-Hant/${i}${n+1}.md`)).flat(), 'content/subtypes/zh-Hant/index.md', ...(translated ? ['content/translations/overview.mjs', `content/translations/subtypes-${locale}.mjs`] : [])];

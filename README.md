@@ -4,6 +4,10 @@ Historical writing drafts and the completed implementation brief are preserved i
 
 Personality Atlas combines a browser-based Jungian functions test, an Enneagram test and standalone reading pages.
 
+[Jungian functions and Enneagram tests](https://personality.zerostudio.cc/?lang=en) · [27 Enneagram subtypes](https://personality.zerostudio.cc/en/subtypes/index.html) · [Theory guide](https://personality.zerostudio.cc/en/theory.html) · [Zero Studio](https://zerostudio.cc/en/)
+
+Theory pages include a localized key-points section and concise answers that distinguish the site's interpretive mapping from validated findings. All article footers offer language-aware links back to the studio and its map tools. `docs/seo-roadmap.json` records keyword hypotheses, the subdomain decision and the remaining Search Console checks; keyword search volumes and indexing are not assumed.
+
 Content is available without completing a test:
 
 - `/theory.html`: Traditional Chinese theory guide; `/zh/theory.html`, `/en/theory.html`, `/ja/theory.html` provide Simplified Chinese, English and Japanese.
