@@ -1,25 +1,60 @@
 {
-  "reviewedAt": "2026-10-12",
+  "reviewedAt": "2026-10-14",
   "keywordEvidence": "The phrases below are intent hypotheses based on actual tool features, not measured search volumes. Validate impressions, clicks and queries in Search Console after indexing.",
   "intentToPage": [
-    {"intent": "world map coloring tool / free interactive world map", "page": "https://atlas.zerostudio.cc/?lang=en", "answer": "Color countries and regions, import CSV values and export map images."},
-    {"intent": "世界地圖填色 / 數據地圖製作", "page": "https://atlas.zerostudio.cc/", "answer": "Provide a working map tool plus the localized map creation guide."},
-    {"intent": "榮格八維測驗 / 九型人格測驗", "page": "https://personality.zerostudio.cc/?lang=hk", "answer": "Provide both questionnaires and explain that results are prompts for reflection."},
-    {"intent": "27 Enneagram subtypes / self-preservation social one-to-one", "page": "https://personality.zerostudio.cc/en/subtypes/index.html", "answer": "Compare the 27 subtypes and link to complete articles."},
-    {"intent": "Enneagram 4 and Ni", "page": "https://personality.zerostudio.cc/en/theory.html#quick-summary", "answer": "Explain the site's interpretation and that there is no validated one-to-one conversion."},
-    {"intent": "東亞旅遊足跡地圖", "page": "https://travelmap.zerostudio.cc/", "answer": "Record regional travel footprints and export or share the map."}
+    {
+      "intent": "world map coloring tool / free interactive world map",
+      "page": "https://zerostudio.cc/atlas/?lang=en",
+      "answer": "Color countries and regions, import CSV values and export map images."
+    },
+    {
+      "intent": "世界地圖填色 / 數據地圖製作",
+      "page": "https://zerostudio.cc/atlas/",
+      "answer": "Provide a working map tool plus the localized map creation guide."
+    },
+    {
+      "intent": "榮格八維測驗 / 九型人格測驗",
+      "page": "https://zerostudio.cc/personality/?lang=hk",
+      "answer": "Provide both questionnaires and explain that results are prompts for reflection."
+    },
+    {
+      "intent": "27 Enneagram subtypes / self-preservation social one-to-one",
+      "page": "https://zerostudio.cc/personality/en/subtypes/index.html",
+      "answer": "Compare the 27 subtypes and link to complete articles."
+    },
+    {
+      "intent": "Enneagram 4 and Ni",
+      "page": "https://zerostudio.cc/personality/en/theory.html#quick-summary",
+      "answer": "Explain the site's interpretation and that there is no validated one-to-one conversion."
+    },
+    {
+      "intent": "東亞旅遊足跡地圖",
+      "page": "https://zerostudio.cc/travel/",
+      "answer": "Record regional travel footprints and export or share the map."
+    }
   ],
   "architectureDecision": {
-    "decision": "Retain the current canonical subdomains and strengthen useful navigation. Do not create duplicate article copies on the root domain.",
-    "reason": "Google does not prescribe subdirectories over subdomains. A migration changes indexed URLs, origin-specific browser storage, asset paths and deployment ownership; no measured benefit currently justifies those changes.",
-    "ifMigrationIsLaterChosen": ["Inventory every indexable URL and stored project origin.", "Map each old URL to exactly one new URL and retain language, query and chapter behavior.", "Rebase assets and internal links; verify map imports, exports and saved projects.", "Update canonical, hreflang and sitemaps together; permanently redirect old URLs.", "Compare Search Console indexing, queries and actual tool usage before and after migration."]
+    "decision": "At the user’s request, all three public tools now use primary-domain subdirectories. Map guides remain canonical on primary /guides/ paths.",
+    "reason": "Explicit user preference on 2026-10-14. Old tool URLs permanently redirect, canonical/hreflang/sitemaps use primary paths, and legacy map origins retain noindex export routes for their browser-local records.",
+    "ifMigrationIsLaterChosen": [
+      "Inventory every indexable URL and stored project origin.",
+      "Map each old URL to exactly one new URL and retain language, query and chapter behavior.",
+      "Rebase assets and internal links; verify map imports, exports and saved projects.",
+      "Update canonical, hreflang and sitemaps together; permanently redirect old URLs.",
+      "Compare Search Console indexing, queries and actual tool usage before and after migration."
+    ]
   },
   "searchConsole": {
     "property": "sc-domain:zerostudio.cc",
     "scope": "Includes all subdomains and protocols; separate Domain properties are not required.",
     "sitemap": "https://zerostudio.cc/sitemap-index.xml",
     "knownStatus": "Submitted successfully on 2026-10-12, but the last sitemap report still said unable to fetch. URL inspection daily quota was exhausted. Submission does not confirm indexing.",
-    "nextManualChecks": ["Confirm the sitemap report has a successful last-read date.", "Inspect canonical Atlas root and language URLs when daily quota is available.", "Inspect the translated theory and subtype overview pages.", "Review query impressions and page performance after data becomes available; record the baseline before judging changes."]
+    "nextManualChecks": [
+      "Confirm the sitemap report has a successful last-read date.",
+      "Inspect canonical Atlas root and language URLs when daily quota is available.",
+      "Inspect the translated theory and subtype overview pages.",
+      "Review query impressions and page performance after data becomes available; record the baseline before judging changes."
+    ]
   },
   "aiSearch": "Use visible, accurate summaries, concise answers, references and ordinary SEO. There is no special Google AI schema or guaranteed citation method.",
   "faq": "Keep helpful visible Q&A. Google retired FAQ rich results on 2026-05-07, so do not promise FAQ search dropdowns.",

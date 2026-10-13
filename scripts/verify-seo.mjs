@@ -34,7 +34,7 @@ if (studioRoot) {
       checkHtml(read(lang + page + 'index.html'), 'https://zerostudio.cc/' + lang + page);
     }
   }
-  checkHtml(read('atlas/index.html'), 'https://atlas.zerostudio.cc/');
+  checkHtml(read('atlas/index.html'), 'https://zerostudio.cc/atlas/');
   for (const lang of ['', 'en/', 'ja/']) {
     for (const slug of ['', 'religion/', 'culture/', 'ai-csv/']) {
       checkHtml(read(lang + 'guides/' + slug + 'index.html'), 'https://zerostudio.cc/' + lang + 'guides/' + slug);
@@ -44,7 +44,7 @@ if (studioRoot) {
   assert.equal([...read('sitemap-index.xml').matchAll(/<sitemap>/g)].length, 4);
   assert.equal([...read('atlas/sitemap.xml').matchAll(/<url>/g)].length, 8);
   assert.match(read('robots.txt'), /Sitemap: https:\/\/zerostudio\.cc\/sitemap-index\.xml/);
-  checkHtml(readFileSync(resolve(studioRoot, 'eastasia-travel/dist/index.html'), 'utf8'), 'https://travelmap.zerostudio.cc/');
+  checkHtml(readFileSync(resolve(studioRoot, 'eastasia-travel/dist/index.html'), 'utf8'), 'https://zerostudio.cc/travel/');
   console.log('Build SEO checks passed: 12 portal pages + 12 primary-domain guides, Atlas app, travel map and sitemap index.');
 }
 const personalityOrigin = option('--personality-origin');
@@ -100,14 +100,14 @@ if (args.includes('--live')) {
   for (const lang of ['', 'en/', 'ja/']) {
     checkHtml(await get('https://zerostudio.cc/' + lang), 'https://zerostudio.cc/' + lang);
   }
-  checkHtml(await get('https://atlas.zerostudio.cc/'), 'https://atlas.zerostudio.cc/');
+  checkHtml(await get('https://zerostudio.cc/atlas/'), 'https://zerostudio.cc/atlas/');
   for (const lang of ['', 'en/', 'ja/']) {
     for (const slug of ['', 'religion/', 'culture/', 'ai-csv/']) {
       const url = 'https://zerostudio.cc/' + lang + 'guides/' + slug;
       checkHtml(await get(url), url);
     }
   }
-  checkHtml(await get('https://travelmap.zerostudio.cc/'), 'https://travelmap.zerostudio.cc/');
+  checkHtml(await get('https://zerostudio.cc/travel/'), 'https://zerostudio.cc/travel/');
   const index = await get('https://zerostudio.cc/sitemap-index.xml');
   assert.equal([...index.matchAll(/<sitemap>/g)].length, 4);
   for (const [, url] of index.matchAll(/<loc>([^<]+)<\/loc>/g)) {
@@ -117,6 +117,6 @@ if (args.includes('--live')) {
     console.log('Live sitemap OK:', url);
   }
   assert.match(await get('https://zerostudio.cc/robots.txt'), /sitemap-index\.xml/);
-  assert.match(await get('https://travelmap.zerostudio.cc/robots.txt'), /travelmap\.zerostudio\.cc/);
+  assert.match(await get('https://zerostudio.cc/travel/robots.txt'), /zerostudio\.cc\/travel/);
   console.log('Live SEO checks passed: main site, 3 projects, guides and all sitemaps.');
 }

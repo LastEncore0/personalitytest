@@ -6,6 +6,10 @@ import { homeStructuredDataJson } from './home-seo.mjs';
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.hostname === 'personality.zerostudio.cc') {
+      const path = url.pathname === '/index.html' ? '/' : url.pathname;
+      return Response.redirect('https://zerostudio.cc/personality' + path + url.search, 301);
+    }
     // /index.html duplicates / ; send both visitors and crawlers to the single canonical entry.
     if (url.pathname === '/index.html') {
       return Response.redirect(new URL('/' + url.search, url).toString(), 301);
