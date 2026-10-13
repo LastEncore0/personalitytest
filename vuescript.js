@@ -222,6 +222,10 @@ var app = createApp({
     })
   },
   computed: {
+    studioRootUrl() {
+      const lang = this.$i18n.locale
+      return 'https://zerostudio.cc/' + (lang === 'en' || lang === 'ja' ? lang + '/' : '')
+    },
     homeUrl() {
       return '/?lang=' + this.$i18n.locale
     },

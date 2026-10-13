@@ -214,7 +214,7 @@
                 <div class="notice-mark" aria-hidden="true">i</div>
                 <div>
                     <h2 data-i18n="read_pls" v-copy="$t('read_pls')">请在开始测试前先阅读以下提示：</h2>
-                    <p data-i18n="start_dec_text" v-copy="$t('start_dec_text')">由于心理防御机制，大部分测试结果很难准确反映你真正的情况，其次本测试更多基于死宅群体，所以结果会有相对应的ACG人物作为比对，如果熟悉这些人物可以比对确认，本测试目的之一就是为了颠覆。大众对MBTI以及九型的错误理解，所以结果很可能与主流测试有较大出入，另外提醒正因为包括本测试在内的所有这类心理测试都是难以反映真实情况的，所以请对包括本测试在内的测试结果都不要过于当真，仅作参考和娱乐。另外真正的心理分析是要反映心理问题的，如果结果不反映问题只叙述优点，说明这只是迎合人类普遍的逃避黑暗面的心理的商业化测试，其参考价值更低，所以也请不要对本测试结果中可能出现的不好的描述愤慨，如果您无法接受请不要参与本测试，谢谢合作！</p>
+                    <p data-i18n="start_dec_text" v-copy="$t('start_dec_text')">本测验以荣格认知功能与九型人格模型为参考，使用动漫与游戏角色作为帮助理解的例子。结果描述思考偏好、核心动机与可能的盲点；角色对应是本站的类型学解读，不代表作品官方设定，也不能验证个人类型。自我报告会受当下情境与答题方式影响，请结合实际经历反思。结果仅供自我探索与娱乐参考，不是临床诊断，也不替代专业心理评估。</p>
                 </div>
             </aside>
         </main>
@@ -668,7 +668,10 @@
                 <li><a href="/zh/theory.html" :href="theoryArticleUrl" data-i18n="theory_link" v-copy="$t('theory_link')">理论指南</a></li>
                 <li><a href="/zh/subtypes/index.html" :href="subtypesOverviewUrl" data-i18n="subtypes_link" v-copy="$t('subtypes_link')">27 副型</a></li>
                 <li><a href="/zh/theory.html#refs" :href="theoryArticleUrl + '#refs'" data-i18n="disclaimer_link" v-copy="$t('disclaimer_link')">参考文献与免责声明</a></li>
-                <li><a href="https://zerostudio.cc/">Zero Studio</a></li>
+                <li><a href="https://zerostudio.cc/privacy/" v-bind="{ href: studioRootUrl + 'privacy/' }" data-policy="privacy/" data-i18n="privacy_link" v-copy="$t('privacy_link')">隐私说明</a></li>
+                <li><a href="https://zerostudio.cc/about/" v-bind="{ href: studioRootUrl + 'about/' }" data-policy="about/" data-i18n="about_link" v-copy="$t('about_link')">关于工作室</a></li>
+                <li><a href="mailto:contact@zerostudio.cc" data-i18n="contact_link" v-copy="$t('contact_link')">联系</a></li>
+                <li><a href="https://zerostudio.cc/" v-bind="{ href: studioRootUrl }">Zero Studio</a></li>
             </ul>
             <p>© 2026 Zero Studio · Personality Atlas</p>
         </footer>

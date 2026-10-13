@@ -61,6 +61,7 @@ export default {
           else element.removeAttribute('selected');
         },
       })
+      .on('a[data-policy]', { element(element) { element.setAttribute('href', 'https://zerostudio.cc/' + (locale === 'en' || locale === 'ja' ? locale + '/' : '') + element.getAttribute('data-policy')); } })
       .on('a.brand', { element(element) { element.setAttribute('href', '/?lang=' + locale); } })
       .on('script[type="application/ld+json"]', {
         element(element) { element.setInnerContent(homeStructuredDataJson(locale), { html: true }); },

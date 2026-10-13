@@ -62,7 +62,7 @@ test('all local content links, assets and table-of-contents anchors resolve', ()
   for (const page of ['index.html', ...pages, '404.html']) {
     const html = read(page), base = new URL('/' + page, SITE_ORIGIN);
     for (const [, target] of html.matchAll(/\b(?:href|src)="([^"{}]+)"/g)) {
-      if (/^(?:subtypeArticleUrl|theoryArticleUrl|subtypesOverviewUrl|homeUrl)/.test(target)) continue;
+      if (/^(?:subtypeArticleUrl|theoryArticleUrl|subtypesOverviewUrl|homeUrl|studioRootUrl)/.test(target)) continue;
       const url = new URL(target.replaceAll('&amp;', '&'), base);
       if (url.origin !== SITE_ORIGIN) continue;
       const file = url.pathname === '/' ? 'index.html' : decodeURIComponent(url.pathname.slice(1));
@@ -90,7 +90,7 @@ test('overview and theory link all 27 articles; each article links both same-typ
 test('four-language original summaries are actually wired into Vue i18n', () => {
   const source = read('vuei18n.js');
   let options;
-  vm.runInNewContext(source.replace(/^import .*\n/, '').replace('export var i18n', 'var i18n'), { subtypeMessages, VueI18n: { createI18n(value) { options = value; return value; } } });
+  vm.runInNewContext(source.replace(/^import .*\r?\n/, '').replace('export var i18n', 'var i18n'), { subtypeMessages, VueI18n: { createI18n(value) { options = value; return value; } } });
   for (const locale of ['zh', 'hk', 'en', 'ja']) {
     assert.equal(Object.keys(subtypeMessages[locale]).length, 27);
     for (const slug of subtypeSlugs) {
