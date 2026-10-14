@@ -1,3 +1,4 @@
+import { homePath } from './content-locales.mjs';
 export const seoMetadata = {
   zh: {
     language: 'zh-Hans',
@@ -31,12 +32,11 @@ export const seoMetadata = {
 
 export const SITE_ORIGIN = 'https://personality.zerostudio.cc'
 
-// hreflang="x-default" must reference a canonical, indexable URL. The bare root canonicalises to
-// ?lang=zh, so the English page is the fallback for visitors whose language is not covered.
+// Every language has a clean canonical path; English is the hreflang fallback.
 export const X_DEFAULT_LOCALE = 'en'
-export const X_DEFAULT_URL = SITE_ORIGIN + '/?lang=' + X_DEFAULT_LOCALE
+export const X_DEFAULT_URL = SITE_ORIGIN + homePath(X_DEFAULT_LOCALE)
 
 export function seoForLocale(locale) {
   const key = Object.hasOwn(seoMetadata, locale) ? locale : 'zh'
-  return { ...seoMetadata[key], canonicalUrl: SITE_ORIGIN + '/?lang=' + key }
+  return { ...seoMetadata[key], canonicalUrl: SITE_ORIGIN + homePath(key) }
 }

@@ -10,8 +10,9 @@ export function redirectRules() {
     rules.push([`${prefix}/theory`, `${prefix}/theory.html`]);
     for (const from of ['/subtypes', '/subtypes/', '/subtypes/index']) rules.push([prefix + from, `${prefix}/subtypes/index.html`]);
     for (const slug of subtypeSlugs) rules.push([`${prefix}/subtypes/${slug}`, `${prefix}/subtypes/${slug}.html`]);
-    // Language roots have no page of their own; send them to the homepage in that language.
-    rules.push([`/${locale}`, `/?lang=${locale}`], [`/${locale}/`, `/?lang=${locale}`]);
+    // Language homes are served by the Worker; normalize only their missing slash.
+    if (locale === 'hk') rules.push(['/hk', '/'], ['/hk/', '/']);
+    else rules.push([`/${locale}`, `${prefix}/`]);
   }
   return rules;
 }

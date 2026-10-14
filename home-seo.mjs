@@ -11,7 +11,7 @@ const publisher = { '@id': 'https://zerostudio.cc/#organization', '@type': 'Orga
 // Homepage structured data, localised so it always matches the language of the visible page.
 export function homeStructuredData(locale) {
   const meta = seoForLocale(locale);
-  const key = meta.canonicalUrl.split('lang=')[1];
+  const key = ['zh','hk','ja','en'].includes(locale) ? locale : 'zh';
   return {
     '@context': 'https://schema.org',
     '@graph': [

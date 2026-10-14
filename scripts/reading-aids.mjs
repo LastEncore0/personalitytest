@@ -1,4 +1,4 @@
-import { articlePath } from '../content-locales.mjs';
+import { articlePath, homePath } from '../content-locales.mjs';
 const copy = {
  hk: {summary:'先讀重點',points:['九型人格描述核心動機，榮格八維描述認知偏好；兩者不是同一套分類。','27 副型由 9 個型號與自保、社交、一對一三種本能組合，不能只靠表面行為判型。','本文的八維對應與能量模型是本站的解讀假說，並非已驗證的心理測量結論。'],questions:'三個常見問題',qa:[['九型人格與榮格八維有什麼關係？','兩者提供不同的自我觀察角度，沒有公認的一對一換算表。本文提出的對應是解讀框架。'],['九型 4 號一定是 Ni 型嗎？','不是。本文用 Ni 的內在意象與意義建構來解讀部分 4 號經驗；4 號的核心動機不等於某種認知功能，不能據此推斷 MBTI。'],['怎麼開始比較 27 個副型？','先觀察反覆出現的核心動機，再比較同型號下三種本能的注意力與日常模式。測驗結果和動漫角色只能作為反思線索。']],overview:'比較九型人格 27 副型',test:'開始榮格八維與九型人格測驗',tools:'Zero Studio 免費工具',map:'世界地圖填色工具',travel:'東亞旅遊足跡地圖'},
  zh: {summary:'先读重点',points:['九型人格描述核心动机，荣格八维描述认知偏好；两者不是同一套分类。','27 副型由 9 个型号与自保、社交、一对一三种本能组合，不能只靠表面行为判型。','本文的八维对应与能量模型是本站的解读假说，并非已验证的心理测量结论。'],questions:'三个常见问题',qa:[['九型人格与荣格八维有什么关系？','两者提供不同的自我观察角度，没有公认的一对一换算表。本文提出的对应是解读框架。'],['九型 4 号一定是 Ni 型吗？','不是。本文用 Ni 的内在意象与意义建构来解读部分 4 号经验；4 号的核心动机不等于某种认知功能，不能据此推断 MBTI。'],['怎么开始比较 27 个副型？','先观察反复出现的核心动机，再比较同型号下三种本能的注意力与日常模式。测验结果和动漫角色只能作为反思线索。']],overview:'比较九型人格 27 副型',test:'开始荣格八维与九型人格测验',tools:'Zero Studio 免费工具',map:'世界地图填色工具',travel:'东亚旅游足迹地图'},
@@ -8,7 +8,7 @@ const copy = {
 const esc = text => text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function theoryReadingAid(locale) {
  const t=copy[locale];
- return `<section class="reading-summary callout" aria-labelledby="quick-summary"><h2 id="quick-summary">${esc(t.summary)}</h2><ul>${t.points.map(point=>`<li>${esc(point)}</li>`).join('')}</ul><h3>${esc(t.questions)}</h3>${t.qa.map(([q,a])=>`<h4>${esc(q)}</h4><p>${esc(a)}</p>`).join('')}<p><a href="${articlePath(locale,'/subtypes/index.html')}">${esc(t.overview)}</a> · <a href="/?lang=${locale}">${esc(t.test)}</a></p></section>`;
+ return `<section class="reading-summary callout" aria-labelledby="quick-summary"><h2 id="quick-summary">${esc(t.summary)}</h2><ul>${t.points.map(point=>`<li>${esc(point)}</li>`).join('')}</ul><h3>${esc(t.questions)}</h3>${t.qa.map(([q,a])=>`<h4>${esc(q)}</h4><p>${esc(a)}</p>`).join('')}<p><a href="${articlePath(locale,'/subtypes/index.html')}">${esc(t.overview)}</a> · <a href="${homePath(locale)}">${esc(t.test)}</a></p></section>`;
 }
 export function ecosystemLinks(locale) {
  const labels={hk:['隱私說明','關於工作室','聯絡'],zh:['隐私说明','关于工作室','联系'],en:['Privacy','About the studio','Contact'],ja:['プライバシー','運営者について','お問い合わせ']}[locale];

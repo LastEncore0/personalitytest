@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { Converter } from './vendor/opencc/t2cn.mjs';
-import { articleLocales, articlePath } from '../content-locales.mjs';
+import { articleLocales, articlePath, homePath } from '../content-locales.mjs';
 import { SITE_ORIGIN, X_DEFAULT_LOCALE } from '../seo.mjs';
 import { articleModified } from './lastmod.mjs';
 import { theoryReadingAid, ecosystemLinks } from './reading-aids.mjs';
@@ -87,14 +87,14 @@ export function localizePage(html, locale, path, modified) {
     for (const node of data['@graph']) {
       if (['Article','CollectionPage'].includes(node['@type'])) { node.inLanguage = l.language; if (modified) node.dateModified = modified; }
       if (node['@type']==='BreadcrumbList') for (const crumb of node.itemListElement) {
-        if (crumb.item===SITE_ORIGIN+'/') crumb.item=SITE_ORIGIN+'/?lang='+locale;
+        if (crumb.item===SITE_ORIGIN+'/') crumb.item=SITE_ORIGIN+homePath(locale);
         else crumb.item=crumb.item.replace(new RegExp('^'+SITE_ORIGIN.replaceAll('.','\\.')+'(/(?:theory\\.html|subtypes/[^#]+\\.html))$'),(_,base)=>SITE_ORIGIN+articlePath(locale,base));
       }
     }
     return '<script type="application/ld+json">' + JSON.stringify(data).replace(/</g,'\\u003c') + '</script>';
   });
   // Assets are shared from the root; editorial links stay within the chosen language.
-  html = html.replace(/href="(?:index\.html|\/\?lang=hk)"/g, `href="/?lang=${locale}"`)
+  html = html.replace(/href="(?:index\.html|\/\?lang=hk)"/g, `href="${homePath(locale)}"`)
     .replace(/href="(theory\.html|favicon\.ico|theme\.css|polish\.css|article\.css)"/g, 'href="/$1"')
     .replace(/href="\/(theory\.html|subtypes\/[^"#]+\.html)(#[^"]*)?"/g, (_,base,hash='') => `href="${articlePath(locale,'/'+base)}${hash}"`);
   html = html.replace('</head>', languageLinks(locale,path) + '\n</head>');

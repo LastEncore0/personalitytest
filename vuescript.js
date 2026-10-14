@@ -1,6 +1,13 @@
 import { i18n } from './vuei18n.js'
 import { seoForLocale } from './seo.mjs'
-import { articlePath } from './content-locales.mjs'
+import { articlePath, homePath, localeForPath } from './content-locales.mjs'
+function resultQueryBase() {
+  const target = new URL(location.href)
+  for (const key of ['lang','load','statue','dom','aux','Instincts','e_result_value','e_maybe','trifix','ti','te','fi','fe','ni','ne','si','se','T','F','S','N','I','E','II','III','IV','V','VI','VII','VIII','IX']) target.searchParams.delete(key)
+  target.hash = ''
+  return target.href + (target.search ? '&' : '?')
+}
+
 const { createApp } = Vue;
 
 var app = createApp({
@@ -211,9 +218,7 @@ var app = createApp({
           createbar(this)
         }
       }
-      else {
-        location.href = location.href + "?load"
-      }
+
       // else {
       //   console.log("no search")
       // }
@@ -227,7 +232,7 @@ var app = createApp({
       return 'https://zerostudio.cc/' + (lang === 'en' || lang === 'ja' ? lang + '/' : '')
     },
     homeUrl() {
-      return '/?lang=' + this.$i18n.locale
+      return homePath(this.$i18n.locale)
     },
     theoryArticleUrl() {
       return articlePath(this.$i18n.locale, '/theory.html')
@@ -244,7 +249,8 @@ var app = createApp({
     '$i18n.locale'(locale) {
       // Keep language selection in the URL so result pages remain shareable.
       var newlangurl = new URL(location.href)
-      newlangurl.searchParams.set('lang', locale)
+      newlangurl.pathname = homePath(locale)
+      newlangurl.searchParams.delete('lang')
       location.href = newlangurl.toString()
     }
   },
@@ -696,7 +702,7 @@ var app = createApp({
             this.enneagram_data.Instincts + maxenneagram[1]
           var that = this
           get_e_result(this.enneagram_test_result, that)
-          var newurl = location.href + "&" + "statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&VIII=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
+          var newurl = resultQueryBase() + "statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&VIII=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
           if (this.e_maybe) {
             newurl += "&e_maybe="
             for (let index = 0; index < this.e_maybe.length; index++) {
@@ -752,7 +758,7 @@ var app = createApp({
       var that = this
       get_e_result(this.enneagram_test_result, that)
       this.enneagram_data.II = 60
-      var newurl = location.href + "&statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&VIII=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
+      var newurl = resultQueryBase() + "statue=enneagram_result" + "&Instincts=" + this.enneagram_data.Instincts + "&e_result_value=" + this.e_result_value + "&trifix=" + this.trifix + "&I=" + this.enneagram_data.I + "&II=" + this.enneagram_data.II + "&III=" + this.enneagram_data.III + "&IV=" + this.enneagram_data.IV + "&V=" + this.enneagram_data.V + "&VI=" + this.enneagram_data.VI + "&VII=" + this.enneagram_data.VII + "&VIII=" + this.enneagram_data.VIII + "&IX=" + this.enneagram_data.IX
       if (this.e_maybe) {
         newurl += "&e_maybe="
         for (let index = 0; index < this.e_maybe.length; index++) {
@@ -795,9 +801,9 @@ var app = createApp({
       this.user_data.S = 3
       this.user_data.I = 60
       this.user_data.E = 10
-      var newurl = location.href + ""
+      var newurl = resultQueryBase()
       console.log("newurl")
-      newurl += "&statue=result_page" + "&dom=" + result_check[0] + "&aux=" + result_check[1]
+      newurl += "statue=result_page" + "&dom=" + result_check[0] + "&aux=" + result_check[1]
       for (let key in this.user_data) {
         newurl += "&" + key + "=" + this.user_data[key]
       }
@@ -995,7 +1001,7 @@ var app = createApp({
           this.result_text = result_check[0] + '_text'
           this.result_text_last = result_check[0] + '_' + result_check[1] + '_text'
           // set result's url
-          var newurl = location.href + "&" + "statue=result_page" + "&dom=" + result_check[0] + "&aux=" + result_check[1]
+          var newurl = resultQueryBase() + "statue=result_page" + "&dom=" + result_check[0] + "&aux=" + result_check[1]
           for (let key in this.user_data) {
             newurl += "&" + key + "=" + this.user_data[key]
           }
@@ -1032,28 +1038,11 @@ app.directive('copy', {
 })
 app.use(i18n);
 var query, querydata;
-// Set the initial language from the URL, or derive it from the browser once.
-if (window.location.search) {
-  query = window.location.search.substring(1)
-  querydata = new URLSearchParams(query)
-  var weblang = ((navigator.language) ? navigator.language : navigator.userLanguage || 'zh').toLowerCase()
-  if (querydata.has('lang')) {
-    var requestedLocale = querydata.get('lang')
-    if (['zh', 'hk', 'ja', 'en'].includes(requestedLocale)) {
-      i18n.global.locale = requestedLocale
-    }
-  } else {
-    var preferredLocale = 'en'
-    if (weblang === 'zh-tw' || weblang === 'zh-hk') preferredLocale = 'hk'
-    else if (weblang.startsWith('zh')) preferredLocale = 'zh'
-    else if (weblang.startsWith('ja')) preferredLocale = 'ja'
-
-    var localizedUrl = new URL(location.href)
-    localizedUrl.searchParams.set('lang', preferredLocale)
-    location.replace(localizedUrl.toString())
-  }
-}
-
+// The canonical language is encoded in the page path. Legacy query URLs still work locally.
+query = window.location.search.substring(1)
+querydata = new URLSearchParams(query)
+i18n.global.locale = ['zh','hk','ja','en'].includes(querydata.get('lang'))
+  ? querydata.get('lang') : localeForPath(location.pathname)
 
 function updateSeoMetadata(locale) {
   var metadata = seoForLocale(locale)

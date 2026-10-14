@@ -8,3 +8,10 @@ export const articleLocales = {
 export function articlePath(locale, path = '/theory.html') {
   return (Object.hasOwn(articleLocales, locale) ? articleLocales[locale] : articleLocales.zh).prefix + path;
 }
+
+export const homePath = locale => articlePath(locale, '/');
+export function localeForPath(path) {
+  const local = path.replace(/^\/personality(?=\/|$)/, '');
+  const match = local.match(/^\/(zh|en|ja)(?:\/|$)/);
+  return match ? match[1] : 'hk';
+}

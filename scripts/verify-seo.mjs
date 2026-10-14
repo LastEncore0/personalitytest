@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { X_DEFAULT_URL, seoForLocale } from '../seo.mjs';
 import { landingCopy } from '../landing-copy.mjs';
 import { subtypeSlugs } from './build-subtypes.mjs';
-import { articleLocales, articlePath } from '../content-locales.mjs';
+import { articleLocales, articlePath, homePath } from '../content-locales.mjs';
 
 const args = process.argv.slice(2);
 const option = (key) => args.includes(key) ? args[args.indexOf(key) + 1] : null;
@@ -40,17 +40,17 @@ if (studioRoot) {
       checkHtml(read(lang + 'guides/' + slug + 'index.html'), 'https://zerostudio.cc/' + lang + 'guides/' + slug);
     }
   }
-  assert.equal([...read('sitemap.xml').matchAll(/<url>/g)].length, 24);
-  assert.equal([...read('sitemap-index.xml').matchAll(/<sitemap>/g)].length, 4);
+  assert.equal([...read('sitemap.xml').matchAll(/<url>/g)].length, 157);
+  assert.equal([...read('sitemap-index.xml').matchAll(/<sitemap>/g)].length, 1);
   assert.equal([...read('atlas/sitemap.xml').matchAll(/<url>/g)].length, 8);
-  assert.match(read('robots.txt'), /Sitemap: https:\/\/zerostudio\.cc\/sitemap-index\.xml/);
+  assert.match(read('robots.txt'), /Sitemap: https:\/\/zerostudio\.cc\/sitemap\.xml/);
   checkHtml(readFileSync(resolve(studioRoot, 'eastasia-travel/dist/index.html'), 'utf8'), 'https://zerostudio.cc/travel/');
-  console.log('Build SEO checks passed: 12 portal pages + 12 primary-domain guides, Atlas app, travel map and sitemap index.');
+  console.log('Build SEO checks passed: 157 unified URLs, portal pages, primary-domain guides, Atlas app and travel map.');
 }
 const personalityOrigin = option('--personality-origin');
 if (personalityOrigin) {
-  for (const locale of ['zh', 'hk', 'ja', 'en', 'unknown']) {
-    const html = await get(personalityOrigin + '/?lang=' + locale);
+  for (const locale of ['zh', 'hk', 'ja', 'en']) {
+    const html = await get(personalityOrigin + homePath(locale));
     const metadata = seoForLocale(locale);
     checkHtml(html, metadata.canonicalUrl);
     assert.equal(title(html), metadata.title);
@@ -68,7 +68,7 @@ if (personalityOrigin) {
   const home = await fetch(personalityOrigin + '/index.html?lang=en', { redirect: 'manual' });
   assert.equal(home.status, 301);
   assert.equal(new URL(home.headers.get('location'), personalityOrigin).search, '?lang=en');
-  for (const [from, to] of [['/theory', '/theory.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/subtypes/', '/subtypes/index.html'], ['/en/subtypes/sx9', '/en/subtypes/sx9.html'], ['/ja', '/?lang=ja']]) {
+  for (const [from, to] of [['/theory', '/theory.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/subtypes/', '/subtypes/index.html'], ['/en/subtypes/sx9', '/en/subtypes/sx9.html'], ['/ja', '/ja/']]) {
     const response = await fetch(personalityOrigin + from, { redirect: 'manual' });
     assert.equal(response.status, 301, from);
     const target = new URL(response.headers.get('location'), personalityOrigin);
@@ -109,14 +109,14 @@ if (args.includes('--live')) {
   }
   checkHtml(await get('https://zerostudio.cc/travel/'), 'https://zerostudio.cc/travel/');
   const index = await get('https://zerostudio.cc/sitemap-index.xml');
-  assert.equal([...index.matchAll(/<sitemap>/g)].length, 4);
+  assert.equal([...index.matchAll(/<sitemap>/g)].length, 1);
   for (const [, url] of index.matchAll(/<loc>([^<]+)<\/loc>/g)) {
     const sitemap = await get(url);
     assert.match(sitemap, /<urlset\b/);
     assert.doesNotMatch(sitemap, /workers\.dev|pages\.dev/);
     console.log('Live sitemap OK:', url);
   }
-  assert.match(await get('https://zerostudio.cc/robots.txt'), /sitemap-index\.xml/);
+  assert.match(await get('https://zerostudio.cc/robots.txt'), /sitemap\.xml/);
   assert.match(await get('https://zerostudio.cc/travel/robots.txt'), /zerostudio\.cc\/travel/);
   console.log('Live SEO checks passed: main site, 3 projects, guides and all sitemaps.');
 }

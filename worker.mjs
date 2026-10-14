@@ -1,5 +1,5 @@
 import { seoForLocale } from './seo.mjs';
-import { articleLocales, articlePath } from './content-locales.mjs';
+import { articleLocales, articlePath, homePath, localeForPath } from './content-locales.mjs';
 import { landingCopy } from './landing-copy.mjs';
 import { homeStructuredDataJson } from './home-seo.mjs';
 
@@ -7,28 +7,35 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.hostname === 'personality.zerostudio.cc') {
-      const path = url.pathname === '/index.html' ? '/' : url.pathname;
+      let path = url.pathname === '/index.html' ? '/' : url.pathname;
+      if (path === '/' && Object.hasOwn(articleLocales, url.searchParams.get('lang'))) path = homePath(url.searchParams.get('lang'));
+      url.searchParams.delete('lang');
       return Response.redirect('https://zerostudio.cc/personality' + path + url.search, 301);
     }
+    const isHome = url.pathname === '/' || /^\/(?:zh|en|ja)\/$/.test(url.pathname);
+    const locale = Object.hasOwn(articleLocales, url.searchParams.get('lang')) ? url.searchParams.get('lang') : localeForPath(url.pathname);
     // /index.html duplicates / ; send both visitors and crawlers to the single canonical entry.
     if (url.pathname === '/index.html') {
       return Response.redirect(new URL('/' + url.search, url).toString(), 301);
     }
     // With html_handling:none, map the test homepage explicitly to its asset.
     const assetUrl = new URL(url);
-    if (assetUrl.pathname === '/') assetUrl.pathname = '/index.html';
+    if (isHome) assetUrl.pathname = '/index.html';
     const response = await env.ASSETS.fetch(new Request(assetUrl, request));
-    if (url.pathname !== '/' || !response.headers.get('content-type')?.includes('text/html')) {
+    if (!isHome || !response.headers.get('content-type')?.includes('text/html')) {
       return response;
     }
 
-    const metadata = seoForLocale(url.searchParams.get('lang'));
-    const locale = Object.hasOwn(articleLocales, url.searchParams.get('lang')) ? url.searchParams.get('lang') : 'zh';
+    const metadata = seoForLocale(locale);
     const copy = landingCopy[locale];
+    const escapeCopy = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const setMeta = (value) => ({
       element(element) { element.setAttribute('content', value); },
     });
     const result = new HTMLRewriter()
+      .on('noscript', { element(element) {
+        element.setInnerContent(`<section class="container"><h2>${escapeCopy(copy.test_title)}</h2><p>${escapeCopy(copy.hero_subtitle)}</p><p>${escapeCopy(copy.start_dec_text)}</p><p><a href="${articlePath(locale, '/theory.html')}">${escapeCopy(copy.theory_link)}</a> · <a href="${articlePath(locale, '/subtypes/index.html')}">${escapeCopy(copy.subtypes_link)}</a></p></section>`, { html: true });
+      } })
       .on('html', { element(element) { element.setAttribute('lang', metadata.language); } })
       .on('title', { element(element) { element.setInnerContent(metadata.title); } })
       .on('link[rel="canonical"]', {
@@ -66,7 +73,7 @@ export default {
         },
       })
       .on('a[data-policy]', { element(element) { element.setAttribute('href', 'https://zerostudio.cc/' + (locale === 'en' || locale === 'ja' ? locale + '/' : '') + element.getAttribute('data-policy')); } })
-      .on('a.brand', { element(element) { element.setAttribute('href', '/?lang=' + locale); } })
+      .on('a.brand', { element(element) { element.setAttribute('href', homePath(locale)); } })
       .on('script[type="application/ld+json"]', {
         element(element) { element.setInnerContent(homeStructuredDataJson(locale), { html: true }); },
       })

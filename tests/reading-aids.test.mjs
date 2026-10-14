@@ -11,7 +11,7 @@ for(const locale of Object.keys(articleLocales)){
   const summary=html.match(/<section class="reading-summary callout"[\s\S]*?<\/section>/)?.[0];
   assert.equal((summary?.match(/<h4>/g)||[]).length,3);
   assert.ok(summary.includes(articlePath(locale,'/subtypes/index.html')));
-  assert.ok(summary.includes(`/?lang=${locale}`));
+  assert.ok(summary.includes(`href="${articlePath(locale,'/')}"`));
   for(const page of ['theory.html','subtypes/index.html','subtypes/sp1.html']){
    const text=readFileSync(new URL('..'+articlePath(locale,'/'+page),import.meta.url),'utf8');
    assert.match(text,/href="https:\/\/atlas\.zerostudio\.cc\//);

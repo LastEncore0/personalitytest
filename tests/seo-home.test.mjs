@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { SITE_ORIGIN, X_DEFAULT_URL, seoMetadata, seoForLocale } from '../seo.mjs';
-import { articleLocales, articlePath } from '../content-locales.mjs';
+import { articleLocales, articlePath, homePath } from '../content-locales.mjs';
 import { landingCopy } from '../landing-copy.mjs';
 import { renderLandingCopy, landingKeys } from '../scripts/build-landing-copy.mjs';
 import { homeStructuredData } from '../home-seo.mjs';
@@ -17,27 +17,16 @@ const escapeHtml = text => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').rep
 const index = read('index.html');
 const sitemap = read('sitemap.xml');
 
-test('x-default points at a canonical, indexable URL that is part of the hreflang set', () => {
-  assert.equal(X_DEFAULT_URL, SITE_ORIGIN + '/?lang=en');
-  assert.equal(seoForLocale('en').canonicalUrl, X_DEFAULT_URL);
-  assert.ok(index.includes(`hreflang="x-default" href="${X_DEFAULT_URL}"`));
-  assert.ok(!index.includes(`hreflang="x-default" href="${SITE_ORIGIN}/"`));
-  // Every homepage sitemap entry carries the full, self-consistent alternate set.
-  const homeEntries = sitemap.split('<url>').filter(entry => entry.includes('?lang=') && entry.includes('<loc>' + SITE_ORIGIN + '/?lang='));
-  assert.equal(homeEntries.length, 4);
-  for (const entry of homeEntries) {
-    assert.ok(entry.includes(`hreflang="x-default" href="${X_DEFAULT_URL}"`));
-    for (const locale of locales) assert.ok(entry.includes(`hreflang="${seoMetadata[locale].language}" href="${SITE_ORIGIN}/?lang=${locale}"`));
+test('homepage languages have clean self-canonicals and reciprocal alternatives', () => {
+  assert.equal(X_DEFAULT_URL,SITE_ORIGIN+'/en/');
+  assert.ok(index.includes('hreflang="x-default" href="'+X_DEFAULT_URL+'"'));
+  for(const locale of locales){
+    const url=SITE_ORIGIN+homePath(locale);
+    assert.ok(sitemap.includes('<loc>'+url+'</loc>'));
+    assert.ok(index.includes('hreflang="'+seoMetadata[locale].language+'" href="'+url+'"'));
+    assert.equal(new URL(seoForLocale(locale).canonicalUrl).search,'');
   }
-  // The bare root is not a sitemap URL because it canonicalises to ?lang=zh.
-  assert.ok(!sitemap.includes(`<loc>${SITE_ORIGIN}/</loc>`));
-  // Articles use the English edition as x-default.
-  for (const base of ['/theory.html', '/subtypes/index.html', '/subtypes/sp1.html']) {
-    for (const locale of locales) {
-      const html = read(articlePath(locale, base).slice(1));
-      assert.ok(html.includes(`hreflang="x-default" href="${SITE_ORIGIN}${articlePath('en', base)}"`), locale + base);
-    }
-  }
+  assert.doesNotMatch(sitemap, /\?lang=/);
 });
 
 test('homepage copy served by the Worker is generated from vuei18n.js and cannot drift', async () => {
@@ -45,9 +34,8 @@ test('homepage copy served by the Worker is generated from vuei18n.js and cannot
   for (const locale of locales) for (const key of landingKeys) assert.ok(landingCopy[locale][key], locale + '/' + key);
 });
 
-test('landing page has no raw Vue templates and its static fallback matches the zh messages', () => {
-  const landing = index.slice(index.indexOf('<main v-if="nostart"'), index.indexOf('<main v-else-if="result_page"'));
-  assert.doesNotMatch(landing, /\{\{/, 'landing page must not ship {{ }} templates');
+test('the entire questionnaire HTML has no raw Vue templates and its static fallback matches the zh messages', () => {
+  assert.doesNotMatch(index, /\{\{/, 'initial HTML must not expose question or result placeholders');
   const keys = new Set();
   for (const [, key, text] of index.matchAll(/data-i18n="([a-z_]+)"[^>]*>([^<]*)</g)) {
     keys.add(key);
@@ -74,8 +62,8 @@ test('homepage structured data is localised and the static copy equals the zh ve
 
 test('homepage links, images and scripts follow SEO and performance rules', () => {
   assert.doesNotMatch(index, /href="index\.html"/);
-  assert.match(index, /class="brand" href="\/\?lang=zh" :href="homeUrl"/);
-  assert.ok(read('vuescript.js').includes("'/?lang=' + this.$i18n.locale"));
+  assert.match(index, /class="brand" href="\/zh\/" v-bind=/);
+  assert.ok(read('vuescript.js').includes("homePath(this.$i18n.locale)"));
   for (const [, attrs] of index.matchAll(/<img\b([^>]*)>/g)) {
     assert.match(attrs, / alt="[^"]+"/, 'static alt text is required');
     assert.match(attrs, / width="\d+"/);
@@ -90,17 +78,17 @@ test('homepage links, images and scripts follow SEO and performance rules', () =
 test('extension-less and legacy URLs redirect to the canonical page instead of returning 404', () => {
   const rules = redirectRules();
   const sources = rules.map(([from]) => from);
-  assert.equal(rules.length, 4 * (1 + 3 + subtypeSlugs.length + 2));
+  assert.equal(rules.length, 4 * (1 + 3 + subtypeSlugs.length) + 5);
   assert.equal(new Set(sources).size, sources.length, 'duplicate redirect source');
   for (const [from, to] of rules) {
     assert.notEqual(from, to);
     const target = new URL(to, SITE_ORIGIN);
     if (target.pathname !== '/') assert.ok(existsSync(resolve(root, target.pathname.slice(1))), 'redirect target missing: ' + to);
-    else assert.ok(Object.hasOwn(seoMetadata, target.searchParams.get('lang')), to);
+    else assert.equal(target.search, '', to);
     const asFile = resolve(root, from.slice(1));
     assert.ok(!(existsSync(asFile) && statSync(asFile).isFile()), 'a real file would be shadowed: ' + from);
   }
-  for (const [from, to] of [['/theory', '/theory.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/ja/subtypes/sx9', '/ja/subtypes/sx9.html'], ['/en', '/?lang=en']]) {
+  for (const [from, to] of [['/theory', '/theory.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/ja/subtypes/sx9', '/ja/subtypes/sx9.html'], ['/en', '/en/']]) {
     assert.ok(rules.some(rule => rule[0] === from && rule[1] === to), from);
   }
   assert.equal(read('.cloudflare-stage/_redirects'), redirectsFile());
@@ -120,7 +108,7 @@ test('sitemap lastmod, JSON-LD dateModified and article metadata agree', () => {
     assert.ok(article.dateModified >= article.datePublished, loc);
     assert.match(html, /<meta property="og:image:alt" content="[^"]+"/, loc);
   }
-  const homeDates = [...sitemap.matchAll(/<loc>[^<]+\?lang=[a-z]+<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)].map(match => match[1]);
+  const homeDates = [...sitemap.matchAll(/<loc>[^<]+<\/loc>\s+<lastmod>([^<]+)<\/lastmod>/g)].map(match => match[1]);
   assert.equal(homeDates.length, 4);
   for (const date of homeDates) assert.match(date, /^\d{4}-\d{2}-\d{2}$/);
 });
