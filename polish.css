@@ -1698,3 +1698,74 @@ a:focus-visible {
     width: 100%;
   }
 }
+
+/* Tool Documentation Section (AdSense depth & methodology) */
+.tool-documentation {
+  width: min(1180px, calc(100% - 40px));
+  max-width: 1180px;
+  margin: 40px auto 60px;
+  padding: 40px 36px;
+  background: var(--atlas-paper);
+  border: 1px solid var(--atlas-line);
+  border-radius: var(--atlas-radius-md);
+  box-shadow: var(--atlas-shadow-soft);
+  box-sizing: border-box;
+}
+
+.tool-documentation h2 {
+  font-size: 24px;
+  font-weight: 750;
+  color: var(--atlas-ink);
+  line-height: 1.4;
+  margin: 0 0 16px;
+  border-bottom: 2px solid var(--atlas-mint);
+  padding-bottom: 12px;
+}
+
+.tool-documentation h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--atlas-forest);
+  margin: 32px 0 14px;
+  line-height: 1.45;
+}
+
+.tool-documentation p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--atlas-ink-soft);
+  margin: 0 0 16px;
+}
+
+.tool-documentation ul {
+  margin: 0 0 24px 24px;
+  padding: 0;
+}
+
+.tool-documentation li {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--atlas-ink-soft);
+  margin-bottom: 10px;
+}
+
+.tool-documentation strong {
+  color: var(--atlas-ink);
+}
+
+@media (max-width: 768px) {
+  .tool-documentation {
+    width: min(100% - 24px, 1180px);
+    margin: 24px auto 40px;
+    padding: 24px 18px;
+  }
+
+  .tool-documentation h2 {
+    font-size: 20px;
+  }
+
+  .tool-documentation h3 {
+    font-size: 16px;
+  }
+}
+

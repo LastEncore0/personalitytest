@@ -1,4 +1,10 @@
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 User-agent: *
 Allow: /
 
-Sitemap: https://zerostudio.cc/personality/sitemap.xml
+Sitemap: https://zerostudio.cc/sitemap.xml
