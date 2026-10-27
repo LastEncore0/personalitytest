@@ -14,8 +14,8 @@ for(const locale of Object.keys(articleLocales)){
   assert.ok(summary.includes(`href="${articlePath(locale,'/')}"`));
   for(const page of ['theory.html','subtypes/index.html','subtypes/sp1.html']){
    const text=readFileSync(new URL('..'+articlePath(locale,'/'+page),import.meta.url),'utf8');
-   assert.match(text,/href="https:\/\/atlas\.zerostudio\.cc\//);
-   assert.match(text,/href="https:\/\/travelmap\.zerostudio\.cc\//);
+   assert.match(text,/href="https:\/\/zerostudio\.cc\/atlas\//);
+   assert.match(text,/href="https:\/\/zerostudio\.cc\/travel\//);
   }
  });
 }

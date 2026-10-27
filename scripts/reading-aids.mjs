@@ -13,5 +13,5 @@ export function theoryReadingAid(locale) {
 export function ecosystemLinks(locale) {
  const labels={hk:['隱私說明','關於工作室','聯絡'],zh:['隐私说明','关于工作室','联系'],en:['Privacy','About the studio','Contact'],ja:['プライバシー','運営者について','お問い合わせ']}[locale];
  const t=copy[locale], lang=locale==='hk'||locale==='zh'?'':locale, map=lang||'zh';
- return `<li><a href="https://zerostudio.cc/${lang?lang+'/':''}">${esc(t.tools)}</a></li><li><a href="https://atlas.zerostudio.cc/${map==='zh'?'':'?lang='+map}">${esc(t.map)}</a></li><li><a href="https://travelmap.zerostudio.cc/#v=2&amp;l=${map==='zh'?'zh-Hant':map}">${esc(t.travel)}</a></li><li><a href="https://zerostudio.cc/${lang?lang+'/':''}privacy/">${labels[0]}</a></li><li><a href="https://zerostudio.cc/${lang?lang+'/':''}about/">${labels[1]}</a></li><li><a href="mailto:contact@zerostudio.cc">${labels[2]}</a></li>`;
+ return `<li><a href="https://zerostudio.cc/${lang?lang+'/':''}">${esc(t.tools)}</a></li><li><a href="https://zerostudio.cc/atlas/${map==='zh'?'':'?lang='+map}">${esc(t.map)}</a></li><li><a href="https://zerostudio.cc/travel/#v=2&amp;l=${map==='zh'?'zh-Hant':map}">${esc(t.travel)}</a></li><li><a href="https://zerostudio.cc/${lang?lang+'/':''}privacy/">${labels[0]}</a></li><li><a href="https://zerostudio.cc/${lang?lang+'/':''}about/">${labels[1]}</a></li><li><a href="mailto:contact@zerostudio.cc">${labels[2]}</a></li>`;
 }

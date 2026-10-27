@@ -7,7 +7,7 @@ for (const [locale, language] of [['zh', 'zh-Hans'], ['hk', 'zh-Hant'], ['ja', '
   test('localized SEO for ' + locale, () => {
     const meta = seoForLocale(locale);
     assert.equal(meta.language, language);
-    assert.equal(meta.canonicalUrl, 'https://personality.zerostudio.cc' + homePath(locale));
+    assert.equal(meta.canonicalUrl, 'https://zerostudio.cc/personality' + homePath(locale));
     assert.ok(meta.title && meta.description && meta.keywords);
   });
 }

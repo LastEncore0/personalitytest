@@ -7,7 +7,7 @@ import { subtypeMessages } from '../subtype-summaries.mjs';
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 // Homepage strings that the Worker writes into the static HTML, so crawlers that do not
 // execute JavaScript still see real text instead of Vue templates.
-export const landingKeys = ['Language_selection', 'disclaimer_link', 'test_title', 'hero_subtitle', 'assessments_label', 'reference_only', 'jung_test', 'jung_dec', 'questions_label', 'start_test', 'ennegram_test', 'ennegram_dec', 'guided_steps_label', 'reading_title', 'reading_intro', 'theory_link', 'theory_teaser', 'read_article', 'subtypes_link', 'subtypes_teaser', 'browse_subtypes', 'read_pls', 'start_dec_text', 'privacy_link', 'about_link', 'contact_link'];
+export const landingKeys = ['Language_selection', 'disclaimer_link', 'test_title', 'hero_subtitle', 'assessments_label', 'reference_only', 'jung_test', 'jung_dec', 'questions_label', 'start_test', 'ennegram_test', 'ennegram_dec', 'guided_steps_label', 'reading_title', 'reading_intro', 'theory_link', 'theory_teaser', 'essay_link', 'essay_teaser', 'read_article', 'subtypes_link', 'subtypes_teaser', 'browse_subtypes', 'read_pls', 'start_dec_text', 'privacy_link', 'about_link', 'contact_link'];
 
 export async function renderLandingCopy() {
   const source = await readFile(resolve(root, 'vuei18n.js'), 'utf8');

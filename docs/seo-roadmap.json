@@ -28,6 +28,11 @@
       "answer": "Explain the site's interpretation and that there is no validated one-to-one conversion."
     },
     {
+      "intent": "榮格八維深度隨筆 / MBTI批判誤區 / 角色塑造心理學",
+      "page": "https://zerostudio.cc/personality/jung-functions.html",
+      "answer": "剖析針對 MBTI 與榮格八維的 4 大批判誤區、Ego 與陰影功能動力學，以及透過動漫與《三體》展露的角色塑造心理學。"
+    },
+    {
       "intent": "東亞旅遊足跡地圖",
       "page": "https://zerostudio.cc/travel/",
       "answer": "Record regional travel footprints and export or share the map."

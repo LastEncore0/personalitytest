@@ -8,6 +8,7 @@ export function redirectRules() {
   const rules = [];
   for (const [locale, { prefix }] of Object.entries(articleLocales)) {
     rules.push([`${prefix}/theory`, `${prefix}/theory.html`]);
+    rules.push([`${prefix}/jung-functions`, `${prefix}/jung-functions.html`]);
     for (const from of ['/subtypes', '/subtypes/', '/subtypes/index']) rules.push([prefix + from, `${prefix}/subtypes/index.html`]);
     for (const slug of subtypeSlugs) rules.push([`${prefix}/subtypes/${slug}`, `${prefix}/subtypes/${slug}.html`]);
     // Language homes are served by the Worker; normalize only their missing slash.

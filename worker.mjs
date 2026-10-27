@@ -7,10 +7,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.hostname === 'personality.zerostudio.cc') {
-      let path = url.pathname === '/index.html' ? '/' : url.pathname;
-      if (path === '/' && Object.hasOwn(articleLocales, url.searchParams.get('lang'))) path = homePath(url.searchParams.get('lang'));
-      url.searchParams.delete('lang');
-      return Response.redirect('https://zerostudio.cc/personality' + path + url.search, 301);
+      return Response.redirect('https://zerostudio.cc/personality' + url.pathname + url.search, 301);
     }
     const isHome = url.pathname === '/' || /^\/(?:zh|en|ja)\/$/.test(url.pathname);
     const locale = Object.hasOwn(articleLocales, url.searchParams.get('lang')) ? url.searchParams.get('lang') : localeForPath(url.pathname);
@@ -77,7 +74,7 @@ export default {
       .on('script[type="application/ld+json"]', {
         element(element) { element.setInnerContent(homeStructuredDataJson(locale), { html: true }); },
       })
-      .on('a[href="/zh/theory.html"], a[href="/zh/subtypes/index.html"], a[href="/zh/theory.html#refs"]', {
+      .on('a[href="/zh/theory.html"], a[href="/zh/jung-functions.html"], a[href="/zh/subtypes/index.html"], a[href="/zh/theory.html#refs"]', {
         element(element) { element.setAttribute('href', articlePath(locale, element.getAttribute('href').slice(3))); },
       })
       .transform(response);

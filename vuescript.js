@@ -237,6 +237,9 @@ var app = createApp({
     theoryArticleUrl() {
       return articlePath(this.$i18n.locale, '/theory.html')
     },
+    essayArticleUrl() {
+      return articlePath(this.$i18n.locale, '/jung-functions.html')
+    },
     subtypesOverviewUrl() {
       return articlePath(this.$i18n.locale, '/subtypes/index.html')
     },

@@ -4,17 +4,18 @@ Historical writing drafts and the completed implementation brief are preserved i
 
 Personality Atlas combines a browser-based Jungian functions test, an Enneagram test and standalone reading pages.
 
-[Jungian functions and Enneagram tests](https://personality.zerostudio.cc/?lang=en) · [27 Enneagram subtypes](https://personality.zerostudio.cc/en/subtypes/index.html) · [Theory guide](https://personality.zerostudio.cc/en/theory.html) · [Zero Studio](https://zerostudio.cc/en/)
+[Jungian functions and Enneagram tests](https://zerostudio.cc/personality/?lang=en) · [27 Enneagram subtypes](https://zerostudio.cc/personality/en/subtypes/index.html) · [Theory guide](https://zerostudio.cc/personality/en/theory.html) · [Zero Studio](https://zerostudio.cc/en/)
 
 Theory pages include a localized key-points section and concise answers that distinguish the site's interpretive mapping from validated findings. All article footers offer language-aware links back to the studio and its map tools. `docs/seo-roadmap.json` records keyword hypotheses, the subdomain decision and the remaining Search Console checks; keyword search volumes and indexing are not assumed.
 
 Content is available without completing a test:
 
 - `/theory.html`: Traditional Chinese theory guide; `/zh/theory.html`, `/en/theory.html`, `/ja/theory.html` provide Simplified Chinese, English and Japanese.
+- `/jung-functions.html`: Traditional Chinese Jungian cognitive functions deep essay; `/zh/jung-functions.html`, `/en/jung-functions.html`, `/ja/jung-functions.html` provide Simplified Chinese, English and Japanese.
 - `/subtypes/index.html`: overview and links to all 27 instinctual subtypes.
 - `/subtypes/{sp,so,sx}{1..9}.html`: full subtype articles with related reading. Overview and subtype paths also have `/zh`, `/en` and `/ja` versions.
 
-All 116 article pages have a language switch preserving the article, reciprocal `hreflang`, their own canonical URL, localized metadata and structured data. The sitemap contains 120 URLs, including four homepage locales. Homepage and result links follow the selected language.
+All 120 article pages have a language switch preserving the article, reciprocal `hreflang`, their own canonical URL, localized metadata and structured data. The sitemap contains 124 URLs, including four homepage locales. Homepage and result links follow the selected language.
 
 Each subtype starts with the complete corresponding type explanation extracted from its language's theory guide, followed by its subtype details and the same anime character portraits and quotes used by the test result page. Character mappings come from `cn_enneagram.js` and localized names/quotes from `vuei18n.js`. Characters without an existing quote show a localized subtype context instead.
 
@@ -26,7 +27,7 @@ Run `npm run build:cloudflare` to build the complete deployment in `.cloudflare-
 
 Use `npx wrangler dev --local --port 8787` to preview the actual Worker and asset routes. With the intended Cloudflare account authenticated, run `npm run deploy:cloudflare`. The existing Worker is named `personalitytest`; retain its domain configuration. HTML paths preserve `.html`; missing pages return HTTP 404 instead of the test homepage. Result URLs use `noindex,follow` while content pages are indexable.
 
-The 2026-10-11 deployment used a workspace-local Wrangler login, ignored by Git. To reuse that login in PowerShell, set `$env:XDG_CONFIG_HOME = Join-Path (Get-Location) '.wrangler-config'` before running the deploy command. Do not publish that directory. Verify the live deployment with `node scripts/verify-seo.mjs --personality-origin https://personality.zerostudio.cc`.
+The 2026-10-11 deployment used a workspace-local Wrangler login, ignored by Git. To reuse that login in PowerShell, set `$env:XDG_CONFIG_HOME = Join-Path (Get-Location) '.wrangler-config'` before running the deploy command. Do not publish that directory. Verify the live deployment with `node scripts/verify-seo.mjs --personality-origin https://zerostudio.cc/personality`.
 
 The theory guide distinguishes the site's interpretive mapping from verified research. The draft's unverified Riso mapping attribution was removed; the site's mapping remains visible as its own hypothesis. Legacy subtype paragraphs were replaced with source-based summaries. The Adsterra loader was removed.
 

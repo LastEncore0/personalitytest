@@ -68,7 +68,7 @@ if (personalityOrigin) {
   const home = await fetch(personalityOrigin + '/index.html?lang=en', { redirect: 'manual' });
   assert.equal(home.status, 301);
   assert.equal(new URL(home.headers.get('location'), personalityOrigin).search, '?lang=en');
-  for (const [from, to] of [['/theory', '/theory.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/subtypes/', '/subtypes/index.html'], ['/en/subtypes/sx9', '/en/subtypes/sx9.html'], ['/ja', '/ja/']]) {
+  for (const [from, to] of [['/theory', '/theory.html'], ['/jung-functions', '/jung-functions.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/subtypes/', '/subtypes/index.html'], ['/en/subtypes/sx9', '/en/subtypes/sx9.html'], ['/ja', '/ja/']]) {
     const response = await fetch(personalityOrigin + from, { redirect: 'manual' });
     assert.equal(response.status, 301, from);
     const target = new URL(response.headers.get('location'), personalityOrigin);
@@ -77,24 +77,24 @@ if (personalityOrigin) {
   }
   assert.match(await get(personalityOrigin + '/seo.mjs'), /export function seoForLocale/);
   assert.match(await get(personalityOrigin + '/robots.txt'), /https:\/\/personality\.zerostudio\.cc\/sitemap\.xml/);
-  const paths = Object.keys(articleLocales).flatMap(locale=>['/theory.html', '/subtypes/index.html', ...subtypeSlugs.map(slug => '/subtypes/' + slug + '.html')].map(path=>articlePath(locale,path)));
+  const paths = Object.keys(articleLocales).flatMap(locale=>['/theory.html', '/jung-functions.html', '/subtypes/index.html', ...subtypeSlugs.map(slug => '/subtypes/' + slug + '.html')].map(path=>articlePath(locale,path)));
   for (const path of paths) {
     const response = await fetch(personalityOrigin + path, { redirect: 'manual' });
     assert.equal(response.status, 200, path + ' must serve directly without redirects');
     const html = await response.text();
-    checkHtml(html, 'https://personality.zerostudio.cc' + path);
+    checkHtml(html, 'https://zerostudio.cc/personality' + path);
     const locale=path.startsWith('/en/')?'en':path.startsWith('/ja/')?'ja':path.startsWith('/zh/')?'zh':'hk';
     assert.ok(html.includes('<html lang="'+articleLocales[locale].language+'">'));
     assert.equal((html.match(/rel="alternate" hreflang=/g)||[]).length,5,path);
     assert.equal((html.match(/<h1(?:\s[^>]*)?>/g) || []).length, 1, path);
   }
   const sitemap = await get(personalityOrigin + '/sitemap.xml');
-  assert.equal([...sitemap.matchAll(/<url>/g)].length, 120);
-  for (const path of paths) assert.ok(sitemap.includes('<loc>https://personality.zerostudio.cc' + path + '</loc>'));
+  assert.equal([...sitemap.matchAll(/<url>/g)].length, 124);
+  for (const path of paths) assert.ok(sitemap.includes('<loc>https://zerostudio.cc/personality' + path + '</loc>'));
   assert.equal((await fetch(personalityOrigin + '/missing-seo-article.html')).status, 404);
   const result = await get(personalityOrigin + '/?lang=hk&statue=enneagram_result&Instincts=Sp&e_result_value=4');
   assert.match(result, /<meta name="robots" content="noindex,follow"/);
-  console.log('Personality SEO checks passed: 4 languages, 116 content pages, 120 sitemap entries, result noindex and missing-page 404.');
+  console.log('Personality SEO checks passed: 4 languages, 120 content pages, 124 sitemap entries, result noindex and missing-page 404.');
 }
 if (args.includes('--live')) {
   for (const lang of ['', 'en/', 'ja/']) {

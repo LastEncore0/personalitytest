@@ -14,6 +14,7 @@ if (basename(outputDirectory) !== ".cloudflare-stage") {
 const files = [
   "index.html",
   "theory.html",
+  "jung-functions.html",
   "article.css",
   "subtype-summaries.mjs",
   "content-locales.mjs",

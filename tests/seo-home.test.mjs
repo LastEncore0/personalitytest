@@ -78,7 +78,7 @@ test('homepage links, images and scripts follow SEO and performance rules', () =
 test('extension-less and legacy URLs redirect to the canonical page instead of returning 404', () => {
   const rules = redirectRules();
   const sources = rules.map(([from]) => from);
-  assert.equal(rules.length, 4 * (1 + 3 + subtypeSlugs.length) + 5);
+  assert.equal(rules.length, 4 * (1 + 1 + 3 + subtypeSlugs.length) + 5);
   assert.equal(new Set(sources).size, sources.length, 'duplicate redirect source');
   for (const [from, to] of rules) {
     assert.notEqual(from, to);
@@ -88,7 +88,7 @@ test('extension-less and legacy URLs redirect to the canonical page instead of r
     const asFile = resolve(root, from.slice(1));
     assert.ok(!(existsSync(asFile) && statSync(asFile).isFile()), 'a real file would be shadowed: ' + from);
   }
-  for (const [from, to] of [['/theory', '/theory.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/ja/subtypes/sx9', '/ja/subtypes/sx9.html'], ['/en', '/en/']]) {
+  for (const [from, to] of [['/theory', '/theory.html'], ['/jung-functions', '/jung-functions.html'], ['/zh/theory', '/zh/theory.html'], ['/subtypes', '/subtypes/index.html'], ['/ja/subtypes/sx9', '/ja/subtypes/sx9.html'], ['/en', '/en/']]) {
     assert.ok(rules.some(rule => rule[0] === from && rule[1] === to), from);
   }
   assert.equal(read('.cloudflare-stage/_redirects'), redirectsFile());
@@ -98,7 +98,7 @@ test('extension-less and legacy URLs redirect to the canonical page instead of r
 
 test('sitemap lastmod, JSON-LD dateModified and article metadata agree', () => {
   const dated = [...sitemap.matchAll(/<loc>([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g)];
-  assert.equal(dated.length, 116);
+  assert.equal(dated.length, 120);
   for (const [, loc, lastmod] of dated) {
     assert.match(lastmod, /^\d{4}-\d{2}-\d{2}$/);
     const html = read(loc.replace(SITE_ORIGIN + '/', ''));

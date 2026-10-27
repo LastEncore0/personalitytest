@@ -37,6 +37,7 @@ export function articleSources(locale, slug) {
   const theory = ['content/theory/zh-Hant.html', ...(translated ? [`content/translations/theory-${locale}.txt`] : [])];
   const shared = ['scripts/article-translations.mjs', 'scripts/reading-aids.mjs', 'content-locales.mjs'];
   if (slug === 'theory') return [...shared, ...theory];
+  if (slug === 'jung-functions') return [...shared, 'scripts/build-essay.mjs', `content/essays/jung-functions/${locale === 'hk' ? 'zh-Hant' : locale}.mjs`];
   const subtypeSources = ['scripts/build-subtypes.mjs'];
   if (slug === 'index') return [...shared, ...subtypeSources, ...Array.from({length:9}, (_,n)=>['sp','so','sx'].map(i=>`content/subtypes/zh-Hant/${i}${n+1}.md`)).flat(), 'content/subtypes/zh-Hant/index.md', ...(translated ? ['content/translations/overview.mjs', `content/translations/subtypes-${locale}.mjs`] : [])];
   return [...shared, ...subtypeSources, ...theory, 'cn_enneagram.js', 'vuei18n.js', 'scripts/subtype-context.mjs', `content/subtypes/zh-Hant/${slug}.md`, ...(translated ? [`content/translations/subtypes-${locale}.mjs`] : [])];

@@ -30,7 +30,7 @@ export const seoMetadata = {
   }
 }
 
-export const SITE_ORIGIN = 'https://personality.zerostudio.cc'
+export const SITE_ORIGIN = 'https://zerostudio.cc/personality'
 
 // Every language has a clean canonical path; English is the hreflang fallback.
 export const X_DEFAULT_LOCALE = 'en'

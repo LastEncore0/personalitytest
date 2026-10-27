@@ -27,8 +27,11 @@ const shell = {
   '27 副型': ['27 subtypes', '27のサブタイプ'],
   '麵包屑': ['Breadcrumb', 'パンくずリスト'],
   '首頁': ['Home', 'ホーム'],
+  '八維隨筆': ['Functions essay', '八機能エッセイ'],
+  '八維深度隨筆': ['Functions essay', '八機能エッセイ'],
   'Personality Atlas 編輯部': ['Personality Atlas editorial team', 'Personality Atlas 編集部'],
   '2026 年 10 月 11 日': ['October 11, 2026', '2026年10月11日'],
+  '2026 年 10 月 21 日': ['October 21, 2026', '2026年10月21日'],
   '繁體中文': ['English', '日本語'],
   '本文目錄': ['Contents', '目次'],
   '27 副型速查表': ['27-subtype quick reference', '27サブタイプ早見表'],
@@ -37,6 +40,7 @@ const shell = {
   '參考文獻與免責聲明': ['References and disclaimer', '参考文献と免責事項'],
   '免責聲明': ['Disclaimer', '免責事項'],
   '© 2026 Zero Studio · Personality Atlas。副型概念依據 Naranjo 與 Chestnut 的整理，以本站原創文字說明。': ['© 2026 Zero Studio · Personality Atlas. Original explanations of subtype concepts drawing on Naranjo and Chestnut.', '© 2026 Zero Studio · Personality Atlas。ナランホとチェスナットのサブタイプ概念を、本站独自の文章で説明しています。'],
+  '© 2026 Zero Studio · Personality Atlas。榮格八維與性格心理學深度探討。': ['© 2026 Zero Studio · Personality Atlas. In-depth exploration of Jungian functions and character psychology.', '© 2026 Zero Studio · Personality Atlas。ユング認知機能と性格心理学の深層考察。'],
 };
 const passion = { en: ['', 'Anger', 'Pride', 'Vanity', 'Envy', 'Avarice', 'Fear', 'Gluttony', 'Lust', 'Sloth'], ja: ['', '怒り', 'プライド', '虚栄', '嫉妬', '貪欲', '恐れ', '貪食', '過剰な欲求', '自己忘却'] };
 const instinct = { en: { sp: 'Self-preservation', so: 'Social', sx: 'One-to-one' }, ja: { sp: '自己保存', so: 'ソーシャル', sx: 'セクシャル' } };
@@ -88,7 +92,7 @@ export function localizePage(html, locale, path, modified) {
       if (['Article','CollectionPage'].includes(node['@type'])) { node.inLanguage = l.language; if (modified) node.dateModified = modified; }
       if (node['@type']==='BreadcrumbList') for (const crumb of node.itemListElement) {
         if (crumb.item===SITE_ORIGIN+'/') crumb.item=SITE_ORIGIN+homePath(locale);
-        else crumb.item=crumb.item.replace(new RegExp('^'+SITE_ORIGIN.replaceAll('.','\\.')+'(/(?:theory\\.html|subtypes/[^#]+\\.html))$'),(_,base)=>SITE_ORIGIN+articlePath(locale,base));
+        else crumb.item=crumb.item.replace(new RegExp('^'+SITE_ORIGIN.replaceAll('.','\\.')+'(/(?:theory\\.html|jung-functions\\.html|subtypes/[^#]+\\.html))$'),(_,base)=>SITE_ORIGIN+articlePath(locale,base));
       }
     }
     return '<script type="application/ld+json">' + JSON.stringify(data).replace(/</g,'\\u003c') + '</script>';
@@ -96,7 +100,7 @@ export function localizePage(html, locale, path, modified) {
   // Assets are shared from the root; editorial links stay within the chosen language.
   html = html.replace(/href="(?:index\.html|\/\?lang=hk)"/g, `href="${homePath(locale)}"`)
     .replace(/href="(theory\.html|favicon\.ico|theme\.css|polish\.css|article\.css)"/g, 'href="/$1"')
-    .replace(/href="\/(theory\.html|subtypes\/[^"#]+\.html)(#[^"]*)?"/g, (_,base,hash='') => `href="${articlePath(locale,'/'+base)}${hash}"`);
+    .replace(/href="\/(theory\.html|jung-functions\.html|subtypes\/[^"#]+\.html)(#[^"]*)?"/g, (_,base,hash='') => `href="${articlePath(locale,'/'+base)}${hash}"`);
   html = html.replace('</head>', languageLinks(locale,path) + '\n</head>');
   html = html.replace(/(<div class="nav-links">[\s\S]*?<\/div>)/, '$1'+languageSwitch(locale,path));
   html = html.replace('<li><a href="https://zerostudio.cc/">Zero Studio</a></li>', '');

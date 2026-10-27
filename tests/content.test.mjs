@@ -13,7 +13,7 @@ import japanese from '../content/translations/subtypes-ja.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const read = file => readFileSync(resolve(root, file), 'utf8');
-const basePages = ['theory.html', 'subtypes/index.html', ...subtypeSlugs.map(slug => 'subtypes/' + slug + '.html')];
+const basePages = ['theory.html', 'jung-functions.html', 'subtypes/index.html', ...subtypeSlugs.map(slug => 'subtypes/' + slug + '.html')];
 const pages = Object.keys(articleLocales).flatMap(locale=>basePages.map(page=>articlePath(locale,'/'+page).slice(1)));
 const escapeHtml = text => text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -39,7 +39,7 @@ test('each subtype starts with its complete theory explanation and preserves tes
   assert.ok(read('subtypes/sp8.html').includes('迪奧·布蘭度'));
 });
 
-test('all 116 content pages have unique metadata, structured data and packaged source', () => {
+test('all 120 content pages have unique metadata, structured data and packaged source', () => {
   const titles = new Set();
   for (const page of pages) {
     const html = read(page), title = html.match(/<title>([^<]+)<\/title>/)?.[1];
@@ -62,7 +62,7 @@ test('all local content links, assets and table-of-contents anchors resolve', ()
   for (const page of ['index.html', ...pages, '404.html']) {
     const html = read(page), base = new URL('/' + page, SITE_ORIGIN);
     for (const [, target] of html.matchAll(/\b(?:href|src)="([^"{}]+)"/g)) {
-      if (/^(?:subtypeArticleUrl|theoryArticleUrl|subtypesOverviewUrl|homeUrl|studioRootUrl)/.test(target)) continue;
+      if (/^(?:subtypeArticleUrl|theoryArticleUrl|essayArticleUrl|subtypesOverviewUrl|homeUrl|studioRootUrl)/.test(target)) continue;
       const url = new URL(target.replaceAll('&amp;', '&'), base);
       if (url.origin !== SITE_ORIGIN) continue;
       const file = url.pathname === '/' ? 'index.html' : decodeURIComponent(url.pathname.slice(1));
@@ -107,8 +107,8 @@ test('four-language original summaries are actually wired into Vue i18n', () => 
 
 test('sitemap lists homepage locales and all content exactly once; deployment excludes drafts', () => {
   const urls = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-  assert.equal(urls.length, 120);
-  assert.equal(new Set(urls).size, 120);
+  assert.equal(urls.length, 124);
+  assert.equal(new Set(urls).size, 124);
   for (const page of pages) assert.ok(urls.includes(SITE_ORIGIN + '/' + page));
   assert.ok(!existsSync(resolve(root, '.cloudflare-stage/content')));
   assert.ok(!existsSync(resolve(root, '.cloudflare-stage/THEORY_ADSENSE_GUIDE.md')));
