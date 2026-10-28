@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 import { buildSubtypes } from "./build-subtypes.mjs";
 import { buildLandingCopy } from "./build-landing-copy.mjs";
@@ -37,6 +37,13 @@ const directories = ["vendor", "img", "sound", "subtypes", "zh", "en", "ja"];
 
 await buildSubtypes();
 await buildLandingCopy();
+
+// Fail the release if an old entry template loses its static methodology or
+// reintroduces advertising on questionnaire and result states.
+const homepage = await readFile(resolve(projectRoot, "index.html"), "utf8");
+if (!homepage.includes('id="personality-methodology"') || /adsbygoogle\.js/.test(homepage)) {
+  throw new Error("Homepage must retain static methodology and exclude advertising scripts.");
+}
 
 await rm(outputDirectory, { recursive: true, force: true });
 await mkdir(outputDirectory, { recursive: true });
